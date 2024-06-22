@@ -6,18 +6,27 @@ import { Typography } from "@/ui/components/typography/typography";
 import Image from "next/image"
 import imageHero  from "../../public/young-black-businessman-with-quizzical-confused-look_1194-20807-removebg-preview.png";
 import { FaChevronRight } from "react-icons/fa";
+import { darkTheme, lightTheme } from "@/styles/theme";
+import { useTheme } from "styled-components";
 
 
 
 
 export default function HeroSection() {
+  const { theme, toggleTheme } = useTheme();
+
+  const buttonClass = theme! === 'light'
+  ? 'bg-black text-white'
+  : 'bg-white text-black';
+
+
   return (
-    <main className="flex flex-col md:items-center md:justify-between md:flex-row mx-10 pt-16 ">
+    <main className="flex flex-col md:items-center md:justify-between md:flex-row  mx-4 md:mx-10 pt-16 ">
       <Container className="flex flex-col gap-5 lg:w-1/2 w-full md:m-10 ">
-        <Typography component="h1" className="text-[#929292] text-7xl font-medium" >
+        <Typography component="h1" className="text-6xl font-medium" >
            Théodore Samba
         </Typography>
-        <Typography component="h5" className=" md:pl-4" variant="body-lg" >
+        <Typography component="h5" className="text-[#878483] md:pl-4" variant="body-lg" >
           Salut Monde je suis
         </Typography>
         <Container className="md:pl-4 " >
@@ -27,16 +36,16 @@ export default function HeroSection() {
             deleteDelay={1000}
          />
         </Container>
-        <Typography component="p" variant="body-lg" className="text-[#878483] pl-2 flex flex-col leading-relaxed">
-          <span>{" Mes passions sont l'informatique,"}</span>
-          <span>{"l’apprentissage profonde  la technologie et"}</span>
-          <span>{"le développement social"} </span> 
+        <Typography component="p" variant="body-lg" className="text-[#878483] md:pl-2 flex flex-col leading-loose">
+          <span>{" Créateur d'expériences digitales innovantes et passionnantes."}</span>
+          <span>{"Transformant vos idées en réalités numériques époustouflantes."}</span>
+          <span>{"passioné par le développement social"} </span> 
         </Typography>
-        <Container className="pl-4 mt-10 flex justify-center" >
-          <Buttons className={` px-5 py-8  bg-white text-black`} width='sm' >
-            {"Contactez Moi"}
-            <FaChevronRight className="before:'_ ' w-5 h-5 font-light" />
-          </Buttons>
+        <Container className=" mt-10 flex justify-center" >
+            <button className={` px-5 py-8 ${buttonClass}`}>
+              {"Contactez Moi"}
+              <FaChevronRight className=" w-5 h-5 font-light" />
+            </button>
         </Container>
       </Container>
       <Container className="hidden lg:block w-1/2">
