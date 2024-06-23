@@ -23,7 +23,7 @@ export default function HeroSection() {
   return (
     <Container className="flex flex-col md:items-center md:justify-between md:flex-row  mx-4 md:mx-10  pt-16 ">
       <Container className="flex flex-col gap-5 lg:w-1/2 w-full">
-        <Typography component="h1" className="font-medium text-6xl" >
+        <Typography component="h1" className="font-medium " variant="display-md" >
            Théodore Samba
         </Typography>
         <Typography component="h5" className="text-[#878483] " variant="body-lg" >
@@ -54,3 +54,4 @@ export default function HeroSection() {
     </Container>
   );
 }
+console.log(HeroSection);

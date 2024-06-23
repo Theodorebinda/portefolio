@@ -50,9 +50,9 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
           <div className="bg-[#459999ee] w-6 rounded-full h-6"></div>
           {
             currentTheme === 'light'?
-            <Typography component="p" className="px-3 text-[#7e7a7a] text-xl font-normal hover:text-[#464646]" >TBSamba</Typography>
+            <Typography component="p" className="px-3 text-[#7e7a7a] text-xl font-normal hover:text-[#464646]" >T.Samba</Typography>
             :
-            <Typography component="p" className="px-3 text-[#7e7a7a] text-xl font-normal hover:text-white" >TBSamba</Typography>
+            <Typography component="p" className="px-3 text-[#7e7a7a] text-xl font-normal hover:text-white" >T.Samba</Typography>
           }
           
         </Link>

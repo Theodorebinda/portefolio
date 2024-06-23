@@ -60,10 +60,10 @@ const config: Config = {
       fontSize: {
         'display': ['4rem', {
           lineHeight: '120%',
-          fontWeight: '700'
+          fontWeight: '300'
         }],
-        'display-md': ['2rem', {
-          lineHeight: '10%',
+        'display-md': ['3rem', {
+          lineHeight: '30%',
           fontWeight: '500'
         }],
         'title-lg': ['2rem', {

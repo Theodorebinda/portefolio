@@ -7,7 +7,7 @@ import RealisationSection from "@/components/realisationSection";
 
 export default function Home() {
   return (
-    <main className="md:container ">
+    <main className="md:container flex flex-col gap-5 ">
       <HeroSection/>
       <RealisationSection />
     </main>
