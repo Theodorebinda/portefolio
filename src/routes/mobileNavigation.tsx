@@ -1,5 +1,5 @@
 import { Typography } from "@/ui/components/typography/typography"
-import next from '../../public/next.svg'
+import logo from '../../public/png-transparent-typescript-language-javascript-static-type-typescript-logo-frontend-3d-icon-thumbnail-removebg-preview.png'
 import styled from 'styled-components';
 import Link from "next/link"
 import { ActiveLink } from "./activeLink"
@@ -32,18 +32,24 @@ export const MobileNavigation =  ({ toggleTheme, currentTheme, className }: Prop
     <header
       className={
         clsx(
-          "z-40 fixed top-0 left-0 right-0 border-b-[1px]  ",
+          "fixed top-0 left-0 right-0 min-w-full ",
           className
         )
       }
     >
-      <Container className="flex flex-row items-center justify-between px-4 py-2 gap-4 h-[8vh]">
-        <Container className="flex justify-start items-center gap-4 ">
-          <Link href="/">
-            <Image src={next} alt='Logo MonYaya' priority width={100} height={100}/>
+      <Container className= {`${currentTheme === 'light' ? "bg-white": "bg-[#222020]"}  flex flex-row items-center w-ful justify-between px-4 py-8 h-[10vh]`}>
+        <Container className="flex justify-start items-center ">
+          <Link href="/" className="flex justify-start items-center">
+            <Image src={logo} alt='Logo MonYaya' priority width={35} height={35}/>
+            {
+            currentTheme === 'light'?
+            <Typography component="p" className="px-3 text-[#7e7a7a] text-xl font-normal hover:text-[#464646]" >TBSamba</Typography>
+            :
+            <Typography component="p" className="px-3 text-[#7e7a7a] text-xl font-normal hover:text-white" >TBSamba</Typography>
+           }
           </Link>
           <ThemeToggleButton onClick={toggleTheme}>
-              {currentTheme === 'light' ? <FaMoon size={32} className="text-[#7e7a7a] hover:fill-[#464646]"/> : <FaSun size={32} className="text-[#b2b2b2] hover:fill-[#ffffff]" />}
+              {currentTheme === 'light' ? <FaMoon size={28} className="text-[#7e7a7a] hover:fill-[#464646]"/> : <FaSun size={28} className="text-[#b2b2b2] hover:fill-[#ffffff]" />}
           </ThemeToggleButton>
         </Container>
         

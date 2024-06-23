@@ -6,6 +6,7 @@ import { lightTheme, darkTheme } from '../../styles/theme';
 import { GlobalStyle } from '../../styles/globalStyle';
 import { Navigation } from '@/routes/navigation'
 import { MobileNavigation } from '@/routes/mobileNavigation'
+import Footer from '@/ui/components/footer/footer';
 
 
 
@@ -41,6 +42,7 @@ export default function MainRoutesLayout({
           <Navigation className='hidden md:block' toggleTheme={toggleTheme} currentTheme={theme} />
           <MobileNavigation className='md:hidden' toggleTheme={toggleTheme} currentTheme={theme}/>
           {children}
+          <Footer/>
       </ThemeProvider>
     </div>
   )
