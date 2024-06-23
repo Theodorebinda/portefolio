@@ -54,4 +54,4 @@ export default function HeroSection() {
     </Container>
   );
 }
-console.log(HeroSection);
+// console.log(HeroSection);

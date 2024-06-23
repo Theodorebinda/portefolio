@@ -1,7 +1,7 @@
 'use client'
 import { Typography } from "@/ui/components/typography/typography"
 import styled from 'styled-components';
-import logo from '../../public/next.svg';
+// import logo from '../../public/next.svg';
 import Link from "next/link"
 import { ActiveLink } from "./activeLink"
 import Image from "next/image"
