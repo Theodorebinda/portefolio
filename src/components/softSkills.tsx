@@ -2,19 +2,20 @@
 
 import { Container } from "@/ui/components/container/container";
 import { Typography } from "@/ui/components/typography/typography";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 interface Props {
-  image: string;
+  image: StaticImageData| string;
   className?: string;
   name: string;
-  description: string;
+  description: string | undefined;
 }
 
-export default function SoftSkillsContent({ image, name, description,className }: Props) {
+
+export default function SoftSkillsContent({ image, name, description,className = "string" }: Props) {
   return (
     <Container className="w-full py-2">
-      <Container className={`${className} flex justify-start items-start md:flex-col md:justify-start `}>
+      <Container className={`${className} flex justify-center items-center md:flex-col md:justify-center `}>
         <Container className="hidden md:flex">
           <Image
             src={image}
@@ -26,7 +27,9 @@ export default function SoftSkillsContent({ image, name, description,className }
         </Container>
         <Container className="flex flex-col justify-start items-start gap-1 ">
           <Typography className="">{name}</Typography>
-          <Typography className="text-[#878483] md:w-full ">{description}</Typography>
+          {
+            description? <Typography className="text-[#878483] md:w-full ">{description}</Typography> : null
+          }
         </Container>
       </Container>
     </Container>

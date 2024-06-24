@@ -1,6 +1,9 @@
+import { StaticImageData } from "next/image"
+
 export interface Competences {
     id : number | string
-    image : string | any
+    image : string | StaticImageData 
     name : string
-    description : string
+    description? : string
+    progression? : number
   }
