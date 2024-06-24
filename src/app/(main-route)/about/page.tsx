@@ -12,17 +12,17 @@ import SoftSkillsContent from "@/components/softSkills"
 
 const About = () => {
   return(
-    <Container className="flex flex-col gap-8 px-4 md:px-8 py-16 bg-secondary-950">
-      <Container className="flex flex-col-reverse md:flex-row  items-center m-auto md:w-3/4 py-4 ">
+    <Container className="flex flex-col gap-8 px-4 md:px-8 py-16 bg-secondary-950 select-none">
+      <Container className="flex flex-col-reverse md:flex-row  items-center m-auto gap-3 md:w-3/4 py-4 ">
         <Image src={photo} width={300} height={300} alt={"Theodore"} className="" />
-        <Container className="flex flex-col items-center justify-between gap-5">
+        <Container className="flex flex-col items-center justify-between gap-5 md:gap-20">
              <Typography variant="body-base" component="p" className="md:leading-loose leading-relaxed text-[#878483]">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Optio totam quod vitae eos 
                 sequi consequuntur, amet perferendis
                 quaerat veniam iure.
             </Typography>
-            <Button className="py-5 ">Obtenir  CV</Button>
+            <Button className="py-8 px-10 ">Obtenir  CV</Button>
         </Container>
       </Container>
       <Container className="basis-2/3">
