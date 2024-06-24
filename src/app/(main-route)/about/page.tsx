@@ -28,19 +28,19 @@ const About = () => {
                 sequi consequuntur, amet perferendis
                 quaerat veniam iure.
             </Typography>
-            <Button className="py-8 px-10 ">Obtenir  CV</Button>
+            <Button className="py-8 px-10 ">Download CV</Button>
         </Container>
       </Container>
-      <Container className="basis-2/3 m-auto">
+      <Container className="basis-2/3 m-auto z-[-10]">
         <Tabs defaultValue='suscribe-to-training' className='w-full flex flex-col gap-4  md:p-8 '>
           <TabsList className='w-full grid grid-cols-2 mb-4 md:m-auto text-[#878483]'>  
             <TabsTrigger value='suscribe-to-training' className='basis-1/3'>
-              <Typography className="flex-wrap hidden md:block text-left" variant="title-base">Competences Comportementale</Typography>
-              <Typography className="flex-wrap md:hidden text-left" variant="title-sm">Competences<br/>Comportementale</Typography>
+              <Typography className="flex-wrap hidden md:block text-left animate-pulse" variant="title-base">Competences Comportementale</Typography>
+              <Typography className="flex-wrap md:hidden text-left animate-pulse" variant="title-sm">Competences<br/>Comportementale</Typography>
             </TabsTrigger>
             <TabsTrigger value='become-a-trainer' className='basis-1/3'>
-              <Typography className="flex-wrap hidden md:block text-left" variant="title-base">Competences Technique</Typography>
-              <Typography className="flex-wrap md:hidden text-left" variant="title-sm">Competences<br/>Techique</Typography>
+              <Typography className="flex-wrap hidden md:block text-left animate-pulse" variant="title-base">Competences Technique</Typography>
+              <Typography className="flex-wrap md:hidden text-left animate-pulse" variant="title-sm">Competences<br/>Techique</Typography>
             </TabsTrigger>
           </TabsList>
           <TabsContent value='suscribe-to-training' className="md:basis-full mx-auto">

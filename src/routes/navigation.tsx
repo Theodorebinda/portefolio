@@ -62,11 +62,11 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
               <Typography key={route.title} variant="body-base" component="p" className="">
                  {
                   currentTheme=== 'light' ?
-                  <ActiveLink href={route.baseUrl!} className="flex hover:text-[#464646] text-[#7e7a7a] ">
+                  <ActiveLink href={route.baseUrl!} className="flex hover:text-[#464646] text-[#7e7a7a] focus:text-white ">
                     {route.title}
                   </ActiveLink>
                   :  
-                  <ActiveLink href={route.baseUrl!} className="flex hover:text-[#fff] text-#7e7a7a">
+                  <ActiveLink href={route.baseUrl!} className="flex hover:text-[#fff] text-#7e7a7a focus:text-white">
                     {route.title}
                   </ActiveLink>
                 }
