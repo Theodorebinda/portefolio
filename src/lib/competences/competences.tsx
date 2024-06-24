@@ -1,43 +1,47 @@
 import { Competences } from "@/types/competences";
-import autonome from "../../../public/ls8g8oxkc04a7ubae2ls-removebg-preview.png";
+import autonome from "../../../public/images/Programming-bro 1 (1).png";
+import equipe from "../../../public/images/Collab-pana 1.png";
+import resolProblem from "../../../public/images/resolutionProbleme.png";
+import resilience from "../../../public/images/Light bulb-bro 1 (1).png";
+
 
 
 export const ListOfSoftCompetences : Competences[] =[
     {
         id : 1,
         image : autonome,
-        name : "Travaille en Autonomie",
-        description : "lorem ipsum dolor sit amjkqkjhqkl kjhqnjkhjnwklcnl"
+        name : "Autonomie et prise d'initiatives",
+        description : "Je suis reconnu pour mon autonomie et ma proactivité, n'hésitant pas à prendre des initiatives pour faire avancer les projets."
     },
     {
         id : 2,
-        image : autonome,
-        name : "Travaille en Autonomie",
-        description : "lorem ipsum dolor sit amjkqkjhqkl kjhqnjkhjnwklcnl"
+        image : equipe,
+        name : "Travaille en Equpipe",
+        description : "Je suis un élément clé dans les projets collaboratifs, sachant écouter les autres et contribuer de manière constructive."
     },
     {
         id : 3,
-        image :autonome,
-        name : "Travaille en Autonomie",
-        description : "lorem ipsum dolor sit amjkqkjhqkl kjhqnjkhjnwklcnl"
+        image :resolProblem,
+        name : "Curiosité et soif d'apprendre",
+        description : "Je fais preuve d'une grande curiosité intellectuelle et j'aime me tenir informé des dernières évolutions technologiques afin d'enrichir en permanence mes compétences."
     },
     {
         id : 4,
-        image :autonome,
-        name : "Travaille en Autonomie",
-        description : "lorem ipsum dolor sit amjkqkjhqkl kjhqnjkhjnwklcnl"
+        image :resilience,
+        name : "Resilience",
+        description : "Je fais preuve de résilience face aux défis, sachant rebondir et surmonter les obstacles avec détermination."
     },
     {
         id : 5,
         image :autonome,
-        name : "Travaille en Autonomie",
-        description : "lorem ipsum dolor sit amjkqkjhqkl kjhqnjkhjnwklcnl"
+        name : "Adaptabilité et flexibilité",
+        description : "Je sais m'adapter rapidement aux changements et aux nouvelles situations, ce qui me permet d'être réactif"
     },
     {
         id : 6,
         image : autonome,
-        name : "Travaille en Autonomie",
-        description : "lorem ipsum dolor sit amjkqkjhqkl kjhqnjkhjnwklcnl"
+        name : "Patience et pédagogie",
+        description : "Je fais preuve d'une grande résilience face aux défis, sachant rebondir et surmonter les obstacles avec détermination."
     }
 
 ]
@@ -76,7 +80,7 @@ export const ListOfHardCompetences : Competences[] =[
     {
         id : 6,
         image : autonome,
-        name : "Tailwind CSS",
+        name : "Tailwind",
         progression :90
     },
     {
@@ -100,7 +104,7 @@ export const ListOfHardCompetences : Competences[] =[
     {
         id : 6,
         image : autonome,
-        name : "ORM Prisma",
+        name : "Prisma",
         progression :50
     },
 

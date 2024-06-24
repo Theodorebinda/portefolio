@@ -61,7 +61,7 @@ const About = () => {
               <Container className="z-[-10] flex  items-center flex-wrap w-full gap-10 mt-10 ">
                 {
                   ListOfHardCompetences.map((hardSkill,index) =>(
-                    <Container key={index} className="flex justify-center items-center  basis-1/4 m-auto">
+                    <Container key={index} className="flex justify-center items-center  basis-1/4 md:basis-1/5 m-auto">
                       <HardSkillContent
                         className = "flex z-[-10]"
                         key={index}
