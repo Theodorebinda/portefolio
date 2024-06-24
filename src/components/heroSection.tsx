@@ -13,12 +13,6 @@ import { Button } from "./button";
 
 
 export default function HeroSection() {
-  const { theme } = useTheme();
-
-  const buttonClass = theme === darkTheme ? 
-    'bg-black text-white'
-  : 'bg-white text-black';
-
 
   return (
     <Container className="flex flex-col md:items-center md:justify-between md:flex-row  mx-4 md:mx-10  pt-16 ">
@@ -42,7 +36,7 @@ export default function HeroSection() {
           <span>{"passioné par le développement social"} </span> 
         </Typography>
         <Container className=" mt-10 flex justify-center" >
-             <Button className={`${buttonClass} px-5 py-8`} variant="secondary">
+             <Button className="bg-white px-5 py-8" variant="default">
               {"Contactez Moi"}
               <FaChevronRight className=" w-5 h-5 font-light" />
             </Button>

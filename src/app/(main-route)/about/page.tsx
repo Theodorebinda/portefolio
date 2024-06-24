@@ -10,11 +10,12 @@ import { Button } from "@/components/button"
 import { ListOfHardCompetences, ListOfSoftCompetences } from "@/lib/competences/competences"
 import SoftSkillsContent from "@/components/softSkills"
 import HardSkillContent from "@/components/hardSkills"
-import { Description } from "@radix-ui/react-dialog"
+
 
 const About = () => {
+ 
   return(
-    <Container className="flex flex-col gap-8 px-4 md:px-8 py-16 md:py-2 bg-secondary-950 select-none m-auto">
+    <Container   className="flex flex-col gap-8 px-4 md:px-8 py-16 md:py-2 bg-secondary-950 select-none m-auto">
       <Container className="flex flex-col-reverse md:flex-row-reverse md:justify-center items-center m-auto gap-3 md:w-3/4 py-4 md:h-screen ">
         <Container>
            <Image src={photo} width={400} height={400} alt={"Theodore"} className="" />
