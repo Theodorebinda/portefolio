@@ -36,7 +36,7 @@ export default function HeroSection() {
           <span>{"passioné par le développement social"} </span> 
         </Typography>
         <Container className=" mt-10 flex justify-center" >
-             <Button className="bg-white px-5 py-8" variant="default">
+             <Button className="bg-[#878483] text-white px-5 py-8" variant="default">
               {"Contactez Moi"}
               <FaChevronRight className=" w-5 h-5 font-light" />
             </Button>

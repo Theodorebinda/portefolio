@@ -11,12 +11,12 @@ export const MainRoutes: AppLinks[] = [
     baseUrl: '/'
   },
   {
-    title: 'Competences',
-    baseUrl: '/competences'
-  },
-  {
     title: 'A propos',
     baseUrl: '/about'
+  },
+  {
+    title: 'Competences',
+    baseUrl: '/competences'
   },
   {
     title: 'Realisation',

@@ -18,6 +18,7 @@ import { IoLogoLinkedin } from "react-icons/io5";
  const ThemeToggleButton = styled.button`
   color: ${(props) => props.theme.text};
   cursor: pointer;
+  font-size:40
   transition: all 0.25s linear;
 `;
 
@@ -62,7 +63,7 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
               <Typography key={route.title} variant="body-base" component="p" className="">
                  {
                   currentTheme=== 'light' ?
-                  <ActiveLink href={route.baseUrl!} className="flex hover:text-[#464646] text-[#7e7a7a] focus:text-white ">
+                  <ActiveLink href={route.baseUrl!} className="flex hover:text-[#464646] text-[#7e7a7a] focus:text-black ">
                     {route.title}
                   </ActiveLink>
                   :  

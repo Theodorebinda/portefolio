@@ -32,7 +32,7 @@ export default function MainRoutesLayout({ children }: { children: React.ReactNo
   }, [theme]);
 
   if (theme === null) {
-    return null; // Or a loading spinner, or any placeholder while the theme is being determined
+    return null; 
   }
 
   return (

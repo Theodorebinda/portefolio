@@ -51,7 +51,7 @@ export const ListOfSoftCompetences : Competences[] =[
         id : 6,
         image : autonome,
         name : "Patience et pédagogie",
-        description : "Je fais preuve d'une grande résilience face aux défis, sachant rebondir et surmonter les obstacles avec détermination."
+        description : "Je sais faire preuve de patience et de pédagogie pour expliquer des concepts techniques à des interlocuteurs non techniques."
     }
 
 ]
