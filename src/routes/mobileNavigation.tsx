@@ -43,9 +43,9 @@ export const MobileNavigation =  ({ toggleTheme, currentTheme, className }: Prop
             <Image src={logo} alt='Logo MonYaya' priority width={35} height={35}/>
             {
             currentTheme === 'light'?
-            <Typography component="p" className="px-3 text-[#7e7a7a] text-xl font-normal hover:text-[#464646]" >TBSamba</Typography>
+            <Typography component="p" className="px-3 text-[#7e7a7a] text-xl font-normal hover:text-[#464646]" >T.Samba</Typography>
             :
-            <Typography component="p" className="px-3 text-[#7e7a7a] text-xl font-normal hover:text-white" >TBSamba</Typography>
+            <Typography component="p" className="px-3 text-[#7e7a7a] text-xl font-normal hover:text-white" >T.Samba</Typography>
            }
           </Link>
           <ThemeToggleButton onClick={toggleTheme}>

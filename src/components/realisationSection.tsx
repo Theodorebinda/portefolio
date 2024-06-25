@@ -5,6 +5,13 @@ import { Typography } from "@/ui/components/typography/typography";
 import { MoveRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import styled from "styled-components";
+
+const P = styled.p`
+&:hover {
+    color:${(props) => props.theme.text}; ;
+}
+;`
 
 
 export default function RealisationSection(){
@@ -35,21 +42,12 @@ export default function RealisationSection(){
                 }
             </Container>
             <Container className="text-[#878483] lg:w-1/5 md:w-1/3 w-3/4">
-
-                 {
-                lightTheme ? 
-                <Container className="underline text-[#878483] hover:text-black">
+                <P className="underline text-[#878483]">
                     <Link href={'/realisation'} className="flex gap-1 justify-start items-center">
                         <span>Toute Les realisations</span>
                         <MoveRight strokeWidth={1.75} size={20} />
                     </Link>
-                </Container> : <Typography className="underline text-[#878483] hover:text-whitw flex flex-row">
-                    <Link href={'/realisation'}  className="flex justify-start gap-1 items-center">
-                        <span>Toute Les realisations</span>
-                        <MoveRight strokeWidth={1.75} size={20} />
-                    </Link>
-                </Typography>
-              }
+                </P>
             </Container>
            
         </Container>

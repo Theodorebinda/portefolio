@@ -1,7 +1,7 @@
 'use client'
 import { Typography } from "@/ui/components/typography/typography"
 import styled from 'styled-components';
-import logo from '../../public/next.svg';
+// import logo from '../../public/next.svg';
 import Link from "next/link"
 import { ActiveLink } from "./activeLink"
 import Image from "next/image"
@@ -18,6 +18,7 @@ import { IoLogoLinkedin } from "react-icons/io5";
  const ThemeToggleButton = styled.button`
   color: ${(props) => props.theme.text};
   cursor: pointer;
+  font-size:40
   transition: all 0.25s linear;
 `;
 
@@ -50,9 +51,9 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
           <div className="bg-[#459999ee] w-6 rounded-full h-6"></div>
           {
             currentTheme === 'light'?
-            <Typography component="p" className="px-3 text-[#7e7a7a] text-xl font-normal hover:text-[#464646]" >TBSamba</Typography>
+            <Typography component="p" className="px-3 text-[#7e7a7a] text-xl font-normal hover:text-[#464646]" >T.Samba</Typography>
             :
-            <Typography component="p" className="px-3 text-[#7e7a7a] text-xl font-normal hover:text-white" >TBSamba</Typography>
+            <Typography component="p" className="px-3 text-[#7e7a7a] text-xl font-normal hover:text-white" >T.Samba</Typography>
           }
           
         </Link>
@@ -62,11 +63,11 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
               <Typography key={route.title} variant="body-base" component="p" className="">
                  {
                   currentTheme=== 'light' ?
-                  <ActiveLink href={route.baseUrl!} className="flex hover:text-[#464646] text-[#7e7a7a] ">
+                  <ActiveLink href={route.baseUrl!} className="flex hover:text-[#464646] text-[#7e7a7a] focus:text-black ">
                     {route.title}
                   </ActiveLink>
                   :  
-                  <ActiveLink href={route.baseUrl!} className="flex hover:text-[#fff] text-#7e7a7a">
+                  <ActiveLink href={route.baseUrl!} className="flex hover:text-[#fff] text-#7e7a7a focus:text-white">
                     {route.title}
                   </ActiveLink>
                 }

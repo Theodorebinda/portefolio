@@ -1,4 +1,4 @@
-import { darkTheme } from '@/styles/theme'
+import { darkTheme,lightTheme } from '@/styles/theme'
 import { text } from 'stream/consumers'
 import type { Config } from 'tailwindcss'
 
@@ -25,13 +25,11 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       colors: {
-        // forest-green
         ligthThem: { 
           body: '#fff',
           text: '#8f8e8e',
           Default : '#39ae44',
         },
-        // storm-gray
         darkTheme: {
           body: '##222020',
           text: '##8f8e8e',
@@ -60,10 +58,10 @@ const config: Config = {
       fontSize: {
         'display': ['4rem', {
           lineHeight: '120%',
-          fontWeight: '700'
+          fontWeight: '300'
         }],
-        'display-md': ['2rem', {
-          lineHeight: '10%',
+        'display-md': ['3rem', {
+          lineHeight: '30%',
           fontWeight: '500'
         }],
         'title-lg': ['2rem', {
