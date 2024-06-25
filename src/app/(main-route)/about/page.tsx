@@ -10,10 +10,10 @@ import { Button } from "@/components/button"
 import { ListOfHardCompetences, ListOfSoftCompetences } from "@/lib/competences/competences"
 import SoftSkillsContent from "@/components/softSkills"
 import HardSkillContent from "@/components/hardSkills"
+import { ThemeContext, useTheme } from "styled-components"
 
 
 const About = () => {
- 
   return(
     <Container   className="flex flex-col gap-8 px-4 md:px-8 py-16 md:py-2 bg-secondary-950 select-none m-auto">
       <Container className="flex flex-col-reverse md:flex-row-reverse md:justify-center items-center mx-auto md:m-auto gap-3 md:w-3/4 md:py-4 md:h-screen ">
@@ -22,15 +22,15 @@ const About = () => {
         </Container>
         <Container className="flex flex-col items-center justify-between gap-5 md:gap-20 md:basis-2/3">
              <Container   className="leading-relaxed text-[#878483]">
-              <Typography>
-                {"Théodore est un développeur web, ingénieur en radiotransmission et électricien,"}
-              </Typography>
-              <Typography>
-                {"diplômé de l'Institut Supérieur de Technique Appliquée et certifié par"}
-                <a href="#">{"La Kadea Academy."}</a><br/>
-                <span>{"Il conçoit et maintient des applications web et mobiles,"}</span><br/>
-                 <span>{"motivé par les projets stimulants qui permettent d'explorer et d'exploiter des technologies innovantes."}</span>
-              </Typography>
+                <Typography component="p" variant="body-lg">
+                  {"Théodore est un développeur web, ingénieur en radiotransmission et électricien,"}
+                </Typography>
+                <Typography component="p" variant="body-lg" className="flex flex-col " >
+                  {"diplômé de l'Institut Supérieur de Technique Appliquée et certifié par"}
+                  <a href="https://www.kadea.academy/" className={`${  "light"? "text-black": "text-whith"}"text-[#343333]"`}>{" La Kadea Academy."}</a><br/>
+                  <span>{"Il conçoit et maintient des applications web et mobiles,"}</span><br/>
+                  <span>{"motivé par les projets stimulants qui permettent d'explorer et d'exploiter des technologies innovantes."}</span>
+                </Typography>
                 
             </Container>
             <Button className="bg-[#878483] text-white px-5 py-8" variant="default">
