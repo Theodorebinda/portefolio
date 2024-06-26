@@ -7,3 +7,4 @@ export interface Competences {
     description? : string
     progression? : number
   }
+

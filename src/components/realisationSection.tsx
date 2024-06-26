@@ -1,11 +1,11 @@
+'use client'
 import { realisationList } from "@/lib/realisation/realisation";
-import { lightTheme } from "@/styles/theme";
 import { Container } from "@/ui/components/container/container";
 import { Typography } from "@/ui/components/typography/typography";
 import { MoveRight } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
+import RelisationDetail from "./realisationDetail";
 
 export const P = styled.p`
 &:hover {
@@ -16,27 +16,23 @@ export const P = styled.p`
 
 export default function RealisationSection(){
     return(
-        <Container className="mx-10 ">
+        <Container className="mx-4 md:mx-10  ">
             <Typography>
                 Derniere Realisation
             </Typography>
-            <Container className="text-[#878483] md:w-3/4">
+            <Container className="text-[#878483] md:w-3/4 mb-4">
                 {
                     realisationList.slice(0,2).map((realisation,index) => {
                         return(
-                            <Container key={index}>
-                                <a href={realisation.link} >
-                                    <Typography>
-                                        {realisation.nom}
-                                    </Typography>
-                                    <Typography>
-                                        {realisation.description}
-                                    </Typography>
-                                </a>
-                                <Link href={realisation.link}>
-                                    <Image src={realisation.image} width={100} height={80} alt={realisation.nom} />
-                                </Link>
-                            </Container>
+                            <RelisationDetail
+                             key={index} 
+                             className=""
+                             link={realisation.link}
+                             nom={realisation.nom}
+                             description={realisation.description}
+                             image={realisation.image}
+                             />
+
                         )
                     })
                 }
