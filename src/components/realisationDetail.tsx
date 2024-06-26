@@ -11,7 +11,7 @@ interface Props {
     nom: string 
     children?: string | undefined;
   }
-export default function RelisationDetail(
+export default function RealisationDetail(
 {  link,
   nom,
   description,

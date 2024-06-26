@@ -17,7 +17,7 @@ export const P = styled.p`
 export default function RealisationSection(){
     return(
         <Container className="mx-4 md:mx-10  ">
-            <Typography>
+            <Typography component="p" className="underline py-4 ">
                 Derniere Realisation
             </Typography>
             <Container className="text-[#878483] md:w-3/4 mb-4">
