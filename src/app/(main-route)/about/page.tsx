@@ -16,8 +16,9 @@ import { P } from "@/components/realisationSection"
 import Link from "next/link"
 
 const Span = styled.a`
+ color: ${(props) => props.theme.textLink};
   &:hover {
-    color:${(props) => props.theme.text}; ;
+    color:${(props) => props.theme.inBody}; ;
   }
 `
 
@@ -30,10 +31,10 @@ const About = () => {
         </Container>
         <Container className="flex flex-col items-center justify-between gap-5 md:gap-20 md:basis-2/3">
              <Container   className="leading-relaxed text-start text-[#878483]">
-                <Typography component="p" variant="body-lg">
+                <Typography className="text-xl font-normal">
                   {"Théodore est un développeur web, ingénieur en radiotransmission et électricien,"}
                 </Typography>
-                <Typography component="p" variant="body-lg" className="flex flex-col leading-relaxed" >
+                <Typography   className="text-xl font-normal leading-relaxed" >
                   <span>{"diplômé de l'Institut Supérieur de Technique Appliquée et certifié par"}
                   <Span href="https://www.kadea.academy/">{" La Kadea Academy."}</Span>
                   </span>
@@ -41,9 +42,8 @@ const About = () => {
                   <span>{"Il conçoit et maintient des applications web et mobiles,"}</span>
                   <span>{"motivé par les projets stimulants qui permettent d'explorer et d'exploiter des technologies innovantes."}</span>
                 </Typography>
-                
             </Container>
-            <Btn className="  px-5 py-6">
+            <Btn className="  px-6 py-5">
               Download CV
             </Btn>
         </Container>
