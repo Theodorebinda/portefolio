@@ -13,7 +13,7 @@ export const lightTheme: DefaultTheme = {
 export const darkTheme: DefaultTheme = {
   body: '#222020',
   inBody:'#FFF',
-  text: '#FFF',
+  text: '#878483',
   inText: '#000',
   textLink: "#878483",
 };

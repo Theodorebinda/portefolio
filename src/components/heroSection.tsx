@@ -19,15 +19,20 @@ transition :0.10s;
     background-color:${(props) => props.theme.body} ;
 }
 ;`
+export const Typo = styled.h1`
+  color: ${(props) => props.theme.inBody};
+
+
+  `
 
 export default function HeroSection() {
 
   return (
     <Container className="flex flex-col md:items-center md:justify-between md:flex-row   mx-4 md:mx-10  pt-16 ">
       <Container className="flex flex-col gap-5 lg:w-1/2 w-full">
-        <Typography component="h1" className="font-medium " variant="display-md" >
+        <Typo className="font-normal text-6xl " >
            Théodore Samba
-        </Typography>
+        </Typo>
         <Typography component="h5" className="text-[#878483] " variant="body-lg" >
           Salut monde, je suis
         </Typography>
@@ -38,10 +43,10 @@ export default function HeroSection() {
             deleteDelay={1000}
          />
         </Container>
-        <Typography component="p"  className="text-2xl font-medium text-[#878483] flex flex-col leading-relaxed">
+        <Typography   className="text-xl font-normal text-[#878483] flex flex-col leading-relaxed">
           <span>{" Créateur d'expériences digitales innovantes et passionnantes."}</span>
           <span>{"Transformant vos idées en réalités numériques."}</span>
-          <span>{"passioné par le développement social"} </span> 
+          {/* <span>{"passioné par le développement social"} </span>  */}
         </Typography>
         <Container className=" mt-10 mb-4 flex justify-center p-2" >
              <Btn className=" flex justify-center items-center gap-1 px-5 py-6">

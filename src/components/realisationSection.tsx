@@ -6,10 +6,11 @@ import { MoveRight } from "lucide-react";
 import Link from "next/link";
 import styled from "styled-components";
 import RelisationDetail from "./realisationDetail";
+import { Typo } from "./heroSection";
 
 export const P = styled.p`
 &:hover {
-    color:${(props) => props.theme.text}; ;
+    color:${(props) => props.theme.inBody}; ;
 }
 ;`
 
@@ -17,9 +18,9 @@ export const P = styled.p`
 export default function RealisationSection(){
     return(
         <Container className="mx-4 md:mx-10  ">
-            <Typography component="p" className="underline py-4 ">
+            <Typo className="underline py-4 ">
                 Derniere Realisation
-            </Typography>
+            </Typo>
             <Container className="text-[#878483] md:w-3/4 mb-4">
                 {
                     realisationList.slice(0,2).map((realisation,index) => {

@@ -19,10 +19,10 @@ export default function RealisationDetail(
   className="string"}:Props
 ) {
   return (
-    <Container className={`${className}`}>
-      <a href={link} className="flex flex-col gap-3">
+    <Container className={`${className} w-full my-4 flex flex-col gap-3`}>
+      <a href={link} className="flex flex-col gap-1">
         <Typography variant="title-sm">{nom}</Typography>
-        <Typography className="lg:w-2/3">{description}</Typography>
+        <Typography className="lg:w-full">{description}</Typography>
       </a>
       <Link href={link}>
         <Image src={image} width={250} height={200} alt={nom} />
