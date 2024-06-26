@@ -14,6 +14,8 @@ import styled from "styled-components"
 import { MoveRight } from "lucide-react"
 import { P } from "@/components/realisationSection"
 import Link from "next/link"
+import { motion } from "framer-motion";
+import LinkToOtherPage from "@/ui/components/link-to-other-page/linkToOtherPage"
 
 const Span = styled.a`
  text-decoration: underline;
@@ -25,14 +27,14 @@ const Span = styled.a`
 
 const About = () => {
   return(
-    <Container   className="flex flex-col gap-8 px-4 lg:px-8 py-16 md:py-2 bg-secondary-950 select-none m-auto">
+    <Container   className="flex flex-col gap-8 px-4 lg:px-8 pt-16 md:py-2  select-none m-auto">
       <Container className="flex flex-col-reverse lg:flex-row-reverse lg:justify-center items-center mx-auto lg:m-auto gap-3 lg:w-3/4 md:w-5/6 md:py-1 lg:h-screen ">
         <Container  className="md:basis-1/3">
           <div className="w-full">
             <Image src={photo} width={400} height={400} alt={"Theodore"} className="object-fill" />
           </div>
         </Container>
-        <Container className="flex flex-col items-center justify-between gap-5 md:gap-20 md:basis-2/3">
+        <motion.div className="box flex flex-col items-center justify-between gap-5 md:gap-20 md:basis-2/3" animate={{ opacity: 5 }} initial={{ opacity: 7 }}>
              <Container   className="leading-relaxed text-start text-[#878483]">
                 <Typography className="text-xl font-normal">
                   {"Théodore est un développeur web, ingénieur en radiotransmission et électricien,"}
@@ -48,7 +50,7 @@ const About = () => {
             <Btn className="  px-6 py-5">
               Download CV
             </Btn>
-        </Container>
+        </motion.div>
       </Container>
       <Container className="basis-2/3 m-auto">
         <Tabs defaultValue='suscribe-to-training' className='w-full flex flex-col gap-4  md:p-8 '>
@@ -96,14 +98,7 @@ const About = () => {
           </TabsContent>
         </Tabs>
       </Container>
-            <Container className="text-[#878483] lg:w-1/3 md:w-1/2 w-1/2  md:ml-16">
-                <P className="underline text-[#878483]">
-                    <Link href={'/competences'} className="flex gap-2 justify-start items-center">
-                        <span>Autre Competences et Experiences</span>
-                        <MoveRight strokeWidth={1.75} size={20} />
-                    </Link>
-                </P>
-            </Container>
+      <LinkToOtherPage texte={"Autres Compétences"} link={"/competences"} />
     </Container>
   )
 }

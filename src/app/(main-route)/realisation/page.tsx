@@ -2,6 +2,8 @@
 import RelisationDetail from "@/components/realisationDetail";
 import { realisationList } from "@/lib/realisation/realisation";
 import { Container } from "@/ui/components/container/container";
+import LinkToOtherPage from "@/ui/components/link-to-other-page/linkToOtherPage";
+// import  LinkToOtherPage  from "@/ui/components/link-to-other-page/linkToOtherPage";
 import { Typography } from "@/ui/components/typography/typography";
 
 export default function Realisation(){
@@ -25,6 +27,7 @@ export default function Realisation(){
                     })
                 }
             </Container>
+            <LinkToOtherPage texte={"Parlons de votre projet"} link={"/contact"} />
         </Container>
     )
 }

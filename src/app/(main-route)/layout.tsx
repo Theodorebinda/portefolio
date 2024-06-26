@@ -7,6 +7,7 @@ import { GlobalStyle } from '../../styles/globalStyle';
 import  {Navigation}  from '@/routes/navigation';
 import { MobileNavigation } from '@/routes/mobileNavigation';
 import Footer from '@/ui/components/footer/footer';
+import { AnimatePresence } from 'framer-motion';
 
 export default function MainRoutesLayout({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<string | null>(null);
@@ -38,11 +39,13 @@ export default function MainRoutesLayout({ children }: { children: React.ReactNo
   return (
     <div>
       <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+      <AnimatePresence mode="wait">
         <GlobalStyle />
         <Navigation className='hidden md:block' toggleTheme={toggleTheme} currentTheme={theme} />
         <MobileNavigation className='md:hidden' toggleTheme={toggleTheme} currentTheme={theme} />
         {children}
         <Footer />
+        </AnimatePresence>
       </ThemeProvider>
     </div>
   );

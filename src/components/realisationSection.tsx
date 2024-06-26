@@ -7,6 +7,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import RelisationDetail from "./realisationDetail";
 import { Typo } from "./heroSection";
+import LinkToOtherPage from "@/ui/components/link-to-other-page/linkToOtherPage";
 
 export const P = styled.p`
 &:hover {
@@ -38,15 +39,7 @@ export default function RealisationSection(){
                     })
                 }
             </Container>
-            <Container className="text-[#878483] lg:w-1/5 md:w-1/3 w-3/4">
-                <P className="underline text-[#878483]">
-                    <Link href={'/realisation'} className="flex gap-1 justify-start items-center">
-                        <span>Toute Les realisations</span>
-                        <MoveRight strokeWidth={1.75} size={20} />
-                    </Link>
-                </P>
-            </Container>
-           
+            <LinkToOtherPage className="" texte={"Toute Les realisations"} link={"/realisation"} />
         </Container>
         
     )
