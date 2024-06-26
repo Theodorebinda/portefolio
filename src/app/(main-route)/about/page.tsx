@@ -16,6 +16,7 @@ import { P } from "@/components/realisationSection"
 import Link from "next/link"
 
 const Span = styled.a`
+ text-decoration: underline;
  color: ${(props) => props.theme.textLink};
   &:hover {
     color:${(props) => props.theme.inBody}; ;
@@ -25,9 +26,11 @@ const Span = styled.a`
 const About = () => {
   return(
     <Container   className="flex flex-col gap-8 px-4 lg:px-8 py-16 md:py-2 bg-secondary-950 select-none m-auto">
-      <Container className="flex flex-col-reverse lg:flex-row-reverse lg:justify-center items-center mx-auto lg:m-auto gap-3 lg:w-3/4 md:w-5/6 md:py-4 lg:h-screen ">
+      <Container className="flex flex-col-reverse lg:flex-row-reverse lg:justify-center items-center mx-auto lg:m-auto gap-3 lg:w-3/4 md:w-5/6 md:py-1 lg:h-screen ">
         <Container  className="md:basis-1/3">
-           <Image src={photo} width={400} height={400} alt={"Theodore"} className="" />
+          <div className="w-full">
+            <Image src={photo} width={400} height={400} alt={"Theodore"} className="object-fill" />
+          </div>
         </Container>
         <Container className="flex flex-col items-center justify-between gap-5 md:gap-20 md:basis-2/3">
              <Container   className="leading-relaxed text-start text-[#878483]">
@@ -35,9 +38,8 @@ const About = () => {
                   {"Théodore est un développeur web, ingénieur en radiotransmission et électricien,"}
                 </Typography>
                 <Typography   className="text-xl font-normal leading-relaxed" >
-                  <span>{"diplômé de l'Institut Supérieur de Technique Appliquée et certifié par"}
-                  <Span href="https://www.kadea.academy/">{" La Kadea Academy."}</Span>
-                  </span>
+                  {"diplômé de "}<Span href="https://ista-kin.org/ista-kin/ista/index.html" target="_blank">{"l'Institut Supérieur de Technique Appliquée"}</Span>{" et certifié par "}
+                  <Span href="https://www.kadea.academy/" target="_blank">{"La Kadea Academy"}</Span>.
                   <br/>
                   <span>{"Il conçoit et maintient des applications web et mobiles,"}</span>
                   <span>{"motivé par les projets stimulants qui permettent d'explorer et d'exploiter des technologies innovantes."}</span>
