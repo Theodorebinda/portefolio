@@ -9,7 +9,7 @@ import jsIcone from "../../../public/images/3d-javascript-logo-design-free-png 1
 import reactIcone from "../../../public/images/react.svg";
 import nodeIcone from "../../../public/images/nodeJs.svg";
 import tailwind from "../../../public/images/tailwindCssLogo.svg";
-import wordPressIcon from "../../../public/images/wordPressIcon.svg";
+import wordPressIcon from "../../../public/images/R-removebg-preview 1.svg";
 import prismaIcon from "../../../public/images/prismaLogo.svg";
 import typescriptIcon from "../../../public/png-transparent-typescript-language-javascript-static-type-typescript-logo-frontend-3d-icon-thumbnail-removebg-preview.png";
 import figmaIcon from "../../../public/images/figmaLogo.svg";
@@ -87,18 +87,7 @@ export const ListOfHardCompetences : Competences[] =[
         name : "NodeJs",
         progression :30
     },
-    {
-        id : 6,
-        image : tailwind,
-        name : "Tailwind",
-        progression :90
-    },
-    {
-        id : 7,
-        image : autonome,
-        name : "Wordpress",
-        progression :90
-    },
+    
     {
         id : 6,
         image : typescriptIcon,
@@ -106,13 +95,25 @@ export const ListOfHardCompetences : Competences[] =[
         progression :40
     },
     {
-        id : 6,
+        id : 7,
+        image : tailwind,
+        name : "Tailwind",
+        progression :90
+    },
+    {
+        id : 8,
+        image : wordPressIcon,
+        name : "Wordpress",
+        progression :90
+    },
+    {
+        id : 9,
         image : figmaIcon,
         name : "Figma",
         progression :70
     },
     {
-        id : 6,
+        id : 10,
         image : prismaIcon,
         name : "Prisma",
         progression :50

@@ -5,18 +5,17 @@ import { Typography } from "@/ui/components/typography/typography";
 import Image from "next/image"
 import imageHero  from "../../public/young-black-businessman-with-quizzical-confused-look_1194-20807-removebg-preview.png";
 import { FaChevronRight } from "react-icons/fa";
-import { darkTheme, lightTheme } from "@/styles/theme";
 import styled from "styled-components";
 // import { Button } from "./button";
 
 
-const Btn = styled.button`
+export const Btn = styled.button`
 background-color: ${(props) => props.theme.inBody};
 color: ${(props) => props.theme.inText};
 transition :0.10s;
 &:hover {
     color:${(props) => props.theme.text};
-    border: 2px solid ${(props) => props.theme.inBext};
+    border: 1px solid ${(props) => props.theme.intext};
     background-color:${(props) => props.theme.body} ;
 }
 ;`
@@ -30,7 +29,7 @@ export default function HeroSection() {
            Théodore Samba
         </Typography>
         <Typography component="h5" className="text-[#878483] " variant="body-lg" >
-          Salut Monde je suis
+          Salut monde, je suis
         </Typography>
         <Container className=" " >
           <Typewriter

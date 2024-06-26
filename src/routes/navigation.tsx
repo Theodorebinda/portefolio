@@ -78,7 +78,7 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
         </nav>
         <Container className="flex justify-between items-center gap-10">
           <Container className="flex items-center justify-end gap-10 px-4 animate">
-            <Link href={"#"}> 
+            <Link href={"https://github.com/Theodorebinda"}> 
                 {currentTheme === 'light' ? <FaGithub size={20} className="text-[#7e7a7a] hover:fill-[#464646]"/> : <FaGithub size={20} className="text-[#b2b2b2] hover:fill-[#ffffff]" />}
             </Link>
             <Link href={"#"}> 

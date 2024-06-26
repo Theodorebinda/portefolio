@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 
-const P = styled.p`
+export const P = styled.p`
 &:hover {
     color:${(props) => props.theme.text}; ;
 }
