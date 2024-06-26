@@ -6,6 +6,7 @@ import Image from "next/image"
 import imageHero  from "../../public/young-black-businessman-with-quizzical-confused-look_1194-20807-removebg-preview.png";
 import { FaChevronRight } from "react-icons/fa";
 import styled from "styled-components";
+import Link from "next/link";
 // import { Button } from "./button";
 
 
@@ -49,10 +50,13 @@ export default function HeroSection() {
           {/* <span>{"passioné par le développement social"} </span>  */}
         </Typography>
         <Container className=" mt-10 mb-4 flex justify-center p-2" >
-             <Btn className=" flex justify-center items-center gap-1 px-5 py-6">
-              {"Contactez Moi"}
+          <Link href={"https://www.linkedin.com/in/theodore-samba-26b456282/"} target="_blank">
+              <Btn className=" flex justify-center items-center gap-1 px-5 py-6">
+                  {"Contactez Moi"}
               <FaChevronRight className=" w-5 h-5 font-light" />
             </Btn>
+          </Link>
+
         </Container>
       </Container>
       <Container className="hidden lg:block w-1/2">
