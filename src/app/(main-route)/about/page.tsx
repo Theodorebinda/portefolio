@@ -15,7 +15,7 @@ import {Span} from "@/styles/globalStyle"
 
 const About = () => {
   return(
-    <Container   className="flex flex-col gap-3 px-4 lg:px-8 pt-16 lg:pt-20  lg:basis-4/5 select-none lg:mx-12 m-auto">
+    <Container   className="flex flex-col gap-3 px-4 lg:px-8 pt-14 lg:pt-3 lg:basis-4/5 select-none lg:mx-12 mx-auto">
       <Container className="flex flex-col-reverse lg:flex-row-reverse lg:justify-between  items-center m-auto  gap-3 lg:h-screen ">
         <Container  className="md:basis-1/3 lg:flex lg:justify-center items-start">
             <Image src={photo} width={300} height={400} alt={"Theodore"} className="object-cover" loading="lazy"/>
@@ -29,8 +29,8 @@ const About = () => {
                   {"diplômé de "}<Span href="https://ista-kin.org/ista-kin/ista/index.html" target="_blank">{"l'Institut Supérieur de Technique Appliquée"}</Span>{" et certifié par "}
                   <Span href="https://www.kadea.academy/" target="_blank">{"La Kadea Academy"}</Span>.
                   <br/>
-                  <span>{"Il conçoit et maintient des applications web et mobiles,"}</span>
-                  <span>{"motivé par les projets stimulants qui permettent d'explorer et d'exploiter des technologies innovantes."}</span>
+                  <span>{"je conçois et maintiens des applications web et mobile,"}</span>
+                  <span>{"motivé par des projets stimulants qui permettent d'explorer et d'exploiter des technologies innovantes."}</span>
                 </Typography>
             </Container>
             <Btn className="  px-6 py-5">
