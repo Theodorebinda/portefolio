@@ -26,7 +26,7 @@ export default function Realisation(){
                     })
                 }
             </Container>
-            <LinkToOtherPage texte={"Parlons de votre projet"} link={"https://www.linkedin.com/in/theodore-samba-26b456282/"} />
+            <LinkToOtherPage texte={"Parlons de votre projet"} link={"https://www.linkedin.com/in/theodore-samba-26b456282/"}  />
         </Container>
     )
 }

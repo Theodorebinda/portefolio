@@ -4,11 +4,9 @@ import Typewriter from "@/ui/components/typewriter/Typewriter";
 import { Typography } from "@/ui/components/typography/typography";
 import Image from "next/image"
 import imageHero  from "../../public/exempleImagePresent-removebg-preview.png";
-import { FaChevronRight } from "react-icons/fa";
-import styled from "styled-components";
 import Link from "next/link";
 import { Btn, Typo } from "@/styles/globalStyle";
-// import { Button } from "./button";
+import { ChevronRight } from "lucide-react";
 
 
 
@@ -39,7 +37,7 @@ export default function HeroSection() {
           <Link href={"https://www.linkedin.com/in/theodore-samba-26b456282/"} target="_blank">
               <Btn className=" flex justify-center items-center gap-1 px-5 py-6">
                   {"Contactez Moi"}
-              <FaChevronRight className=" w-5 h-5 font-light" />
+              <ChevronRight className=" w-5 h-5 font-light" />
             </Btn>
           </Link>
 

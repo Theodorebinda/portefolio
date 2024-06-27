@@ -48,11 +48,11 @@ export default class MyDocument extends Document {
                   }
                 `}
         </style>
-        {/* <script src="../app/(main-route)/page.tsx" async />
+        <script src="../app/(main-route)/page.tsx" async />
         <script src="../app/(main-route)/about/page." async />
         <script src="../app/(main-route)/competences/page.tsx" async />
         <script src="../app/(main-route)/realisation/page.tsx" async />
-        <script src='../app/(main-route)/layout.tsx' async /> */}
+        <script src='../app/(main-route)/layout.tsx' async />
         </Head>
         <body>
           <Main />
