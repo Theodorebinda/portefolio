@@ -1,8 +1,10 @@
 // HardSkillsContent.tsx
 
+import { Typo } from "@/styles/globalStyle";
 import { Container } from "@/ui/components/container/container";
 import { Typography } from "@/ui/components/typography/typography";
 import Image, { StaticImageData } from "next/image";
+
 
 interface Props {
   image: StaticImageData| string;
@@ -23,12 +25,13 @@ export default function SoftSkillsContent({ image, name, description,className =
             width={150}
             height={150}
             className={`${className}rounded-full`}
+            loading="lazy"
           />
         </Container>
         <Container className="flex flex-col justify-start items-start gap-1 ">
-          <Typography className="">{name}</Typography>
+          <Typo className="text-md">{name}</Typo>
           {
-            description? <Typography className="text-[#878483] md:w-full ">{description}</Typography> : null
+            description? <Typography className=" md:w-full ">{description}</Typography> : null
           }
         </Container>
       </Container>

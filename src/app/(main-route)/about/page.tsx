@@ -1,53 +1,53 @@
 'use client'
 
-import { Container } from "@/ui/components/container/container"
+import { Container } from "@/ui/components/container/container";
 import { Typography } from "@/ui/components/typography/typography"
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import photo from "../../../../public/young-black-businessman-with-quizzical-confused-look_1194-20807-removebg-preview.png"
+import photo from "../../../../public/exempleImagePresent-removebg-preview.png"
 import { TabsContent } from '@radix-ui/react-tabs'
-import Image from "next/image"
-import { Button } from "@/components/button"
+import Image from "next/image";
 import { ListOfHardCompetences, ListOfSoftCompetences } from "@/lib/competences/competences"
-import SoftSkillsContent from "@/components/softSkills"
-import HardSkillContent from "@/components/hardSkills"
-import { ThemeContext, useTheme } from "styled-components"
-
+import SoftSkillsContent from "@/components/softSkills";
+import HardSkillContent from "@/components/hardSkills";
+import LinkToOtherPage from "@/ui/components/link-to-other-page/linkToOtherPage"
+import { Btn } from "@/styles/globalStyle"
+import {Span} from "@/styles/globalStyle"
 
 const About = () => {
   return(
-    <Container   className="flex flex-col gap-8 px-4 md:px-8 py-16 md:py-2 bg-secondary-950 select-none m-auto">
-      <Container className="flex flex-col-reverse md:flex-row-reverse md:justify-center items-center mx-auto md:m-auto gap-3 md:w-3/4 md:py-4 md:h-screen ">
-        <Container  className="md:basis-1/3">
-           <Image src={photo} width={400} height={400} alt={"Theodore"} className="" />
+    <Container   className="flex flex-col gap-3 px-4 lg:px-8 pt-14 lg:pt-3 lg:basis-4/5 select-none lg:mx-12 mx-auto">
+      <Container className="flex flex-col-reverse lg:flex-row-reverse lg:justify-between  items-center m-auto  gap-3 lg:h-screen ">
+        <Container  className="md:basis-1/3 lg:flex lg:justify-center items-start">
+            <Image src={photo} width={300} height={400} alt={"Theodore"} className="object-cover" loading="lazy"/>
         </Container>
-        <Container className="flex flex-col items-center justify-between gap-5 md:gap-20 md:basis-2/3">
-             <Container   className="leading-relaxed text-[#878483]">
-                <Typography component="p" variant="body-lg">
-                  {"Théodore est un développeur web, ingénieur en radiotransmission et électricien,"}
+        <Container className="flex flex-col items-center justify-between gap-10 md:gap-10 md:basis-1/2">
+             <Container   className="leading-relaxed text-start">
+                <Typography className="text-xl font-normal">
+                  {"Développeur web et mobile, ingénieur en radiotransmission et électricien,"}
                 </Typography>
-                <Typography component="p" variant="body-lg" className="flex flex-col " >
-                  {"diplômé de l'Institut Supérieur de Technique Appliquée et certifié par"}
-                  <a href="https://www.kadea.academy/" className={`${  "light"? "text-black": "text-whith"}"text-[#343333]"`}>{" La Kadea Academy."}</a><br/>
-                  <span>{"Il conçoit et maintient des applications web et mobiles,"}</span><br/>
-                  <span>{"motivé par les projets stimulants qui permettent d'explorer et d'exploiter des technologies innovantes."}</span>
+                <Typography   className="text-xl font-normal leading-relaxed" >
+                  {"diplômé de "}<Span href="https://ista-kin.org/ista-kin/ista/index.html" target="_blank">{"l'Institut Supérieur de Technique Appliquée"}</Span>{" et certifié par "}
+                  <Span href="https://www.kadea.academy/" target="_blank">{"La Kadea Academy"}</Span>.
+                  <br/>
+                  <span>{"je conçois et maintiens des applications web et mobile,"}</span>
+                  <span>{"motivé par des projets stimulants qui permettent d'explorer et d'exploiter des technologies innovantes."}</span>
                 </Typography>
-                
             </Container>
-            <Button className="bg-[#878483] text-white px-5 py-8" variant="default">
+            <Btn className="  px-6 py-5">
               Download CV
-            </Button>
+            </Btn>
         </Container>
       </Container>
-      <Container className="basis-2/3 m-auto">
+      <Container className="basis-4/5 m-auto">
         <Tabs defaultValue='suscribe-to-training' className='w-full flex flex-col gap-4  md:p-8 '>
-          <TabsList className='w-full grid grid-cols-2 mb-4 md:m-auto text-[#878483]'>  
+          <TabsList className='w-full grid grid-cols-2 mb-4 md:m-auto'>  
             <TabsTrigger value='suscribe-to-training' className='basis-1/3'>
-              <Typography className="flex-wrap hidden md:block text-left e" variant="title-base">Competences Comportementale</Typography>
-              <Typography className="flex-wrap md:hidden text-left" variant="title-sm">Competences<br/>Comportementale</Typography>
+              <Typography className="flex-wrap hidden lg:block text-left " variant="title-base">Competences Comportementale</Typography>
+              <Typography className="flex-wrap lg:hidden text-left" variant="title-sm">Competences<br/>Comportementale</Typography>
             </TabsTrigger>
             <TabsTrigger value='become-a-trainer' className='basis-1/3'>
-              <Typography className="flex-wrap hidden md:block text-left " variant="title-base">Competences Technique</Typography>
-              <Typography className="flex-wrap md:hidden text-left" variant="title-sm">Competences<br/>Techique</Typography>
+              <Typography className="flex-wrap hidden lg:block text-left " variant="title-base">Competences Technique</Typography>
+              <Typography className="flex-wrap lg:hidden text-left" variant="title-sm">Competences<br/>Techique</Typography>
             </TabsTrigger>
           </TabsList>
           <TabsContent value='suscribe-to-training' className="md:basis-full mx-auto">
@@ -83,6 +83,7 @@ const About = () => {
               </Container>
           </TabsContent>
         </Tabs>
+          <LinkToOtherPage className="md:ml-2" texte={"Autres Compétences"} link={"/competences"} />
       </Container>
     </Container>
   )

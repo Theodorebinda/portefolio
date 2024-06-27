@@ -14,7 +14,7 @@ const CircularProgressBar: React.FC<CircularProgressBarProps> = ({ percentage,im
   return (
     <div className="w-20 h-20 m-auto ">
         <CircularProgressbarWithChildren value={percentage} className=''>
-            <Image width={50} height={50} src={image} alt={name} />
+            <Image width={40} height={40} src={image} alt={name} loading="lazy" />
             <div className='text-xs pt-[-8]'>
                 <span className='font-semibold'>{`${percentage}%`}</span>
             </div>

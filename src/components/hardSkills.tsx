@@ -1,6 +1,6 @@
+import { Typo } from "@/styles/globalStyle";
 import CircularProgressBar from "@/ui/components/circularProgressBar/circularProgressBar";
 import { Container } from "@/ui/components/container/container";
-import { Typography } from "@/ui/components/typography/typography";
 import Image, { StaticImageData } from "next/image";
 
 
@@ -18,9 +18,9 @@ export default function HardSkillContent({percentage,name, image, className = "s
                 <Container>
                     <CircularProgressBar percentage={percentage} image={image} name={name} />
                 </Container>
-                <Typography>
+                <Typo>
                     {name}
-                </Typography>
+                </Typo>
             </Container>
 
         </Container>

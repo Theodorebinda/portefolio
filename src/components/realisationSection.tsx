@@ -1,55 +1,37 @@
+'use client'
 import { realisationList } from "@/lib/realisation/realisation";
-import { lightTheme } from "@/styles/theme";
 import { Container } from "@/ui/components/container/container";
-import { Typography } from "@/ui/components/typography/typography";
-import { MoveRight } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import styled from "styled-components";
+import RelisationDetail from "./realisationDetail";
+import LinkToOtherPage from "@/ui/components/link-to-other-page/linkToOtherPage";
+import { Typo } from "@/styles/globalStyle";
 
-const P = styled.p`
-&:hover {
-    color:${(props) => props.theme.text}; ;
-}
-;`
+
 
 
 export default function RealisationSection(){
     return(
-        <Container className="mx-10 ">
-            <Typography>
+        <Container className="mx-4 md:mx-10  ">
+            <Typo className="underline py-4 ">
                 Derniere Realisation
-            </Typography>
-            <Container className="text-[#878483] md:w-3/4">
+            </Typo>
+            <Container className=" md:w-3/4 mb-4">
                 {
                     realisationList.slice(0,2).map((realisation,index) => {
                         return(
-                            <Container key={index}>
-                                <a href={realisation.link} >
-                                    <Typography>
-                                        {realisation.nom}
-                                    </Typography>
-                                    <Typography>
-                                        {realisation.description}
-                                    </Typography>
-                                </a>
-                                <Link href={realisation.link}>
-                                    <Image src={realisation.image} width={100} height={80} alt={realisation.nom} />
-                                </Link>
-                            </Container>
+                            <RelisationDetail
+                             key={index} 
+                             className=""
+                             link={realisation.link}
+                             nom={realisation.nom}
+                             description={realisation.description}
+                             image={realisation.image}
+                             />
+
                         )
                     })
                 }
             </Container>
-            <Container className="text-[#878483] lg:w-1/5 md:w-1/3 w-3/4">
-                <P className="underline text-[#878483]">
-                    <Link href={'/realisation'} className="flex gap-1 justify-start items-center">
-                        <span>Toute Les realisations</span>
-                        <MoveRight strokeWidth={1.75} size={20} />
-                    </Link>
-                </P>
-            </Container>
-           
+            <LinkToOtherPage className="" texte={"Toute Les realisations"} link={"/realisation"} />
         </Container>
         
     )
