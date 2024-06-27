@@ -18,7 +18,7 @@ const About = () => {
     <Container   className="flex flex-col gap-3 px-4 lg:px-8 pt-14 lg:pt-3 lg:basis-4/5 select-none lg:mx-12 mx-auto">
       <Container className="flex flex-col-reverse lg:flex-row-reverse lg:justify-between  items-center m-auto  gap-3 lg:h-screen ">
         <Container  className="md:basis-1/3 lg:flex lg:justify-center items-start">
-            <Image src={photo} width={300} height={400} alt={"Theodore"} className="object-cover" loading="lazy"/>
+            <Image src={photo} width={400} height={400} alt={"Theodore"} className="object-cover" loading="lazy"/>
         </Container>
         <Container className="flex flex-col items-center justify-between gap-10 md:gap-10 md:basis-1/2">
              <Container   className="leading-relaxed text-start">
@@ -33,9 +33,14 @@ const About = () => {
                   <span>{"motivé par des projets stimulants qui permettent d'explorer et d'exploiter des technologies innovantes."}</span>
                 </Typography>
             </Container>
-            <Btn className="  px-6 py-5">
-              Download CV
-            </Btn>
+            <Container>
+              <a href="/CV.pdf" download="CV.pdf" target="_blank" rel="noopener noreferrer">
+                <Btn className="  px-6 py-5">
+                  Download CV
+                </Btn>
+              </a>
+            </Container>
+
         </Container>
       </Container>
       <Container className="basis-4/5 m-auto">

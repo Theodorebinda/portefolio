@@ -41,7 +41,7 @@ export default function MainRoutesLayout({ children }: { children: React.ReactNo
   return (
     <ThemeProvider theme={selectedTheme}>
         <GlobalStyle />
-        <Navigation className='hidden md:block' toggleTheme={toggleTheme} currentTheme={theme} />
+        <Navigation className='hidden lg:block' toggleTheme={toggleTheme} currentTheme={theme} />
         <MobileNavigation className='lg:hidden' toggleTheme={toggleTheme} currentTheme={theme} />
         {children}
         <Footer />

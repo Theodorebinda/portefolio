@@ -20,9 +20,9 @@ export default function RealisationDetail(
 ) {
   return (
     <Container className={`${className} w-full my-4 flex flex-col gap-3`}>
-      <a href={link} className="flex flex-col gap-1">
+      <span  className="flex flex-col gap-1 w-[10rem]">
         <Typography variant="title-sm">{nom}</Typography>
-      </a>
+      </span>
       <Typography className="lg:w-full">{description}</Typography>
       <Link href={link} className="md:w-1/3">
         <Image src={image}  height={200} alt={nom} loading="lazy" className="object-cover " />
