@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Container } from "@/ui/components/container/container"
-import { P } from "@/components/realisationSection";
 import { MoveRight } from "lucide-react";
+import { P } from "@/styles/globalStyle";
 
 interface Propos {
     texte: string;

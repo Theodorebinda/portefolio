@@ -25,7 +25,7 @@ export default function RealisationDetail(
         <Typography className="lg:w-full">{description}</Typography>
       </a>
       <Link href={link}>
-        <Image src={image} width={250} height={200} alt={nom} />
+        <Image src={image} width={250} height={200} alt={nom} loading="lazy" />
       </Link>
     </Container>
   );

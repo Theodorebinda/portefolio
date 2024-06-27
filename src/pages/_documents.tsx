@@ -31,7 +31,29 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+        <link
+            rel="preload"
+            href="/path/to/font.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+        <style>
+                {`
+                  .text-6xl {
+                    font-size: 4rem;
+                    font-weight: normal;
+                    font-family: var(--font-inter);
+                  }
+                `}
+        </style>
+        {/* <script src="../app/(main-route)/page.tsx" async />
+        <script src="../app/(main-route)/about/page." async />
+        <script src="../app/(main-route)/competences/page.tsx" async />
+        <script src="../app/(main-route)/realisation/page.tsx" async />
+        <script src='../app/(main-route)/layout.tsx' async /> */}
+        </Head>
         <body>
           <Main />
           <NextScript />

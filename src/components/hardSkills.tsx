@@ -1,8 +1,7 @@
+import { Typo } from "@/styles/globalStyle";
 import CircularProgressBar from "@/ui/components/circularProgressBar/circularProgressBar";
 import { Container } from "@/ui/components/container/container";
-import { Typography } from "@/ui/components/typography/typography";
 import Image, { StaticImageData } from "next/image";
-import { Typo } from "./heroSection";
 
 
 interface Props {

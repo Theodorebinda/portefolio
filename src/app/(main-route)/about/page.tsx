@@ -3,27 +3,16 @@
 import { Container } from "@/ui/components/container/container"
 import { Typography } from "@/ui/components/typography/typography"
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import photo from "../../../../public/young-black-businessman-with-quizzical-confused-look_1194-20807-removebg-preview.png"
+import photo from "../../../../public/exempleImagePresent-removebg-preview.png"
 import { TabsContent } from '@radix-ui/react-tabs'
 import Image from "next/image"
 import { ListOfHardCompetences, ListOfSoftCompetences } from "@/lib/competences/competences"
 import SoftSkillsContent from "@/components/softSkills"
 import HardSkillContent from "@/components/hardSkills"
-import { Btn } from "@/components/heroSection"
-import styled from "styled-components"
-import { MoveRight } from "lucide-react"
-import { P } from "@/components/realisationSection"
-import Link from "next/link"
 import { motion } from "framer-motion";
 import LinkToOtherPage from "@/ui/components/link-to-other-page/linkToOtherPage"
-
-const Span = styled.a`
- text-decoration: underline;
- color: ${(props) => props.theme.textLink};
-  &:hover {
-    color:${(props) => props.theme.inBody}; ;
-  }
-`
+import { Btn } from "@/styles/globalStyle"
+import {Span} from "@/styles/globalStyle"
 
 const About = () => {
   return(
@@ -31,10 +20,10 @@ const About = () => {
       <Container className="flex flex-col-reverse lg:flex-row-reverse lg:justify-center items-center mx-auto lg:m-auto gap-3 lg:w-3/4 md:w-5/6 md:py-1 lg:h-screen ">
         <Container  className="md:basis-1/3">
           <div className="w-full">
-            <Image src={photo} width={400} height={400} alt={"Theodore"} className="object-fill" />
+            <Image src={photo} width={400} height={400} alt={"Theodore"} className="object-fill" loading="lazy"/>
           </div>
         </Container>
-        <motion.div className="box flex flex-col items-center justify-between gap-5 md:gap-20 md:basis-2/3" animate={{ opacity: 5 }} initial={{ opacity: 7 }}>
+        <div className="box flex flex-col items-center justify-between gap-5 md:gap-20 md:basis-2/3">
              <Container   className="leading-relaxed text-start text-[#878483]">
                 <Typography className="text-xl font-normal">
                   {"Théodore est un développeur web, ingénieur en radiotransmission et électricien,"}
@@ -50,7 +39,7 @@ const About = () => {
             <Btn className="  px-6 py-5">
               Download CV
             </Btn>
-        </motion.div>
+        </div>
       </Container>
       <Container className="basis-2/3 m-auto">
         <Tabs defaultValue='suscribe-to-training' className='w-full flex flex-col gap-4  md:p-8 '>
@@ -97,8 +86,8 @@ const About = () => {
               </Container>
           </TabsContent>
         </Tabs>
+          <LinkToOtherPage className="" texte={"Autres Compétences"} link={"/competences"} />
       </Container>
-      <LinkToOtherPage texte={"Autres Compétences"} link={"/competences"} />
     </Container>
   )
 }

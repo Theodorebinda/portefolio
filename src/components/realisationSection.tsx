@@ -1,19 +1,11 @@
 'use client'
 import { realisationList } from "@/lib/realisation/realisation";
 import { Container } from "@/ui/components/container/container";
-import { Typography } from "@/ui/components/typography/typography";
-import { MoveRight } from "lucide-react";
-import Link from "next/link";
-import styled from "styled-components";
 import RelisationDetail from "./realisationDetail";
-import { Typo } from "./heroSection";
 import LinkToOtherPage from "@/ui/components/link-to-other-page/linkToOtherPage";
+import { Typo } from "@/styles/globalStyle";
 
-export const P = styled.p`
-&:hover {
-    color:${(props) => props.theme.inBody}; ;
-}
-;`
+
 
 
 export default function RealisationSection(){
