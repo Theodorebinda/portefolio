@@ -36,7 +36,7 @@ export default class MyDocument extends Document {
         <Head>
         <link
             rel="preload"
-            href="/path/to/font.woff2"
+            href="../app/globals.css"
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"
@@ -52,7 +52,9 @@ export default class MyDocument extends Document {
         </style>
         <script src="page.tsx" async />
         <script src="../app/(main-route)/page.tsx" async />
+        <script src="../app/(main-route)/page.tsx" defer  />
         <script src='../app/(main-route)/layout' async />
+        <script src='../app/(main-route)/layout' defer />
         </Head>
         <body>
           <Main />

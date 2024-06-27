@@ -8,9 +8,10 @@ import Image from "next/image"
 import { MainRoutes } from "@/lib/pageRoutes/pageRoutes"
 import { Container } from '@/ui/components/container/container'
 import { Sheet, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTrigger } from "@/components/ui/sheet"
-import { Menu } from "lucide-react"
 import { FaMoon } from "react-icons/fa6";
 import { FaSun } from "react-icons/fa";
+import { CiMenuFries } from "react-icons/ci";
+import { RiMenu2Line } from "react-icons/ri";
 
 
 
@@ -37,26 +38,25 @@ export const MobileNavigation =  ({ toggleTheme, currentTheme, className }: Prop
         )
       }
     >
-      <Container className= {`${currentTheme === 'light' ? "bg-white": "bg-[#222020]"}  flex flex-row items-center w-ful justify-between px-4 py-8 h-[10vh]`}>
-        <Container className="flex justify-start items-center ">
+      <Container className= {`${currentTheme === 'light' ? "bg-white": "bg-[#222020]"}  flex flex-row items-center w-full justify-between px-4 py-8 h-[10vh]`}>
+        <Container className="flex justify-start items-center gap-3">
           <Link href="/" className="flex justify-start items-center">
-            <Image src={logo} alt='Logo MonYaya' priority width={35} height={35}/>
+            <Image src={logo} alt='Logo' priority width={35} height={35}/>
             {
             currentTheme === 'light'?
-            <Typography component="p" className="px-3 text-[#7e7a7a] text-xl font-normal hover:text-[#464646]" >T.Samba</Typography>
+            <Typography component="p" className="px text-2xl font-normal hover:text-[#464646]" >T.Samba</Typography>
             :
-            <Typography component="p" className="px-3 text-[#7e7a7a] text-xl font-normal hover:text-white" >T.Samba</Typography>
+            <Typography component="p" className="px text-2xl font-normal hover:text-white" >T.Samba</Typography>
            }
           </Link>
           <ThemeToggleButton onClick={toggleTheme}>
-              {currentTheme === 'light' ? <FaMoon size={28} className="text-[#7e7a7a] hover:fill-[#464646]"/> : <FaSun size={28} className="text-[#b2b2b2] hover:fill-[#ffffff]" />}
+              {currentTheme === 'light' ? <FaMoon size={30} className=" hover:fill-[#464646]"/> : <FaSun size={30} className=" hover:fill-[#ffffff]" />}
           </ThemeToggleButton>
         </Container>
-        
           
         <Sheet>
           <SheetTrigger>
-            <Menu/>
+          <RiMenu2Line size={32} />
           </SheetTrigger>
           <SheetContent className="w-[90vw] bg-[#f7f2f2]">
             <SheetDescription className="h-full">
@@ -64,7 +64,7 @@ export const MobileNavigation =  ({ toggleTheme, currentTheme, className }: Prop
                 <Container className='w-full flex flex-col'>
                 {
                   MainRoutes.map(route => 
-                    <Typography key={route.title!}variant="body-base" component="p" className="text-white pt-10 my-auto ">
+                    <Typography key={route.title!}variant="body-base" component="p" className="pt-10 my-auto ">
                       <ActiveLink href={route.baseUrl!}>
                         {route.title}
                       </ActiveLink>

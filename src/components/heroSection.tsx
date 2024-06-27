@@ -15,7 +15,7 @@ export default function HeroSection() {
   return (
     <Container className="flex flex-col md:items-start md:justify-between md:gap-8 md:flex-row lg:pt-20  mx-4 md:mx-10  pt-16 ">
       <Container className="flex flex-col gap-5 lg:w-1/2 w-full">
-        <Typo className="font-normal text-6xl " >
+        <Typo className="font-normal text-7xl " >
            Théodore Samba
         </Typo>
         <Typography  className="text-xl font-normal " >

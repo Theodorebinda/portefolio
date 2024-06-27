@@ -10,8 +10,8 @@ interface Propos {
 }
 const LinkToOtherPage = ({texte,link, className = "string"}: Propos) => {
     return(
-        <Container className={`${className}text-[#878483] mt-10`}>
-                <P className="underline text-[#878483]">
+        <Container className={`${className} mt-10`}>
+                <P className="underline ">
                     <Link href={link} className="flex gap-2 justify-start items-center">
                         <span>{texte}</span>
                         <MoveRight strokeWidth={1.75} size={20} />
