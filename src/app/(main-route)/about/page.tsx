@@ -24,7 +24,7 @@ const About = () => {
           </div>
         </Container>
         <div className="box flex flex-col items-center justify-between gap-5 md:gap-20 md:basis-2/3">
-             <Container   className="leading-relaxed text-start text-[#878483]">
+             <Container   className="leading-relaxed text-start">
                 <Typography className="text-xl font-normal">
                   {"Théodore est un développeur web, ingénieur en radiotransmission et électricien,"}
                 </Typography>
@@ -43,9 +43,9 @@ const About = () => {
       </Container>
       <Container className="basis-2/3 m-auto">
         <Tabs defaultValue='suscribe-to-training' className='w-full flex flex-col gap-4  md:p-8 '>
-          <TabsList className='w-full grid grid-cols-2 mb-4 md:m-auto text-[#878483]'>  
+          <TabsList className='w-full grid grid-cols-2 mb-4 md:m-auto'>  
             <TabsTrigger value='suscribe-to-training' className='basis-1/3'>
-              <Typography className="flex-wrap hidden lg:block text-left e" variant="title-base">Competences Comportementale</Typography>
+              <Typography className="flex-wrap hidden lg:block text-left " variant="title-base">Competences Comportementale</Typography>
               <Typography className="flex-wrap lg:hidden text-left" variant="title-sm">Competences<br/>Comportementale</Typography>
             </TabsTrigger>
             <TabsTrigger value='become-a-trainer' className='basis-1/3'>

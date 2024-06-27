@@ -31,7 +31,7 @@ export default function SoftSkillsContent({ image, name, description,className =
         <Container className="flex flex-col justify-start items-start gap-1 ">
           <Typo className="text-md">{name}</Typo>
           {
-            description? <Typography className="text-[#878483] md:w-full ">{description}</Typography> : null
+            description? <Typography className=" md:w-full ">{description}</Typography> : null
           }
         </Container>
       </Container>

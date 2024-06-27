@@ -4,16 +4,16 @@ import { DefaultTheme } from 'styled-components';
 export const lightTheme: DefaultTheme = {
   body: '#FFF',
   inBody:'#222020',
-  text: '#878483',
+  text: '#545454',
   inText: '#FFF',
-  textLink: "#646262",
+  textLink: "#303030",
 
 };
 
 export const darkTheme: DefaultTheme = {
   body: '#222020',
   inBody:'#FFF',
-  text: '#878483',
+  text: '#ABABAB',
   inText: '#000',
-  textLink: "#878483",
+  textLink: "#C7C7C7",
 };

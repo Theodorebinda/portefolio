@@ -51,9 +51,9 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
           <div className="bg-[#459999ee] w-6 rounded-full h-6"></div>
           {
             currentTheme === 'light'?
-            <Typography component="p" className="px-3 text-[#7e7a7a] text-xl font-normal hover:text-[#464646]" >T.Samba</Typography>
+            <Typography component="p" className="px-3  text-xl font-normal hover:text-[#000]" >T.Samba</Typography>
             :
-            <Typography component="p" className="px-3 text-[#7e7a7a] text-xl font-normal hover:text-white" >T.Samba</Typography>
+            <Typography component="p" className="px-3 ] text-xl font-normal hover:text-white" >T.Samba</Typography>
           }
           
         </Link>
@@ -63,11 +63,11 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
               <Typography key={route.title} variant="body-base" component="p" className="">
                  {
                   currentTheme=== 'light' ?
-                  <ActiveLink href={route.baseUrl!} className="flex hover:text-[#464646] text-[#7e7a7a] focus:text-black ">
+                  <ActiveLink href={route.baseUrl!} className="flex hover:text-[#000] focus:text-black ">
                     {route.title}
                   </ActiveLink>
                   :  
-                  <ActiveLink href={route.baseUrl!} className="flex hover:text-[#fff] text-#7e7a7a focus:text-white">
+                  <ActiveLink href={route.baseUrl!} className="flex hover:text-[#fff]  focus:text-white">
                     {route.title}
                   </ActiveLink>
                 }
@@ -78,18 +78,18 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
         </nav>
         <Container className="flex justify-between items-center gap-10">
           <Container className="flex items-center justify-end gap-10 px-4 animate">
-            <Link href={"https://github.com/Theodorebinda"} target="_black"> 
-                {currentTheme === 'light' ? <FaGithub size={20} className="text-[#7e7a7a] hover:fill-[#464646]"/> : <FaGithub size={20} className="text-[#b2b2b2] hover:fill-[#ffffff]" />}
+            <Link href={"https://github.com/Theodorebinda"} target="_black" aria-label={'github'}> 
+                {currentTheme === 'light' ? <FaGithub size={20} className=" hover:fill-[#464646]"/> : <FaGithub size={20} className=" hover:fill-[#ffffff]" />}
             </Link>
-            <Link href={"https://www.linkedin.com/in/theodore-samba-26b456282/"} target="_black"> 
-                {currentTheme === 'light' ? <IoLogoLinkedin size={20} className="text-[#7e7a7a] hover:fill-[#464646]"/> : <IoLogoLinkedin size={20} className="text-[#b2b2b2] hover:fill-[#ffffff]" />}
+            <Link href={"https://www.linkedin.com/in/theodore-samba-26b456282/"} target="_black" aria-label={"LinkedIn"}> 
+                {currentTheme === 'light' ? <IoLogoLinkedin size={20} className=" hover:fill-[#464646]"/> : <IoLogoLinkedin size={20} className=" hover:fill-[#ffffff]" />}
             </Link>
-            <Link href={"#"} target="_black"> 
-                {currentTheme === 'light' ? <FaXTwitter size={20} className="text-[#7e7a7a] hover:fill-[#464646]"/> : <FaXTwitter size={20} className="text-[#b2b2b2] hover:fill-[#ffffff]" />}
+            <Link href={"#"} target="_black" aria-label={"X"}> 
+                {currentTheme === 'light' ? <FaXTwitter size={20} className=" hover:fill-[#464646]"/> : <FaXTwitter size={20} className=" hover:fill-[#ffffff]" />}
             </Link>
           </Container>
-          <ThemeToggleButton onClick={toggleTheme}>
-              {currentTheme === 'light' ? <FaMoon size={20} className="text-[#7e7a7a] hover:fill-[#464646]"/> : <FaSun size={20} className="text-[#b2b2b2] hover:fill-[#ffffff]" />}
+          <ThemeToggleButton onClick={toggleTheme} aria-label={"theme"}>
+              {currentTheme === 'light' ? <FaMoon size={20} className=" hover:fill-[#464646]"/> : <FaSun size={20} className=" hover:fill-[#ffffff]" />}
           </ThemeToggleButton>
         </Container>
       </Container>

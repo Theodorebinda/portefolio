@@ -22,7 +22,7 @@ export const ActiveLink = ({href, children, className}: Props) => {
       className={
         clsx(
           isActive ?  ' ' : '',
-          'font-medium animate text-[#7e7a7a]  w-full block rounded ',
+          'font-medium animate  w-full block rounded ',
           className
         )
       }

@@ -1,6 +1,8 @@
 // pages/_document.tsx
 import Document, { DocumentContext, DocumentInitialProps, Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
+// import { ServerStyleet } from ;
+
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
@@ -48,11 +50,9 @@ export default class MyDocument extends Document {
                   }
                 `}
         </style>
+        <script src="page.tsx" async />
         <script src="../app/(main-route)/page.tsx" async />
-        <script src="../app/(main-route)/about/page." async />
-        <script src="../app/(main-route)/competences/page.tsx" async />
-        <script src="../app/(main-route)/realisation/page.tsx" async />
-        <script src='../app/(main-route)/layout.tsx' async />
+        <script src='../app/(main-route)/layout' async />
         </Head>
         <body>
           <Main />

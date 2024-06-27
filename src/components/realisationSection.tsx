@@ -14,7 +14,7 @@ export default function RealisationSection(){
             <Typo className="underline py-4 ">
                 Derniere Realisation
             </Typo>
-            <Container className="text-[#878483] md:w-3/4 mb-4">
+            <Container className=" md:w-3/4 mb-4">
                 {
                     realisationList.slice(0,2).map((realisation,index) => {
                         return(

@@ -20,7 +20,7 @@ transition :0.10s;
     background-color:${(props) => props.theme.body} ;
 }
 `;
-export const Typo = styled.p`
+export const Typo = styled.h1`
   color: ${(props) => props.theme.inBody};
   `
 
