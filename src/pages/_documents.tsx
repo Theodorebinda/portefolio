@@ -37,10 +37,15 @@ export default class MyDocument extends Document {
         <link
             rel="preload"
             href="../app/globals.css"
-            as="font"
+            as="style"
             type="font/woff2"
             crossOrigin="anonymous"
           />
+            <link 
+            rel="app/(main-route)/layout'" 
+            href="page.js" 
+            as="script">
+          </link>
         <style>
                 {`
                   .text-6xl {

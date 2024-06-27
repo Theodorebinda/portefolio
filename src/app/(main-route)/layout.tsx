@@ -18,12 +18,8 @@ export default function MainRoutesLayout({ children }: { children: React.ReactNo
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      setTheme(savedTheme);
-    } else {
-      const userPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setTheme(userPrefersDark ? 'dark' : 'light');
-    }
+    const userPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(savedTheme || (userPrefersDark ? 'dark' : 'light'));
   }, []);
 
   useEffect(() => {
@@ -32,7 +28,7 @@ export default function MainRoutesLayout({ children }: { children: React.ReactNo
     }
   }, [theme]);
 
-  const selectedTheme = useMemo(() => (theme === 'light' ? lightTheme : darkTheme), [theme]);
+  const selectedTheme = theme === 'light' ? lightTheme : darkTheme;
 
   if (theme === null) {
     return <Loader />;

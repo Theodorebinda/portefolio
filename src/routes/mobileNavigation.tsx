@@ -41,7 +41,7 @@ export const MobileNavigation =  ({ toggleTheme, currentTheme, className }: Prop
       <Container className= {`${currentTheme === 'light' ? "bg-white": "bg-[#222020]"}  flex flex-row items-center w-full justify-between px-4 py-8 h-[10vh]`}>
         <Container className="flex justify-start items-center gap-3">
           <Link href="/" className="flex justify-start items-center">
-            <Image src={logo} alt='Logo' priority width={35} height={35}/>
+            <Image src={logo} alt='Logo'  width={35} height={35} loading="lazy"/>
             {
             currentTheme === 'light'?
             <Typography component="p" className="px text-2xl font-normal hover:text-[#464646]" >T.Samba</Typography>
