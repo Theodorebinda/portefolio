@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "tsc && next build",
     "start": "next start",
+    "postinstall": "tsc --version && cat tsconfig.json && npm list --depth=0 && printenv",
     "lint": "next lint"
   },
   "dependencies": {
