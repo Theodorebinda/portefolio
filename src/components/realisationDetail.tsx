@@ -4,7 +4,7 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 
 interface Props {
-  link: string | URL ;
+    link: string | URL |undefined ;
     className?: string;
     image :StaticImageData | string;
     description?: string;

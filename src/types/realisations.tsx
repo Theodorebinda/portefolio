@@ -6,6 +6,6 @@ export interface Realisation {
     nom : string
     description? : string | undefined
     responsable? : string
-    link? : string
+    link : string | URL | undefined
   }
 
