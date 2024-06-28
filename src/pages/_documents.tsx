@@ -1,7 +1,6 @@
 // pages/_document.tsx
 import Document, { DocumentContext, DocumentInitialProps, Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
-import layout from '@/app/(main-route)/layout';
 // import { ServerStyleet } from ;
 
 
@@ -37,14 +36,14 @@ export default class MyDocument extends Document {
         <Head>
         <link
             rel="preload"
-            href={ServerStyleSheet}
+            href="../app/globals.css"
             as="style"
             type="font/woff2"
             crossOrigin="anonymous"
           />
             <link 
             rel="app/(main-route)/layout'" 
-            href={layout} 
+            href="page.js" 
             as="script">
           </link>
         <style>
