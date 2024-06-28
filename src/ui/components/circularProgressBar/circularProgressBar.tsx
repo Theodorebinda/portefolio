@@ -5,7 +5,7 @@ import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 interface CircularProgressBarProps {
-  percentage: number | undefined;
+  percentage?: number |undefined ;
   image : StaticImageData | string
   name : string 
 }
