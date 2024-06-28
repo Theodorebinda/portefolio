@@ -8,7 +8,7 @@ interface Props {
     percentage?: number ;
     className?: string ;
     image :StaticImageData | string;
-    name: string 
+    name: string ;
     children?: string | undefined;
   }
 export default function HardSkillContent({percentage,name, image, className = "string"}: Props){

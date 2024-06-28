@@ -6,8 +6,8 @@ import 'react-circular-progressbar/dist/styles.css';
 
 interface CircularProgressBarProps {
   percentage?: number ;
-  image : StaticImageData | string
-  name : string 
+  image : StaticImageData | string;
+  name : string ;
 }
 
 const CircularProgressBar: React.FC<CircularProgressBarProps> = ({ percentage,image,name }) => {
