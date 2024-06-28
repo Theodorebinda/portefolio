@@ -1,32 +1,16 @@
 'use client';
 
-import { ReactNode, useState, useEffect, useMemo } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from '../../styles/theme';
 import { GlobalStyle } from '../../styles/globalStyle';
-import { Navigation } from '@/routes/navigation';
-import { MobileNavigation } from '@/routes/mobileNavigation';
 import Footer from '@/ui/components/footer/footer';
 import Loader from '@/ui/components/loader/loader';
+import { useTheme } from '../../lib/useTheme/useTheme';
+import NavigationWrapper from '../../routes/navigationWraper';
+import React from 'react';
 
-export default function MainRoutesLayout({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<string | null>(null);
-
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
-  };
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    const userPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setTheme(savedTheme || (userPrefersDark ? 'dark' : 'light'));
-  }, []);
-
-  useEffect(() => {
-    if (theme) {
-      localStorage.setItem('theme', theme);
-    }
-  }, [theme]);
+function MainRoutesLayout({ children }: { children: React.ReactNode }) {
+  const { theme, toggleTheme } = useTheme();
 
   const selectedTheme = theme === 'light' ? lightTheme : darkTheme;
 
@@ -36,11 +20,12 @@ export default function MainRoutesLayout({ children }: { children: React.ReactNo
 
   return (
     <ThemeProvider theme={selectedTheme}>
-        <GlobalStyle />
-        <Navigation className='hidden lg:block' toggleTheme={toggleTheme} currentTheme={theme} />
-        <MobileNavigation className='lg:hidden' toggleTheme={toggleTheme} currentTheme={theme} />
-        {children}
-        <Footer />
+      <GlobalStyle />
+      <NavigationWrapper toggleTheme={toggleTheme} currentTheme={theme} />
+      {children}
+      <Footer />
     </ThemeProvider>
   );
 }
+
+export default React.memo(MainRoutesLayout);
