@@ -16,7 +16,7 @@ export default function Realisation(){
                             <RelisationDetail
                              key={index} 
                              className=""
-                             link={realisation.link}
+                            //  link={realisation.link}
                              nom={realisation.nom}
                              description={realisation.description}
                              image={realisation.image}
