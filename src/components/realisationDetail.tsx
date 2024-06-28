@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Url } from "url";
 
 interface Props {
-    link: string |Url |undefined ;
+    // link: string |Url |undefined ;
     className?: string;
     image :StaticImageData | string;
     description?: string;
@@ -13,7 +13,7 @@ interface Props {
     children?: string | undefined;
   }
 export default function RealisationDetail(
-{  link,
+{ 
   nom,
   description,
   image,
@@ -25,9 +25,9 @@ export default function RealisationDetail(
         <Typography variant="title-sm">{nom}</Typography>
       </span>
       <Typography className="lg:w-full">{description}</Typography>
-      <Link href={link} className="md:w-1/3">
+      {/* <Link href={link} className="md:w-1/3"> */}
         <Image src={image}  height={200} alt={nom} loading="lazy" className="object-cover " />
-      </Link>
+      {/* </Link> */}
     </Container>
   );
 }
