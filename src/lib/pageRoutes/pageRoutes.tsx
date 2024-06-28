@@ -24,29 +24,6 @@ export const MainRoutes: AppLinks[] = [
   },
 ]
 
-export const SocialNetworks: AppLinks[] = [
-  {
-    title: 'LinkedIn',
-    baseUrl: 'https://www.linkedin.com/company',
-    CustomIcon: Linkedin,
-  },
-  {
-    title: 'Facebook',
-    baseUrl: 'https://www.facebook.com/company',
-    CustomIcon: Facebook,
-  },
-  {
-    title: 'X',
-    baseUrl: 'https://www.x.com/company',
-    CustomIcon: X,
-  },
-  {
-    title: 'Youtube',
-    baseUrl: 'https://www.youtube.com/company',
-    CustomIcon: Youtube,
-  }
-]
-
 export const HomeRoute: AppLinks[] = [
   {
     title: "Retourner à l'acceuil",
