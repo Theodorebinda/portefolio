@@ -2,9 +2,10 @@ import { Container } from "@/ui/components/container/container";
 import { Typography } from "@/ui/components/typography/typography";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
+import { Url } from "url";
 
 interface Props {
-    link: string | URL |undefined ;
+    link: string |Url |undefined ;
     className?: string;
     image :StaticImageData | string;
     description?: string;

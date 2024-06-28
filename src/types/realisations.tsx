@@ -1,4 +1,5 @@
 import { StaticImageData } from "next/image"
+import { Url } from "url"
 
 export interface Realisation {
     id : number | string
@@ -6,6 +7,6 @@ export interface Realisation {
     nom : string
     description? : string | undefined
     responsable? : string
-    link : string | URL | undefined
+    link :  string| Url | undefined
   }
 
