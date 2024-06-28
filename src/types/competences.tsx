@@ -5,6 +5,12 @@ export interface Competences {
     image : string | StaticImageData ;
     name : string;
     description? : string;
-    progression?: number ;
+  }
+  export interface CompetencesHard {
+    id : number | string;
+    image : string | StaticImageData ;
+    name : string;
+    description? : string;
+    progression: number ;
   }
 

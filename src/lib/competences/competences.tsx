@@ -1,4 +1,4 @@
-import { Competences } from "@/types/competences";
+import { Competences, CompetencesHard } from "@/types/competences";
 import autonome from "/public/images/Programming-bro 1 (1).png";
 import equipe from "/public/images/Collab-pana 1.png";
 import resolProblem from "/public/images/resolutionProbleme.png";
@@ -56,7 +56,7 @@ export const ListOfSoftCompetences : Competences[] =[
 
 ]
 
-export const ListOfHardCompetences : Competences[] =[
+export const ListOfHardCompetences : CompetencesHard[] =[
     {
         id : 1,
         image : htmlIcone,
