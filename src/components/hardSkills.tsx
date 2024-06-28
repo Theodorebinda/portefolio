@@ -5,7 +5,7 @@ import Image, { StaticImageData } from "next/image";
 
 
 interface Props {
-    percentage?: number | undefined;
+    percentage?: number ;
     className?: string ;
     image :StaticImageData | string;
     name: string 

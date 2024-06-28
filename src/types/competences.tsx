@@ -5,6 +5,6 @@ export interface Competences {
     image : string | StaticImageData ;
     name : string;
     description? : string;
-    progression? : number | undefined;
+    progression?: number ;
   }
 
