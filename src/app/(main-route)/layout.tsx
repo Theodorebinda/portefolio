@@ -1,12 +1,12 @@
 'use client';
 
 import { ThemeProvider } from 'styled-components';
-import { lightTheme, darkTheme } from '../../styles/theme';
-import { GlobalStyle } from '../../styles/globalStyle';
+import { lightTheme, darkTheme } from '@/styles/theme';
+import { GlobalStyle } from '@/styles/globalStyle';
 import Footer from '@/ui/components/footer/footer';
 import Loader from '@/ui/components/loader/loader';
-import { useTheme } from '../../lib/useTheme/useTheme';
-import NavigationWrapper from '../../routes/navigationWraper';
+import { useTheme } from '@/lib/useTheme/useTheme';
+import NavigationWrapper from '@/routes/navigationWraper';
 import React from 'react';
 
 function MainRoutesLayout({ children }: { children: React.ReactNode }) {

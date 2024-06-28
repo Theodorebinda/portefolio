@@ -3,7 +3,7 @@ import { Container } from "@/ui/components/container/container";
 import Typewriter from "@/ui/components/typewriter/Typewriter";
 import { Typography } from "@/ui/components/typography/typography";
 import Image from "next/image"
-import imageHero  from "../../public/exempleImagePresent-removebg-preview.png";
+import imageHero  from "/public/exempleImagePresent-removebg-preview.png";
 import Link from "next/link";
 import { Btn, Typo } from "@/styles/globalStyle";
 import { ChevronRight } from "lucide-react";

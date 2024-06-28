@@ -1,5 +1,5 @@
 import { Typography } from "@/ui/components/typography/typography"
-import logo from '../../public/png-transparent-typescript-language-javascript-static-type-typescript-logo-frontend-3d-icon-thumbnail-removebg-preview.png'
+import logo from '/public/png-transparent-typescript-language-javascript-static-type-typescript-logo-frontend-3d-icon-thumbnail-removebg-preview.png'
 import styled from 'styled-components';
 import Link from "next/link"
 import { ActiveLink } from "./activeLink"
@@ -10,7 +10,6 @@ import { Container } from '@/ui/components/container/container'
 import { Sheet, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTrigger } from "@/components/ui/sheet"
 import { FaMoon } from "react-icons/fa6";
 import { FaSun } from "react-icons/fa";
-import { CiMenuFries } from "react-icons/ci";
 import { RiMenu2Line } from "react-icons/ri";
 
 

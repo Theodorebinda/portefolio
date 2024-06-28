@@ -7,7 +7,7 @@ import Image, { StaticImageData } from "next/image";
 
 
 interface Props {
-  image: StaticImageData| string;
+  image: StaticImageData | string;
   className?: string;
   name: string;
   description: string | undefined;

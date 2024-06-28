@@ -3,7 +3,7 @@
 import { Container } from "@/ui/components/container/container";
 import { Typography } from "@/ui/components/typography/typography"
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import photo from "../../../../public/exempleImagePresent-removebg-preview.png"
+import photo from "/public/exempleImagePresent-removebg-preview.png"
 import { TabsContent } from '@radix-ui/react-tabs'
 import Image from "next/image";
 import { ListOfHardCompetences, ListOfSoftCompetences } from "@/lib/competences/competences"

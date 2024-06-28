@@ -1,6 +1,6 @@
 import { Realisation } from '@/types/realisations'
-import second from '../../../public/images/screencapture-opi-b.png'
-import mentor from "../../../public/images/screencapture-chef-d-oeuvre-s.png"
+import second from '/public/images/screencapture-opi-b.png'
+import mentor from "/public/images/screencapture-chef-d-oeuvre-s.png"
 
 
 export const realisationList :Realisation[]= [

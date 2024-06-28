@@ -1,18 +1,18 @@
 import { Competences } from "@/types/competences";
-import autonome from "../../../public/images/Programming-bro 1 (1).png";
-import equipe from "../../../public/images/Collab-pana 1.png";
-import resolProblem from "../../../public/images/resolutionProbleme.png";
-import resilience from "../../../public/images/Light bulb-bro 1 (1).png";
-import htmlIcone from "../../../public/images/htmlLogo.svg";
-import cssIcone from "../../../public/images/cssLogo.svg";
-import jsIcone from "../../../public/images/3d-javascript-logo-design-free-png 1.svg";
-import reactIcone from "../../../public/images/react.svg";
-import nodeIcone from "../../../public/images/nodeJs.svg";
-import tailwind from "../../../public/images/tailwindCssLogo.svg";
-import wordPressIcon from "../../../public/images/R-removebg-preview 1.svg";
-import prismaIcon from "../../../public/images/prismaLogo.svg";
-import typescriptIcon from "../../../public/png-transparent-typescript-language-javascript-static-type-typescript-logo-frontend-3d-icon-thumbnail-removebg-preview.png";
-import figmaIcon from "../../../public/images/figmaLogo.svg";
+import autonome from "/public/images/Programming-bro 1 (1).png";
+import equipe from "/public/images/Collab-pana 1.png";
+import resolProblem from "/public/images/resolutionProbleme.png";
+import resilience from "/public/images/Light bulb-bro 1 (1).png";
+import htmlIcone from "/public/images/htmlLogo.svg";
+import cssIcone from "/public/images/cssLogo.svg";
+import jsIcone from "/public/images/3d-javascript-logo-design-free-png 1.svg";
+import reactIcone from "/public/images/react.svg";
+import nodeIcone from "/public/images/nodeJs.svg";
+import tailwind from "/public/images/tailwindCssLogo.svg";
+import wordPressIcon from "/public/images/R-removebg-preview 1.svg";
+import prismaIcon from "/public/images/prismaLogo.svg";
+import typescriptIcon from "/public/png-transparent-typescript-language-javascript-static-type-typescript-logo-frontend-3d-icon-thumbnail-removebg-preview.png";
+import figmaIcon from "/public/images/figmaLogo.svg";
 
 
 
