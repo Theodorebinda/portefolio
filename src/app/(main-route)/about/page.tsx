@@ -23,7 +23,7 @@ const About = () => {
         <Container className="flex flex-col items-center justify-between gap-10 md:gap-10 md:basis-1/2">
              <Container   className="leading-relaxed text-start">
                 <Typography className="text-xl font-normal">
-                  {"Développeur web et mobile, ingénieur en radiotransmission et électricien,"}
+                  {"Développeur web et mobile, ingénieur en radio-transmission et électricien,"}
                 </Typography>
                 <Typography   className="text-xl font-normal leading-relaxed" >
                   {"diplômé de "}<Span href="https://ista-kin.org/ista-kin/ista/index.html" target="_blank">{"l'Institut Supérieur de Technique Appliquée"}</Span>{" et certifié par "}

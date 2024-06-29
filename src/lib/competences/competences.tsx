@@ -21,13 +21,13 @@ export const ListOfSoftCompetences : Competences[] =[
         id : 1,
         image : autonome,
         name : "Autonomie et prise d'initiatives",
-        description : "Je suis reconnu pour mon autonomie et ma proactivité, n'hésitant pas à prendre des initiatives pour faire avancer les projets."
+        description : "Autonome et proactif, n'hésitant pas à prendre des initiatives pour faire avancer des projets."
     },
     {
         id : 2,
         image : equipe,
         name : "Travaille en Equpipe",
-        description : "Je suis un élément clé dans les projets collaboratifs, sachant écouter les autres et contribuer de manière constructive."
+        description : "Je suis collaboratif, sachant écouter les autres et contribuer de manière constructive."
     },
     {
         id : 3,
