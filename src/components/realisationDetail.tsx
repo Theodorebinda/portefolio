@@ -23,9 +23,9 @@ export default function RealisationDetail(
         <Typography variant="title-sm">{nom}</Typography>
       </span>
       <Typography className="lg:w-full">{description}</Typography>
-      {/* <Link href={link} className="md:w-1/3"> */}
-        <Image src={image}  height={200} alt={nom} loading="lazy" className="object-cover " />
-      {/* </Link> */}
+      <Container className="md:w-1/3">
+        <Image src={image} sizes={"10vw"} alt={nom} loading="lazy" className="object-cover " />
+      </Container>
     </Container>
   );
 }

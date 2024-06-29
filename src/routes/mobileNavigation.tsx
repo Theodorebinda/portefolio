@@ -1,10 +1,8 @@
 import { Typography } from "@/ui/components/typography/typography"
-import logo from '/public/png-transparent-typescript-language-javascript-static-type-typescript-logo-frontend-3d-icon-thumbnail-removebg-preview.png'
 import styled from 'styled-components';
 import Link from "next/link"
 import { ActiveLink } from "./activeLink"
 import clsx from 'clsx'
-import Image from "next/image"
 import { MainRoutes } from "@/lib/pageRoutes/pageRoutes"
 import { Container } from '@/ui/components/container/container'
 import { Sheet, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTrigger } from "@/components/ui/sheet"
@@ -39,23 +37,23 @@ export const MobileNavigation =  ({ toggleTheme, currentTheme, className }: Prop
     >
       <Container className= {`${currentTheme === 'light' ? "bg-white": "bg-[#222020]"}  flex flex-row items-center w-full justify-between px-4 py-8 h-[10vh]`}>
         <Container className="flex justify-start items-center gap-3">
-          <Link href="/" className="flex justify-start items-center">
-            <Image src={logo} alt='Logo'  width={35} height={35} loading="lazy"/>
+          <Link href="/" className="flex justify-start items-center" aria-label={"logo"}>
+              <div className="bg-[#459999ee] w-6 rounded-full h-6"></div>
             {
             currentTheme === 'light'?
-            <Typography component="p" className="px text-2xl font-normal hover:text-[#464646]" >T.Samba</Typography>
+            <Typography component="p" className="px-1 text-xl font-normal hover:text-[#464646]" >T.Samba</Typography>
             :
-            <Typography component="p" className="px text-2xl font-normal hover:text-white" >T.Samba</Typography>
+            <Typography component="p" className="px-1 text-xl font-normal hover:text-white" >T.Samba</Typography>
            }
           </Link>
-          <ThemeToggleButton onClick={toggleTheme}>
+          <ThemeToggleButton onClick={toggleTheme} aria-label={"theme"}>
               {currentTheme === 'light' ? <FaMoon size={30} className=" hover:fill-[#464646]"/> : <FaSun size={30} className=" hover:fill-[#ffffff]" />}
           </ThemeToggleButton>
         </Container>
           
         <Sheet>
           <SheetTrigger>
-          <RiMenu2Line size={32} />
+          <RiMenu2Line size={32} aria-label={"menu"} />
           </SheetTrigger>
           <SheetContent className="w-[90vw] bg-[#f7f2f2]">
             <SheetDescription className="h-full">

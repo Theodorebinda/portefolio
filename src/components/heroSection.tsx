@@ -13,8 +13,8 @@ import { ChevronRight } from "lucide-react";
 export default function HeroSection() {
 
   return (
-    <Container className="flex flex-col md:items-start md:justify-between md:gap-8 md:flex-row lg:pt-20  mx-4 md:mx-10  pt-16 ">
-      <Container className="flex flex-col gap-5 lg:w-1/2 w-full">
+    <Container className="flex flex-col md:items-start md:justify-between md:gap-8 md:flex-row lg:pt-20  mx-4 md:mx-10 lg:h-screen  pt-16 ">
+      <Container className="flex flex-col gap-5 lg:w-3/4 w-full">
         <Typo className="font-normal text-6xl " >
            Théodore Samba
         </Typo>
@@ -23,9 +23,9 @@ export default function HeroSection() {
         </Typography>
         <Container className="" >
           <Typewriter
-            texts={["Developpeur web et mobile", "UI/UX Designer","Ir Radio Transmission"]}
+            texts={["Developpeur web/mobile", "UI/UX Designer","Ir Radio Transmission"]}
             speed={50}
-            deleteDelay={1000}
+            deleteDelay={1500}
          />
         </Container>
         <Typography   className="text-xl font-normal flex flex-col leading-relaxed">
@@ -44,7 +44,7 @@ export default function HeroSection() {
         </Container>
       </Container>
       <Container className="hidden lg:flex lg:justify-center items-start w-1/2">
-      <Image src={imageHero} height={300} width={300} alt='theodore' className=" object-cover" loading="lazy" />
+      <Image src={imageHero} height={400} width={400} alt='theodore' className=" object-cover" loading="lazy" />
       </Container>
     </Container>
   );
