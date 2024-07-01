@@ -1,14 +1,14 @@
 'use client'
 import RelisationDetail from "@/components/realisationDetail";
 import { realisationList } from "@/lib/realisation/realisation";
+import { P } from "@/styles/globalStyle";
 import { Container } from "@/ui/components/container/container";
 import LinkToOtherPage from "@/ui/components/link-to-other-page/linkToOtherPage";
-import { Typography } from "@/ui/components/typography/typography";
 
 export default function Realisation(){
     return(
         <Container className="mx-4 lg:w-2/3 md:w-3/4 pt-10 md:pt-20 md:m-auto">
-            <Typography>Realisation</Typography>
+            <P>Realisation</P>
             <Container>
             {
                     realisationList.map((realisation,index) => {
