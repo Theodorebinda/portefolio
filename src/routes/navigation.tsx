@@ -10,6 +10,7 @@ import { FaMoon } from "react-icons/fa6";
 import { FaGithub, FaSun } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoLinkedin } from "react-icons/io5";
+import LinkMediaSocial from "@/components/linkSocialMedia";
 
 
 
@@ -75,17 +76,7 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
           }
         </nav>
         <Container className="flex justify-between items-center gap-10">
-          <Container className="flex items-center justify-end gap-10 px-4 animate">
-            <Link href={"https://github.com/Theodorebinda"} target="_black" aria-label={'github'}> 
-                {currentTheme === 'light' ? <FaGithub size={20} className=" hover:fill-[#464646]"/> : <FaGithub size={20} className=" hover:fill-[#ffffff]" />}
-            </Link>
-            <Link href={"https://www.linkedin.com/in/theodore-samba-26b456282/"} target="_black" aria-label={"LinkedIn"}> 
-                {currentTheme === 'light' ? <IoLogoLinkedin size={20} className=" hover:fill-[#464646]"/> : <IoLogoLinkedin size={20} className=" hover:fill-[#ffffff]" />}
-            </Link>
-            <Link href={"#"} target="_black" aria-label={"X"}> 
-                {currentTheme === 'light' ? <FaXTwitter size={20} className=" hover:fill-[#464646]"/> : <FaXTwitter size={20} className=" hover:fill-[#ffffff]" />}
-            </Link>
-          </Container>
+          <LinkMediaSocial  currentTheme={currentTheme}/>
           <ThemeToggleButton onClick={toggleTheme} aria-label={"theme"}>
               {currentTheme === 'light' ? <FaMoon size={20} className=" hover:fill-[#464646]"/> : <FaSun size={20} className=" hover:fill-[#ffffff]" />}
           </ThemeToggleButton>
