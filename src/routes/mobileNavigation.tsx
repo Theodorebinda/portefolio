@@ -9,6 +9,7 @@ import { Sheet, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetT
 import { FaMoon } from "react-icons/fa6";
 import { FaSun } from "react-icons/fa";
 import { RiMenu2Line } from "react-icons/ri";
+import LinkMediaSocial from "@/components/linkSocialMedia";
 
 
 
@@ -55,8 +56,8 @@ export const MobileNavigation =  ({ toggleTheme, currentTheme, className }: Prop
           <SheetTrigger>
           <RiMenu2Line size={32} aria-label={"menu"} />
           </SheetTrigger>
-          <SheetContent className="w-[90vw] bg-[#f7f2f2]">
-            <SheetDescription className="h-full">
+          <SheetContent className={`${currentTheme === 'light' ? "bg-white": "bg-[#222020]"} w-[90vw] `} >
+            <SheetDescription className="h-full flex justify-between flex-col">
               <nav className=" flex flex-col justify-between items-center">
                 <Container className='w-full flex flex-col'>
                 {
@@ -70,6 +71,14 @@ export const MobileNavigation =  ({ toggleTheme, currentTheme, className }: Prop
                 }
                 </Container>
               </nav>
+              <Container className="flex flex-col justify-start gap-2">
+                <Typography className="font-semibold"  variant="body-base">Contact</Typography>
+                <span>Adresse : 123, Rue de la Paix, Kinshasa</span>
+                <span>Email :<a href="mail:theodorebinda@gmail.com">  theodorebinda@gmail.com</a></span>
+                <span>Tel :<a href="tel:+243894594411">  +243 89 459 4411</a></span>
+              </Container>
+
+              <LinkMediaSocial className="gap-24 justify-start" currentTheme={currentTheme} />
             </SheetDescription>
           </SheetContent>
         </Sheet>
