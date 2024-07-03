@@ -39,7 +39,7 @@ export const MobileNavigation =  ({ toggleTheme, currentTheme, className }: Prop
       <Container className= {`${currentTheme === 'light' ? "bg-white": "bg-[#222020]"}  flex flex-row items-center w-full justify-between px-4 py-8 h-[10vh]`}>
         <Container className="flex justify-start items-center gap-3">
           <Link href="/" className="flex justify-start items-center" aria-label={"logo"}>
-              <div className="bg-[#459999ee] w-6 rounded-full h-6"></div>
+              <div className="bg-[#b2d2fa] w-6 rounded-full h-6"></div>
             {
             currentTheme === 'light'?
             <Typography component="p" className="px-1 text-xl font-normal hover:text-[#464646]" >T.Samba</Typography>
