@@ -47,7 +47,7 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
     >
       <Container className= {`${currentTheme === 'light' ? "bg-white": "bg-[#222020]" } flex flex-row items-center w-ful justify-between  px-20 pt-8 h-[7rem]`}>
         <Link href="/" className="flex justify-between items-center">
-          <div className="bg-[#459999ee] w-6 rounded-full h-6"></div>
+          <div className="bg-[#b2d2fa] w-6 rounded-full h-6"></div>
           {
             currentTheme === 'light'?
             <Typography component="p" className="px-3  text-xl font-normal hover:text-[#000]" >T.Samba</Typography>

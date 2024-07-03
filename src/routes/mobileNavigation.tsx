@@ -74,7 +74,7 @@ export const MobileNavigation =  ({ toggleTheme, currentTheme, className }: Prop
               <Container className="flex flex-col justify-start gap-2">
                 <Typography className="font-semibold"  variant="body-base">Contact</Typography>
                 <span>Adresse : 123, Rue de la Paix, Kinshasa</span>
-                <span>Email :<a href="mail:theodorebinda@gmail.com">  theodorebinda@gmail.com</a></span>
+                <span>Email :<a href="mailto:theodorebinda@gmail.com">  theodorebinda@gmail.com</a></span>
                 <span>Tel :<a href="tel:+243894594411">  +243 89 459 4411</a></span>
               </Container>
 
