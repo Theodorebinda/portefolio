@@ -23,17 +23,17 @@ export const ContactForm: React.FC = () => {
     let formErrors = {};
 
     if (!name) {
-      formErrors = { ...formErrors, name: 'Name is required' };
+      formErrors = { ...formErrors, name: 'Veuillez entrer votre nom !' };
     }
 
     if (!email) {
-      formErrors = { ...formErrors, email: 'Email is required' };
+      formErrors = { ...formErrors, email: 'Veuillez entrer votre adresse Email.' };
     } else if (!validateEmail(email)) {
-      formErrors = { ...formErrors, email: 'Email is not valid' };
+      formErrors = { ...formErrors, email: 'Revoyez votre adresse email' };
     }
 
     if (!message) {
-      formErrors = { ...formErrors, message: 'Message is required' };
+      formErrors = { ...formErrors, message: 'Ecrivez quelque chose' };
     }
 
     setErrors(formErrors);
@@ -63,7 +63,7 @@ export const ContactForm: React.FC = () => {
       <form ref={form} onSubmit={sendEmail} className='w-full flex flex-col gap-10'>
         <Container className='flex flex-col lg:flex-row gap-10 lg:justify-between lg:items-center'>
           <Container className='flex flex-col gap-2'>
-            <label className='font-semibold'>Name</label>
+            <label className='font-semibold'>Nom</label>
             <input
               type="text"
               name="name"
@@ -98,12 +98,12 @@ export const ContactForm: React.FC = () => {
           />
           {errors.message && <span className='text-red-500'>{errors.message}</span>}
         </Container>
-        <input type="submit" value="Send" className='bg-blue-500 text-white p-2 rounded cursor-pointer' />
+        <input type="submit" value="Envoyer" className='bg-[#b2d2fa] text-black hover:bg-[#5182be] hover:font-semibold p-2 rounded cursor-pointer' />
       </form>
       {showSuccessPopup && (
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-4 rounded shadow-lg">
-            <p>Message envoyé avec succès!</p>
+            <p>Merci pour votre message!</p>
           </div>
         </div>
       )}
