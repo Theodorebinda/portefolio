@@ -1,4 +1,3 @@
-'use client'
 import React, { useRef, useState, FormEvent } from 'react';
 import emailjs, { init } from '@emailjs/browser';
 import { Container } from '@/ui/components/container/container';
@@ -12,45 +11,49 @@ export const ContactForm: React.FC = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [errors, setErrors] = useState<{ name?: string; email?: string; message?: string }>({});
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
 
   const validateEmail = (email: string) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
 
-  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
+  const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     let formErrors = {};
 
     if (!name) {
-      formErrors = { ...formErrors, name: 'Entrer votre nom' };
+      formErrors = { ...formErrors, name: 'Name is required' };
     }
 
     if (!email) {
-      formErrors = { ...formErrors, email: 'Entrez votre adresse mail' };
+      formErrors = { ...formErrors, email: 'Email is required' };
     } else if (!validateEmail(email)) {
-      formErrors = { ...formErrors, email: 'Revoyez votre adresse mail' };
+      formErrors = { ...formErrors, email: 'Email is not valid' };
     }
 
     if (!message) {
-      formErrors = { ...formErrors, message: 'Vous avez entré aucun message' };
+      formErrors = { ...formErrors, message: 'Message is required' };
     }
 
     setErrors(formErrors);
 
     if (Object.keys(formErrors).length === 0) {
-      if (form.current) {
-        emailjs
-          .sendForm('service_4p5in7e', 'template_8dz8bpg', form.current)
-          .then(
-            (result) => {
-              console.log("Message sent successfully");
-              console.log('SUCCESS!', result.text);
-            },
-            (error) => {
-              console.log('FAILED...', error.text);
-            }
-          );
+      try {
+        if (form.current) {
+          const result = await emailjs.sendForm('service_4p5in7e', 'template_8dz8bpg', form.current);
+          console.log("Message sent successfully");
+          console.log('SUCCESS!', result.text);
+          setName('');
+          setEmail('');
+          setMessage('');
+          setErrors({});
+          setShowSuccessPopup(true);
+          setTimeout(() => setShowSuccessPopup(false), 3000);
+          form.current?.reset();
+        }
+      } catch (error) {
+        console.error('Email sending failed:', error);
       }
     }
   };
@@ -76,7 +79,7 @@ export const ContactForm: React.FC = () => {
             <input
               type="email"
               name="email"
-              placeholder='Entrez votre adresse email'
+              placeholder='Entrez votre email'
               className='bg-transparent focus:outline-none focus:border-b-2 pb-5 border-b'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -88,15 +91,22 @@ export const ContactForm: React.FC = () => {
           <label className='font-semibold'>Message</label>
           <textarea
             name="message"
-            placeholder='Enrez votre message'
+            placeholder='votre message'
             className='placeholder-gray-500 bg-transparent focus:outline-none focus:border-b-2 pb-5 border-b resize-none'
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           />
           {errors.message && <span className='text-red-500'>{errors.message}</span>}
         </Container>
-        <input type="submit" value="Envoyer" className='bg-[#b2d2fa] text-black hover:bg-[#6390c8] hover:font-semibold  p-2 rounded cursor-pointer' />
+        <input type="submit" value="Send" className='bg-blue-500 text-white p-2 rounded cursor-pointer' />
       </form>
+      {showSuccessPopup && (
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-4 rounded shadow-lg">
+            <p>Message envoyé avec succès!</p>
+          </div>
+        </div>
+      )}
     </Container>
   );
 };

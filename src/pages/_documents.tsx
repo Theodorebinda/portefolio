@@ -34,6 +34,7 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
+        <meta name="google" content="notranslate"/>
         <link
             rel="preload"
             href="../app/globals.css"
