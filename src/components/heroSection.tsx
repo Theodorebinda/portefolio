@@ -34,7 +34,7 @@ export default function HeroSection() {
           {/* <span>{"passioné par le développement social"} </span>  */}
         </Typography>
         <Container className=" mt-10 mb-4 flex justify-center p-2" >
-          <Link href={"https://www.linkedin.com/in/theodore-samba-26b456282/"} target="_blank">
+          <Link href={"/contact"} >
               <Btn className=" flex justify-center items-center gap-1 px-5 py-6">
                   {"Contactez Moi"}
               <ChevronRight className=" w-5 h-5 font-light" />

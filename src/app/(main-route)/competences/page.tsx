@@ -1,12 +1,13 @@
 'use client'
 import { P, Typo } from "@/styles/globalStyle";
 import { Container } from "@/ui/components/container/container";
+import LinkToOtherPage from "@/ui/components/link-to-other-page/linkToOtherPage";
 import { Typography } from "@/ui/components/typography/typography";
 import { Construction } from "lucide-react";
 
 export default function Competences(){
     return(
-        <Container className="lg:mx-80 mx-5 h-screen pt-16 flex flex-col items-start justify-start text-start gap-8 text-xl font-normal leading-relaxed">
+        <Container className="lg:mx-80 mx-5 lg:h-screen pt-16 flex flex-col items-start justify-start text-start gap-8 text-xl font-normal leading-relaxed">
             <P>
                 Autre Competences
             </P>
@@ -27,6 +28,7 @@ export default function Competences(){
                    {"Au paravant j'ai travaillé comme enseignant et responsable des ateliers ou je supervisais les travaux pratique et assurais la securité des eleves"}<br/>
                 </Typography>
             </Container>
+            <LinkToOtherPage className=" text-lg" texte={"Parlons de vous maintenant"} link={"/contact"} />
         </Container>
     )
 }
