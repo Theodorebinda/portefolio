@@ -3,7 +3,6 @@ import { P, Typo } from "@/styles/globalStyle";
 import { Container } from "@/ui/components/container/container";
 import LinkToOtherPage from "@/ui/components/link-to-other-page/linkToOtherPage";
 import { Typography } from "@/ui/components/typography/typography";
-import { Construction } from "lucide-react";
 
 export default function Competences(){
     return(

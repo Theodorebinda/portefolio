@@ -1,7 +1,6 @@
 // pages/_document.tsx
 import Document, { DocumentContext, DocumentInitialProps, Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
-// import { ServerStyleet } from ;
 
 
 export default class MyDocument extends Document {
@@ -35,6 +34,7 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
         <meta name="google" content="notranslate"/>
+        <link rel="icon" href='../../public/theodore - Copie.jpg' type="image/theo-icon" />
         <link
             rel="preload"
             href="../app/globals.css"
