@@ -2,13 +2,7 @@ import React, { useRef, useState, FormEvent } from 'react';
 import emailjs, { init } from '@emailjs/browser';
 import { Container } from '@/ui/components/container/container';
 
-
-const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
-const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-
-init(userId!);
-
+init('VCyUVQhmgVW3VDFiv');
 
 export const ContactForm: React.FC = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -47,7 +41,7 @@ export const ContactForm: React.FC = () => {
     if (Object.keys(formErrors).length === 0) {
       try {
         if (form.current) {
-          const result = await emailjs.sendForm(serviceId!, templateId!, form.current);
+          const result = await emailjs.sendForm('service_4p5in7e', 'template_8dz8bpg', form.current);
           console.log("Message sent successfully");
           console.log('SUCCESS!', result.text);
           setName('');
