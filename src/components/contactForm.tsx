@@ -10,10 +10,6 @@ const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
 init(userId!);
 
 
-// console.log(userId)
-// console.log(serviceId)
-// console.log(templateId)
-
 export const ContactForm: React.FC = () => {
   const form = useRef<HTMLFormElement>(null);
 
