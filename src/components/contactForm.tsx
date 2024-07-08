@@ -3,9 +3,9 @@ import emailjs, { init } from '@emailjs/browser';
 import { Container } from '@/ui/components/container/container';
 
 
-const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
-const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const userId = process.env.API_SECRET_KEY_EMAILJS_USER_ID;
+const serviceId = process.env.API_SECRET_KEY_EMAILJS_SERVICE_ID;
+const templateId = process.env.API_SECRET_KEY_EMAILJS_TEMPLATE_ID;
 
 init(userId!);
 
