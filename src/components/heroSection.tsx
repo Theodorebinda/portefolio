@@ -44,7 +44,7 @@ export default function HeroSection() {
         </Container>
       </Container>
       <Container className="hidden lg:flex lg:justify-center items-start w-1/2">
-      <Image src={imageHero} height={400} width={400} alt='theodore' className=" object-cover" loading="lazy" />
+      <Image src={imageHero} height={400} width={400}  alt='theodore' className="object-cover" loading="lazy" />
       </Container>
     </Container>
   );

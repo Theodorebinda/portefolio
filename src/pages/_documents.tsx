@@ -35,6 +35,7 @@ export default class MyDocument extends Document {
         <Head>
         <meta name="google" content="notranslate"/>
         <link rel="icon" href='../../public/theodore - Copie.jpg' type="image/theo-icon" />
+        <link rel="preload" href="../../public/theodore-removebg-preview.png" as="image" />
         <link
             rel="preload"
             href="../app/globals.css"

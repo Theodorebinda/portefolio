@@ -24,7 +24,7 @@ export default function RealisationDetail(
       </span>
       <Typography className="lg:w-full">{description}</Typography>
       <Container className="md:w-1/3">
-        <Image src={image}  alt={nom}  className="object-cover " />
+        <Image src={image}  alt={nom} width={400}height={200} className="" />
       </Container>
     </Container>
   );
