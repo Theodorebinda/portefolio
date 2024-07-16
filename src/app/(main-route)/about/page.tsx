@@ -34,7 +34,7 @@ const About = () => {
                 </Typography>
             </Container>
             <Container>
-              <a href="/CV Theodore (1).pdf" download="CV.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/Mon CV.pdf" download="CV.pdf" target="_blank" rel="noopener noreferrer">
                 <Btn className="  px-6 py-5">
                   Download CV
                 </Btn>
