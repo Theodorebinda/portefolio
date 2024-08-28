@@ -9,7 +9,7 @@ export default function Footer (){
                 
                 <Container className="flex flex-row justify-between md:m-auto  items-center gap-1">
                     <Copyright strokeWidth={2} size={20} />
-                    <Typography className="text-xs ">Theodore Samba Binda </Typography>
+                    <Typography className="text-xs ">theodorebinda@gmail.com</Typography>
                     <Dot strokeWidth={1.75} />
                     <Typography className="text-xs ">Kinshasa - RDC 2024</Typography>
 
