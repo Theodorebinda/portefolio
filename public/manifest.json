@@ -1,0 +1,21 @@
+{
+    "name": "Theodore Samba",
+    "short_name": "Samba",
+    "description": "Portfolio de Theodore samba",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "icons": [
+      {
+        "src": "icons/theodoreAppDes - Copie.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "icons/theoFormatApp - Copie.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ]
+  }
+  
