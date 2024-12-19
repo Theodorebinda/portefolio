@@ -1,24 +1,23 @@
-import './globals.css'
-import type { Metadata } from 'next'
-import { Inter  } from 'next/font/google'
+import "./globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Theodore Samba',
-  description: ' portefolio | Theodore Samba est un developpeur web et mobile, developpe des application web et mobile.',
-}
+  title: "Theodore Samba",
+  description:
+    " portefolio | Theodore Samba est un developpeur web et mobile, developpe des application web et mobile.",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="fr" translate="no" className="notranslate">
-        <body className={inter.className}>
-          {children}
-        </body>
+    <html lang="fr" translate="no">
+      <body className={inter.className}>{children}</body>
     </html>
-  )
+  );
 }
