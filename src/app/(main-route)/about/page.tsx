@@ -2,9 +2,8 @@
 
 import { Container } from "@/ui/components/container/container";
 import { Typography } from "@/ui/components/typography/typography";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import photo from "/public/theodore-removebg-preview.png";
-import { TabsContent } from "@radix-ui/react-tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 import Image from "next/image";
 import {
   ListOfHardCompetences,
