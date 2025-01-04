@@ -6,7 +6,7 @@ import { P } from "@/styles/globalStyle";
 
 const ContactPage = () => {
   return (
-    <div className="pt-10  mx-5  flex flex-col gap-10 lg:h-screen">
+    <div className="flex flex-col gap-10 lg:h-screen">
       <Container className="flex flex-col justify-center items-center gap-2 lg:text-center">
         <P className="text-2xl">Envoyez Un Message!</P>
         <span className="text-xl">

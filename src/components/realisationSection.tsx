@@ -7,7 +7,7 @@ import { Typo } from "@/styles/globalStyle";
 
 export default function RealisationSection() {
   return (
-    <Container className="mx-4  ">
+    <Container className=" ">
       <Typo className="underline py-4 ">Dernière Réalisation</Typo>
       <Container className="md:w-3/4 mb-4">
         {realisationList

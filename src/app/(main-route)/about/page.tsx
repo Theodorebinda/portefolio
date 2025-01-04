@@ -17,7 +17,7 @@ import { Span } from "@/styles/globalStyle";
 
 const About = () => {
   return (
-    <Container className="flex flex-col gap-3 px-4  lg:basis-4/5 select-none  ">
+    <Container className="flex flex-col gap-3  lg:basis-4/5 select-none  ">
       <Container className="flex flex-col-reverse lg:flex-row-reverse lg:justify-between  items-center  gap-3  ">
         <Container className="md:basis-1/3 lg:flex lg:justify-center items-start">
           <Image

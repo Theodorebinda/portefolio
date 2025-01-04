@@ -6,7 +6,7 @@ import { Typography } from "@/ui/components/typography/typography";
 
 export default function Competences() {
   return (
-    <Container className=" mx-5 lg:h-screen flex flex-col items-start justify-start text-start gap-8 text-xl font-normal leading-relaxed">
+    <Container className="  lg:h-screen flex flex-col items-start justify-start text-start gap-8 text-xl font-normal leading-relaxed">
       <P>Autre Competences</P>
       <Container className="flex flex-col gap-4">
         <P>Electricien</P>

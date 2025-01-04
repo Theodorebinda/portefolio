@@ -41,7 +41,7 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
       <Container
         className={`${currentTheme === "light" ? "bg-white" : "bg-[#1c1917]"} `}
       >
-        <Container className="mx-56 flex flex-row items-center w-ful justify-between   h-[7rem]">
+        <Container className="mx-52 flex flex-row items-center w-ful justify-between   h-[7rem]">
           <Link href="/" className="flex justify-between items-center">
             <div className="bg-[#b2d2fa] hover:bg-[#5182be] w-6 rounded-full h-6"></div>
             {currentTheme === "light" ? (
