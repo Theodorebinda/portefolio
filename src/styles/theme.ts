@@ -11,7 +11,7 @@ export const lightTheme: DefaultTheme = {
 };
 
 export const darkTheme: DefaultTheme = {
-  body: '#222020',
+  body: '#1c1917',
   inBody:'#FFF',
   text: '#ABABAB',
   inText: '#000',
