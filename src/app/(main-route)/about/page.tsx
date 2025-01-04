@@ -29,7 +29,7 @@ const About = () => {
             loading="lazy"
           />
         </Container>
-        <Container className="flex flex-col items-center justify-between gap-10  ">
+        <Container className="md:basis-1/2 flex flex-col items-center justify-between gap-10  ">
           <Container className="leading-relaxed text-start">
             <Typography className="text-xl font-normal">
               {
@@ -72,12 +72,12 @@ const About = () => {
           </Container>
         </Container>
       </Container>
-      <Container className="basis-4/5 m-auto">
+      <Container className="mt-32">
         <Tabs
           defaultValue="suscribe-to-training"
-          className="w-full flex flex-col gap-4  md:p-8 "
+          className="w-full flex flex-col gap-4 "
         >
-          <TabsList className="w-full grid grid-cols-2 mb-4 md:m-auto">
+          <TabsList className="w-full grid grid-cols-2 mb-4">
             <TabsTrigger value="suscribe-to-training" className="basis-1/3">
               <Typography
                 className="flex-wrap hidden lg:block text-left "

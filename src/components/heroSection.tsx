@@ -10,9 +10,11 @@ import { ChevronRight } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <Container className="flex flex-col md:items-start md:justify-between md:gap-8 md:flex-row  lg:h-screen ">
+    <Container className="flex flex-col md:items-start md:justify-between md:gap-10 md:flex-row  lg:h-screen ">
       <Container className="flex flex-col gap-5  ">
-        <Typo className="font-normal text-6xl ">Théodore Samba</Typo>
+        <Typo className="font-normal text-7xl md:text-7xl ">
+          Théodore Samba
+        </Typo>
         <Typography className="text-xl font-normal ">
           Salut monde, je suis
         </Typography>
@@ -34,7 +36,7 @@ export default function HeroSection() {
           <span>{"Transformant vos idées en réalités numériques."}</span>
           {/* <span>{"passioné par le développement social"} </span>  */}
         </Typography>
-        <Container className=" mt-10 mb-4 flex justify-center p-2">
+        <Container className="mt-10 md:mt-20 flex justify-center p-2">
           <Link href={"/contact"}>
             <Btn className=" flex justify-center items-center gap-1 px-5 py-6">
               {"Contactez Moi"}
@@ -43,7 +45,7 @@ export default function HeroSection() {
           </Link>
         </Container>
       </Container>
-      <Container className="hidden lg:flex lg:justify-center items-start w-1/2">
+      <Container className="hidden md:basis-1/3  lg:flex lg:justify-center items-start w-1/2">
         <Image
           src={imageHero}
           height={400}

@@ -1,3 +1,4 @@
+import { P } from "@/styles/globalStyle";
 import { Container } from "@/ui/components/container/container";
 import { Typography } from "@/ui/components/typography/typography";
 import { Url } from "next/dist/shared/lib/router/router";
@@ -20,14 +21,14 @@ export default function RealisationDetail({
   className = "string",
 }: Props) {
   return (
-    <Container className={`${className} w-full my-4 flex flex-col gap-3`}>
+    <Container className={`${className} w-full mt-4 mb-10 flex flex-col gap-3`}>
       <Link href={link!} passHref legacyBehavior>
         <a
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col gap-1 w-[10rem]"
         >
-          <Typography variant="title-sm">{nom}</Typography>
+          <P>{nom}</P>
         </a>
       </Link>
       <Typography className="lg:w-full">{description}</Typography>
