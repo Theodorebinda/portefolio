@@ -7,7 +7,7 @@ import LinkToOtherPage from "@/ui/components/link-to-other-page/linkToOtherPage"
 
 export default function Realisation() {
   return (
-    <Container className="mx-4 lg:w-2/3 md:w-3/4 pt-10 md:pt-20 md:m-auto">
+    <Container className="mx-4 lg:w-2/3 md:w-3/4  ">
       <P>Realisation</P>
       <Container>
         {realisationList

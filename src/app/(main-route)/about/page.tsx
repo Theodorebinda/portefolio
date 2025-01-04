@@ -17,8 +17,8 @@ import { Span } from "@/styles/globalStyle";
 
 const About = () => {
   return (
-    <Container className="flex flex-col gap-3 px-4 lg:px-8 pt-14 lg:pt-3 lg:basis-4/5 select-none lg:mx-12 mx-auto">
-      <Container className="flex flex-col-reverse lg:flex-row-reverse lg:justify-between  items-center m-auto  gap-3 lg:h-screen ">
+    <Container className="flex flex-col gap-3 px-4  lg:basis-4/5 select-none  ">
+      <Container className="flex flex-col-reverse lg:flex-row-reverse lg:justify-between  items-center  gap-3  ">
         <Container className="md:basis-1/3 lg:flex lg:justify-center items-start">
           <Image
             src={photo}
@@ -29,7 +29,7 @@ const About = () => {
             loading="lazy"
           />
         </Container>
-        <Container className="flex flex-col items-center justify-between gap-10 md:gap-10 md:basis-1/2">
+        <Container className="flex flex-col items-center justify-between gap-10  ">
           <Container className="leading-relaxed text-start">
             <Typography className="text-xl font-normal">
               {

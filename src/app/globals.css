@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 body {
-  @apply mt-[8vh] md:mt-[10vh]
+  @apply mt-[8vh] md:mt-[10vh] md:mx-52 ;
 }
 
-.animate{
-  @apply transition-all duration-200 ease-in-out
+.animate {
+  @apply transition-all duration-200 ease-in-out;
 }
 
 .hamburger {
-  @apply cursor-pointer
+  @apply cursor-pointer;
 }
 
 .hamburger svg {
@@ -20,7 +20,7 @@ body {
   /* Define the transition for transforming the SVG */
   transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-  
+
 .line {
   @apply stroke-black;
   fill: none;
@@ -29,7 +29,7 @@ body {
   stroke-width: 2.5;
   /* Define the transition for transforming the Stroke */
   transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
-              stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .line-top-bottom {
@@ -50,13 +50,21 @@ body {
 }
 
 .glass-effect {
-  border: 1px solid #FFF;
-  background: linear-gradient(107deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.30) 100%);
+  border: 1px solid #fff;
+  background: linear-gradient(
+    107deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
   /* backdrop-filter: blur(40px); */
 }
 
 .gradiant-effect {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.75) 98.44%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.75) 98.44%
+  );
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -67,10 +75,12 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
   appearance: textfield;
 }
 @layer base {
   :root {
-    --radius: 0.5rem;}}
+    --radius: 0.5rem;
+  }
+}

@@ -29,8 +29,8 @@ const config: Config = {
   				Default: '#39ae44'
   			},
   			darkTheme: {
-  				body: '##222020',
-  				text: '##8f8e8e',
+  				body: '#222020',
+  				text: '#8f8e8e',
   				titre: '#000'
   			},
   			destructive: '#ff0035',
