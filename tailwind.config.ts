@@ -52,72 +52,8 @@ const config: Config = {
   			},
   			white_powder: '#fafaf2'
   		},
-  		fontSize: {
-  			display: [
-  				'4rem',
-  				{
-  					lineHeight: '120%',
-  					fontWeight: '300'
-  				}
-  			],
-  			'display-md': [
-  				'3rem',
-  				{
-  					lineHeight: '30%',
-  					fontWeight: '500'
-  				}
-  			],
-  			'title-lg': [
-  				'2rem',
-  				{
-  					lineHeight: '120%',
-  					fontWeight: '700'
-  				}
-  			],
-  			'title-base': [
-  				'1.5rem',
-  				{
-  					lineHeight: '120%',
-  					fontWeight: '700'
-  				}
-  			],
-  			'title-sm': [
-  				'1rem',
-  				{
-  					lineHeight: '120%',
-  					fontWeight: '600'
-  				}
-  			],
-  			'title-xs': [
-  				'0.85rem',
-  				{
-  					lineHeight: '120%',
-  					fontWeight: '600'
-  				}
-  			],
-  			'body-lg': [
-  				'1.5rem',
-  				{
-  					lineHeight: '120%',
-  					fontWeight: '600'
-  				}
-  			],
-  			'body-base': [
-  				'1rem',
-  				{
-  					lineHeight: '120%',
-  					fontWeight: '400'
-  				}
-  			],
-  			'body-sm': [
-  				'0.85rem',
-  				{
-  					lineHeight: '120%',
-  					fontWeight: '400'
-  				}
-  			]
-  		},
-  		borderRadius: {
+  	
+			borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply mt-[8vh] md:mt-[10vh] md:mx-52  md:pt-20 lg:pt-32 mx-5 pt-10;
+  @apply mt-[8vh] md:mt-[10vh] lg:mx-52   md:pt-20 lg:pt-32 mx-5 pt-10;
 }
 
 .animate {

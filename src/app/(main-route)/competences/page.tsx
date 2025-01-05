@@ -8,7 +8,7 @@ export default function Competences() {
   return (
     <Container className="md:h-screen  flex flex-col justify-between text-start text-xl font-normal leading-relaxed  lg:w-2/3 md:w-3/4">
       <Container className="flex flex-col justify-between text-start gap-10">
-        <P>Autre Competences</P>
+        <P className="font-normal md:text-5xl text-4xl">Autre Competences</P>
         <Container className="flex flex-col gap-4">
           <P>Electricien</P>
           <Typography className="text-xl font-normal leading-relaxed">

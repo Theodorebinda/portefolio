@@ -18,6 +18,18 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'media.licdn.com', // Ajoutez comme un autre objet
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'scontent-jnb2-1.xx.fbcdn.net', // Ajoutez comme un autre objet
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 };
