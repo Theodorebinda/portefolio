@@ -20,7 +20,7 @@ export const MainRoutes: AppLinks[] = [
   },
   {
     title: "Blog",
-    baseUrl: "/",
+    baseUrl: "/blog",
   },
 ];
 
