@@ -4,7 +4,8 @@ import { Typography } from "@/ui/components/typography/typography";
 import Image from "next/image";
 import { useState } from "react";
 import { Skeleton } from "./ui/skeleton";
-import { Pin } from "lucide-react";
+import { Linkedin, Pin } from "lucide-react";
+import ReviewsPage from "./reviewSection";
 
 const AboutSection = () => {
   const [loading, setLoading] = useState(true);
@@ -53,8 +54,9 @@ const AboutSection = () => {
           </Typography>
         </Container>
       </Container>
-      <Container className=" bg-[#292524] h-auto rounded-md p-4 shadow-xl drop-shadow-2xl flex flex-col items-start justify-start">
-        <Container className="flex justify-start items-center gap-5">
+      <ReviewsPage />
+      {/* <Container className=" bg-[#292524] h-auto rounded-md p-4 shadow-xl drop-shadow-2xl flex flex-col items-start justify-start">
+        <Container className="flex justify-start items-center gap-5 w-full">
           <Image
             src="https://lh3.googleusercontent.com/a/ACg8ocKi7_sRkEisPwvp2TKaQQXOPC0DjsoGJ24BReynndwrm_7InhzT=s288-c-no"
             height={40} // Ajusté pour correspondre à la taille de l'avatar
@@ -62,18 +64,21 @@ const AboutSection = () => {
             alt="theodore"
             className="object-cover rounded-full" // Ajout d'une marge en bas
           />
-          <Container>
-            <Typography className="text-lg font-bold">Theodore</Typography>
-            <Typography className="text-sm text-gray-400">
-              Développeur Frontend
-            </Typography>
+          <Container className="flex justify-between w-full">
+            <Container>
+              <Typography className="text-lg font-bold">Theodore</Typography>
+              <Typography className="text-sm text-gray-400">
+                Développeur Frontend
+              </Typography>
+            </Container>
+            <Linkedin />
           </Container>
         </Container>
 
         <Typography className="text-sm text-center mt-2">
           {"Une expérience incroyable, très satisfait des résultats!"}
         </Typography>
-      </Container>
+      </Container> */}
     </Container>
   );
 };
