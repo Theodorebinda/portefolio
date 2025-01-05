@@ -1,4 +1,5 @@
-import { Linkedin, X } from "lucide-react";
+import { P } from "@/styles/globalStyle";
+import { Typography } from "@/ui/components/typography/typography";
 import Image from "next/image";
 import React from "react";
 import { FaFacebook, FaLinkedin, FaTwitter, FaX } from "react-icons/fa6";
@@ -11,7 +12,7 @@ interface Review {
 }
 const ReviewCard: React.FC<{ review: Review }> = ({ review }) => {
   return (
-    <div className="bg-[#292524] h-[1hv]  rounded-md p-4 shadow-xl drop-shadow-2xl flex flex-col items-start justify-start z-[-20]">
+    <div className="bg-[#2f2d2d] h-[1hv]  rounded-md p-4 shadow-xl drop-shadow-2xl flex flex-col items-start justify-start z-[-20] text-slate-300">
       <div className="flex justify-start items-center gap-5 w-full mb-4">
         <Image
           src={review.photo}
@@ -22,8 +23,8 @@ const ReviewCard: React.FC<{ review: Review }> = ({ review }) => {
         />
         <div className="flex justify-between w-full">
           <div>
-            <h3 className="text-lg font-bold">{review.name}</h3>
-            <p className="text-xs text-gray-300">{review.role}</p>
+            <p className="text-lg  font-bold">{review.name}</p>
+            <p className="text-xs text-slate-400">{review.role}</p>
           </div>
           <div>
             {/* Exemple d'icône selon la provenance */}
