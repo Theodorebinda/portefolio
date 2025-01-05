@@ -17,6 +17,7 @@ import { FaMoon } from "react-icons/fa6";
 import { FaSun } from "react-icons/fa";
 import { RiMenu2Line } from "react-icons/ri";
 import LinkMediaSocial from "@/components/linkSocialMedia";
+import { useEffect, useState } from "react";
 
 export const ThemeToggleButton = styled.button`
   color: ${(props) => props.theme.text};
@@ -35,9 +36,24 @@ export const MobileNavigation = ({
   currentTheme,
   className,
 }: Props) => {
+  const [isScrolled, setIsScrolled] = useState(false); // État pour suivre le défilement
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0); // mise à jour l'état en fonction de la position de défilement
+    };
+
+    window.addEventListener("scroll", handleScroll); //  l'écouteur d'événements
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll); // Nettoie l'écouteur d'événements
+    };
+  }, []);
   return (
     <header
-      className={clsx("fixed top-0 left-0 right-0 min-w-full ", className)}
+      className={clsx("fixed top-0 left-0 right-0 min-w-full ", className, {
+        "shadow-md": isScrolled,
+      })}
     >
       <Container
         className={`${

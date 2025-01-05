@@ -8,7 +8,9 @@ import { Typo } from "@/styles/globalStyle";
 export default function RealisationSection() {
   return (
     <Container className=" ">
-      <Typo className="underline py-4 ">Dernière Réalisation</Typo>
+      <Typo className=" py-4 font-normal text-5xl md:text-5xl">
+        Recent Projet
+      </Typo>
       <Container className="md:w-3/4 mb-4">
         {realisationList
           .slice()
