@@ -4,6 +4,9 @@ import withPWA from "next-pwa";
 
 const nextConfig = {
   reactStrictMode: true, // Active strict mode
+  images: {
+    domains: ['lh3.googleusercontent.com'],
+  },
 };
 
 export default withPWA({
