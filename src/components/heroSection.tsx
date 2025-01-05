@@ -29,10 +29,9 @@ export default function HeroSection() {
           />
         </Container>
         <Typography className="text-xl font-normal flex flex-col leading-relaxed">
-          <span>
-            {" Créateur d'expériences digitales innovantes et passionnantes."}
-          </span>
-          <span>{"Transformant vos idées en réalités numériques."}</span>
+          <span>{" Je suis passionné par 🎨 les systèmes de conception,"}</span>
+          <span>{"♿️ l'accessibilité, ⚙️ les machines d'état,"}</span>
+          <span>{" et 😍 l'expérience utilisateur."}</span>
         </Typography>
         <Container className="mt-10 mb-4 flex justify-center p-2">
           <Link href={"/contact"}>
