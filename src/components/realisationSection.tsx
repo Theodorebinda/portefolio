@@ -8,7 +8,7 @@ import { Typo } from "@/styles/globalStyle";
 export default function RealisationSection() {
   return (
     <Container className=" ">
-      <Typo className=" py-4 font-normal text-7xl md:text-5xl">
+      <Typo className=" py-4 font-normal text-5xl md:text-5xl">
         Recent Projet
       </Typo>
       <Container className="md:w-3/4 mb-4">
