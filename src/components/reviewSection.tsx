@@ -31,14 +31,14 @@ const reviews = [
     name: "Sacre Mbiku",
     role: "Developer|| Designer UI/UX",
     review:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora iste adipisci, officiis atque perferendis dolore assumenda laudantium magnam provident. Blanditiis, magni? Exercitationem, quis quia! Corrupti ipsum, eos blanditiis rem, magnam, perspiciatis aperiam perferendis cum voluptatem dolores natus voluptate facilis nesciunt expedita aut eligendi excepturi veniam laboriosam doloremque quasi architecto. Animi?",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora iste adipisci, officiis atque perferendis ",
     origin: "LinkedIn",
   },
 ];
 
 const ReviewsPage = () => {
   return (
-    <div className="py-8 grid md:grid-cols-2 gap-8 ">
+    <div className=" grid md:grid-cols-2 gap-8 ">
       {reviews.map((review, index) => (
         <ReviewCard key={index} review={review} />
       ))}

@@ -5,7 +5,20 @@ import withPWA from "next-pwa";
 const nextConfig = {
   reactStrictMode: true, // Active strict mode
   images: {
-    domains: ['lh3.googleusercontent.com', 'avatars.githubusercontent.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com', // Doit être une chaîne
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com', // Ajoutez comme un autre objet
+        port: '',
+        pathname: '/**',
+      },
+    ],
   },
 };
 

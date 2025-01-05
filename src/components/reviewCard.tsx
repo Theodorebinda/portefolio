@@ -11,7 +11,7 @@ interface Review {
 }
 const ReviewCard: React.FC<{ review: Review }> = ({ review }) => {
   return (
-    <div className="bg-[#292524] h-auto rounded-md p-4 shadow-xl drop-shadow-2xl flex flex-col items-start justify-start z-[-20]">
+    <div className="bg-[#292524] h-[1hv]  rounded-md p-4 shadow-xl drop-shadow-2xl flex flex-col items-start justify-start z-[-20]">
       <div className="flex justify-start items-center gap-5 w-full mb-4">
         <Image
           src={review.photo}
@@ -42,7 +42,7 @@ const ReviewCard: React.FC<{ review: Review }> = ({ review }) => {
           </div>
         </div>
       </div>
-      <p className="text-sm text-left mt-2">{review.review}</p>
+      <p className="text-sm text-left mt-2 ">{review.review}</p>
     </div>
   );
 };
