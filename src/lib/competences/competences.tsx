@@ -1,124 +1,83 @@
-import { Competences, CompetencesHard } from "@/types/competences";
-import autonome from "/public/images/Programming-bro 1 (1).png";
-import equipe from "/public/images/Collab-pana 1.png";
-import resolProblem from "/public/images/resolutionProbleme.png";
-import resilience from "/public/images/Light bulb-bro 1 (1).png";
-import htmlIcone from "/public/images/htmlLogo.svg";
-import nextJS from "/public/images/next.svg";
-import jsIcone from "/public/images/3d-javascript-logo-design-free-png 1.svg";
-import reactIcone from "/public/images/react.svg";
-import nodeIcone from "/public/images/nodeJs.svg";
-import tailwind from "/public/images/tailwindCssLogo.svg";
-import wordPressIcon from "/public/images/R-removebg-preview 1.svg";
-import prismaIcon from "/public/images/prismaLogo.svg";
-import typescriptIcon from "/public/png-transparent-typescript-language-javascript-static-type-typescript-logo-frontend-3d-icon-thumbnail-removebg-preview.png";
-import flutter from "/public/images/flutter_icon.png";
+import { toolsAndSoftward } from "@/types/competences";
+import nextJS from "/public/svg/nextjs.svg";
+import express from "/public/svg/express.svg";
+import jsIcone from "/public/svg/javascript.svg";
+import reactIcone from "/public/svg/React.svg";
+import nodeIcone from "/public/svg/node.svg";
+import tailwind from "/public/svg/tailwind.svg";
+import dart from "/public/svg/dart.svg";
+import prismaIcon from "/public/svg/prismaLogo.svg";
+import typescriptIcon from "/public/svg/typescript.svg";
+import flutter from "/public/svg/flutter.svg";
+import figma from "/public/svg/figma.svg";
+import notion from "/public/svg/notion.svg";
+import github from "/public/svg/github.svg";
 
-export const ListOfSoftCompetences: Competences[] = [
+export const ListOfHardCompetences: toolsAndSoftward[] = [
   {
     id: 1,
-    image: autonome,
-    name: "Autonomie et prise d'initiatives",
-    description:
-      "Autonome et proactif, n'hésitant pas à prendre des initiatives pour faire avancer des projets.",
-  },
-  {
-    id: 2,
-    image: equipe,
-    name: "Travaille en Equpipe",
-    description:
-      "Je suis collaboratif, sachant écouter les autres et contribuer de manière constructive.",
-  },
-  {
-    id: 3,
-    image: resolProblem,
-    name: "Curiosité et soif d'apprendre",
-    description:
-      "Je fais preuve d'une grande curiosité intellectuelle et j'aime me tenir informé des dernières évolutions technologiques afin d'enrichir en permanence mes compétences.",
-  },
-  {
-    id: 4,
-    image: resilience,
-    name: "Resilience",
-    description:
-      "Je fais preuve de résilience face aux défis, sachant rebondir et surmonter les obstacles avec détermination.",
-  },
-  {
-    id: 5,
-    image: autonome,
-    name: "Adaptabilité et flexibilité",
-    description:
-      "Je sais m'adapter rapidement aux changements et aux nouvelles situations, ce qui me permet d'être réactif",
-  },
-  {
-    id: 6,
-    image: autonome,
-    name: "Patience et pédagogie",
-    description:
-      "Je sais faire preuve de patience et de pédagogie pour expliquer des concepts techniques à des interlocuteurs non techniques.",
-  },
-];
-
-export const ListOfHardCompetences: CompetencesHard[] = [
-  {
-    id: 1,
-    image: htmlIcone,
-    name: "HTML5",
-    progression: 80,
-  },
-  {
-    id: 2,
     image: nextJS,
     name: "NextJs",
-    progression: 50,
+  },
+  {
+    id: 2,
+    image: jsIcone,
+    name: "Javascript",
   },
   {
     id: 3,
-    image: jsIcone,
-    name: "Javascript",
-    progression: 50,
+    image: reactIcone,
+    name: "ReactJs",
+  },
+  {
+    id: 11,
+    image: figma,
+    name: "figma",
+  },
+  {
+    id: 12,
+    image: github,
+    name: "github",
+  },
+  {
+    id: 13,
+    image: notion,
+    name: "notion",
   },
   {
     id: 4,
-    image: reactIcone,
-    name: "ReactJs",
-    progression: 70,
-  },
-  {
-    id: 5,
     image: nodeIcone,
     name: "NodeJs",
-    progression: 30,
   },
 
   {
-    id: 6,
+    id: 5,
     image: typescriptIcon,
     name: "Typscript",
-    progression: 40,
+  },
+  {
+    id: 6,
+    image: tailwind,
+    name: "Tailwind",
   },
   {
     id: 7,
-    image: tailwind,
-    name: "Tailwind",
-    progression: 90,
+    image: dart,
+    name: "dart",
   },
   {
     id: 8,
-    image: wordPressIcon,
-    name: "Wordpress",
-    progression: 90,
+    image: express,
+    name: "express",
   },
   {
     id: 9,
     image: flutter,
     name: "Flutter",
-    progression: 50,
   },
   {
     id: 10,
     image: prismaIcon,
     name: "Prisma",
-    progression: 50,
   },
 ];
