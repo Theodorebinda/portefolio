@@ -26,18 +26,16 @@ const AboutSection = () => {
               loading="lazy"
               onLoad={() => setLoading(false)}
             />
-            <Container className="flex-col gap-10">
-              <Typography className="text-4xl md:text-7xl   ">
-                Je concois
-              </Typography>
-            </Container>
+            <Typography className=" font-normal text-4xl md:text-7xl">
+              Je concois
+            </Typography>
           </Container>
 
           <Typography className="md:text-6xl text-4xl  font-bold  ">
             des applications
           </Typography>
           <Container className="flex items-center gap-8">
-            <Typography className="md:text-6xl text-xl font-bold">
+            <Typography className="md:text-6xl text-4xl font-bold">
               web et mobile{" "}
             </Typography>
             <Pin className="md:hidden flex" color="#b2d2fa" fill="#b2d2fa" />
