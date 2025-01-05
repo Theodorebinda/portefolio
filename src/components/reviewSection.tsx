@@ -24,13 +24,21 @@ const reviews = [
     name: "Marie Curie",
     role: "Designer UI/UX",
     review: "Très bonne collaboration, travail de qualité.",
-    origin: "Twitter",
+    origin: "LinkedIn",
+  },
+  {
+    photo: "https://avatars.githubusercontent.com/u/141269644?s=100&v=4",
+    name: "Sacre Mbiku",
+    role: "Developer|| Designer UI/UX",
+    review:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora iste adipisci, officiis atque perferendis dolore assumenda laudantium magnam provident. Blanditiis, magni? Exercitationem, quis quia! Corrupti ipsum, eos blanditiis rem, magnam, perspiciatis aperiam perferendis cum voluptatem dolores natus voluptate facilis nesciunt expedita aut eligendi excepturi veniam laboriosam doloremque quasi architecto. Animi?",
+    origin: "LinkedIn",
   },
 ];
 
 const ReviewsPage = () => {
   return (
-    <div className="py-8 grid grid-cols-2 gap-4">
+    <div className="py-8 grid md:grid-cols-2 gap-8 ">
       {reviews.map((review, index) => (
         <ReviewCard key={index} review={review} />
       ))}
