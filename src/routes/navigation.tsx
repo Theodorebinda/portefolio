@@ -30,7 +30,7 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
       return;
     }
   };
-  const [isScrolled, setIsScrolled] = useState(false); // État pour suivre le défilement
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,7 +48,7 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
     <header
       className={clsx(
         //  'text-primary-Default',
-        "fixed top-0 left-0 right-0 min-w-full   ",
+        "fixed top-0 left-0 right-0 max-w-full   ",
         className,
         { "shadow-md": isScrolled }
       )}
@@ -56,7 +56,11 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
       <Container
         className={`${currentTheme === "light" ? "bg-white" : "bg-[#1c1917]"} `}
       >
-        <Container className="mx-52 flex flex-row items-center w-ful justify-between   h-[7rem]">
+        <Container
+          className={`mx-4 md:mx-36 flex flex-row ${
+            isScrolled ? "items-center" : "items-end"
+          } max-w-full justify-between h-[7rem] `}
+        >
           <Link href="/" className="flex justify-between items-center">
             <div className="bg-[#b2d2fa] hover:bg-[#5182be] w-6 rounded-full h-6"></div>
             {currentTheme === "light" ? (
@@ -75,7 +79,7 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
               </Typography>
             )}
           </Link>
-          <nav className="flex items-center justify-between gap-10">
+          <nav className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-10">
             {MainRoutes.map((route) => (
               <Typography
                 key={route.title}
@@ -101,7 +105,7 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
               </Typography>
             ))}
           </nav>
-          <Container className="flex justify-between items-center gap-10">
+          <Container className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-10">
             <LinkMediaSocial currentTheme={currentTheme} />
             <ThemeToggleButton onClick={toggleTheme} aria-label={"theme"}>
               {currentTheme === "light" ? (
