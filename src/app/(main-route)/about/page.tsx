@@ -11,7 +11,7 @@ const About = () => {
       <ToolsAndSoftwareSection />
       <LinkToOtherPage
         className="md:ml-2"
-        texte={"Autres Compétences"}
+        texte={"Détails Carrières ? Ici 😊"}
         link={"/competences"}
       />
     </Container>

@@ -5,24 +5,6 @@ import { Typography } from "@/ui/components/typography/typography";
 import Image from "next/image";
 
 const ToolsAndSoftwareSection = () => {
-  const tools = [
-    "Visual Studio Code",
-    "Git",
-    "Postman",
-    "Figma",
-    "Docker",
-    "Node.js",
-  ];
-
-  const software = [
-    "React",
-    "Next.js",
-    "Express",
-    "MongoDB",
-    "Tailwind CSS",
-    "Styled Components",
-  ];
-
   return (
     <Container className="mt-16">
       <Container className="flex flex-col gap-3">
@@ -40,14 +22,14 @@ const ToolsAndSoftwareSection = () => {
         </Container>
       </Container>
 
-      <Container className="flex md:flex-row mt-10">
-        <Container className="flex  items-center justify-start gap-3">
+      <Container className="flex md:flex-row mt-10 flex-wrap">
+        <Container className="flex flex-wrap  items-center justify-start gap-3">
           {ListOfHardCompetences.map((competence) => (
             <div key={competence.id}>
               <Image
                 src={competence.image}
-                width={70}
-                height={70}
+                width={50}
+                height={50}
                 alt={competence.name}
               />
             </div>
