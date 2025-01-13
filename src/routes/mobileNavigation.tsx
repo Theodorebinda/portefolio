@@ -1,3 +1,4 @@
+"use client";
 import { Typography } from "@/ui/components/typography/typography";
 import styled from "styled-components";
 import Link from "next/link";
@@ -37,6 +38,7 @@ export const MobileNavigation = ({
   className,
 }: Props) => {
   const [isScrolled, setIsScrolled] = useState(false); // État pour suivre le défilement
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -92,8 +94,8 @@ export const MobileNavigation = ({
           </ThemeToggleButton>
         </Container>
 
-        <Sheet>
-          <SheetTrigger>
+        <Sheet open={open} onOpenChange={setOpen}>
+          <SheetTrigger asChild>
             <RiMenu2Line size={32} aria-label={"menu"} />
           </SheetTrigger>
           <SheetContent
@@ -111,16 +113,21 @@ export const MobileNavigation = ({
                       component="p"
                       className="pt-10 my-auto "
                     >
-                      <ActiveLink href={route.baseUrl!}>
+                      <Link
+                        href={route.baseUrl!}
+                        onClick={() => setOpen(false)}
+                      >
                         {route.title}
-                      </ActiveLink>
+                      </Link>
                     </Typography>
                   ))}
                 </Container>
               </nav>
               <Container className="flex flex-col justify-start gap-2">
                 <Typography className="font-semibold" variant="body-base">
-                  Contact
+                  <Link href={"/contact"} onClick={() => setOpen(false)}>
+                    Contact
+                  </Link>
                 </Typography>
                 <span>
                   Email :
