@@ -4,11 +4,29 @@ import HeroSectionAbout from "@/components/heroSectionAbout";
 import ToolsAndSoftwareSection from "@/components/sectionToolsAndSoftward";
 import LinkToOtherPage from "@/ui/components/link-to-other-page/linkToOtherPage";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const About = () => {
   const [showMore, setShowMore] = useState(false);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+      if (window.scrollY === 0) {
+        // Vérifie si on est en haut de la page
+        setShowMore(false); // Ferme la section si on est en haut
+        setShowScrollToTop(false); // Cache le bouton de remontée
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll); //  l'écouteur d'événements
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll); // Nettoie l'écouteur d'événements
+    };
+  }, []);
   const toggleShowMore = () => {
     setShowMore((prev) => {
       if (!prev) {

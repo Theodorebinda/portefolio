@@ -34,7 +34,7 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0); // mise à jour l'état en fonction de la position de défilement
+      setIsScrolled(window.scrollY > 0);
     };
 
     window.addEventListener("scroll", handleScroll); //  l'écouteur d'événements
