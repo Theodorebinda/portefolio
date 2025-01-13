@@ -1,9 +1,5 @@
 import { AppLinks } from "@/types/app-links";
 import { Presentation, Home, Settings2 } from "lucide-react";
-import Linkedin from "/public/icons/linkedin.png";
-import Facebook from "/public/icons/facebook.png";
-import Youtube from "/public/icons/youtube.png";
-import X from "/public/icons/TwitterX.png";
 
 export const MainRoutes: AppLinks[] = [
   {
@@ -11,7 +7,7 @@ export const MainRoutes: AppLinks[] = [
     baseUrl: "/about",
   },
   {
-    title: "Parcours",
+    title: "Carrière",
     baseUrl: "/competences",
   },
   {
