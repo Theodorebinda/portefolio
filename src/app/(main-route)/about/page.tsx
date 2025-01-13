@@ -5,6 +5,7 @@ import ToolsAndSoftwareSection from "@/components/sectionToolsAndSoftward";
 import LinkToOtherPage from "@/ui/components/link-to-other-page/linkToOtherPage";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { ChevronDownCircle, ChevronUpCircle } from "lucide-react";
 
 const About = () => {
   const [showMore, setShowMore] = useState(false);
@@ -66,9 +67,9 @@ const About = () => {
         {!showMore && ( // Cacher le bouton si le contenu est ouvert
           <button
             onClick={toggleShowMore}
-            className="text-blue-500 animate-bounce "
+            className="text-[#b2d2fa] hover:text-[#5182be] animate-bounce "
           >
-            ▼ {/* Flèche vers le bas */}
+            <ChevronDownCircle size={50} />
           </button>
         )}
         {showMore && (
@@ -85,9 +86,9 @@ const About = () => {
         {showScrollToTop && ( // Afficher le bouton de remontée
           <button
             onClick={scrollToTop}
-            className="text-blue-500 fixed bottom-4 right-4"
+            className="text-[#b2d2fa] hover:text-[#5182be] animate-bounce fixed bottom-10 right-10"
           >
-            ▲ {/* Flèche vers le haut */}
+            <ChevronUpCircle size={50} />
           </button>
         )}
       </div>
