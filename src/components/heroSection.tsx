@@ -11,7 +11,7 @@ import { ChevronRight } from "lucide-react";
 // src/components/heroSection.tsx
 export default function HeroSection() {
   return (
-    <Container className="flex flex-col md:items-start md:justify-between  md:flex-row lg:h-screen">
+    <Container className="flex flex-col items-start justify-between flex-wrap  lg:flex-row h-screen">
       <Container className="flex flex-col gap-5 md:basis-1/2">
         <Typo className="font-normal text-6xl md:text-6xl">Théodore Samba</Typo>
         <Typography className="text-xl font-normal">
