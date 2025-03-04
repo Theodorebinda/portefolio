@@ -10,7 +10,7 @@ import { LanguageProvider } from "@/contexts/language/LanguageContext";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter", // Permet d'utiliser
+  variable: "--font-inter", // Permet d'utili
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], // Tutes les variantes
 });
 
