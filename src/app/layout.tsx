@@ -9,7 +9,7 @@ import { LanguageProvider } from "@/contexts/language/LanguageContext";
 // Configuration optimisée de la police Inter
 const inter = Inter({
   subsets: ["latin"],
-  display: "swap", // Meilleur affichage pendant le chargement
+  display: "swap",
   variable: "--font-inter", // Permet d'utiliser la police via CSS variable
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], // Toutes les variantes
 });
@@ -140,21 +140,18 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }}
         />
         {/* Meta tags pour autoriser les crawlers d'IA */}
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-        <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta
+          name="robots"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        />
+        <meta
+          name="googlebot"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        />
         {/* Meta tags pour les images */}
-        <meta
-          name="image"
-          content={image1Url}
-        />
-        <meta
-          property="og:image:secure_url"
-          content={image1Url}
-        />
-        <meta
-          property="og:image:secure_url"
-          content={image2Url}
-        />
+        <meta name="image" content={image1Url} />
+        <meta property="og:image:secure_url" content={image1Url} />
+        <meta property="og:image:secure_url" content={image2Url} />
         {/* Permettre l'indexation des images par Google */}
         <link rel="canonical" href="https://theodorebinda.me" />
       </head>
