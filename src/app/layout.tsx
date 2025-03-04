@@ -10,7 +10,7 @@ import { LanguageProvider } from "@/contexts/language/LanguageContext";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter", // Permet d'utiliser la police via
+  variable: "--font-inter", // Permet d'utiliser la police
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], // Tutes les variantes
 });
 
