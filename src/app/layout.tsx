@@ -11,7 +11,7 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter", // Permet d'utiliser la police via CS
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], // Toutes les variantes
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], // Tutes les variantes
 });
 
 export const metadata: Metadata = {
