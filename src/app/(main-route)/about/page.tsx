@@ -10,10 +10,9 @@ import { useTrackPageView } from "@/lib/hooks/useTrackPageView";
 import { useTranslation } from "@/lib/hooks/useTranslation";
 import dynamic from "next/dynamic";
 
-// Lazy load framer-motion uniquement quand nécessaire
 const MotionDiv = dynamic(
   () => import("framer-motion").then((mod) => mod.motion.div),
-  { ssr: false }
+  { ssr: false },
 );
 
 const About = () => {
