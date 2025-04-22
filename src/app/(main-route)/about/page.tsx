@@ -6,6 +6,7 @@ import LinkToOtherPage from "@/ui/components/link-to-other-page/linkToOtherPage"
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { ChevronDownCircle, ChevronUpCircle } from "lucide-react";
+import AboutMe from "@/components/detailAbout";
 
 const About = () => {
   const [showMore, setShowMore] = useState(false);
@@ -64,7 +65,7 @@ const About = () => {
         link={"/competences"}
       />
       <div className="flex flex-col items-center mt-4">
-        {!showMore && ( // Cacher le bouton si le contenu est ouvert
+        {!showMore && (
           <button
             onClick={toggleShowMore}
             className="text-[#b2d2fa] hover:text-[#5182be] animate-bounce "
@@ -74,13 +75,13 @@ const About = () => {
         )}
         {showMore && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }} // État initial
-            animate={{ opacity: 1, height: "auto" }} // État animé
-            exit={{ opacity: 0, height: 0 }} // État de sortie
-            transition={{ duration: 0.3 }} // Durée de l'animation
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
             className="mt-20"
           >
-            <HeroSectionAbout />
+            <AboutMe />
           </motion.div>
         )}
         {showScrollToTop && ( // Afficher le bouton de remontée

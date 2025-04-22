@@ -30,6 +30,12 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'photos.fife.usercontent.google.com', // Ajoutez comme un autre objet
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 };

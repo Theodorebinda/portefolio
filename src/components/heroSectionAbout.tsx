@@ -42,7 +42,7 @@ const HeroSectionAbout = () => {
         </Container>
         <Container>
           <a
-            href="/Mon CV.pdf"
+            href="/CV Theodore.pdf"
             download="CV.pdf"
             target="_blank"
             rel="noopener noreferrer"

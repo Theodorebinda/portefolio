@@ -8,7 +8,6 @@ import Loader from "@/app/loader/loader";
 import { useTheme } from "@/lib/useTheme/useTheme";
 import NavigationWrapper from "@/routes/navigationWraper";
 import React from "react";
-import SpotifyPlayer from "@/components/SpotifyPlayer";
 
 function MainRoutesLayout({ children }: { children: React.ReactNode }) {
   const { theme, toggleTheme } = useTheme();
@@ -23,7 +22,7 @@ function MainRoutesLayout({ children }: { children: React.ReactNode }) {
     <ThemeProvider theme={selectedTheme}>
       <GlobalStyle />
       <NavigationWrapper toggleTheme={toggleTheme} currentTheme={theme} />
-      <SpotifyPlayer playlistUrl="https://open.spotify.com/embed/playlist/679wCT6dVMDBxrYa5NcrXL?utm_source=generator" />
+      {/* <SpotifyPlayer playlistUrl="https://open.spotify.com/embed/playlist/679wCT6dVMDBxrYa5NcrXL?utm_source=generator" /> */}
       {children}
       <Footer />
     </ThemeProvider>
