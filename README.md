@@ -80,7 +80,7 @@ Déployer ce portfolio est un jeu d'enfant grâce à [Vercel](https://vercel.com
 2. Importez votre dépôt Git.
 3. Laissez la magie opérer : votre site sera déployé en quelques clics.
 
-Le portfolio actuel est accessible ici : [https://theodore-samba.vercel.app/](theodore-samba).  
+Le portfolio actuel est accessible ici : [/](https://theodore-samba.vercel.app).  
 (P.S. Oui, je n'ai pas encore un domaine personnalisé, mais ça viendra !)
 
 ---
