@@ -1,42 +1,9 @@
-// import { Realisation } from "@/types/realisations";
-// import second from "/public/images/screencapture-opi-b.png";
-// import mentor from "/public/images/screencapture-chef-d-oeuvre-s.png";
-// import monyaya from "/public/images/Capture_monyaya.png";
-
-// export const realisationList: Realisation[] = [
-//   {
-//     id: 1,
-//     nom: "OPI-B",
-//     link: "https://opi-b.bprod.top/",
-//     description:
-//       "Créé dans le but de s'exercer, ce projet est une plateforme de découverte et de réservation de destinations touristiques en République Démocratique du Congo.",
-//     responsable: "Jonathan Smith",
-//     image: second,
-//   },
-//   {
-//     id: 2,
-//     nom: "mentor conect",
-//     link: "#",
-//     description:
-//       "Connect Mentor est une plateforme qui met en relation des personnes souhaitant apprendre avec des mentors qualifiés dans le domaine concerné.",
-//     responsable: "Jonathan Smith",
-//     image: mentor,
-//   },
-//   {
-//     id: 3,
-//     nom: "Monyaya",
-//     link: "https://monyaya.com",
-//     description:
-//       "Monyaya est une plateforme qui connecte les professionnels(yaya) aux apprenants pour des sessions de mentorat ou de formation pratique dans divers domaines.",
-//     responsable: "Gael ",
-//     image: monyaya,
-//   },
-// ];
 import { Project } from "@/types/projet-type";
 import second from "/public/images/screencapture-opi-b.png";
 import mentor from "/public/images/screencapture-chef-d-oeuvre-s.png";
 import monyaya from "/public/images/Capture_monyaya.png";
-import { FaGithub, FaGlobe } from "react-icons/fa";
+import Lukatout from "/public/images/Design sans titre (1).png";
+import { FaAppStore, FaGithub, FaGlobe, FaMobile } from "react-icons/fa";
 
 export const projectsData: Project[] = [
   {
@@ -102,18 +69,44 @@ export const projectsData: Project[] = [
         label: "Website",
         url: "https://monyaya.com",
       },
-      {
-        icon: <FaGithub />,
-        label: "GitHub",
-        url: "https://github.com/username/opi-b",
-      },
+      // {
+      //   icon: <FaGithub />,
+      //   label: "GitHub",
+      //   url: "https://github.com/username/opi-b",
+      // },
     ],
     stats: [
       { label: "PROFESSIONNELS", value: "200+" },
       { label: "FORMATIONS", value: "30+" },
     ],
     image: monyaya,
-    logo: "/images/monyaya-logo.svg", // À remplacer par votre logo si disponible
+    logo: "/images/monyaya-logo.svg",
+    responsable: "Gael",
+  },
+  {
+    id: "Lukatout_app",
+    name: "Lukatout",
+    description:
+      "Plateforme connectant des professionnels (yaya) à des apprenants pour des sessions de mentorat ou formation pratique.",
+    type: "Plateforme SaaS",
+    links: [
+      {
+        icon: <FaAppStore />,
+        label: "AppStore",
+        url: "#",
+      },
+      {
+        icon: <FaMobile />,
+        label: "PlayStore",
+        url: "#",
+      },
+    ],
+    stats: [
+      { label: "PROFESSIONNELS", value: "200+" },
+      { label: "FORMATIONS", value: "30+" },
+    ],
+    image: Lukatout,
+    logo: "/images/monyaya-logo.svg",
     responsable: "Gael",
   },
 ];
