@@ -48,16 +48,18 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
     <header
       className={clsx(
         //  'text-primary-Default',
-        "fixed top-0 left-0 right-0 max-w-full   ",
+        "fixed top-0 left-0 right-0 max-w-full md:mx-48  ",
         className,
         { "shadow-md": isScrolled }
       )}
     >
       <Container
-        className={`${currentTheme === "light" ? "bg-white" : "bg-[#1c1917]"} `}
+        className={`${
+          currentTheme === "light" ? "bg-white  px-10" : "bg-[#1c1917]  px-10"
+        } `}
       >
         <Container
-          className={`mx-4 md:mx-36 flex flex-row ${
+          className={`mx-4  flex flex-row md:mx-auto  py-8 max-w-screen-xl ${
             isScrolled ? "items-center" : "items-end"
           } max-w-full justify-between h-[7rem] `}
         >

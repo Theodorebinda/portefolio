@@ -1,10 +1,12 @@
 "use client";
+import { useTrackPageView } from "@/lib/hooks/useTrackPageView";
 import { P, Typo } from "@/styles/globalStyle";
 import { Container } from "@/ui/components/container/container";
 import LinkToOtherPage from "@/ui/components/link-to-other-page/linkToOtherPage";
 import { Typography } from "@/ui/components/typography/typography";
 
 export default function Competences() {
+  useTrackPageView();
   return (
     <Container className="md:h-screen  flex flex-col justify-between text-start text-xl font-normal leading-relaxed  lg:w-2/3 md:w-3/4">
       <Container className="flex flex-col justify-between text-start gap-10">

@@ -7,6 +7,7 @@ import imageHero from "/public/theodore-removebg-preview.png";
 import Link from "next/link";
 import { Btn, Typo } from "@/styles/globalStyle";
 import { ChevronRight } from "lucide-react";
+import { trackEvent } from "@/utils/trackEvent";
 
 // src/components/heroSection.tsx
 export default function HeroSection() {
@@ -35,7 +36,10 @@ export default function HeroSection() {
         </Typography>
         <Container className="mt-10 mb-4 flex justify-center p-2">
           <Link href={"/contact"}>
-            <Btn className="flex justify-center items-center gap-1 px-5 py-6">
+            <Btn
+              className="flex justify-center items-center gap-1 px-5 py-6"
+              onClick={() => trackEvent("click", "Download", "CV Download")}
+            >
               {"Contactez Moi"}
               <ChevronRight className="w-5 h-5 font-light" />
             </Btn>

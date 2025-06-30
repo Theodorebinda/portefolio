@@ -14,6 +14,12 @@ const nextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'scontent.ffih1-2.fna.fbcdn.net', // Doit être une chaîne
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
         hostname: 'avatars.githubusercontent.com', // Ajoutez comme un autre objet
         port: '',
         pathname: '/**',
