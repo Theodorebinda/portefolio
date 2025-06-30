@@ -1,4 +1,4 @@
-# Portfolio
+ju# Portfolio
 
 Ce projet est un portfolio interactif développé avec [Next.js](https://nextjs.org/) et [Tailwind CSS](https://tailwindcss.com/), conçu pour mettre en valeur mes compétences, mes expériences et mes projets.
 
@@ -80,7 +80,7 @@ Déployer ce portfolio est un jeu d'enfant grâce à [Vercel](https://vercel.com
 2. Importez votre dépôt Git.
 3. Laissez la magie opérer : votre site sera déployé en quelques clics.
 
-Le portfolio actuel est accessible ici : [https://portefolio-gules.vercel.app/](https://portefolio-gules.vercel.app/).  
+Le portfolio actuel est accessible ici : [https://theodore-samba.vercel.app/](theodore-samba).  
 (P.S. Oui, je n'ai pas encore un domaine personnalisé, mais ça viendra !)
 
 ---
