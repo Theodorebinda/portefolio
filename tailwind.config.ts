@@ -50,10 +50,19 @@ const config: Config = {
   				'950': '#1b1d16',
   				Default: '#a9b195'
   			},
-  			white_powder: '#fafaf2'
+  			white_powder: '#fafaf2',
+  			sidebar: {
+  				DEFAULT: 'hsl(var(--sidebar-background))',
+  				foreground: 'hsl(var(--sidebar-foreground))',
+  				primary: 'hsl(var(--sidebar-primary))',
+  				'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+  				accent: 'hsl(var(--sidebar-accent))',
+  				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+  				border: 'hsl(var(--sidebar-border))',
+  				ring: 'hsl(var(--sidebar-ring))'
+  			}
   		},
-  	
-			borderRadius: {
+  		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
@@ -80,10 +89,16 @@ const config: Config = {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out'
   		},
-				fontFamily: {
-					sans: ['Poppins', 'sans-serif'], // Configurez Poppins comme police principale
-					poppins: ['Poppins', 'sans-serif'], // Ajoutez une option dédiée si nécessaire
-			},
+  		fontFamily: {
+  			sans: [
+  				'Poppins',
+  				'sans-serif'
+  			],
+  			poppins: [
+  				'Poppins',
+  				'sans-serif'
+  			]
+  		}
   	}
   },
   plugins: [
