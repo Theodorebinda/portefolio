@@ -1,18 +1,6 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { Project, ProjectLink } from "@/types/projet-type";
-import monyaya from "/public/images/Capture_monyaya.png";
-import { Globe, Webhook } from "lucide-react";
-import { FaGithub, FaGlobe } from "react-icons/fa6";
+import { Project } from "@/types/projet-type";
 
 interface ProjectCardProps {
   project: Project;
