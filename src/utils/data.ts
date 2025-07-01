@@ -9,7 +9,7 @@ export interface AnnualDataType {
   title: string;
   description: string;
   achievements: string[];
-  imageUrl?: string | StaticImageData;
+  imageUrls: (string | StaticImageData)[];
 }
 
 // Toutes les données disponibles
@@ -25,7 +25,7 @@ const allAnnualData: AnnualDataType[] = [
       "Mise en œuvre de pratiques DevOps pour automatiser les déploiements.",
       "Participation active à la communauté open-source, contribuant à un projet majeur.",
     ],
-    imageUrl: Lukatout,
+    imageUrls: [Lukatout, Lukatout, Lukatout, Lukatout],
   },
   {
     year: "2024",
@@ -38,7 +38,7 @@ const allAnnualData: AnnualDataType[] = [
       "Collaboration avec une équipe multidisciplinaire pour le déploiement de nouvelles fonctionnalités.",
       "Formation continue sur les principes de l'UX/UI pour améliorer l'expérience utilisateur.",
     ],
-    imageUrl: "/images/2024-achievements.jpg",
+    imageUrls: [Lukatout, Lukatout, Lukatout],
   },
   {
     year: "2023",
@@ -51,7 +51,7 @@ const allAnnualData: AnnualDataType[] = [
       "Contribution à des projets open-source simples pour comprendre les flux de travail collaboratifs.",
       "Premières expériences avec des frameworks front-end comme React.",
     ],
-    imageUrl: "/images/2023-foundations.jpg", // Assure-toi que cette image existe
+    imageUrls: [Lukatout, Lukatout], // Assure-toi que cette image existe
   },
   {
     year: "2022",
@@ -60,11 +60,10 @@ const allAnnualData: AnnualDataType[] = [
       "L'année 2022 a marqué le début de mon intérêt pour le développement logiciel. J'ai commencé à explorer le monde de la programmation et ses vastes possibilités.",
     achievements: [
       "Initiation aux concepts de la programmation et de la logique algorithmique.",
-      "Apprentissage des bases de Python et des scripts simples.",
-      "Exploration de différentes carrières dans le domaine technologique.",
+      "Apprentissage des bases de Javascript et des scripts simples.",
       "Participation à des ateliers et des bootcamps d'introduction.",
     ],
-    imageUrl: "/images/2022-discovery.jpg", // Assure-toi que cette image existe
+    imageUrls: [Lukatout, Lukatout], // Assure-toi que cette image existe
   },
   // Tu peux ajouter d'autres années plus anciennes ici
 ];
@@ -75,7 +74,7 @@ export const fetchAnnualData = async (
   limit: number
 ): Promise<{ data: AnnualDataType[]; hasMore: boolean }> => {
   // Simuler un délai réseau
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  await new Promise((resolve) => setTimeout(resolve, 1000));
 
   const startIndex = offset;
   const endIndex = offset + limit;

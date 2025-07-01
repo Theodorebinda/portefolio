@@ -88,7 +88,11 @@ const Carriere: React.FC = () => {
               title={data.title}
               description={data.description}
               achievements={data.achievements}
-              imageUrl={data.imageUrl}
+              imageUrls={
+                Array.isArray(data.imageUrls)
+                  ? data.imageUrls
+                  : [data.imageUrls]
+              }
             />
           ))}
         </Container>

@@ -1,8 +1,7 @@
-// app/hooks/useTrackPageView.ts
 "use client";
 
 import { useEffect } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 declare const window: Window & {
   dataLayer?: Record<string, any>[];
@@ -11,16 +10,17 @@ declare const window: Window & {
 
 export const useTrackPageView = () => {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   useEffect(() => {
-    if (window.gtag) {
-      const url = `${pathname}${
-        searchParams?.toString() ? `?${searchParams}` : ""
-      }`;
+    if (typeof window !== "undefined" && window.gtag) {
+      // On utilise window.location.search pour éviter useSearchParams()
+      const searchParams = window.location.search;
+      const url = `${pathname}${searchParams}`;
+
       window.gtag("event", "page_view", {
         page_path: url,
+        send_to: "G-XXXXXXXXXX", // Remplacez par votre ID
       });
     }
-  }, [pathname, searchParams]);
+  }, [pathname]); // Seul pathname comme dépendance
 };
