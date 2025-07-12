@@ -32,7 +32,6 @@ const About = () => {
   const toggleShowMore = () => {
     setShowMore((prev) => {
       if (!prev) {
-        // Si on ouvre la section, faire défiler vers le bas
         setTimeout(() => {
           window.scrollTo({
             top: document.body.scrollHeight,
@@ -41,7 +40,7 @@ const About = () => {
           setShowScrollToTop(true);
         }, 500); //
       } else {
-        setShowScrollToTop(false); // Cacher le bouton si la section est fermée
+        setShowScrollToTop(false);
       }
       return !prev;
     });
@@ -64,11 +63,12 @@ const About = () => {
         texte={"Détails Carrières ? Ici 😊"}
         link={"/competences"}
       />
-      <div className="flex flex-col items-center mt-4">
+      <div className="flex flex-col  mt-4">
         {!showMore && (
           <button
             onClick={toggleShowMore}
-            className="text-[#b2d2fa] hover:text-[#5182be] animate-bounce "
+            className="text-[#b2d2fa] hover:text-[#5182be] animate-bounce fixed bottom-10 right-10 z-50 flex items-center justify-center rounded-full bg-[#1a1a1a] p-2 shadow-lg transition-all duration-900 hover:bg-[#2c2c2c] disabled:opacity-50 disabled:cursor-not-allowed"
+            // disabled={isScrolled}
           >
             <ChevronDownCircle size={50} />
           </button>
@@ -84,7 +84,7 @@ const About = () => {
             <AboutMe />
           </motion.div>
         )}
-        {showScrollToTop && ( // Afficher le bouton de remontée
+        {showScrollToTop && (
           <button
             onClick={scrollToTop}
             className="text-[#b2d2fa] hover:text-[#5182be] animate-bounce fixed bottom-10 right-10"

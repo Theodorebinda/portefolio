@@ -1,10 +1,10 @@
 "use client";
-// pages/carriere.tsx
 import AnnualSummary from "@/components/annual-summary";
 import { Typo } from "@/styles/globalStyle";
 import { Container } from "@/ui/components/container/container";
 import LinkToOtherPage from "@/ui/components/link-to-other-page/linkToOtherPage";
 import { AnnualDataType, fetchAnnualData } from "@/utils/data";
+import { Loader2 } from "lucide-react";
 import Head from "next/head";
 import React, { useState, useEffect, useRef, useCallback } from "react";
 
@@ -59,7 +59,7 @@ const Carriere: React.FC = () => {
       }
     );
 
-    observer.observe(loader.current); // Commence à observer l'élément
+    observer.observe(loader.current);
 
     // Fonction de nettoyage quand le composant est démonté ou que les dépendances changent
     return () => {
@@ -83,7 +83,7 @@ const Carriere: React.FC = () => {
         <Container className="space-y-10 ">
           {annualData.map((data, index) => (
             <AnnualSummary
-              key={data.year} // Utilisation de l'année comme clé unique
+              key={data.year}
               year={data.year}
               title={data.title}
               description={data.description}
@@ -102,27 +102,7 @@ const Carriere: React.FC = () => {
           <div ref={loader} className="flex justify-center m-auto h-[45vh]">
             {isLoading ? (
               <div className="flex items-center text-blue-600 font-semibold">
-                <svg
-                  className="animate-spin -ml-1 mr-3 h-5 w-5 text-blue-600"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <circle
-                    className="opacity-25"
-                    cx="12"
-                    cy="12"
-                    r="10"
-                    stroke="currentColor"
-                    strokeWidth="4"
-                  ></circle>
-                  <path
-                    className="opacity-75"
-                    fill="currentColor"
-                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                  ></path>
-                </svg>
-                Chargement parcours...
+                Chargement...
               </div>
             ) : (
               <p className="text-gray-500">

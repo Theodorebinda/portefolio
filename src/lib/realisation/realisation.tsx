@@ -29,7 +29,7 @@ export const projectsData: Project[] = [
       { label: "DESTINATIONS", value: "50+" },
     ],
     image: second,
-    logo: "/images/opi-b-logo.svg", // À remplacer par votre logo si disponible
+    logo: "/images/opi-b-logo.svg",
     responsable: "Jonathan Smith",
   },
   {
@@ -66,7 +66,7 @@ export const projectsData: Project[] = [
     links: [
       {
         icon: <FaGlobe />,
-        label: "Website",
+        label: "WebApp",
         url: "https://monyaya.com",
       },
       // {
@@ -87,7 +87,7 @@ export const projectsData: Project[] = [
     id: "Lukatout_app",
     name: "Lukatout",
     description:
-      "Plateforme connectant des professionnels (yaya) à des apprenants pour des sessions de mentorat ou formation pratique.",
+      "Market-Place App Permettant aux marchants de vendre leurs produit, et aux utilisateurs d'en achetter.",
     type: "Plateforme SaaS",
     links: [
       {
@@ -102,11 +102,11 @@ export const projectsData: Project[] = [
       },
     ],
     stats: [
-      { label: "PROFESSIONNELS", value: "200+" },
-      { label: "FORMATIONS", value: "30+" },
+      { label: "Utilisateurs", value: "200+" },
+      { label: "Marchant", value: "30+" },
     ],
     image: Lukatout,
     logo: "/images/monyaya-logo.svg",
-    responsable: "Gael",
+    responsable: "Felicien",
   },
 ];

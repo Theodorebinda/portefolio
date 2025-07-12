@@ -16,9 +16,9 @@ export const metadata: Metadata = {
   title: "Theodore Samba",
   description:
     "Portefolio | Theodore Samba est un développeur web et mobile, développe des applications web et mobile.",
-  metadataBase: new URL("https://votredomaine.com"), // À remplacer par votre URL
+  metadataBase: new URL("https://theodore-samba.vercel.app"),
   alternates: {
-    canonical: "/", // Bon pour le SEO
+    canonical: "/",
   },
   openGraph: {
     type: "website",
@@ -51,7 +51,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" translate="no" className={inter.variable}>
-      <body className="font-sans bg-white text-gray-900 antialiased">
+      <body className="font-sans  antialiased">
         <TrackPageView />
         {children}
         <Analytics />

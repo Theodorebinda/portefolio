@@ -30,7 +30,7 @@ const AnnualSummary: React.FC<AnnualDataType> = ({
   }, [imageUrls]);
 
   return (
-    <div className="flex flex-col md:flex-row items-center gap-6 shadow-md rounded-2xl p-6 mb-8">
+    <div className="flex flex-col md:flex-row items-center gap-6 hover:shadow-md rounded-2xl p-6 mb-8">
       {imageUrls!.length > 0 && (
         <div className="w-full md:w-1/2 transition-all duration-500 ease-in-out">
           <Image

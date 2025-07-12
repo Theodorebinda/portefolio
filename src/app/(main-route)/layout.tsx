@@ -7,8 +7,10 @@ import Footer from "@/ui/components/footer/footer";
 import Loader from "@/app/loader/loader";
 import { useTheme } from "@/lib/useTheme/useTheme";
 import NavigationWrapper from "@/routes/navigationWraper";
-import React from "react";
+import React, { useEffect } from "react";
 import { useTrackPageView } from "@/lib/hooks/useTrackPageView";
+import ScrollToTop from "@/utils/scroll-to-top";
+import { usePathname } from "next/navigation";
 
 function MainRoutesLayout({ children }: { children: React.ReactNode }) {
   const { theme, toggleTheme } = useTheme();
@@ -27,6 +29,7 @@ function MainRoutesLayout({ children }: { children: React.ReactNode }) {
         <NavigationWrapper toggleTheme={toggleTheme} currentTheme={theme} />
         {/* <SpotifyPlayer playlistUrl="https://open.spotify.com/embed/playlist/679wCT6dVMDBxrYa5NcrXL?utm_source=generator" /> */}
         {children}
+        <ScrollToTop />
         <Footer />
       </div>
     </ThemeProvider>

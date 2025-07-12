@@ -51,10 +51,10 @@ const allAnnualData: AnnualDataType[] = [
       "Contribution à des projets open-source simples pour comprendre les flux de travail collaboratifs.",
       "Premières expériences avec des frameworks front-end comme React.",
     ],
-    imageUrls: [Lukatout, Lukatout], // Assure-toi que cette image existe
+    imageUrls: [Lukatout, Lukatout],
   },
   {
-    year: "2022",
+    year: "2021 - 2022",
     title: "Découverte et Premiers Pas",
     description:
       "L'année 2022 a marqué le début de mon intérêt pour le développement logiciel. J'ai commencé à explorer le monde de la programmation et ses vastes possibilités.",
@@ -63,7 +63,21 @@ const allAnnualData: AnnualDataType[] = [
       "Apprentissage des bases de Javascript et des scripts simples.",
       "Participation à des ateliers et des bootcamps d'introduction.",
     ],
-    imageUrls: [Lukatout, Lukatout], // Assure-toi que cette image existe
+    imageUrls: [Lukatout, Lukatout],
+  },
+  {
+    year: "2015 - 2019",
+    title: "Ingenieur en Électronique et Radio Transmission",
+    description:
+      "Formation approfondie en électronique et systèmes de transmission radio avec acquisition de compétences techniques théoriques et pratiques.",
+    achievements: [
+      "Maîtrise des principes fondamentaux de l'électronique analogique et numérique",
+      "Apprentissage des systèmes de transmission radio (modulation, antennes, propagation)",
+      "Conception et réalisation de circuits électroniques",
+      "Initiation à la programmation embarquée pour systèmes électroniques",
+      "Participation à des projets pratiques de radiocommunication",
+    ],
+    imageUrls: [],
   },
   // Tu peux ajouter d'autres années plus anciennes ici
 ];

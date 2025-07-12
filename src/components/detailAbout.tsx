@@ -4,63 +4,67 @@ import Image from "next/image";
 import { Skeleton } from "./ui/skeleton";
 import { useState } from "react";
 
-const details = [
+const photos = [
   {
     id: 1,
     image:
-      "https://lh3.googleusercontent.com/a/ACg8ocKi7_sRkEisPwvp2TKaQQXOPC0DjsoGJ24BReynndwrm_7InhzT=s288-c-no",
+      "https://res.cloudinary.com/dhdaxlymt/image/upload/v1752206216/Portefolio/Design_sans_titre_1_annqgb.png",
     title: "Palme D'or",
-    description:
-      "Je suis un développeur passionné avec une expérience dans le développement web et mobile, spécialisé dans la création d'applications intuitives et performantes.",
-    fistDate: "Fevrier 2023",
-    lastDate: "Aout 2024",
+    description: "Photo prise lors du festival de Cannes 2023",
   },
   {
     id: 2,
     image:
       "https://lh3.googleusercontent.com/a/ACg8ocKi7_sRkEisPwvp2TKaQQXOPC0DjsoGJ24BReynndwrm_7InhzT=s288-c-no",
     title: "Sycamore",
-    description:
-      "Je maîtrise diverses technologies comme React, Flutter, Node.js, et bien d'autres, ce qui me permet de créer des solutions complètes.",
+    description: "Paysage automnal en Californie",
   },
+  // Ajoutez plus de photos ici
 ];
 
-const AboutMe = () => {
-  const [loading, setLoading] = useState(false);
+const PhotoGallery = () => {
+  const [loading, setLoading] = useState(true);
+
   return (
-    <Container className="mt-16">
-      <Typography className="text-4xl lg:text-6xl font-bold">
+    <Container className="mt-16 w-full flex flex-col  justify-start">
+      <Typography className="text-4xl lg:text-6xl font-bold mb-8">
         Gallerie
       </Typography>
-      <Container className="flex flex-col gap-5 mt-5 md:h-auto]">
-        {details.map((detail) => (
+
+      <Container className="flex flex-wrap gap-6 justify-start items-start">
+        {photos.map((photo) => (
           <Container
-            key={detail.id}
-            className="flex flex-col md:flex-row items-center gap-5"
+            key={photo.id}
+            className="relative w-full sm:w-[500px] h-[400px] group overflow-hidden rounded-lg shadow-lg"
           >
             {loading ? (
-              <Skeleton className="w-[180px] h-[100px] bg-slate-300 flex z-[-10]  " />
-            ) : (
-              <Image
-                src={detail.image}
-                height={100}
-                width={100}
-                alt="theodore"
-                className="object-cover  flex"
-                loading="lazy"
-                onLoad={() => setLoading(false)} // Changer à false ici
-                onError={() => {
-                  setLoading(false);
-                  console.error("Image failed to load.");
-                }}
-              />
-            )}
+              <Skeleton className="w-full h-full bg-slate-300" />
+            ) : null}
 
-            <Container className="flex flex-col">
-              <Typography className="text-2xl font-semibold">
-                {detail.title}
+            <Image
+              src={photo.image}
+              fill
+              alt={photo.title}
+              className={`object-cover transition-opacity duration-500 ${
+                loading ? "opacity-0" : "opacity-100"
+              }`}
+              loading="lazy"
+              onLoad={() => setLoading(false)}
+              onError={() => {
+                setLoading(false);
+                console.error("Image failed to load.");
+              }}
+            />
+
+            {/* Overlay sombre */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent bg-opacity-95 group-hover:opacity-90 transition-opacity" />
+
+            {/* Texte superposé */}
+            <Container className="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <Typography className="text-2xl font-bold mb-2">
+                {photo.title}
               </Typography>
-              <Typography className="text-lg">{detail.description}</Typography>
+              <Typography className="text-lg">{photo.description}</Typography>
             </Container>
           </Container>
         ))}
@@ -69,4 +73,4 @@ const AboutMe = () => {
   );
 };
 
-export default AboutMe;
+export default PhotoGallery;
