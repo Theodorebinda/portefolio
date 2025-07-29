@@ -12,6 +12,7 @@ import { useTrackPageView } from "@/lib/hooks/useTrackPageView";
 import ScrollToTop from "@/utils/scroll-to-top";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { usePathname } from "next/navigation";
+import TrackPageView from "@/components/analytique/tracking-view";
 
 function MainRoutesLayout({ children }: { children: React.ReactNode }) {
   const { theme, toggleTheme } = useTheme();
@@ -28,9 +29,9 @@ function MainRoutesLayout({ children }: { children: React.ReactNode }) {
       <GlobalStyle />
       <div className=" mx-auto py-8 max-w-screen-xl">
         <NavigationWrapper toggleTheme={toggleTheme} currentTheme={theme} />
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
         {/* <SpotifyPlayer playlistUrl="https://open.spotify.com/embed/playlist/679wCT6dVMDBxrYa5NcrXL?utm_source=generator" /> */}
         {children}
+        <TrackPageView />
         <ScrollToTop />
         <Footer />
       </div>

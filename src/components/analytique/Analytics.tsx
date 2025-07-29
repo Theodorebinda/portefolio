@@ -2,6 +2,11 @@
 
 import Script from "next/script";
 
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
 export const Analytics = () => {
   const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 

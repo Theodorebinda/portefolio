@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@/components/analytique/Analytics";
 import TrackPageView from "@/components/analytique/tracking-view";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 // Configuration optimisée de la police Inter
 const inter = Inter({
@@ -52,9 +53,8 @@ export default function RootLayout({
   return (
     <html lang="fr" translate="no" className={inter.variable}>
       <body className="font-sans  antialiased">
-        <TrackPageView />
         {children}
-        <Analytics />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
       </body>
     </html>
   );
