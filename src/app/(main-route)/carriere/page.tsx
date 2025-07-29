@@ -85,7 +85,7 @@ const Carriere: React.FC = () => {
       initialized.current = true;
       loadMoreData();
     }
-  }, []); // Tableau de dépendances vide
+  }, [loadMoreData]); // Tableau de dépendances vide
 
   return (
     <main className="">
