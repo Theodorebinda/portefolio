@@ -1,39 +1,11 @@
-// app/components/Analytics.tsx
 "use client";
 
 import Script from "next/script";
-import { useEffect } from "react";
-
-// app/types/globals.d.ts
-export {};
-
-declare global {
-  interface Window {
-    dataLayer: Record<string, any>[];
-    gtag: (...args: any[]) => void;
-  }
-}
-
-declare const window: Window & {
-  dataLayer?: Record<string, any>[];
-  gtag?: (...args: any[]) => void;
-};
 
 export const Analytics = () => {
-  useEffect(() => {
-    if (!window.dataLayer) {
-      window.dataLayer = [];
-    }
+  const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
-    if (!window.gtag) {
-      window.gtag = function () {
-        window.dataLayer?.push(arguments);
-      };
-      window.gtag("js", new Date());
-    }
-  }, []);
-
-  if (!process.env.NEXT_PUBLIC_GA_ID) {
+  if (!GA_ID) {
     console.warn("Google Analytics ID manquant");
     return null;
   }
@@ -41,14 +13,18 @@ export const Analytics = () => {
   return (
     <>
       <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
         strategy="afterInteractive"
       />
-      <Script id="gtag-config" strategy="afterInteractive">
+      <Script id="gtag-init" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+          function gtag(){window.dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', '${GA_ID}', {
+            page_path: window.location.pathname,
+          });
         `}
       </Script>
     </>
