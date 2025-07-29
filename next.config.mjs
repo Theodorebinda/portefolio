@@ -8,7 +8,25 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'lh3.googleusercontent.com', // Doit être une chaîne
+        hostname: 'lh3.googleusercontent.com', 
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'photos.app.goo.gl', 
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'scontent.ffih1-2.fna.fbcdn.net', // Doit être une chaîne
         port: '',
         pathname: '/**',
       },
@@ -30,7 +48,16 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'photos.fife.usercontent.google.com', // Ajoutez comme un autre objet
+        port: '',
+        pathname: '/**',
+      },
     ],
+  },
+  experimental: {
+    scrollRestoration: true,
   },
 };
 

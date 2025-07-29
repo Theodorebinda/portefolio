@@ -1,9 +1,11 @@
 "use client";
+
 import { Container } from "@/ui/components/container/container";
 import LinkToOtherPage from "@/ui/components/link-to-other-page/linkToOtherPage";
 import { Typography } from "@/ui/components/typography/typography";
 
 const BlogPage = () => {
+  // TrackPageView();
   return (
     <Container>
       <Container className="flex flex-col items-center justify-center h-[50vh]">
