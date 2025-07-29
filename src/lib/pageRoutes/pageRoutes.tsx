@@ -3,7 +3,7 @@ import { Presentation, Home, Settings2 } from "lucide-react";
 
 export const MainRoutes: AppLinks[] = [
   {
-    title: "A propos",
+    title: "Résumé",
     baseUrl: "/about",
   },
   {
