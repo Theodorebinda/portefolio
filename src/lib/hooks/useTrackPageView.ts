@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 declare const window: Window & {
   dataLayer?: Record<string, any>[];
@@ -17,10 +18,12 @@ export const useTrackPageView = () => {
       const searchParams = window.location.search;
       const url = `${pathname}${searchParams}`;
 
-      window.gtag("event", "page_view", {
-        page_path: url,
-        send_to: "G-XXXXXXXXXX", // Remplacez par votre ID
-      });
+      if (GA_ID && window.gtag) {
+        window.gtag("event", "page_view", {
+          page_path: url,
+          send_to: GA_ID,
+        });
+      }
     }
   }, [pathname]); // Seul pathname comme dépendance
 };

@@ -95,7 +95,7 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
                       : `hover:text-[#fff] ${
                           isActive(route.baseUrl!)
                             ? "text-white font-bold "
-                            : "text-gray-400"
+                            : "text-gray-300"
                         }`
                   }`}
                 >
