@@ -30,15 +30,16 @@ const AnnualSummary: React.FC<AnnualDataType> = ({
   }, [imageUrls]);
 
   return (
-    <div className="flex flex-col md:flex-row justify-between items-start gap-6   mb-8">
+    <div className="flex flex-col md:flex-row justify-between items-start gap-6   mb-8 ">
       {imageUrls!.length > 0 && (
-        <div className="w-full md:w-2/5 transition-all duration-500 ease-in-out">
+        <div className="w-full md:w-2/5 transition-all duration-500 ease-in-out h-[300px]  relative overflow-hidden rounded-xl -z-50">
           <Image
             src={imageUrls![currentIndex]}
             alt={`Image ${currentIndex + 1} pour l'année ${year}`}
-            width={400}
-            height={400}
-            className="rounded-xl object-cover w-full h-auto"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 40vw"
+            priority={currentIndex === 0}
           />
         </div>
       )}

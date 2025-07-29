@@ -44,12 +44,14 @@ const allAnnualData: AnnualDataType[] = [
     description:
       "2023 : apprentissage intensif des bases du développement web et exploration des principaux frameworks.",
     achievements: [
-      "Maîtrise des fondamentaux JavaScript, HTML et CSS.",
+      "Maîtrise des fondamentaux JavaScript, HTML et CSS et ReactJs.",
       "Réalisation de plusieurs projets personnels pour appliquer les connaissances.",
       "Premières contributions à des projets open-source.",
       "Initiation aux frameworks front-end comme React.",
     ],
-    imageUrls: [Lukatout, Lukatout],
+    imageUrls: [
+      "https://res.cloudinary.com/dhdaxlymt/image/upload/v1753792903/Portefolio/WhatsApp_Image_2025-07-29_at_13.40.43_urqgmq.jpg",
+    ],
   },
   {
     year: "2021-2022",
@@ -74,7 +76,7 @@ const allAnnualData: AnnualDataType[] = [
       "Initiation à la programmation embarquée.",
     ],
     imageUrls: [
-      "https://res.cloudinary.com/dhdaxlymt/image/upload/v1752206216/Portefolio/Design_sans_titre_1_annqgb.png",
+      "https://res.cloudinary.com/dhdaxlymt/image/upload/v1753789719/Portefolio/20180210_105949_rundcs.jpg",
     ],
   },
 ];
