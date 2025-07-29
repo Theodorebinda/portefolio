@@ -63,7 +63,7 @@ const About = () => {
       <LinkToOtherPage
         className={`md:ml-2`}
         texte={`Détails Carrières ? Ici 😊`}
-        link={"/competences"}
+        link={"/carriere"}
       />
       <div className="flex flex-col  mt-4">
         {!showMore && (
