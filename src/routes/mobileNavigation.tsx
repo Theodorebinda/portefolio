@@ -101,7 +101,7 @@ export const MobileNavigation = ({
           <SheetContent
             className={`${
               currentTheme === "light" ? "bg-white" : "bg-[#222020]"
-            } w-[80vw]`}
+            } w-[90vw]`}
           >
             <SheetDescription className="h-full flex justify-between flex-col">
               <nav className=" flex flex-col justify-between items-center">
