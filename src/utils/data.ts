@@ -16,70 +16,67 @@ export interface AnnualDataType {
 const allAnnualData: AnnualDataType[] = [
   {
     year: "2025",
-    title: "Consolidation et Leadership Technique",
+    title: "Freelance",
     description:
-      "En 2025, j'ai consolidé mes compétences techniques et pris davantage de responsabilités, notamment dans l'architecture de solutions et le mentorat de nouveaux membres de l'équipe.",
+      "Début 2025 : consolidation de mes compétences techniques et soft skills, lancement de mon activité freelance.",
     achievements: [
-      "Conception et implémentation d'une nouvelle architecture de microservices.",
+      "Renforcement des compétences en gestion de projet grâce à diverses formations.",
       "Lead technique sur deux projets majeurs, du concept au déploiement.",
-      "Mise en œuvre de pratiques DevOps pour automatiser les déploiements.",
-      "Participation active à la communauté open-source, contribuant à un projet majeur.",
+      "Contributions actives à des projets open-source importants.",
     ],
-    imageUrls: [Lukatout, Lukatout, Lukatout, Lukatout],
+    imageUrls: [Lukatout, Lukatout],
   },
   {
     year: "2024",
-    title: "Année de Croissance et d'Innovation",
+    title: "Croissance et Innovation",
     description:
-      "L'année 2024 a été marquée par une immersion profonde dans les technologies web modernes et le développement de projets significatifs. J'ai eu l'opportunité de travailler sur des applications à forte valeur ajoutée.",
+      "2024 : approfondissement des technologies web modernes et développement de projets à forte valeur ajoutée.",
     achievements: [
-      "Développement d'une application de gestion de projets avec Next.js et une API RESTful.",
-      "Mise en place de tests unitaires et d'intégration pour assurer la qualité du code.",
-      "Collaboration avec une équipe multidisciplinaire pour le déploiement de nouvelles fonctionnalités.",
-      "Formation continue sur les principes de l'UX/UI pour améliorer l'expérience utilisateur.",
+      "Développement d'applications sur mesure pour une entreprise privée.",
+      "Collaboration avec une équipe multidisciplinaire pour déployer de nouvelles fonctionnalités.",
+      "Perfectionnement continu en UX/UI pour optimiser l'expérience utilisateur.",
     ],
     imageUrls: [Lukatout, Lukatout, Lukatout],
   },
   {
     year: "2023",
-    title: "Immersion et Acquisition de Compétences Fondamentales",
+    title: "Acquisition des Fondamentaux",
     description:
-      "L'année 2023 fut une période d'apprentissage intense, où j'ai jeté les bases de ma carrière en développement web, explorant divers langages et frameworks.",
+      "2023 : apprentissage intensif des bases du développement web et exploration des principaux frameworks.",
     achievements: [
-      "Maîtrise des fondamentaux de JavaScript, HTML et CSS.",
-      "Développement de plusieurs projets personnels pour appliquer les concepts appris.",
-      "Contribution à des projets open-source simples pour comprendre les flux de travail collaboratifs.",
-      "Premières expériences avec des frameworks front-end comme React.",
+      "Maîtrise des fondamentaux JavaScript, HTML et CSS.",
+      "Réalisation de plusieurs projets personnels pour appliquer les connaissances.",
+      "Premières contributions à des projets open-source.",
+      "Initiation aux frameworks front-end comme React.",
     ],
     imageUrls: [Lukatout, Lukatout],
   },
   {
-    year: "2021 - 2022",
-    title: "Découverte et Premiers Pas",
+    year: "2021-2022",
+    title: "Découverte du Développement",
     description:
-      "L'année 2022 a marqué le début de mon intérêt pour le développement logiciel. J'ai commencé à explorer le monde de la programmation et ses vastes possibilités.",
+      "2021-2022 : premiers pas dans l'univers du développement logiciel et de la programmation.",
     achievements: [
-      "Initiation aux concepts de la programmation et de la logique algorithmique.",
-      "Apprentissage des bases de Javascript et des scripts simples.",
-      "Participation à des ateliers et des bootcamps d'introduction.",
+      "Apprentissage des concepts de base de la programmation.",
+      "Découverte de JavaScript et création de scripts simples.",
+      "Participation à des ateliers d'introduction au développement.",
     ],
     imageUrls: [Lukatout, Lukatout],
   },
   {
-    year: "2015 - 2019",
-    title: "Ingenieur en Électronique et Radio Transmission",
+    year: "2015-2019",
+    title: "Ingénieur en Électronique et Transmission Radio",
     description:
-      "Formation approfondie en électronique et systèmes de transmission radio avec acquisition de compétences techniques théoriques et pratiques.",
+      "Formation spécialisée en systèmes électroniques et transmission radio, combinant théorie et pratique.",
     achievements: [
-      "Maîtrise des principes fondamentaux de l'électronique analogique et numérique",
-      "Apprentissage des systèmes de transmission radio (modulation, antennes, propagation)",
-      "Conception et réalisation de circuits électroniques",
-      "Initiation à la programmation embarquée pour systèmes électroniques",
-      "Participation à des projets pratiques de radiocommunication",
+      "Maîtrise de l'électronique analogique et numérique.",
+      "Conception et implémentation de circuits électroniques.",
+      "Initiation à la programmation embarquée.",
     ],
-    imageUrls: [],
+    imageUrls: [
+      "https://res.cloudinary.com/dhdaxlymt/image/upload/v1752206216/Portefolio/Design_sans_titre_1_annqgb.png",
+    ],
   },
-  // Tu peux ajouter d'autres années plus anciennes ici
 ];
 
 // Fonction pour simuler la récupération de données paginées
@@ -88,7 +85,7 @@ export const fetchAnnualData = async (
   limit: number
 ): Promise<{ data: AnnualDataType[]; hasMore: boolean }> => {
   // Simuler un délai réseau
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  await new Promise((resolve) => setTimeout(resolve, 2000));
 
   const startIndex = offset;
   const endIndex = offset + limit;

@@ -31,14 +31,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           <h3 className="text-3xl md:text-4xl font-bold text-[#436896] hover:text-[#5182be] font-poppins">
             {project.name}
           </h3>
-          {/* <div className="flex items-center justify-start gap-8">
-            <Link href={"#"} className="flex justify-start items-center gap-2">
-              <FaGithub /> <span className="">Github</span>
-            </Link>
-            <Link href={"#"} className="flex justify-start items-center gap-2">
-              <FaGlobe /> <span>Website</span>
-            </Link>
-          </div> */}
           <div className="flex items-center justify-start gap-8">
             {project.links?.map((link: any, index: any) => (
               <Link

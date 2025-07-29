@@ -46,14 +46,14 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
       className={clsx(
         "fixed top-0 left-0 right-0 max-w-full md:mx-48 ",
         className,
-        { "shadow-md": isScrolled }
+        { "shadow-sm": isScrolled }
       )}
     >
       <Container
         className={`${
           currentTheme === "light"
-            ? "bg-white px-10"
-            : "bg-[#1c1917] px-10 max-w-screen-xl"
+            ? "bg-white "
+            : "bg-[#1c1917] max-w-screen-xl"
         }`}
       >
         <Container

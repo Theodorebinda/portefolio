@@ -65,7 +65,7 @@ const AboutSection = () => {
                 rel="noopener noreferrer"
                 className="flex justify-start items-center gap-2 transition-colors hover:text-[#5182be] underline font-bold"
               >
-                <Mail size={20} color="white" fill="blue" />
+                <Mail size={20} className="text-[#4474ae]" />
                 <span className="">{"Email"}</span>
               </Link>
             </div>
@@ -76,7 +76,7 @@ const AboutSection = () => {
                 rel="noopener noreferrer"
                 className="flex justify-start items-center gap-2 hover:text-[#5182be] underline transition-colors"
               >
-                <IoDocument size={20} color="blue" />
+                <IoDocument size={20} className="text-[#4474ae]" />
                 <span className="font-bold">{"Resumé"}</span>
               </Link>
             </div>

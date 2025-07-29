@@ -14,6 +14,12 @@ const nextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'photos.app.goo.gl', 
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
         hostname: 'res.cloudinary.com',
         port: '',
         pathname: '/**',

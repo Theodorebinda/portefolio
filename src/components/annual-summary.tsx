@@ -30,36 +30,43 @@ const AnnualSummary: React.FC<AnnualDataType> = ({
   }, [imageUrls]);
 
   return (
-    <div className="flex flex-col md:flex-row items-center gap-6 hover:shadow-md rounded-2xl p-6 mb-8">
+    <div className="flex flex-col md:flex-row justify-between items-start gap-6   mb-8">
       {imageUrls!.length > 0 && (
-        <div className="w-full md:w-1/2 transition-all duration-500 ease-in-out">
+        <div className="w-full md:w-2/5 transition-all duration-500 ease-in-out">
           <Image
             src={imageUrls![currentIndex]}
             alt={`Image ${currentIndex + 1} pour l'année ${year}`}
-            width={600}
+            width={400}
             height={400}
             className="rounded-xl object-cover w-full h-auto"
           />
         </div>
       )}
 
-      <div className="w-full md:w-1/2">
-        <h3 className="text-sm uppercase tracking-wider mb-1">{year}</h3>
-        <h4 className="text-3xl font-bold text-blue-700 mb-4">{title}</h4>
-        <p className=" leading-relaxed mb-4">{description}</p>
-
-        {achievements?.length > 0 && (
-          <div>
-            <h5 className="text-lg font-semibold mb-2">Réalisations clés :</h5>
-            <ul className="list-disc list-inside space-y-1 ">
-              {achievements.map((item, index) => (
-                <li key={index} className="leading-snug">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+      <div className="w-full md:w-1/2 flex flex-col  justify-between gap-4 h-full ">
+        <div className="flex flex-col items-start">
+          <h3 className="text-sm uppercase tracking-wider mb-1">{year}</h3>
+          <span className="text-3xl md:text-4xl font-bold text-[#436896] hover:text-[#5182be] font-poppins">
+            {title}
+          </span>
+          <p className="text-xl font-poppins leading-relaxed">{description}</p>
+        </div>
+        <div>
+          {achievements?.length > 0 && (
+            <div className="flex flex-col">
+              <h5 className="text-lg font-semibold mb-2">
+                Réalisations clés :
+              </h5>
+              <ul className="list-disc list-inside space-y-1 ">
+                {achievements.map((item, index) => (
+                  <li key={index} className="leading-snug">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

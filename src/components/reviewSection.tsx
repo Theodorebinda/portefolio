@@ -3,11 +3,28 @@ import ReviewCard from "./reviewCard";
 
 const reviews = [
   {
+    photo: "https://avatars.githubusercontent.com/u/141269644?s=100&v=4",
+    name: "Sacre Mbiku",
+    role: "Developer|| Designer UI/UX",
+    review:
+      "C'est surtout sa capacité à s'adapter à tout type de projet qui est impressionnante. J'ai de très bons souvenirs de notre collaboration et je le recommande vivement !",
+    origin: "LinkedIn",
+  },
+  {
     photo:
       "https://media.licdn.com/dms/image/v2/D4D03AQGV-0WKhuKIcA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1729609426768?e=1756944000&v=beta&t=Rtd8ejHkmv1rgVxsjoi5aQ1edPz1znZNQX4p5zXDtIg",
     name: "Gaël Makelele",
     role: "Chercheur & Entrepreneur",
     review: "Une expérience incroyable, très satisfait des résultats!",
+    origin: "LinkedIn",
+  },
+
+  {
+    photo:
+      "https://media.licdn.com/dms/image/v2/D4E03AQG6fASoGiVFWA/profile-displayphoto-shrink_400_400/B4EZXj8wU.GwAg-/0/1743286115742?e=1756944000&v=beta&t=7CyURoyqSCAAH4D8yaHhlhp3ieBBXCbnQdeQRsSaRfg",
+    name: "Felicien Fercus",
+    role: "Développement commercial et des projets",
+    review: "Très bonne collaboration, travail de qualité.",
     origin: "LinkedIn",
   },
   {
@@ -18,27 +35,11 @@ const reviews = [
     review: "Super service, je recommande vivement!",
     origin: "Facebook",
   },
-  {
-    photo:
-      "https://media.licdn.com/dms/image/v2/D4E03AQG6fASoGiVFWA/profile-displayphoto-shrink_400_400/B4EZXj8wU.GwAg-/0/1743286115742?e=1756944000&v=beta&t=7CyURoyqSCAAH4D8yaHhlhp3ieBBXCbnQdeQRsSaRfg",
-    name: "Felicien Fercus",
-    role: "Développement commercial et des projets",
-    review: "Très bonne collaboration, travail de qualité.",
-    origin: "LinkedIn",
-  },
-  {
-    photo: "https://avatars.githubusercontent.com/u/141269644?s=100&v=4",
-    name: "Sacre Mbiku",
-    role: "Developer|| Designer UI/UX",
-    review:
-      "C'est surtout sa capacité à s'adapter à tout type de projet qui est impressionnante. J'ai de très bons souvenirs de notre collaboration et je le recommande vivement !",
-    origin: "LinkedIn",
-  },
 ];
 
 const ReviewsPage = () => {
   return (
-    <div className=" grid md:grid-cols-2 gap-8 ">
+    <div className=" grid md:grid-cols-2 gap-8 items-start">
       {reviews.map((review, index) => (
         <ReviewCard key={index} review={review} />
       ))}
