@@ -7,7 +7,6 @@ import { Container } from "@/ui/components/container/container";
 import LinkToOtherPage from "@/ui/components/link-to-other-page/linkToOtherPage";
 
 export default function ProjectsPage() {
-  // TrackPageView();
   return (
     <Container className="">
       <Container className=" lg:w-2/3 md:w-3/4 mb-8 ">

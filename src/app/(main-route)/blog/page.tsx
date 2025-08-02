@@ -7,8 +7,8 @@ import { Typography } from "@/ui/components/typography/typography";
 const BlogPage = () => {
   // TrackPageView();
   return (
-    <Container>
-      <Container className="flex flex-col items-center justify-center h-[50vh]">
+    <Container className="flex flex-col h-[calc(70vh-100px)]">
+      <Container className="flex flex-col items-center justify-center h-full">
         <Typography className="text-4xl font-bold mb-4">
           Page en construction
         </Typography>

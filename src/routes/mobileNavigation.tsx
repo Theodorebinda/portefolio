@@ -142,7 +142,7 @@ export const MobileNavigation = ({
               </Container>
 
               <LinkMediaSocial
-                className="gap-24 justify-start"
+                className="gap-28 justify-start"
                 currentTheme={currentTheme}
               />
             </SheetDescription>
