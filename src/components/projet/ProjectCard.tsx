@@ -8,9 +8,8 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
-    <div className="flex flex-col md:flex-row items-stretch md:items-start justify-between overflow-hidden bg-transparent h-[300px] md:h-[400px]">
-      {/* Conteneur de l'image avec effet de zoom */}
-      <div className="md:w-1/2 relative h-full overflow-hidden group -z-30 rounded-l-lg shadow-lg">
+    <div className="flex flex-col-reverse md:flex-row  md:items-start justify-between overflow-hidden bg-transparent ">
+      <div className="md:w-1/2 w-full relative h-[300px] md:h-[400px] overflow-hidden group -z-30 rounded-l-lg shadow-lg ">
         <Image
           src={project.image}
           alt={`${project.name} screenshot`}
@@ -21,12 +20,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                w-full h-full
                transition-transform duration-500 ease-in-out
                group-hover:scale-[1.15] group-hover:origin-[0%_0%]
-               transform-gpu" // Nouveaux éléments
+               transform-gpu"
         />
       </div>
-
-      {/* Conteneur du contenu */}
-      <div className="md:w-1/3  flex flex-col justify-between h-full">
+      <div className="md:w-1/3   flex flex-col justify-between md:h-full">
         <div className="space-y-6 flex flex-col ">
           <h3 className="text-3xl md:text-4xl font-bold text-[#436896] hover:text-[#5182be] font-poppins">
             {project.name}

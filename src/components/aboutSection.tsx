@@ -77,7 +77,14 @@ const AboutSection = () => {
                 className="flex justify-start items-center gap-2 hover:text-[#5182be] underline transition-colors"
               >
                 <IoDocument size={20} className="text-[#4474ae]" />
-                <span className="font-bold">{"Resumé"}</span>
+                <a
+                  href="/CV Theodore.pdf"
+                  download="CV_Theodore.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className="font-bold">{"Resumé"}</span>
+                </a>
               </Link>
             </div>
           </Container>

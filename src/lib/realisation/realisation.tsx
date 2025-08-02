@@ -3,6 +3,7 @@ import second from "/public/images/screencapture-opi-b.png";
 import mentor from "/public/images/screencapture-chef-d-oeuvre-s.png";
 import monyaya from "/public/images/Capture_monyaya.png";
 import Lukatout from "/public/images/Design sans titre (1).png";
+import esmicom from "/public/images/Design_Esmicom-removebg-preview.png";
 import { FaAppStore, FaGithub, FaGlobe, FaMobile } from "react-icons/fa";
 
 export const projectsData: Project[] = [
@@ -106,6 +107,33 @@ export const projectsData: Project[] = [
       { label: "Marchant", value: "30+" },
     ],
     image: Lukatout,
+    logo: "/images/monyaya-logo.svg",
+    responsable: "Felicien",
+  },
+  {
+    id: "esmicom_app",
+    name: "Esmicom E-learning",
+    description:
+      "Plateforme E-learning permettant aux apprenant de suivre les cours de leurs fac aux professeurs de suivre la progression de leurs etudiant l'administration de tout gerer.",
+    type: "Plateforme SaaS",
+    links: [
+      {
+        icon: <FaGlobe />,
+        label: "WebApp",
+        url: "https://elearning.esmicom.org",
+      },
+      // {
+      //   icon: <FaGithub />,
+      //   label: "GitHub",
+      //   url: "https://github.com/username/opi-b",
+      // },
+    ],
+    stats: [
+      { label: "Etudiants", value: "700+" },
+      { label: "Professeurs", value: "10+" },
+      { label: "Admin", value: "5+" },
+    ],
+    image: esmicom,
     logo: "/images/monyaya-logo.svg",
     responsable: "Felicien",
   },
