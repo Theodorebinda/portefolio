@@ -1,11 +1,14 @@
 "use client";
 
+import TrackPageView from "@/components/analytique/tracking-view";
+import { useTrackPageView } from "@/lib/hooks/useTrackPageView";
 import { Container } from "@/ui/components/container/container";
 import LinkToOtherPage from "@/ui/components/link-to-other-page/linkToOtherPage";
 import { Typography } from "@/ui/components/typography/typography";
 
 const BlogPage = () => {
-  // TrackPageView();
+  TrackPageView();
+  useTrackPageView();
   return (
     <Container className="flex flex-col h-[calc(70vh-100px)]">
       <Container className="flex flex-col items-center justify-center h-full">

@@ -7,8 +7,10 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDownCircle, ChevronUpCircle } from "lucide-react";
 import AboutMe from "@/components/detailAbout";
+import { useTrackPageView } from "@/lib/hooks/useTrackPageView";
 
 const About = () => {
+  useTrackPageView();
   const [showMore, setShowMore] = useState(false);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
