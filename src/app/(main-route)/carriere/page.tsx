@@ -1,5 +1,6 @@
 "use client";
 import AnnualSummary from "@/components/annual-summary";
+import { useTrackPageView } from "@/lib/hooks/useTrackPageView";
 import { Typo } from "@/styles/globalStyle";
 import { Container } from "@/ui/components/container/container";
 import LinkToOtherPage from "@/ui/components/link-to-other-page/linkToOtherPage";
@@ -10,13 +11,14 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 const ITEMS_PER_LOAD = 2;
 
 const Carriere: React.FC = () => {
+  useTrackPageView();
   const [annualData, setAnnualData] = useState<AnnualDataType[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [hasMore, setHasMore] = useState<boolean>(true);
   const [offset, setOffset] = useState<number>(0);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
   const loader = useRef<HTMLDivElement>(null);
-  const initialized = useRef(false); // Nouvelle référence pour suivre l'initialisation
+  const initialized = useRef(false);
 
   useEffect(() => {
     const handleScroll = () => {

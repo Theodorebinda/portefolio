@@ -5,8 +5,10 @@ import { ContactForm } from "../../../components/contactForm";
 import { P } from "@/styles/globalStyle";
 import imageHero from "../../../../public/icons/fleche1.png";
 import Image from "next/image";
+import { useTrackPageView } from "@/lib/hooks/useTrackPageView";
 
 const ContactPage = () => {
+  useTrackPageView();
   return (
     <div className="h-[ 70vh] flex items-center justify-between basis-full mb-20">
       <Container className="hidden md:block">
