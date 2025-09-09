@@ -18,7 +18,7 @@ const AboutSection = () => {
           <Container className=" flex items-start md:items-center justify-start gap-4">
             <div className="hidden md:block">
               {!loading ? (
-                <Skeleton className="w-[80px] h-[80px] bg-slate-300 rounded-full flex z-[-10]  " />
+                <Skeleton className="w-[80px] h-[80px] bg-slate-300 rounded-full flex -z-[-10]  " />
               ) : (
                 <Image
                   src="https://lh3.googleusercontent.com/a/ACg8ocKi7_sRkEisPwvp2TKaQQXOPC0DjsoGJ24BReynndwrm_7InhzT=s288-c-no"
