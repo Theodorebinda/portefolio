@@ -9,37 +9,39 @@ import { Btn, Typo } from "@/styles/globalStyle";
 import { ChevronRight } from "lucide-react";
 import { trackEvent } from "@/utils/trackEvent";
 import Greeting from "./greting";
-
-// src/components/heroSection.tsx
+import { useTranslation } from "@/lib/hooks/useTranslation";
 export default function HeroSection() {
+  const { t } = useTranslation();
+
   return (
     <Container className="flex flex-col items-start justify-between flex-wrap  lg:flex-row mb-8 font-poppins ">
       <Container className="flex flex-col gap-3 md:basis-1/2">
         <Typo className=" text-6xl md:text-6xl">Théodore Samba</Typo>
         <Container className="text-xl flex justify-start gap-3  items-center">
           <Greeting />
-          <Typography>je suis</Typography>
+          <Typography>{t("hero.iam")}</Typography> {/* Traduction */}
         </Container>
 
         <Container>
           <Container>
-            {" "}
             <Typewriter
               texts={[
-                "Developpeur web/mobile",
-                "UI/UX Designer",
-                "Ir Radio Transmission",
+                // Utilisez les clés de traduction
+                t("roles.web_developer"),
+                t("roles.ui_ux_designer"),
+                t("roles.radio_engineer"),
               ]}
               speed={50}
               deleteDelay={1500}
             />
           </Container>
-          <Typography className="text-xl  flex flex-col leading-8 font-semibold">
-            <span>
-              {" Je suis passionné par 🎨 les systèmes de conception,"}
-            </span>
-            <span>{"♿️ l'accessibilité, ⚙️ les machines d'état,"}</span>
-            <span>{" et 😍 l'expérience utilisateur."}</span>
+          <Typography className="text-xl   leading-8 font-semibold">
+            <span>{t("hero.passionate")}</span>
+            {"  "}
+            <span>{t("hero.design_systems")},</span> {"  "}
+            <span>{t("hero.accessibility")},</span> {"  "}
+            <span>{t("hero.state_machines")},</span> {"  "}
+            <span>{t("hero.user_experience")}.</span>
           </Typography>
         </Container>
 
@@ -49,7 +51,7 @@ export default function HeroSection() {
               className="flex justify-center items-center gap-1 px-5 py-6"
               onClick={() => trackEvent("click", "Download", "CV Download")}
             >
-              {"Contactez Moi"}
+              {t("hero.contact_me")}
               <ChevronRight className="w-5 h-5 font-light" />
             </Btn>
           </Link>

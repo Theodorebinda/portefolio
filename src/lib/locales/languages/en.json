@@ -1,0 +1,27 @@
+{
+  "routes": {
+    "about": "About",
+    "career": "Career",
+    "projects": "Projects",
+    "blog": "Blog",
+    "home": "Back to home"
+  },
+  "hero": {
+    "greeting": "Welcome",
+    "morning": "Good morning",
+    "afternoon": "Good afternoon",
+    "evening": "Good evening",
+    "iam": "I am",
+    "passionate": "I'm passionate about ",
+    "design_systems": " 🎨 design systems",
+    "accessibility": " ♿️ accessibility",
+    "state_machines": " ⚙️ state machines",
+    "user_experience": " and 😍 user experience",
+    "contact_me": "Contact Me"
+  },
+  "roles": {
+    "web_developer": "Web/Mobile Developer",
+    "ui_ux_designer": "UI/UX Designer",
+    "radio_engineer": "Radio Transmission Engineer"
+  }
+}

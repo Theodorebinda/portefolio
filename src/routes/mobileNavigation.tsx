@@ -10,8 +10,6 @@ import {
   Sheet,
   SheetContent,
   SheetDescription,
-  SheetFooter,
-  SheetHeader,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { FaMoon } from "react-icons/fa6";
@@ -19,7 +17,9 @@ import { FaSun } from "react-icons/fa";
 import { RiMenu2Line } from "react-icons/ri";
 import LinkMediaSocial from "@/components/linkSocialMedia";
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion"; // Import pour les animations
+import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "@/contexts/language/LanguageContext";
+import { useTranslation } from "@/lib/hooks/useTranslation";
 
 export const ThemeToggleButton = styled.button`
   color: ${(props) => props.theme.text};
@@ -40,6 +40,8 @@ export const MobileNavigation = ({
 }: Props) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { language, toggleLanguage } = useLanguage();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -94,6 +96,18 @@ export const MobileNavigation = ({
               <FaSun size={20} className=" hover:fill-[#ffffff]" />
             )}
           </ThemeToggleButton>
+
+          {/* Ajoutez le bouton de changement de langue */}
+          <button
+            onClick={toggleLanguage}
+            className={`ml-2 px-2 py-1 rounded-md ${
+              currentTheme === "light"
+                ? "bg-gray-200 text-gray-800"
+                : "bg-gray-700 text-white"
+            }`}
+          >
+            {language === "fr" ? "EN" : "FR"}
+          </button>
         </Container>
 
         <Sheet open={open} onOpenChange={setOpen}>
@@ -117,8 +131,8 @@ export const MobileNavigation = ({
                 <nav className=" flex flex-col justify-between items-center">
                   <Container className="w-full flex flex-col">
                     {MainRoutes.map((route) => (
-                      <motion.div // Animation pour chaque élément
-                        key={route.title!}
+                      <motion.div
+                        key={route.titleKey!}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
@@ -130,7 +144,7 @@ export const MobileNavigation = ({
                             onClick={() => setOpen(false)}
                             className="block py-2"
                           >
-                            {route.title}
+                            {t(route.titleKey)}{" "}
                           </Link>
                         </Typography>
                       </motion.div>
@@ -140,18 +154,19 @@ export const MobileNavigation = ({
                 <Container className="flex flex-col justify-start gap-2">
                   <Typography className="font-semibold" variant="body-base">
                     <Link href={"/contact"} onClick={() => setOpen(false)}>
-                      Contact
+                      {t("contact")} {/* Traduisez aussi "Contact" */}
                     </Link>
                   </Typography>
                   <span>
-                    Email :
+                    {t("email")} : {/* Traduisez "Email" */}
                     <a href="mailto:theodorebinda@gmail.com">
                       {" "}
                       theodorebinda@gmail.com
                     </a>
                   </span>
                   <span>
-                    Tel :<a href="tel:+243894594411"> +243 89 459 4411</a>
+                    {t("phone")} : {/* Traduisez "Tel" */}
+                    <a href="tel:+243894594411"> +243 89 459 4411</a>
                   </span>
                 </Container>
 
