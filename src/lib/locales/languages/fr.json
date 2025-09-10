@@ -37,5 +37,69 @@
     "review2": "Une expérience incroyable, très satisfait des résultats!",
     "review3": "Très bonne collaboration, travail de qualité.",
     "review4": "Super service, je recommande vivement!"
+  },
+  "redirection": {
+    "contact_lets_talk": "Parlons de votre projet...",
+    "contact_me": "Ecris Moi Pour Plus",
+    "if_not_redirected": "Si vous n'êtes pas redirigé automatiquement, cliquez",
+    "here": "ici",
+    "details_career": "Détails Carrières ? Ici 😊"
+  },
+  "projects": {
+    "recent": "Projet Récent",
+    "all_projects": "Toutes les réalisations",
+    "opi_b": {
+      "name": "OPI-B",
+      "description": "Plateforme de découverte et de réservation de destinations touristiques en République Démocratique du Congo.",
+      "type": "Application Web",
+      "stats": {
+        "users": "UTILISATEURS",
+        "destinations": "DESTINATIONS"
+      }
+    },
+    "mentor_conect": {
+      "name": "Mentor Conect",
+      "description": "Plateforme qui met en relation des apprenants avec des mentors qualifiés dans divers domaines.",
+      "type": "Application Web",
+      "stats": {
+        "mentors": "MENTORS",
+        "students": "ÉTUDIANTS"
+      }
+    },
+    "monyaya": {
+      "name": "Monyaya",
+      "description": "Plateforme connectant des professionnels (yaya) à des apprenants pour des sessions de mentorat ou formation pratique.",
+      "type": "Plateforme SaaS",
+      "stats": {
+        "professionals": "PROFESSIONNELS",
+        "trainings": "FORMATIONS"
+      }
+    },
+    "lukatout": {
+      "name": "Lukatout",
+      "description": "Market-Place App Permettant aux marchands de vendre leurs produits, et aux utilisateurs d'en acheter.",
+      "type": "Plateforme SaaS",
+      "stats": {
+        "users": "Utilisateurs",
+        "merchants": "Marchands"
+      }
+    },
+    "esmicom": {
+      "name": "Esmicom E-learning",
+      "description": "Plateforme E-learning permettant aux apprenants de suivre les cours de leur fac, aux professeurs de suivre la progression de leurs étudiants et à l'administration de tout gérer.",
+      "type": "Plateforme SaaS",
+      "stats": {
+        "students": "Étudiants",
+        "teachers": "Professeurs",
+        "admins": "Administrateurs"
+      }
+    }
+  },
+  "links": {
+    "website": "Site Web",
+    "github": "GitHub",
+    "webapp": "Application Web",
+    "appstore": "App Store",
+    "playstore": "Play Store"
   }
 }

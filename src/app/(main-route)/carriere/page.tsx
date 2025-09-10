@@ -1,6 +1,7 @@
 "use client";
 import AnnualSummary from "@/components/annual-summary";
 import { useTrackPageView } from "@/lib/hooks/useTrackPageView";
+import { useTranslation } from "@/lib/hooks/useTranslation";
 import { Typo } from "@/styles/globalStyle";
 import { Container } from "@/ui/components/container/container";
 import LinkToOtherPage from "@/ui/components/link-to-other-page/linkToOtherPage";
@@ -19,6 +20,7 @@ const Carriere: React.FC = () => {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
   const loader = useRef<HTMLDivElement>(null);
   const initialized = useRef(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -126,7 +128,7 @@ const Carriere: React.FC = () => {
 
       {!hasMore && annualData.length > 0 && (
         <LinkToOtherPage
-          texte={"Veillez me contacter pour plus"}
+          texte={t("redirection.contact_me")}
           link={"/contact"}
         />
       )}

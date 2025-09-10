@@ -37,5 +37,69 @@
     "review2": "An incredible experience, very satisfied with the results!",
     "review3": "Very good collaboration, quality work.",
     "review4": "Great service, I highly recommend!"
+  },
+  "redirection": {
+    "contact_lets_talk": "Let's talk about your project...",
+    "contact_me": "Write to me for more",
+    "if_not_redirected": "If you are not redirected automatically, click",
+    "here": "here",
+    "details_career": "Career Details? Here 😊"
+  },
+  "projects": {
+    "recent": "Recent Project",
+    "all_projects": "All projects",
+    "opi_b": {
+      "name": "OPI-B",
+      "description": "Platform for discovering and booking tourist destinations in the Democratic Republic of Congo.",
+      "type": "Web Application",
+      "stats": {
+        "users": "USERS",
+        "destinations": "DESTINATIONS"
+      }
+    },
+    "mentor_conect": {
+      "name": "Mentor Connect",
+      "description": "Platform connecting learners with qualified mentors in various fields.",
+      "type": "Web Application",
+      "stats": {
+        "mentors": "MENTORS",
+        "students": "STUDENTS"
+      }
+    },
+    "monyaya": {
+      "name": "Monyaya",
+      "description": "Platform connecting professionals (yaya) with learners for mentoring sessions or practical training.",
+      "type": "SaaS Platform",
+      "stats": {
+        "professionals": "PROFESSIONALS",
+        "trainings": "TRAININGS"
+      }
+    },
+    "lukatout": {
+      "name": "Lukatout",
+      "description": "Marketplace App allowing merchants to sell their products and users to buy them.",
+      "type": "SaaS Platform",
+      "stats": {
+        "users": "Users",
+        "merchants": "Merchants"
+      }
+    },
+    "esmicom": {
+      "name": "Esmicom E-learning",
+      "description": "E-learning platform allowing students to follow their university courses, teachers to monitor their students' progress, and administrators to manage everything.",
+      "type": "SaaS Platform",
+      "stats": {
+        "students": "Students",
+        "teachers": "Teachers",
+        "admins": "Administrators"
+      }
+    }
+  },
+  "links": {
+    "website": "Website",
+    "github": "GitHub",
+    "webapp": "Web App",
+    "appstore": "App Store",
+    "playstore": "Play Store"
   }
 }
