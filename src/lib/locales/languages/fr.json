@@ -23,5 +23,19 @@
     "web_developer": "Développeur web/mobile",
     "ui_ux_designer": "UI/UX Designer",
     "radio_engineer": "Ingénieur Radio Transmission"
+  },
+  "about": {
+    "design": "Je conçois",
+    "applications": "des applications",
+    "web_mobile": "web et mobile",
+    "description": "Ingénieur en conception spécialisé dans les systèmes de design et l'accessibilité, je crée des interfaces intuitives alliant esthétique et inclusivité.",
+    "email": "Email",
+    "resume": "Resumé"
+  },
+  "reviews": {
+    "review1": "C'est surtout sa capacité à s'adapter à tout type de projet qui est impressionnante. J'ai de très bons souvenirs de notre collaboration et je le recommande vivement !",
+    "review2": "Une expérience incroyable, très satisfait des résultats!",
+    "review3": "Très bonne collaboration, travail de qualité.",
+    "review4": "Super service, je recommande vivement!"
   }
 }

@@ -17,7 +17,7 @@ import { FaSun } from "react-icons/fa";
 import { RiMenu2Line } from "react-icons/ri";
 import LinkMediaSocial from "@/components/linkSocialMedia";
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/language/LanguageContext";
 import { useTranslation } from "@/lib/hooks/useTranslation";
 
@@ -55,9 +55,14 @@ export const MobileNavigation = ({
     };
   }, []);
 
+  // Fonction pour fermer le Sheet après un clic
+  const handleLinkClick = () => {
+    setOpen(false);
+  };
+
   return (
     <header
-      className={clsx("fixed top-0 left-0 right-0 min-w-full ", className, {
+      className={clsx("fixed top-0 left-0 right-0 min-w-full z-50", className, {
         "shadow-md": isScrolled,
       })}
     >
@@ -71,6 +76,7 @@ export const MobileNavigation = ({
             href="/"
             className="flex justify-start items-center"
             aria-label={"logo"}
+            onClick={handleLinkClick} // Ferme le Sheet quand on clique sur le logo
           >
             <div className="bg-[#b2d2fa] hover:bg-[#5182be] w-6 rounded-full h-6"></div>
             {currentTheme === "light" ? (
@@ -97,7 +103,7 @@ export const MobileNavigation = ({
             )}
           </ThemeToggleButton>
 
-          {/* Ajoutez le bouton de changement de langue */}
+          {/* Bouton de changement de langue */}
           <button
             onClick={toggleLanguage}
             className={`ml-2 px-2 py-1 rounded-md ${
@@ -141,10 +147,10 @@ export const MobileNavigation = ({
                         <Typography variant="body-base" component="p">
                           <Link
                             href={route.baseUrl!}
-                            onClick={() => setOpen(false)}
+                            onClick={handleLinkClick} // Utilise la fonction de fermeture
                             className="block py-2"
                           >
-                            {t(route.titleKey)}{" "}
+                            {t(route.titleKey)}
                           </Link>
                         </Typography>
                       </motion.div>
@@ -153,20 +159,30 @@ export const MobileNavigation = ({
                 </nav>
                 <Container className="flex flex-col justify-start gap-2">
                   <Typography className="font-semibold" variant="body-base">
-                    <Link href={"/contact"} onClick={() => setOpen(false)}>
-                      {t("contact")} {/* Traduisez aussi "Contact" */}
+                    <Link href={"/contact"} onClick={handleLinkClick}>
+                      {" "}
+                      {/* Utilise la fonction de fermeture */}
+                      {t("contact")}
                     </Link>
                   </Typography>
                   <span>
-                    {t("email")} : {/* Traduisez "Email" */}
-                    <a href="mailto:theodorebinda@gmail.com">
+                    {t("email")} :
+                    <a
+                      href="mailto:theodorebinda@gmail.com"
+                      onClick={handleLinkClick}
+                    >
                       {" "}
+                      {/* Utilise la fonction de fermeture */}{" "}
                       theodorebinda@gmail.com
                     </a>
                   </span>
                   <span>
-                    {t("phone")} : {/* Traduisez "Tel" */}
-                    <a href="tel:+243894594411"> +243 89 459 4411</a>
+                    {t("phone")} :
+                    <a href="tel:+243894594411" onClick={handleLinkClick}>
+                      {" "}
+                      {/* Utilise la fonction de fermeture */}
+                      +243 89 459 4411
+                    </a>
                   </span>
                 </Container>
 

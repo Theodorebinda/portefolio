@@ -55,9 +55,7 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
     >
       <Container
         className={`${
-          currentTheme === "light"
-            ? "bg-white "
-            : "bg-[#1c1917] max-w-screen-xl"
+          currentTheme === "light" ? "bg-white " : "bg-[#1c1917] max-w-full"
         }`}
       >
         <Container
@@ -103,7 +101,7 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
                         }`
                   }`}
                 >
-                  {t(route.titleKey)} {/* Utilisez t() pour traduire */}
+                  {t(route.titleKey)}
                 </Link>
               </Typography>
             ))}

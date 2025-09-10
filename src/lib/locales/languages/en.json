@@ -23,5 +23,19 @@
     "web_developer": "Web/Mobile Developer",
     "ui_ux_designer": "UI/UX Designer",
     "radio_engineer": "Radio Transmission Engineer"
+  },
+  "about": {
+    "design": "I design",
+    "applications": "applications",
+    "web_mobile": "web and mobile",
+    "description": "Design engineer specialized in design systems and accessibility, I create intuitive interfaces combining aesthetics and inclusivity.",
+    "email": "Email",
+    "resume": "Resume"
+  },
+  "reviews": {
+    "review1": "It's especially his ability to adapt to any type of project that is impressive. I have very good memories of our collaboration and I highly recommend him!",
+    "review2": "An incredible experience, very satisfied with the results!",
+    "review3": "Very good collaboration, quality work.",
+    "review4": "Great service, I highly recommend!"
   }
 }

@@ -1,16 +1,13 @@
 // components/Greeting.tsx
 "use client";
 import { useTranslation } from "@/lib/hooks/useTranslation";
-import { useEffect, useState } from "react";
+import { useMemo } from "react";
 
 const Greeting = () => {
-  const [greeting, setGreeting] = useState("");
-  const [visitTime, setVisitTime] = useState<Date | null>(null);
   const { t } = useTranslation();
 
-  useEffect(() => {
+  const greeting = useMemo(() => {
     const now = new Date();
-    setVisitTime(now);
     const currentHour = now.getHours();
     let greetingKey = "hero.greeting";
 
@@ -22,8 +19,8 @@ const Greeting = () => {
       greetingKey = "hero.evening";
     }
 
-    setGreeting(t(greetingKey));
-  }, [t]);
+    return t(greetingKey);
+  }, [t]); // Maintenant 't' peut être dans les dépendances
 
   return (
     <div className="">
