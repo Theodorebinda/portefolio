@@ -73,9 +73,7 @@ const AboutSection = () => {
               </Link>
             </div>
             <div className="flex items-center justify-start gap-8">
-              <Link
-                href={"#"}
-                target="_blank"
+              <div
                 rel="noopener noreferrer"
                 className="flex justify-start items-center gap-2 hover:text-[#5182be] underline transition-colors"
               >
@@ -87,9 +85,8 @@ const AboutSection = () => {
                   rel="noopener noreferrer"
                 >
                   <span className="font-bold">{t("about.resume")}</span>{" "}
-                  {/* Traduction */}
                 </a>
-              </Link>
+              </div>
             </div>
           </Container>
         </Container>
