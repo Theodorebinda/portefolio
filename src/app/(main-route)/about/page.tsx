@@ -40,7 +40,7 @@ const About = () => {
           if (aboutMeRef.current) {
             aboutMeRef.current.scrollIntoView({
               behavior: "smooth",
-              block: "start", // ou "center", "end"
+              block: "start",
             });
           }
           setShowScrollToTop(true);
