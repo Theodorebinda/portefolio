@@ -101,5 +101,59 @@
     "webapp": "Application Web",
     "appstore": "App Store",
     "playstore": "Play Store"
+  },
+  "career": {
+    "title": "Parcours",
+    "scroll_more": "Faites défiler pour voir plus d'activités.",
+    "loading": "Chargement...",
+    "years": {
+      "2025": {
+        "title": "Freelance",
+        "description": "Début 2025 : consolidation de mes compétences techniques et soft skills, lancement de mon activité freelance.",
+        "achievements": [
+          "Renforcement des compétences en gestion de projet grâce à diverses formations.",
+          "Lead technique sur deux projets majeurs, du concept au déploiement.",
+          "Contributions actives à des projets open-source importants."
+        ]
+      },
+      "2024": {
+        "title": "Croissance et Innovation",
+        "description": "2024 : approfondissement des technologies web modernes et développement de projets à forte valeur ajoutée.",
+        "achievements": [
+          "Développement d'applications sur mesure pour une entreprise privée.",
+          "Collaboration avec une équipe multidisciplinaire pour déployer de nouvelles fonctionnalités.",
+          "Perfectionnement continu en UX/UI pour optimiser l'expérience utilisateur."
+        ]
+      },
+      "2023": {
+        "title": "Acquisition des Fondamentaux",
+        "description": "2023 : apprentissage intensif des bases du développement web et exploration des principaux frameworks.",
+        "achievements": [
+          "Maîtrise des fondamentaux JavaScript, HTML et CSS et ReactJs.",
+          "Réalisation de plusieurs projets personnels pour appliquer les connaissances.",
+          "Premières contributions à des projets open-source.",
+          "Initiation aux frameworks front-end comme React."
+        ]
+      },
+      "2021-2022": {
+        "title": "Découverte du Développement",
+        "description": "2021-2022 : premiers pas dans l'univers du développement logiciel et de la programmation.",
+        "achievements": [
+          "Apprentissage des concepts de base de la programmation.",
+          "Découverte de JavaScript et création de scripts simples.",
+          "Participation à des ateliers d'introduction au développement."
+        ]
+      },
+      "2015-2019": {
+        "title": "Ingénieur en Électronique et Transmission Radio",
+        "description": "Formation spécialisée en systèmes électroniques et transmission radio, combinant théorie et pratique.",
+        "achievements": [
+          "Maîtrise de l'électronique analogique et numérique.",
+          "Conception et implémentation de circuits électroniques.",
+          "Initiation à la programmation embarquée."
+        ]
+      }
+    },
+    "achievements_title": "Réalisations clés :"
   }
 }

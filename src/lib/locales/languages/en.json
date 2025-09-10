@@ -101,5 +101,59 @@
     "webapp": "Web App",
     "appstore": "App Store",
     "playstore": "Play Store"
+  },
+  "career": {
+    "title": "Career Path",
+    "scroll_more": "Scroll to see more activities.",
+    "loading": "Loading...",
+    "years": {
+      "2025": {
+        "title": "Freelance",
+        "description": "Early 2025: consolidation of my technical and soft skills, launch of my freelance activity.",
+        "achievements": [
+          "Strengthening project management skills through various trainings.",
+          "Technical lead on two major projects, from concept to deployment.",
+          "Active contributions to important open-source projects."
+        ]
+      },
+      "2024": {
+        "title": "Growth and Innovation",
+        "description": "2024: deepening modern web technologies and developing high-value projects.",
+        "achievements": [
+          "Development of custom applications for a private company.",
+          "Collaboration with a multidisciplinary team to deploy new features.",
+          "Continuous improvement in UX/UI to optimize user experience."
+        ]
+      },
+      "2023": {
+        "title": "Acquisition of Fundamentals",
+        "description": "2023: intensive learning of web development basics and exploration of main frameworks.",
+        "achievements": [
+          "Mastery of JavaScript, HTML and CSS fundamentals and ReactJs.",
+          "Completion of several personal projects to apply knowledge.",
+          "First contributions to open-source projects.",
+          "Introduction to front-end frameworks like React."
+        ]
+      },
+      "2021-2022": {
+        "title": "Discovery of Development",
+        "description": "2021-2022: first steps in the world of software development and programming.",
+        "achievements": [
+          "Learning basic programming concepts.",
+          "Discovery of JavaScript and creation of simple scripts.",
+          "Participation in development introduction workshops."
+        ]
+      },
+      "2015-2019": {
+        "title": "Electronics and Radio Transmission Engineer",
+        "description": "Specialized training in electronic systems and radio transmission, combining theory and practice.",
+        "achievements": [
+          "Mastery of analog and digital electronics.",
+          "Design and implementation of electronic circuits.",
+          "Introduction to embedded programming."
+        ]
+      }
+    },
+    "achievements_title": "Key achievements:"
   }
 }
