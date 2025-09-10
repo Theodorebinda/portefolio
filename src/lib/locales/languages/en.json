@@ -47,7 +47,7 @@
   },
   "projects": {
     "recent": "Recent Project",
-    "all_projects": "All projects",
+    "all_projects": "Some Projects",
     "opi_b": {
       "name": "OPI-B",
       "description": "Platform for discovering and booking tourist destinations in the Democratic Republic of Congo.",
@@ -155,5 +155,77 @@
       }
     },
     "achievements_title": "Key achievements:"
+  },
+  "aboutPage": {
+    "hero": {
+      "iam": "I am",
+      "title": "Web and mobile developer, radio transmission engineer and electrician,",
+      "graduated": "graduated from",
+      "ista": "Institut Supérieur de Technique Appliquée",
+      "certified": "and certified by",
+      "kadea": "Kadea Academy",
+      "description1": "I design and maintain web and mobile applications,",
+      "description2": "motivated by stimulating projects that allow exploring and exploiting innovative technologies.",
+      "download_cv": "Download CV"
+    },
+    "toolsAndSoftware": {
+      "title": "Tools & Software",
+      "description": "Throughout my journey, I've had the opportunity to work with various software,",
+      "description_continued": "tools and frameworks - here are a few:"
+    }
+  },
+  "contact": {
+    "title": "Send A Message!",
+    "subtitle": "Do you have a question or a proposal, or do you just want to say hello? Go ahead.",
+    "form": {
+      "name": "Name",
+      "name_placeholder": "Enter your name",
+      "email": "Email",
+      "email_placeholder": "Enter your email",
+      "message": "Message",
+      "message_placeholder": "your message",
+      "submit": "Send",
+      "errors": {
+        "name_required": "Please enter your name!",
+        "email_required": "Please enter your email address.",
+        "email_invalid": "Please check your email address",
+        "message_required": "Please write something"
+      },
+      "success": "Thank you for your message!"
+    }
+  },
+  "common": {
+    "construction_title": "Page under construction",
+    "construction_message": "This page will be available soon. Stay tuned!",
+    "cta_message": "Want to chat a bit? 😊"
+  },
+  "gallery": {
+    "title": "Gallery",
+    "photos": {
+      "1": {
+        "title": "Sycamore",
+        "description": "Photo taken during a work session at Sycamore 2024"
+      },
+      "2": {
+        "title": "Kadea",
+        "description": "Photo taken during the certification and closing of training at Kadea 2023"
+      },
+      "3": {
+        "title": "Kadea",
+        "description": "Photo taken during a training session at Kadea 2023"
+      },
+      "4": {
+        "title": "Palme D'or",
+        "description": "Photo taken at Palme D'or, Web Master management of certain websites and performance enhancement 2023"
+      },
+      "5": {
+        "title": "Palme D'or",
+        "description": "Preparation of electrical tools and materials for a work session 2022"
+      },
+      "6": {
+        "title": "ISTA 2019-2020",
+        "description": "Photo taken during a study session with colleagues in 2019"
+      }
+    }
   }
 }

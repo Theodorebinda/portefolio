@@ -1,42 +1,45 @@
+"use client";
+
 import { Btn, Typo } from "@/styles/globalStyle";
 import { Container } from "@/ui/components/container/container";
 import { Typography } from "@/ui/components/typography/typography";
 import Image from "next/image";
 import photo from "/public/theodore-removebg-preview.png";
 import { Span } from "@/styles/globalStyle";
+import { useTranslation } from "@/lib/hooks/useTranslation";
 
 const HeroSectionAbout = () => {
+  const { t } = useTranslation();
+
   return (
     <Container className="flex flex-col lg:flex-row lg:justify-between  items-start">
       <Container className="md:basis-1/2 flex flex-col items-center justify-between gap-10  ">
         <Container className="leading-relaxed text-start">
           <Typography className="text-xl font-normal">
-            <Typo className="font-normal text-6xl md:text-7xl">Je suis </Typo>
-            {
-              "Développeur web et mobile, ingénieur en radio-transmission et électricien,"
-            }
+            <Typo className="font-normal text-6xl md:text-7xl">
+              {t("aboutPage.hero.iam")} {/* Traduction */}
+            </Typo>
+            {t("aboutPage.hero.title")} {/* Traduction */}
           </Typography>
           <Typography className="text-xl font-normal leading-relaxed">
-            {"diplômé de "}
+            {t("aboutPage.hero.graduated")} {/* Traduction */}
             <Span
               href="https://ista-kin.org/ista-kin/ista/index.html"
               target="_blank"
             >
-              {"l'Institut Supérieur de Technique Appliquée"}
+              {t("aboutPage.hero.ista")} {/* Traduction */}
             </Span>
-            {" et certifié par "}
+            {" " + t("aboutPage.hero.certified") + " "} {/* Traduction */}
             <Span href="https://www.kadea.academy/" target="_blank">
-              {"La Kadea Academy"}
+              {t("aboutPage.hero.kadea")} {/* Traduction */}
             </Span>
             .
             <br />
             <span>
-              {"je conçois et maintiens des applications web et mobile,"}
+              {t("aboutPage.hero.description1")} {/* Traduction */}
             </span>
             <span>
-              {
-                "motivé par des projets stimulants qui permettent d'explorer et d'exploiter des technologies innovantes."
-              }
+              {" " + t("aboutPage.hero.description2")} {/* Traduction */}
             </span>
           </Typography>
         </Container>
@@ -47,7 +50,7 @@ const HeroSectionAbout = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Btn className="  px-6 py-5">Download CV</Btn>
+            <Btn className="px-6 py-5">{t("aboutPage.hero.download_cv")}</Btn>
           </a>
         </Container>
       </Container>

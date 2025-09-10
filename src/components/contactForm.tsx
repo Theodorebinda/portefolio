@@ -1,11 +1,15 @@
+"use client";
+
 import React, { useRef, useState, FormEvent } from "react";
 import emailjs, { init } from "@emailjs/browser";
 import { Container } from "@/ui/components/container/container";
+import { useTranslation } from "@/lib/hooks/useTranslation";
 
 init("VCyUVQhmgVW3VDFiv");
 
 export const ContactForm = () => {
   const form = useRef<HTMLFormElement>(null);
+  const { t } = useTranslation();
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -27,20 +31,29 @@ export const ContactForm = () => {
     let formErrors = {};
 
     if (!name) {
-      formErrors = { ...formErrors, name: "Veuillez entrer votre nom !" };
+      formErrors = {
+        ...formErrors,
+        name: t("contact.form.errors.name_required"),
+      };
     }
 
     if (!email) {
       formErrors = {
         ...formErrors,
-        email: "Veuillez entrer votre adresse Email.",
+        email: t("contact.form.errors.email_required"),
       };
     } else if (!validateEmail(email)) {
-      formErrors = { ...formErrors, email: "Revoyez votre adresse email" };
+      formErrors = {
+        ...formErrors,
+        email: t("contact.form.errors.email_invalid"),
+      };
     }
 
     if (!message) {
-      formErrors = { ...formErrors, message: "Ecrivez quelque chose" };
+      formErrors = {
+        ...formErrors,
+        message: t("contact.form.errors.message_required"),
+      };
     }
 
     setErrors(formErrors);
@@ -78,24 +91,24 @@ export const ContactForm = () => {
       >
         <Container className="flex flex-col lg:flex-row gap-10 lg:justify-between lg:items-center">
           <Container className="flex flex-col gap-2">
-            <label className="font-semibold">Nom</label>
+            <label className="font-semibold">{t("contact.form.name")}</label>
             <input
               type="text"
               name="name"
-              placeholder="Entrez Votre nom"
-              className="placeholder-slate-400  bg-transparent focus:outline-none focus:border-b-2 pb-5 border-b"
+              placeholder={t("contact.form.name_placeholder")}
+              className="placeholder-slate-400 bg-transparent focus:outline-none focus:border-b-2 pb-5 border-b"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
             {errors.name && <span className="text-red-500">{errors.name}</span>}
           </Container>
           <Container className="flex flex-col gap-2">
-            <label className="font-semibold">Email</label>
+            <label className="font-semibold">{t("contact.form.email")}</label>
             <input
               type="email"
               name="email"
-              placeholder="Entrez votre email"
-              className="placeholder-slate-400  bg-transparent focus:outline-none focus:border-b-2 pb-5 border-b"
+              placeholder={t("contact.form.email_placeholder")}
+              className="placeholder-slate-400 bg-transparent focus:outline-none focus:border-b-2 pb-5 border-b"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -105,10 +118,12 @@ export const ContactForm = () => {
           </Container>
         </Container>
         <Container className="flex flex-col gap-2">
-          <label className="font-semibold">Message</label>
+          <label className="font-semibold">
+            {t("contact.form.message")} {/* Traduction */}
+          </label>
           <textarea
             name="message"
-            placeholder="votre message"
+            placeholder={t("contact.form.message_placeholder")}
             className="placeholder-slate-400 bg-transparent focus:outline-none focus:border-b-2 pb-5 border-b resize-none"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
@@ -119,14 +134,14 @@ export const ContactForm = () => {
         </Container>
         <input
           type="submit"
-          value="Envoyer"
+          value={t("contact.form.submit")}
           className="bg-[#b2d2fa] text-black hover:bg-[#5182be] hover:font-semibold p-2 rounded cursor-pointer"
         />
       </form>
       {showSuccessPopup && (
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-4 rounded shadow-lg">
-            <p>Merci pour votre message!</p>
+            <p>{t("contact.form.success")}</p>
           </div>
         </div>
       )}
