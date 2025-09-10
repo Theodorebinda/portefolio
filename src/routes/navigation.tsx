@@ -107,17 +107,21 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
             ))}
           </nav>
 
-          <Container className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-10">
+          <Container className="flex flex-col md:flex-row justify-between items-center gap-3 md:gap-8">
             <button
               onClick={toggleLanguage}
-              className={`ml-2 px-2 py-1 rounded-md ${
+              className={` flex items-center gap-2 px-1 py-0.5 rounded-lg shadow-sm transition ${
                 currentTheme === "light"
-                  ? "bg-gray-200 text-gray-800"
-                  : "bg-gray-700 text-white"
+                  ? "bg-gray-100 hover:bg-gray-200 text-gray-800"
+                  : "bg-gray-700 hover:bg-gray-600 text-white"
               }`}
             >
-              {language === "fr" ? "EN" : "FR"}
+              <span className="text-sm">{language === "fr" ? "🇬🇧" : "🇫🇷"}</span>
+              <span className="hidden sm:inline text-sm font-medium">
+                {language === "fr" ? "EN" : "FR"}
+              </span>
             </button>
+
             <LinkMediaSocial currentTheme={currentTheme} />
             <ThemeToggleButton onClick={toggleTheme} aria-label="theme">
               {currentTheme === "light" ? (
