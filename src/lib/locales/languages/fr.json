@@ -1,0 +1,231 @@
+{
+  "routes": {
+    "about": "Résumé",
+    "career": "Carrière",
+    "projects": "Projets",
+    "blog": "Blog",
+    "home": "Retourner à l'accueil"
+  },
+  "hero": {
+    "greeting": "Bienvenue",
+    "morning": "Bonjour",
+    "afternoon": "Bon après-midi",
+    "evening": "Bonsoir",
+    "iam": "je suis",
+    "passionate": "Je suis passionné par",
+    "design_systems": "🎨 les systèmes de conception",
+    "accessibility": "♿️ l'accessibilité",
+    "state_machines": "⚙️ les machines d'état",
+    "user_experience": "et 😍 l'expérience utilisateur",
+    "contact_me": "Contactez Moi"
+  },
+  "roles": {
+    "web_developer": "Développeur web/mobile",
+    "ui_ux_designer": "UI/UX Designer",
+    "radio_engineer": "Ingénieur Radio Transmission"
+  },
+  "about": {
+    "design": "Je conçois",
+    "applications": "des applications",
+    "web_mobile": "web et mobile",
+    "description": "Ingénieur en conception spécialisé dans les systèmes de design et l'accessibilité, je crée des interfaces intuitives alliant esthétique et inclusivité.",
+    "email": "Email",
+    "resume": "Resumé"
+  },
+  "reviews": {
+    "review1": "C'est surtout sa capacité à s'adapter à tout type de projet qui est impressionnante. J'ai de très bons souvenirs de notre collaboration et je le recommande vivement !",
+    "review2": "Une expérience incroyable, très satisfait des résultats!",
+    "review3": "Très bonne collaboration, travail de qualité.",
+    "review4": "Super service, je recommande vivement!"
+  },
+  "redirection": {
+    "contact_lets_talk": "Parlons de votre projet...",
+    "contact_me": "Ecris Moi Pour Plus",
+    "if_not_redirected": "Si vous n'êtes pas redirigé automatiquement, cliquez",
+    "here": "ici",
+    "details_career": "Détails Carrières ? Ici 😊"
+  },
+  "projects": {
+    "recent": "Projet Récent",
+    "all_projects": "Quelques projets",
+    "opi_b": {
+      "name": "OPI-B",
+      "description": "Plateforme de découverte et de réservation de destinations touristiques en République Démocratique du Congo.",
+      "type": "Application Web",
+      "stats": {
+        "users": "UTILISATEURS",
+        "destinations": "DESTINATIONS"
+      }
+    },
+    "mentor_conect": {
+      "name": "Mentor Conect",
+      "description": "Plateforme qui met en relation des apprenants avec des mentors qualifiés dans divers domaines.",
+      "type": "Application Web",
+      "stats": {
+        "mentors": "MENTORS",
+        "students": "ÉTUDIANTS"
+      }
+    },
+    "monyaya": {
+      "name": "Monyaya",
+      "description": "Plateforme connectant des professionnels (yaya) à des apprenants pour des sessions de mentorat ou formation pratique.",
+      "type": "Plateforme SaaS",
+      "stats": {
+        "professionals": "PROFESSIONNELS",
+        "trainings": "FORMATIONS"
+      }
+    },
+    "lukatout": {
+      "name": "Lukatout",
+      "description": "Market-Place App Permettant aux marchands de vendre leurs produits, et aux utilisateurs d'en acheter.",
+      "type": "Plateforme SaaS",
+      "stats": {
+        "users": "Utilisateurs",
+        "merchants": "Marchands"
+      }
+    },
+    "esmicom": {
+      "name": "Esmicom E-learning",
+      "description": "Plateforme E-learning permettant aux apprenants de suivre les cours de leur fac, aux professeurs de suivre la progression de leurs étudiants et à l'administration de tout gérer.",
+      "type": "Plateforme SaaS",
+      "stats": {
+        "students": "Étudiants",
+        "teachers": "Professeurs",
+        "admins": "Administrateurs"
+      }
+    }
+  },
+  "links": {
+    "website": "Site Web",
+    "github": "GitHub",
+    "webapp": "Application Web",
+    "appstore": "App Store",
+    "playstore": "Play Store"
+  },
+  "career": {
+    "title": "Parcours",
+    "scroll_more": "Faites défiler pour voir plus d'activités.",
+    "loading": "Chargement...",
+    "years": {
+      "2025": {
+        "title": "Freelance",
+        "description": "Début 2025 : consolidation de mes compétences techniques et soft skills, lancement de mon activité freelance.",
+        "achievements": [
+          "Renforcement des compétences en gestion de projet grâce à diverses formations.",
+          "Lead technique sur deux projets majeurs, du concept au déploiement.",
+          "Contributions actives à des projets open-source importants."
+        ]
+      },
+      "2024": {
+        "title": "Croissance et Innovation",
+        "description": "2024 : approfondissement des technologies web modernes et développement de projets à forte valeur ajoutée.",
+        "achievements": [
+          "Développement d'applications sur mesure pour une entreprise privée.",
+          "Collaboration avec une équipe multidisciplinaire pour déployer de nouvelles fonctionnalités.",
+          "Perfectionnement continu en UX/UI pour optimiser l'expérience utilisateur."
+        ]
+      },
+      "2023": {
+        "title": "Acquisition des Fondamentaux",
+        "description": "2023 : apprentissage intensif des bases du développement web et exploration des principaux frameworks.",
+        "achievements": [
+          "Maîtrise des fondamentaux JavaScript, HTML et CSS et ReactJs.",
+          "Réalisation de plusieurs projets personnels pour appliquer les connaissances.",
+          "Premières contributions à des projets open-source.",
+          "Initiation aux frameworks front-end comme React."
+        ]
+      },
+      "2021-2022": {
+        "title": "Découverte du Développement",
+        "description": "2021-2022 : premiers pas dans l'univers du développement logiciel et de la programmation.",
+        "achievements": [
+          "Apprentissage des concepts de base de la programmation.",
+          "Découverte de JavaScript et création de scripts simples.",
+          "Participation à des ateliers d'introduction au développement."
+        ]
+      },
+      "2015-2019": {
+        "title": "Ingénieur en Électronique et Transmission Radio",
+        "description": "Formation spécialisée en systèmes électroniques et transmission radio, combinant théorie et pratique.",
+        "achievements": [
+          "Maîtrise de l'électronique analogique et numérique.",
+          "Conception et implémentation de circuits électroniques.",
+          "Initiation à la programmation embarquée."
+        ]
+      }
+    },
+    "achievements_title": "Réalisations clés :"
+  },
+  "aboutPage": {
+    "hero": {
+      "iam": "Je suis",
+      "title": "Développeur web et mobile, ingénieur en radio-transmission et électricien,",
+      "graduated": "diplômé de",
+      "ista": "l'Institut Supérieur de Technique Appliquée",
+      "certified": "et certifié par",
+      "kadea": "La Kadea Academy",
+      "description1": "je conçois et maintiens des applications web et mobile,",
+      "description2": "motivé par des projets stimulants qui permettent d'explorer et d'exploiter des technologies innovantes.",
+      "download_cv": "Télécharger CV"
+    },
+    "toolsAndSoftware": {
+      "title": "Outils & Logiciels",
+      "description": "Dans mon parcours, j'ai eu l'occasion de travailler avec différents logiciels,",
+      "description_continued": "outils et cadres - en voici quelques-uns :"
+    }
+  },
+  "contact": {
+    "title": "Envoyez Un Message!",
+    "subtitle": "Vous avez une question ou une proposition, ou vous souhaitez simplement dire bonjour ? Allez-y.",
+    "form": {
+      "name": "Nom",
+      "name_placeholder": "Entrez Votre nom",
+      "email": "Email",
+      "email_placeholder": "Entrez votre email",
+      "message": "Message",
+      "message_placeholder": "votre message",
+      "submit": "Envoyer",
+      "errors": {
+        "name_required": "Veuillez entrer votre nom !",
+        "email_required": "Veuillez entrer votre adresse Email.",
+        "email_invalid": "Revoyez votre adresse email",
+        "message_required": "Ecrivez quelque chose"
+      },
+      "success": "Merci pour votre message!"
+    }
+  },
+  "common": {
+    "construction_title": "Page en construction",
+    "construction_message": "Cette page sera bientôt disponible. Restez à l'écoute !",
+    "cta_message": "Tu veux discuter un peu? 😊"
+  },
+  "gallery": {
+    "title": "Gallerie",
+    "photos": {
+      "1": {
+        "title": "Sycamore",
+        "description": "Photo prise lors du seance de travail a sycamore 2024"
+      },
+      "2": {
+        "title": "Kadea",
+        "description": "Photo prise lors la certification et cloture de formation a la Kadea 2023"
+      },
+      "3": {
+        "title": "Kadea",
+        "description": "Photo prise lors d'une seance de formation a la Kadea 2023"
+      },
+      "4": {
+        "title": "Palme D'or",
+        "description": "Photo prise a Palme D'or, Web Master gestion de certain site web et renforcement de performance 2023"
+      },
+      "5": {
+        "title": "Palme D'or",
+        "description": "Preparation des outils et materiels electrique pour une seance de travail 2022"
+      },
+      "6": {
+        "title": "ISTA 2019-2020",
+        "description": "Photo prise lors d'une seance d'etude avec collegues en 2019"
+      }
+    }
+  }
+}

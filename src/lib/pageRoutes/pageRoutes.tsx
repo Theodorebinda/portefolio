@@ -1,28 +1,29 @@
+// lib/pageRoutes/pageRoutes.ts
 import { AppLinks } from "@/types/app-links";
 import { Presentation, Home, Settings2 } from "lucide-react";
 
 export const MainRoutes: AppLinks[] = [
   {
-    title: "Résumé",
+    titleKey: "routes.about",
     baseUrl: "/about",
   },
   {
-    title: "Carrière",
+    titleKey: "routes.career",
     baseUrl: "/carriere",
   },
   {
-    title: "Projets",
+    titleKey: "routes.projects",
     baseUrl: "/realisation",
   },
   {
-    title: "Blog",
+    titleKey: "routes.blog",
     baseUrl: "/blog",
   },
 ];
 
 export const HomeRoute: AppLinks[] = [
   {
-    title: "Retourner à l'acceuil",
+    titleKey: "routes.home",
     baseUrl: "/",
     Icon: Home,
   },

@@ -6,11 +6,14 @@ import { P } from "@/styles/globalStyle";
 import imageHero from "../../../../public/icons/fleche1.png";
 import Image from "next/image";
 import { useTrackPageView } from "@/lib/hooks/useTrackPageView";
+import { useTranslation } from "@/lib/hooks/useTranslation";
 
 const ContactPage = () => {
   useTrackPageView();
+  const { t } = useTranslation();
+
   return (
-    <div className="h-[ 70vh] flex items-center justify-between basis-full mb-20">
+    <div className="h-[70vh] flex items-center justify-between basis-full mb-20">
       <Container className="hidden md:block">
         <Image
           src={imageHero}
@@ -23,11 +26,8 @@ const ContactPage = () => {
       </Container>
       <Container className="flex flex-col gap-10 md:basis-1/2">
         <Container className="flex flex-col justify-center items-center gap-2 lg:text-center">
-          <P className="text-2xl">Envoyez Un Message!</P>
-          <span className="text-xl">
-            Vous avez une question ou une proposition, ou vous souhaitez
-            simplement dire bonjour ? Allez-y.
-          </span>
+          <P className="text-2xl">{t("contact.title")}</P>
+          <span className="text-xl">{t("contact.subtitle")}</span>
         </Container>
         <ContactForm />
       </Container>

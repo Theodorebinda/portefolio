@@ -1,65 +1,21 @@
+"use client";
+
 import { Container } from "@/ui/components/container/container";
 import { Typography } from "@/ui/components/typography/typography";
 import Image from "next/image";
 import { Skeleton } from "./ui/skeleton";
 import { useState } from "react";
-
-const photos = [
-  {
-    id: 1,
-    image:
-      "https://res.cloudinary.com/dhdaxlymt/image/upload/v1753789718/Portefolio/WhatsApp_Image_2025-07-29_at_12.47.40_ztgdjo.jpg",
-    title: "Sycamore",
-    description: "Photo prise lors du seance de travail a sycamore 2024",
-  },
-  {
-    id: 2,
-    image:
-      "https://res.cloudinary.com/dhdaxlymt/image/upload/v1753788860/Portefolio/WhatsApp_Image_2025-07-29_at_12.32.56_psozxo.jpg",
-    title: "Kadea",
-    description:
-      "Photo prise lors la certification et cloture  de formation a la Kadea 2023 ",
-  },
-  {
-    id: 3,
-    image:
-      "https://res.cloudinary.com/dhdaxlymt/image/upload/v1753788860/Portefolio/WhatsApp_Image_2025-07-29_at_12.32.55_mtv4if.jpg",
-    title: "Kadea",
-    description: "Photo prise lors d'une seance de formation a la Kadea 2023 ",
-  },
-  {
-    id: 4,
-    image:
-      "https://res.cloudinary.com/dhdaxlymt/image/upload/v1753788866/Portefolio/IMG_20240716_162737_8_ipapu2.jpg",
-    title: "Palme D'or",
-    description:
-      "Photo prise a Palme D'or, Web Master gestion de certain site web et renforcement de performance 2023",
-  },
-  {
-    id: 5,
-    image:
-      "https://res.cloudinary.com/dhdaxlymt/image/upload/v1753788862/Portefolio/IMG_20231005_113100_985_ejn6if.jpg",
-    title: "Palme D'or",
-    description:
-      "Preparation des outils et materiels electrique pour une seance de travail 2022",
-  },
-  {
-    id: 6,
-    image:
-      "https://res.cloudinary.com/dhdaxlymt/image/upload/v1753789719/Portefolio/20180210_105949_rundcs.jpg",
-    title: "ISTA 2019-2020",
-    description:
-      "Photo prise lors d'une seance d'etude avec collegues en  2019",
-  },
-];
+import { useTranslation } from "@/lib/hooks/useTranslation";
+import { photos } from "@/lib/galleriesData/gallerie";
 
 const PhotoGallery = () => {
   const [loading, setLoading] = useState(true);
+  const { t } = useTranslation();
 
   return (
-    <Container className="mt-16 w-full flex flex-col  justify-start ">
+    <Container className="mt-16 w-full flex flex-col justify-start">
       <Typography className="text-4xl lg:text-6xl font-bold mb-8">
-        Gallerie
+        {t("gallery.title")}
       </Typography>
 
       <Container className="flex flex-wrap gap-6 justify-start items-start">
@@ -75,7 +31,7 @@ const PhotoGallery = () => {
             <Image
               src={photo.image}
               fill
-              alt={photo.title}
+              alt={t(photo.titleKey)}
               className={`object-cover transition-opacity duration-500 ${
                 loading ? "opacity-0" : "opacity-100"
               }`}
@@ -89,9 +45,11 @@ const PhotoGallery = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent bg-opacity-95 group-hover:opacity-90 transition-opacity" />
             <Container className="absolute bottom-0 left-0 right-0 p-6 text-white">
               <Typography className="text-2xl font-bold mb-2">
-                {photo.title}
+                {t(photo.titleKey)} {/* Traduction */}
               </Typography>
-              <Typography className="text-lg">{photo.description}</Typography>
+              <Typography className="text-lg">
+                {t(photo.descriptionKey)} {/* Traduction */}
+              </Typography>
             </Container>
           </Container>
         ))}
