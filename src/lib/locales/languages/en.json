@@ -167,6 +167,11 @@
       "description1": "I design and maintain web and mobile applications,",
       "description2": "motivated by stimulating projects that allow exploring and exploiting innovative technologies.",
       "download_cv": "Download CV"
+    },
+    "toolsAndSoftware": {
+      "title": "Tools & Software",
+      "description": "Throughout my journey, I've had the opportunity to work with various software,",
+      "description_continued": "tools and frameworks - here are a few:"
     }
   },
   "contact": {

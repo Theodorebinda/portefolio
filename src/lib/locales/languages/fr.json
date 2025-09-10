@@ -167,6 +167,11 @@
       "description1": "je conçois et maintiens des applications web et mobile,",
       "description2": "motivé par des projets stimulants qui permettent d'explorer et d'exploiter des technologies innovantes.",
       "download_cv": "Télécharger CV"
+    },
+    "toolsAndSoftware": {
+      "title": "Outils & Logiciels",
+      "description": "Dans mon parcours, j'ai eu l'occasion de travailler avec différents logiciels,",
+      "description_continued": "outils et cadres - en voici quelques-uns :"
     }
   },
   "contact": {
