@@ -37,7 +37,7 @@ const AnnualSummary: React.FC<AnnualDataType> = ({
         <div className="w-full md:w-2/5 transition-all duration-500 ease-in-out h-[300px]  relative overflow-hidden rounded-xl -z-50">
           <Image
             src={imageUrls![currentIndex]}
-            alt={`${t("image_for_year", { year })} ${currentIndex + 1}`} // Traduction
+            alt={`${t("theodore")} ${currentIndex + 1}`}
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 40vw"
