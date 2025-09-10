@@ -1,30 +1,30 @@
 // components/Greeting.tsx
-import { useEffect, useState } from "react";
+"use client";
+import { useTranslation } from "@/lib/hooks/useTranslation";
+import { useMemo } from "react";
 
 const Greeting = () => {
-  const [greeting, setGreeting] = useState("Bienvenue");
-  const [visitTime, setVisitTime] = useState<Date | null>(null);
+  const { t } = useTranslation();
 
-  useEffect(() => {
+  const greeting = useMemo(() => {
     const now = new Date();
-    setVisitTime(now);
     const currentHour = now.getHours();
-    let greetingMessage = "Bienvenue";
+    let greetingKey = "hero.greeting";
 
     if (currentHour >= 5 && currentHour < 12) {
-      greetingMessage = "Bonjour";
+      greetingKey = "hero.morning";
     } else if (currentHour >= 12 && currentHour < 18) {
-      greetingMessage = "Bon après-midi";
+      greetingKey = "hero.afternoon";
     } else {
-      greetingMessage = "Bonsoir";
+      greetingKey = "hero.evening";
     }
 
-    setGreeting(greetingMessage);
-  }, []);
+    return t(greetingKey);
+  }, [t]); // Maintenant 't' peut être dans les dépendances
 
   return (
     <div className="">
-      <span>{greeting} !, </span>
+      <span>{greeting} , </span>
     </div>
   );
 };

@@ -10,6 +10,8 @@ import { FaMoon } from "react-icons/fa6";
 import { FaSun } from "react-icons/fa";
 import LinkMediaSocial from "@/components/linkSocialMedia";
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/contexts/language/LanguageContext";
+import { useTranslation } from "@/lib/hooks/useTranslation";
 
 const ThemeToggleButton = styled.button`
   color: ${(props) => props.theme.text};
@@ -27,6 +29,8 @@ interface Props {
 export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
+  const { language, toggleLanguage } = useLanguage();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,9 +55,7 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
     >
       <Container
         className={`${
-          currentTheme === "light"
-            ? "bg-white "
-            : "bg-[#1c1917] max-w-screen-xl"
+          currentTheme === "light" ? "bg-white " : "bg-[#1c1917] max-w-full"
         }`}
       >
         <Container
@@ -78,7 +80,7 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
           <nav className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-10">
             {MainRoutes.map((route) => (
               <Typography
-                key={route.title}
+                key={route.titleKey}
                 variant="body-base"
                 component="p"
                 className=""
@@ -99,13 +101,27 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
                         }`
                   }`}
                 >
-                  {route.title}
+                  {t(route.titleKey)}
                 </Link>
               </Typography>
             ))}
           </nav>
 
-          <Container className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-10">
+          <Container className="flex flex-col md:flex-row justify-between items-center gap-3 md:gap-8">
+            <button
+              onClick={toggleLanguage}
+              className={` flex items-center gap-2 px-1 py-0.5 rounded-lg shadow-sm transition ${
+                currentTheme === "light"
+                  ? "bg-gray-100 hover:bg-gray-200 text-gray-800"
+                  : "bg-gray-700 hover:bg-gray-600 text-white"
+              }`}
+            >
+              <span className="text-sm">{language === "fr" ? "🇬🇧" : "🇫🇷"}</span>
+              <span className="hidden sm:inline text-sm font-medium">
+                {language === "fr" ? "EN" : "FR"}
+              </span>
+            </button>
+
             <LinkMediaSocial currentTheme={currentTheme} />
             <ThemeToggleButton onClick={toggleTheme} aria-label="theme">
               {currentTheme === "light" ? (

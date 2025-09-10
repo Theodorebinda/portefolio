@@ -1,6 +1,8 @@
+// app/carriere/page.tsx
 "use client";
 import AnnualSummary from "@/components/annual-summary";
 import { useTrackPageView } from "@/lib/hooks/useTrackPageView";
+import { useTranslation } from "@/lib/hooks/useTranslation";
 import { Typo } from "@/styles/globalStyle";
 import { Container } from "@/ui/components/container/container";
 import LinkToOtherPage from "@/ui/components/link-to-other-page/linkToOtherPage";
@@ -19,6 +21,7 @@ const Carriere: React.FC = () => {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
   const loader = useRef<HTMLDivElement>(null);
   const initialized = useRef(false);
+  const { t } = useTranslation(); // Utilisez le hook
 
   useEffect(() => {
     const handleScroll = () => {
@@ -87,21 +90,23 @@ const Carriere: React.FC = () => {
       initialized.current = true;
       loadMoreData();
     }
-  }, [loadMoreData]); // Tableau de dépendances vide
+  }, [loadMoreData]);
 
   return (
     <main className="">
       <Container className="lg:w-2/3 md:w-3/4 mb-8">
-        <Typo className="font-poppins text-5xl">Parcours</Typo>
+        <Typo className="font-poppins text-5xl">
+          {t("career.title")} {/* Traduction */}
+        </Typo>
       </Container>
       <Container className="space-y-10">
         {annualData.map((data) => (
           <AnnualSummary
-            key={`${data.year}-${data.title}`} // Clé plus unique
+            key={`${data.year}-${data.titleKey}`}
             year={data.year}
-            title={data.title}
-            description={data.description}
-            achievements={data.achievements}
+            titleKey={data.titleKey}
+            descriptionKey={data.descriptionKey}
+            achievementsKeys={data.achievementsKeys}
             imageUrls={
               Array.isArray(data.imageUrls) ? data.imageUrls : [data.imageUrls]
             }
@@ -114,11 +119,13 @@ const Carriere: React.FC = () => {
           {isLoading ? (
             <div className="flex flex-col items-center justify-center gap-4">
               <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500" />
-              <p className="text-sm font-medium text-gray-600">Chargement...</p>
+              <p className="text-sm font-medium text-gray-600">
+                {t("career.loading")} {/* Traduction */}
+              </p>
             </div>
           ) : (
             <p className="text-gray-500">
-              {` Faites défiler pour voir plus d'activités.`}
+              {t("career.scroll_more")} {/* Traduction */}
             </p>
           )}
         </div>
@@ -126,7 +133,7 @@ const Carriere: React.FC = () => {
 
       {!hasMore && annualData.length > 0 && (
         <LinkToOtherPage
-          texte={"Veillez me contacter pour plus"}
+          texte={t("redirection.contact_me")}
           link={"/contact"}
         />
       )}
@@ -135,7 +142,7 @@ const Carriere: React.FC = () => {
         <button
           onClick={scrollToTop}
           className="fixed bottom-10 right-10 z-50 p-3 bg-gray-700 rounded-full shadow-lg hover:bg-gray-600 transition-colors duration-300"
-          aria-label="Remonter en haut de la page"
+          aria-label={t("scroll_to_top")}
         >
           <ChevronUpCircle size={40} className="text-white" />
         </button>

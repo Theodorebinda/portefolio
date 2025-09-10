@@ -1,0 +1,159 @@
+{
+  "routes": {
+    "about": "About",
+    "career": "Career",
+    "projects": "Projects",
+    "blog": "Blog",
+    "home": "Back to home"
+  },
+  "hero": {
+    "greeting": "Welcome",
+    "morning": "Good morning",
+    "afternoon": "Good afternoon",
+    "evening": "Good evening",
+    "iam": "I am",
+    "passionate": "I'm passionate about ",
+    "design_systems": " 🎨 design systems",
+    "accessibility": " ♿️ accessibility",
+    "state_machines": " ⚙️ state machines",
+    "user_experience": " and 😍 user experience",
+    "contact_me": "Contact Me"
+  },
+  "roles": {
+    "web_developer": "Web/Mobile Developer",
+    "ui_ux_designer": "UI/UX Designer",
+    "radio_engineer": "Radio Transmission Engineer"
+  },
+  "about": {
+    "design": "I design",
+    "applications": "applications",
+    "web_mobile": "web and mobile",
+    "description": "Design engineer specialized in design systems and accessibility, I create intuitive interfaces combining aesthetics and inclusivity.",
+    "email": "Email",
+    "resume": "Resume"
+  },
+  "reviews": {
+    "review1": "It's especially his ability to adapt to any type of project that is impressive. I have very good memories of our collaboration and I highly recommend him!",
+    "review2": "An incredible experience, very satisfied with the results!",
+    "review3": "Very good collaboration, quality work.",
+    "review4": "Great service, I highly recommend!"
+  },
+  "redirection": {
+    "contact_lets_talk": "Let's talk about your project...",
+    "contact_me": "Write to me for more",
+    "if_not_redirected": "If you are not redirected automatically, click",
+    "here": "here",
+    "details_career": "Career Details? Here 😊"
+  },
+  "projects": {
+    "recent": "Recent Project",
+    "all_projects": "All projects",
+    "opi_b": {
+      "name": "OPI-B",
+      "description": "Platform for discovering and booking tourist destinations in the Democratic Republic of Congo.",
+      "type": "Web Application",
+      "stats": {
+        "users": "USERS",
+        "destinations": "DESTINATIONS"
+      }
+    },
+    "mentor_conect": {
+      "name": "Mentor Connect",
+      "description": "Platform connecting learners with qualified mentors in various fields.",
+      "type": "Web Application",
+      "stats": {
+        "mentors": "MENTORS",
+        "students": "STUDENTS"
+      }
+    },
+    "monyaya": {
+      "name": "Monyaya",
+      "description": "Platform connecting professionals (yaya) with learners for mentoring sessions or practical training.",
+      "type": "SaaS Platform",
+      "stats": {
+        "professionals": "PROFESSIONALS",
+        "trainings": "TRAININGS"
+      }
+    },
+    "lukatout": {
+      "name": "Lukatout",
+      "description": "Marketplace App allowing merchants to sell their products and users to buy them.",
+      "type": "SaaS Platform",
+      "stats": {
+        "users": "Users",
+        "merchants": "Merchants"
+      }
+    },
+    "esmicom": {
+      "name": "Esmicom E-learning",
+      "description": "E-learning platform allowing students to follow their university courses, teachers to monitor their students' progress, and administrators to manage everything.",
+      "type": "SaaS Platform",
+      "stats": {
+        "students": "Students",
+        "teachers": "Teachers",
+        "admins": "Administrators"
+      }
+    }
+  },
+  "links": {
+    "website": "Website",
+    "github": "GitHub",
+    "webapp": "Web App",
+    "appstore": "App Store",
+    "playstore": "Play Store"
+  },
+  "career": {
+    "title": "Career Path",
+    "scroll_more": "Scroll to see more activities.",
+    "loading": "Loading...",
+    "years": {
+      "2025": {
+        "title": "Freelance",
+        "description": "Early 2025: consolidation of my technical and soft skills, launch of my freelance activity.",
+        "achievements": [
+          "Strengthening project management skills through various trainings.",
+          "Technical lead on two major projects, from concept to deployment.",
+          "Active contributions to important open-source projects."
+        ]
+      },
+      "2024": {
+        "title": "Growth and Innovation",
+        "description": "2024: deepening modern web technologies and developing high-value projects.",
+        "achievements": [
+          "Development of custom applications for a private company.",
+          "Collaboration with a multidisciplinary team to deploy new features.",
+          "Continuous improvement in UX/UI to optimize user experience."
+        ]
+      },
+      "2023": {
+        "title": "Acquisition of Fundamentals",
+        "description": "2023: intensive learning of web development basics and exploration of main frameworks.",
+        "achievements": [
+          "Mastery of JavaScript, HTML and CSS fundamentals and ReactJs.",
+          "Completion of several personal projects to apply knowledge.",
+          "First contributions to open-source projects.",
+          "Introduction to front-end frameworks like React."
+        ]
+      },
+      "2021-2022": {
+        "title": "Discovery of Development",
+        "description": "2021-2022: first steps in the world of software development and programming.",
+        "achievements": [
+          "Learning basic programming concepts.",
+          "Discovery of JavaScript and creation of simple scripts.",
+          "Participation in development introduction workshops."
+        ]
+      },
+      "2015-2019": {
+        "title": "Electronics and Radio Transmission Engineer",
+        "description": "Specialized training in electronic systems and radio transmission, combining theory and practice.",
+        "achievements": [
+          "Mastery of analog and digital electronics.",
+          "Design and implementation of electronic circuits.",
+          "Introduction to embedded programming."
+        ]
+      }
+    },
+    "achievements_title": "Key achievements:"
+  }
+}

@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronDownCircle, ChevronUpCircle } from "lucide-react";
 import AboutMe from "@/components/detailAbout";
 import { useTrackPageView } from "@/lib/hooks/useTrackPageView";
+import { useTranslation } from "@/lib/hooks/useTranslation";
 
 const About = () => {
   useTrackPageView();
@@ -15,6 +16,7 @@ const About = () => {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const aboutMeRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,7 +66,7 @@ const About = () => {
       <ToolsAndSoftwareSection />
       <LinkToOtherPage
         className={`md:ml-2`}
-        texte={`Détails Carrières ? Ici 😊`}
+        texte={t("redirection.details_career")}
         link={"/carriere"}
       />
       <div className="flex flex-col  mt-4">

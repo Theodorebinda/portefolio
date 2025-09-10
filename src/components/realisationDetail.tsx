@@ -1,3 +1,4 @@
+// components/RealisationDetail.tsx
 import { P } from "@/styles/globalStyle";
 import { Container } from "@/ui/components/container/container";
 import { Typography } from "@/ui/components/typography/typography";
@@ -13,6 +14,7 @@ interface Props {
   nom: string;
   children?: string | undefined;
 }
+
 export default function RealisationDetail({
   nom,
   description,
@@ -22,7 +24,6 @@ export default function RealisationDetail({
 }: Props) {
   return (
     <Container className={`${className} w-full mt-4 mb-10 flex flex-col gap-3`}>
-      {/* <Link href={link!} passHref legacyBehavior> */}
       <a
         target="_blank"
         rel="noopener noreferrer"
@@ -30,7 +31,6 @@ export default function RealisationDetail({
       >
         <P>{nom}</P>
       </a>
-      {/* </Link> */}
       <Typography className="lg:w-full">{description}</Typography>
       <Container className="md:w-1/3">
         <Image src={image} alt={nom} width={380} className="object-cover" />

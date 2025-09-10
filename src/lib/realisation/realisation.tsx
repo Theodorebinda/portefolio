@@ -1,3 +1,4 @@
+// lib/realisation/realisation.ts
 import { Project } from "@/types/projet-type";
 import second from "/public/images/screencapture-opi-b.png";
 import mentor from "/public/images/screencapture-chef-d-oeuvre-s.png";
@@ -9,25 +10,24 @@ import { FaAppStore, FaGithub, FaGlobe, FaMobile } from "react-icons/fa";
 export const projectsData: Project[] = [
   {
     id: "opi-b",
-    name: "OPI-B",
-    description:
-      "Plateforme de découverte et de réservation de destinations touristiques en République Démocratique du Congo.",
-    type: "Application Web",
+    nameKey: "projects.opi_b.name", // Clé de traduction
+    descriptionKey: "projects.opi_b.description", // Clé de traduction
+    typeKey: "projects.opi_b.type", // Clé de traduction
     links: [
       {
         icon: <FaGlobe />,
-        label: "Website",
+        labelKey: "links.website", // Clé de traduction
         url: "https://opi-b.bprod.top/",
       },
       {
         icon: <FaGithub />,
-        label: "GitHub",
+        labelKey: "links.github", // Clé de traduction
         url: "https://github.com/username/opi-b",
       },
     ],
     stats: [
-      { label: "UTILISATEURS", value: "500+" },
-      { label: "DESTINATIONS", value: "50+" },
+      { labelKey: "projects.opi_b.stats.users", value: "500+" }, // Clé de traduction
+      { labelKey: "projects.opi_b.stats.destinations", value: "50+" }, // Clé de traduction
     ],
     image: second,
     logo: "/images/opi-b-logo.svg",
@@ -35,50 +35,43 @@ export const projectsData: Project[] = [
   },
   {
     id: "mentor-conect",
-    name: "Mentor Conect",
-    description:
-      "Plateforme qui met en relation des apprenants avec des mentors qualifiés dans divers domaines.",
-    type: "Application Web",
+    nameKey: "projects.mentor_conect.name",
+    descriptionKey: "projects.mentor_conect.description",
+    typeKey: "projects.mentor_conect.type",
     links: [
       {
         icon: <FaGlobe />,
-        label: "Website",
+        labelKey: "links.website",
         url: "https://opi-b.bprod.top/",
       },
       {
         icon: <FaGithub />,
-        label: "GitHub",
+        labelKey: "links.github",
         url: "https://github.com/username/opi-b",
       },
     ],
     stats: [
-      { label: "MENTORS", value: "100+" },
-      { label: "ÉTUDIANTS", value: "1K+" },
+      { labelKey: "projects.mentor_conect.stats.mentors", value: "100+" },
+      { labelKey: "projects.mentor_conect.stats.students", value: "1K+" },
     ],
     image: mentor,
     responsable: "Jonathan Smith",
   },
   {
     id: "monyaya",
-    name: "Monyaya",
-    description:
-      "Plateforme connectant des professionnels (yaya) à des apprenants pour des sessions de mentorat ou formation pratique.",
-    type: "Plateforme SaaS",
+    nameKey: "projects.monyaya.name",
+    descriptionKey: "projects.monyaya.description",
+    typeKey: "projects.monyaya.type",
     links: [
       {
         icon: <FaGlobe />,
-        label: "WebApp",
+        labelKey: "links.webapp",
         url: "https://monyaya.com",
       },
-      // {
-      //   icon: <FaGithub />,
-      //   label: "GitHub",
-      //   url: "https://github.com/username/opi-b",
-      // },
     ],
     stats: [
-      { label: "PROFESSIONNELS", value: "200+" },
-      { label: "FORMATIONS", value: "30+" },
+      { labelKey: "projects.monyaya.stats.professionals", value: "200+" },
+      { labelKey: "projects.monyaya.stats.trainings", value: "30+" },
     ],
     image: monyaya,
     logo: "/images/monyaya-logo.svg",
@@ -86,25 +79,24 @@ export const projectsData: Project[] = [
   },
   {
     id: "Lukatout_app",
-    name: "Lukatout",
-    description:
-      "Market-Place App Permettant aux marchants de vendre leurs produit, et aux utilisateurs d'en achetter.",
-    type: "Plateforme SaaS",
+    nameKey: "projects.lukatout.name",
+    descriptionKey: "projects.lukatout.description",
+    typeKey: "projects.lukatout.type",
     links: [
       {
         icon: <FaAppStore />,
-        label: "AppStore",
+        labelKey: "links.appstore",
         url: "#",
       },
       {
         icon: <FaMobile />,
-        label: "PlayStore",
+        labelKey: "links.playstore",
         url: "#",
       },
     ],
     stats: [
-      { label: "Utilisateurs", value: "200+" },
-      { label: "Marchant", value: "30+" },
+      { labelKey: "projects.lukatout.stats.users", value: "200+" },
+      { labelKey: "projects.lukatout.stats.merchants", value: "30+" },
     ],
     image: Lukatout,
     logo: "/images/monyaya-logo.svg",
@@ -112,26 +104,20 @@ export const projectsData: Project[] = [
   },
   {
     id: "esmicom_app",
-    name: "Esmicom E-learning",
-    description:
-      "Plateforme E-learning permettant aux apprenant de suivre les cours de leurs fac aux professeurs de suivre la progression de leurs etudiant l'administration de tout gerer.",
-    type: "Plateforme SaaS",
+    nameKey: "projects.esmicom.name",
+    descriptionKey: "projects.esmicom.description",
+    typeKey: "projects.esmicom.type",
     links: [
       {
         icon: <FaGlobe />,
-        label: "WebApp",
+        labelKey: "links.webapp",
         url: "https://elearning.esmicom.org",
       },
-      // {
-      //   icon: <FaGithub />,
-      //   label: "GitHub",
-      //   url: "https://github.com/username/opi-b",
-      // },
     ],
     stats: [
-      { label: "Etudiants", value: "700+" },
-      { label: "Professeurs", value: "10+" },
-      { label: "Admin", value: "5+" },
+      { labelKey: "projects.esmicom.stats.students", value: "700+" },
+      { labelKey: "projects.esmicom.stats.teachers", value: "10+" },
+      { labelKey: "projects.esmicom.stats.admins", value: "5+" },
     ],
     image: esmicom,
     logo: "/images/monyaya-logo.svg",
