@@ -10,6 +10,7 @@ import {
   Sheet,
   SheetContent,
   SheetDescription,
+  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { FaMoon } from "react-icons/fa6";
@@ -69,32 +70,21 @@ export const MobileNavigation = ({
       <Container
         className={`${
           currentTheme === "light" ? "bg-white" : "bg-[#1c1917]"
-        }  flex flex-row items-center w-full justify-between px-4 py-8 h-[10vh]`}
+        } flex flex-row items-center w-full justify-between px-4 py-8 h-[10vh]`}
       >
         <Container className="flex justify-start items-center gap-3">
           <Link
             href="/"
             className="flex justify-start items-center"
             aria-label={"logo"}
-            onClick={handleLinkClick} // Ferme le Sheet quand on clique sur le logo
+            onClick={handleLinkClick}
           >
             <div className="bg-[#b2d2fa] hover:bg-[#5182be] w-6 rounded-full h-6"></div>
-            {currentTheme === "light" ? (
-              <Typography
-                component="p"
-                className="px-1 text-xl font-normal hover:text-[#464646]"
-              >
-                T.Samba
-              </Typography>
-            ) : (
-              <Typography
-                component="p"
-                className="px-1 text-xl font-normal hover:text-white"
-              >
-                T.Samba
-              </Typography>
-            )}
+            <span className="px-1 text-xl font-normal hover:text-[#464646]">
+              T.Samba
+            </span>
           </Link>
+
           <ThemeToggleButton onClick={toggleTheme} aria-label={"theme"}>
             {currentTheme === "light" ? (
               <FaMoon size={18} className=" hover:fill-[#464646]" />
@@ -105,7 +95,7 @@ export const MobileNavigation = ({
 
           <button
             onClick={toggleLanguage}
-            className={` flex items-center gap-2 px-1 py-0.5 rounded-lg shadow-sm transition ${
+            className={`flex items-center gap-2 px-1 py-0.5 rounded-lg shadow-sm transition ${
               currentTheme === "light"
                 ? "bg-gray-100 hover:bg-gray-200 text-gray-800"
                 : "bg-gray-700 hover:bg-gray-600 text-white"
@@ -120,7 +110,10 @@ export const MobileNavigation = ({
 
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
-            <RiMenu2Line size={32} aria-label={"menu"} />
+            {/* Correction pour l'erreur de ref */}
+            <button className="p-2">
+              <RiMenu2Line size={32} aria-label={"menu"} />
+            </button>
           </SheetTrigger>
           <SheetContent
             side="bottom"
@@ -128,6 +121,8 @@ export const MobileNavigation = ({
               currentTheme === "light" ? "bg-white" : "bg-[#222020]"
             } w-full h-[85vh] rounded-t-2xl`}
           >
+            {" "}
+            <SheetTitle className="sr-only">Menu</SheetTitle>
             <motion.div
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
@@ -136,7 +131,7 @@ export const MobileNavigation = ({
               className="h-full"
             >
               <SheetDescription className="h-full flex justify-between flex-col">
-                <nav className=" flex flex-col justify-between items-center">
+                <nav className="h-full flex flex-col justify-between items-center">
                   <Container className="w-full flex flex-col">
                     {MainRoutes.map((route) => (
                       <motion.div
@@ -146,47 +141,44 @@ export const MobileNavigation = ({
                         transition={{ delay: 0.1 }}
                         className="pt-10 my-auto"
                       >
-                        <Typography variant="body-base" component="p">
-                          <Link
-                            href={route.baseUrl!}
-                            onClick={handleLinkClick} // Utilise la fonction de fermeture
-                            className="block py-2"
-                          >
-                            {t(route.titleKey)}
-                          </Link>
-                        </Typography>
+                        <Link
+                          href={route.baseUrl!}
+                          onClick={handleLinkClick}
+                          className="block py-2 text-base font-normal"
+                        >
+                          {t(route.titleKey)}
+                        </Link>
                       </motion.div>
                     ))}
                   </Container>
+                  <Container className="flex flex-col justify-start w-full gap-2 mb-8">
+                    <span className="font-semibold">
+                      <Link href={"/contact"} onClick={handleLinkClick}>
+                        contact
+                      </Link>
+                    </span>
+                    <span>
+                      email :
+                      <a
+                        href="mailto:theodorebinda@gmail.com"
+                        onClick={handleLinkClick}
+                        className="ml-1"
+                      >
+                        theodorebinda@gmail.com
+                      </a>
+                    </span>
+                    <span>
+                      phone :
+                      <a
+                        href="tel:+243894594411"
+                        onClick={handleLinkClick}
+                        className="ml-1"
+                      >
+                        +243 89 459 4411
+                      </a>
+                    </span>
+                  </Container>
                 </nav>
-                <Container className="flex flex-col justify-start gap-2">
-                  <Typography className="font-semibold" variant="body-base">
-                    <Link href={"/contact"} onClick={handleLinkClick}>
-                      {" "}
-                      {/* Utilise la fonction de fermeture */}
-                      {t("contact")}
-                    </Link>
-                  </Typography>
-                  <span>
-                    {t("email")} :
-                    <a
-                      href="mailto:theodorebinda@gmail.com"
-                      onClick={handleLinkClick}
-                    >
-                      {" "}
-                      {/* Utilise la fonction de fermeture */}{" "}
-                      theodorebinda@gmail.com
-                    </a>
-                  </span>
-                  <span>
-                    {t("phone")} :
-                    <a href="tel:+243894594411" onClick={handleLinkClick}>
-                      {" "}
-                      {/* Utilise la fonction de fermeture */}
-                      +243 89 459 4411
-                    </a>
-                  </span>
-                </Container>
 
                 <LinkMediaSocial
                   className="gap-28 justify-start"
