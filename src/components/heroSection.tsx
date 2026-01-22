@@ -64,7 +64,9 @@ export default function HeroSection() {
           width={400}
           alt="theodore"
           className="object-contain"
-          loading="lazy"
+          priority
+          sizes="(min-width: 1024px) 400px, 100vw"
+          placeholder="blur"
         />
       </Container>
     </Container>

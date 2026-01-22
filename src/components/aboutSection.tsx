@@ -6,11 +6,17 @@ import { Typography } from "@/ui/components/typography/typography";
 import Image from "next/image";
 import { useState } from "react";
 import { Skeleton } from "./ui/skeleton";
-import ReviewsPage from "./reviewSection";
-import { DockIcon, Mail, Pin } from "lucide-react";
+import dynamic from "next/dynamic";
+import { Mail, Pin } from "lucide-react";
 import Link from "next/link";
 import { IoDocument } from "react-icons/io5";
 import { useTranslation } from "@/lib/hooks/useTranslation";
+
+// Lazy load ReviewsPage pour réduire le bundle initial
+const ReviewsPage = dynamic(() => import("./reviewSection"), {
+  ssr: true,
+  loading: () => <div className="min-h-[400px]" />,
+});
 
 const AboutSection = () => {
   const [loading, setLoading] = useState(true);
