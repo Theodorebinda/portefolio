@@ -1,5 +1,5 @@
 User-agent: *
+Allow: /
 Disallow: /admin/
 Disallow: /private/
-Allow: /public/
-Crawl-delay: 10
+Sitemap: https://theodorebinda.me/sitemap.xml

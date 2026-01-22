@@ -1,8 +1,6 @@
-import { P } from "@/styles/globalStyle";
-import { Typography } from "@/ui/components/typography/typography";
 import Image from "next/image";
 import React from "react";
-import { FaFacebook, FaLinkedin, FaTwitter, FaX } from "react-icons/fa6";
+import { FaFacebook, FaLinkedin } from "react-icons/fa6";
 interface Review {
   photo: string;
   name: string;

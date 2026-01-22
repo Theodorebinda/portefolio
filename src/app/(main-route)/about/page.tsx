@@ -3,12 +3,18 @@ import { Container } from "@/ui/components/container/container";
 import HeroSectionAbout from "@/components/heroSectionAbout";
 import ToolsAndSoftwareSection from "@/components/sectionToolsAndSoftward";
 import LinkToOtherPage from "@/ui/components/link-to-other-page/linkToOtherPage";
-import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDownCircle, ChevronUpCircle } from "lucide-react";
 import AboutMe from "@/components/detailAbout";
 import { useTrackPageView } from "@/lib/hooks/useTrackPageView";
 import { useTranslation } from "@/lib/hooks/useTranslation";
+import dynamic from "next/dynamic";
+
+// Lazy load framer-motion uniquement quand nécessaire
+const MotionDiv = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.div),
+  { ssr: false }
+);
 
 const About = () => {
   useTrackPageView();
@@ -80,7 +86,7 @@ const About = () => {
           </button>
         )}
         {showMore && (
-          <motion.div
+          <MotionDiv
             ref={aboutMeRef}
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
@@ -89,7 +95,7 @@ const About = () => {
             className="mt-20"
           >
             <AboutMe />
-          </motion.div>
+          </MotionDiv>
         )}
         {showScrollToTop && (
           <button

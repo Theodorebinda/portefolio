@@ -1,8 +1,7 @@
 "use client";
 import { Typography } from "@/ui/components/typography/typography";
-import styled from "styled-components";
 import Link from "next/link";
-import { usePathname } from "next/navigation"; // Importez usePathname
+import { usePathname } from "next/navigation";
 import { MainRoutes } from "@/lib/pageRoutes/pageRoutes";
 import { Container } from "@/ui/components/container/container";
 import clsx from "clsx";
@@ -12,13 +11,6 @@ import LinkMediaSocial from "@/components/linkSocialMedia";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/contexts/language/LanguageContext";
 import { useTranslation } from "@/lib/hooks/useTranslation";
-
-const ThemeToggleButton = styled.button`
-  color: ${(props) => props.theme.text};
-  cursor: pointer;
-  font-size: 40;
-  transition: all 0.25s linear;
-`;
 
 interface Props {
   className?: string;
@@ -31,6 +23,9 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { language, toggleLanguage } = useLanguage();
   const { t } = useTranslation();
+  
+  // Utiliser currentTheme pour déterminer la couleur du texte
+  const textColor = currentTheme === "light" ? "text-gray-800" : "text-gray-200";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -123,13 +118,17 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
             </button>
 
             <LinkMediaSocial currentTheme={currentTheme} />
-            <ThemeToggleButton onClick={toggleTheme} aria-label="theme">
+            <button
+              onClick={toggleTheme}
+              aria-label="theme"
+              className={`${textColor} cursor-pointer transition-all duration-250 ease-linear`}
+            >
               {currentTheme === "light" ? (
                 <FaMoon size={20} className="hover:fill-[#464646]" />
               ) : (
                 <FaSun size={20} className="hover:fill-[#ffffff]" />
               )}
-            </ThemeToggleButton>
+            </button>
           </Container>
         </Container>
       </Container>

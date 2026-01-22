@@ -18,7 +18,6 @@ import { FaSun } from "react-icons/fa";
 import { RiMenu2Line } from "react-icons/ri";
 import LinkMediaSocial from "@/components/linkSocialMedia";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/language/LanguageContext";
 import { useTranslation } from "@/lib/hooks/useTranslation";
 
@@ -121,71 +120,62 @@ export const MobileNavigation = ({
               currentTheme === "light" ? "bg-white" : "bg-[#222020]"
             } w-full h-[85vh] rounded-t-2xl`}
           >
-            {" "}
             <SheetTitle className="sr-only">Menu</SheetTitle>
-            <motion.div
-              initial={{ y: "100%" }}
-              animate={{ y: 0 }}
-              exit={{ y: "100%" }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="h-full"
-            >
-              <SheetDescription className="h-full flex justify-between flex-col">
-                <nav className="h-full flex flex-col justify-between items-center">
-                  <Container className="w-full flex flex-col">
-                    {MainRoutes.map((route) => (
-                      <motion.div
-                        key={route.titleKey!}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1 }}
-                        className="pt-10 my-auto"
+            <SheetDescription className="h-full flex justify-between flex-col">
+              <nav className="h-full flex flex-col justify-between items-center">
+                <Container className="w-full flex flex-col">
+                  {MainRoutes.map((route, index) => (
+                    <div
+                      key={route.titleKey!}
+                      className="pt-10 my-auto opacity-0 animate-fade-in"
+                      style={{
+                        animationDelay: `${index * 0.1}s`,
+                        animationFillMode: "forwards",
+                      }}
+                    >
+                      <Link
+                        href={route.baseUrl!}
+                        onClick={handleLinkClick}
+                        className="block py-2 text-base font-normal"
                       >
-                        <Link
-                          href={route.baseUrl!}
-                          onClick={handleLinkClick}
-                          className="block py-2 text-base font-normal"
-                        >
-                          {t(route.titleKey)}
-                        </Link>
-                      </motion.div>
-                    ))}
-                  </Container>
-                  <Container className="flex flex-col justify-start w-full gap-2 mb-8">
-                    <span className="font-semibold">
-                      <Link href={"/contact"} onClick={handleLinkClick}>
-                        contact
+                        {t(route.titleKey)}
                       </Link>
-                    </span>
-                    <span>
-                      email :
-                      <a
-                        href="mailto:theodorebinda@gmail.com"
-                        onClick={handleLinkClick}
-                        className="ml-1"
-                      >
-                        theodorebinda@gmail.com
-                      </a>
-                    </span>
-                    <span>
-                      phone :
-                      <a
-                        href="tel:+243894594411"
-                        onClick={handleLinkClick}
-                        className="ml-1"
-                      >
-                        +243 89 459 4411
-                      </a>
-                    </span>
-                  </Container>
-                </nav>
-
-                <LinkMediaSocial
-                  className="gap-28 justify-start"
-                  currentTheme={currentTheme}
-                />
-              </SheetDescription>
-            </motion.div>
+                    </div>
+                  ))}
+                </Container>
+                <Container className="flex flex-col justify-start w-full gap-2 mb-8">
+                  <span className="font-semibold">
+                    <Link href={"/contact"} onClick={handleLinkClick}>
+                      contact
+                    </Link>
+                  </span>
+                  <span>
+                    email :
+                    <a
+                      href="mailto:theodorebinda@gmail.com"
+                      onClick={handleLinkClick}
+                      className="ml-1"
+                    >
+                      theodorebinda@gmail.com
+                    </a>
+                  </span>
+                  <span>
+                    phone :
+                    <a
+                      href="tel:+243894594411"
+                      onClick={handleLinkClick}
+                      className="ml-1"
+                    >
+                      +243 89 459 4411
+                    </a>
+                  </span>
+                </Container>
+              </nav>
+              <LinkMediaSocial
+                className="gap-28 justify-start"
+                currentTheme={currentTheme}
+              />
+            </SheetDescription>
           </SheetContent>
         </Sheet>
       </Container>
