@@ -24,13 +24,20 @@ export default function RealisationDetail({
 }: Props) {
   return (
     <Container className={`${className} w-full mt-4 mb-10 flex flex-col gap-3`}>
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex flex-col gap-1 w-[10rem]"
-      >
-        <P>{nom}</P>
-      </a>
+      {link ? (
+        <Link
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex flex-col gap-1 w-[10rem]"
+        >
+          <P>{nom}</P>
+        </Link>
+      ) : (
+        <span className="flex flex-col gap-1 w-[10rem]">
+          <P>{nom}</P>
+        </span>
+      )}
       <Typography className="lg:w-full">{description}</Typography>
       <Container className="md:w-1/3">
         <Image src={image} alt={nom} width={380} className="object-cover" />
