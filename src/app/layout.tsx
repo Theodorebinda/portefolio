@@ -71,10 +71,18 @@ export const metadata: Metadata = {
     siteName: "Theodore Samba",
     images: [
       {
-        url: "/theodore - Copie.jpg",
+        url: "https://theodorebinda.me/theodore%20-%20Copie.jpg",
         width: 1200,
         height: 630,
         alt: "Theodore Samba - Développeur web et mobile",
+        type: "image/jpeg",
+      },
+      {
+        url: "https://theodorebinda.me/theodore-removebg-preview.png",
+        width: 800,
+        height: 800,
+        alt: "Theodore Samba - Photo de profil",
+        type: "image/png",
       },
     ],
   },
@@ -83,7 +91,10 @@ export const metadata: Metadata = {
     title: "Theodore Samba | Développeur web & mobile",
     description:
       "Portfolio de Theodore Samba, développeur web & mobile. Projets, compétences et contact.",
-    images: ["/theodore - Copie.jpg"],
+    images: [
+      "https://theodorebinda.me/theodore%20-%20Copie.jpg",
+      "https://theodorebinda.me/theodore-removebg-preview.png",
+    ],
   },
 };
 
@@ -92,8 +103,55 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // URLs des images avec encodage correct pour les espaces
+  // Les fichiers du dossier /public sont servis directement à la racine
+  // Ces URLs sont stables et accessibles directement (pas via _next/image)
+  const baseUrl = "https://theodorebinda.me";
+  const image1Url = `${baseUrl}/theodore%20-%20Copie.jpg`; // Espace encodé en %20
+  const image2Url = `${baseUrl}/theodore-removebg-preview.png`; // Accessible directement depuis /public
+
+  // Métadonnées structurées pour les images (JSON-LD)
+  const imageSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Theodore Samba",
+    alternateName: ["Theodore Binda", "Samba Binda"],
+    image: [image1Url, image2Url],
+    jobTitle: "Développeur web & mobile",
+    url: baseUrl,
+    sameAs: [
+      "https://github.com/Theodorebinda",
+      "https://www.linkedin.com/in/theodore-samba-26b456282/",
+    ],
+  };
+
   return (
     <html lang="fr" translate="no" className={inter.variable}>
+      <head>
+        {/* Métadonnées structurées pour les images (JSON-LD) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }}
+        />
+        {/* Meta tags pour autoriser les crawlers d'IA */}
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        {/* Meta tags pour les images */}
+        <meta
+          name="image"
+          content={image1Url}
+        />
+        <meta
+          property="og:image:secure_url"
+          content={image1Url}
+        />
+        <meta
+          property="og:image:secure_url"
+          content={image2Url}
+        />
+        {/* Permettre l'indexation des images par Google */}
+        <link rel="canonical" href="https://theodorebinda.me" />
+      </head>
       <body className="font-sans  antialiased">
         <LanguageProvider>
           {children}
