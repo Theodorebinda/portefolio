@@ -5,6 +5,8 @@ import mentor from "/public/images/screencapture-chef-d-oeuvre-s.png";
 import monyaya from "/public/images/Capture_monyaya.png";
 import Lukatout from "/public/images/Design sans titre (1).png";
 import esmicom from "/public/images/Design_Esmicom-removebg-preview.png";
+import resurection from "/public/images/resurection_design.png";
+import digiPublic from "/public/images/digi_public.png";
 import { FaAppStore, FaGithub, FaGlobe, FaMobile } from "react-icons/fa";
 
 export const projectsData: Project[] = [
@@ -123,4 +125,46 @@ export const projectsData: Project[] = [
     logo: "/images/monyaya-logo.svg",
     responsable: "Felicien",
   },
+  {
+    id: "resurection_app",
+    nameKey: "Church Reporting",
+    descriptionKey: "Plateforme de reporting des activités religieuses pour la paroisse de La Resurection. gestion de departements, des activites, des extensions, des evenements,  des membres, des finances, des rapports",
+    typeKey: "Web Application",
+    links: [
+      {
+        icon: <FaGlobe />,
+        labelKey: "links.webapp",
+        url: "#",
+      },
+    ],
+    stats: [
+      { labelKey: "departements", value: "8+" },
+      { labelKey: "activites", value: "200+" },
+      { labelKey: "extensions", value: "10+" },
+    ],
+    image: resurection,
+    logo: "#",
+    responsable: "La Resurection",
+  },
+  {
+    id: "digi_public",
+    nameKey: "Digi Public Client",
+    descriptionKey: "Plateforme de gestion de la communication publique pour la ville de Kinshasa. gestion de departements, des activites, des extensions, des evenements,  des membres, des finances, des rapports",
+    typeKey: "Web Application",
+    links: [
+      {
+        icon: <FaGlobe />,
+        labelKey: "links.webapp",
+        url: "#",
+      },
+    ],
+    stats: [
+      { labelKey: "departements", value: "8+" },
+      { labelKey: "activites", value: "200+" },
+      { labelKey: "extensions", value: "10+" },
+    ],
+    image: resurection,
+    logo: "#",
+    responsable: "La Resurection",
+  }
 ];
