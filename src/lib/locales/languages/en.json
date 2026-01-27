@@ -93,6 +93,35 @@
         "teachers": "Teachers",
         "admins": "Administrators"
       }
+    },
+    "resurection": {
+      "name": "Church Reporting",
+      "description": "Religious activities reporting platform for La Résurrection parish. Management of departments, activities, extensions, events, members, finances, and reports.",
+      "type": "Web Application",
+      "stats": {
+        "departements": "DEPARTMENTS",
+        "activites": "ACTIVITIES",
+        "extensions": "EXTENSIONS"
+      }
+    },
+    "digi_public": {
+      "name": "Digi Public Client",
+      "description": "Application allowing self-declaration, property declaration, tax payment, case tracking, and property management.",
+      "type": "Web Application",
+      "stats": {
+        "auto_declarations": "SELF-DECLARATIONS",
+        "suivre_ses_dossiers": "CASE TRACKING",
+        "gérer_ses_biens": "PROPERTY MANAGEMENT"
+      }
+    },
+    "dapioil": {
+      "name": "Dapi Oil SARL",
+      "description": "Website for Dapi Oil SARL for visibility, client management, and petroleum products routing.",
+      "type": "Website",
+      "stats": {
+        "clients_gérés": "MANAGED CLIENTS",
+        "referencement": "SEO"
+      }
     }
   },
   "links": {

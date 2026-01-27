@@ -50,6 +50,11 @@ export const metadata: Metadata = {
       fr: "/",
     },
   },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
   robots: {
     index: true,
     follow: true,
@@ -128,6 +133,7 @@ export default function RootLayout({
   return (
     <html lang="fr" translate="no" className={inter.variable}>
       <head>
+        {/* Favicon - Next.js sert automatiquement /public/favicon.ico à /favicon.ico */}
         {/* Métadonnées structurées pour les images (JSON-LD) */}
         <script
           type="application/ld+json"

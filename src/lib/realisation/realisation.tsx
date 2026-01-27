@@ -1,13 +1,13 @@
 // lib/realisation/realisation.ts
 import { Project } from "@/types/projet-type";
-import second from "/public/images/screencapture-opi-b.png";
-import mentor from "/public/images/screencapture-chef-d-oeuvre-s.png";
-import monyaya from "/public/images/Capture_monyaya.png";
-import Lukatout from "/public/images/Design sans titre (1).png";
-import esmicom from "/public/images/Design_Esmicom-removebg-preview.png";
-import resurection from "/public/images/resurection_design.png";
-import digiPublic from "/public/images/digi_public.png";
-import dapioil from "/public/images/dapioil.png";
+import second from "../../../public/images/screencapture-opi-b.png";
+import mentor from "../../../public/images/screencapture-chef-d-oeuvre-s.png";
+import monyaya from "../../../public/images/Capture_monyaya.png";
+import Lukatout from "../../../public/images/Design sans titre (1).png";
+import esmicom from "../../../public/images/Design_Esmicom-removebg-preview.png";
+import resurection from "../../../public/images/resurection_design.png";
+import digiPublic from "../../../public/images/digi_public.png";
+import dapioil from "../../../public/images/dapioil.png";
 import { FaAppStore, FaGithub, FaGlobe, FaMobile } from "react-icons/fa";
 
 export const projectsData: Project[] = [
@@ -128,9 +128,9 @@ export const projectsData: Project[] = [
   },
   {
     id: "resurection_app",
-    nameKey: "Church Reporting",
-    descriptionKey: "Plateforme de reporting des activités religieuses pour la paroisse de La Resurection. gestion de departements, des activites, des extensions, des evenements,  des membres, des finances, des rapports",
-    typeKey: "Web Application",
+    nameKey: "projects.resurection.name",
+    descriptionKey: "projects.resurection.description",
+    typeKey: "projects.resurection.type",
     links: [
       {
         icon: <FaGlobe />,
@@ -139,9 +139,9 @@ export const projectsData: Project[] = [
       },
     ],
     stats: [
-      { labelKey: "departements", value: "8+" },
-      { labelKey: "activites", value: "200+" },
-      { labelKey: "extensions", value: "10+" },
+      { labelKey: "projects.resurection.stats.departements", value: "8+" },
+      { labelKey: "projects.resurection.stats.activites", value: "200+" },
+      { labelKey: "projects.resurection.stats.extensions", value: "10+" },
     ],
     image: resurection,
     logo: "#",
@@ -149,9 +149,9 @@ export const projectsData: Project[] = [
   },
   {
     id: "digi_public",
-    nameKey: "Digi Public Client",
-    descriptionKey: "Application permettant de faire l'auto-déclaration, déclarer ses biens, payer ses taxes, suivre son dossier et gérer ses biens.",
-    typeKey: "Web Application",
+    nameKey: "projects.digi_public.name",
+    descriptionKey: "projects.digi_public.description",
+    typeKey: "projects.digi_public.type",
     links: [
       {
         icon: <FaGlobe />,
@@ -160,9 +160,9 @@ export const projectsData: Project[] = [
       },
     ],
     stats: [
-      { labelKey: "auto_declarations", value: "" },
-      { labelKey: "suivre_ses_dossiers", value: "" },
-      { labelKey: "gérer_ses_biens", value: "" },
+      { labelKey: "projects.digi_public.stats.auto_declarations", value: "" },
+      { labelKey: "projects.digi_public.stats.suivre_ses_dossiers", value: "" },
+      { labelKey: "projects.digi_public.stats.gérer_ses_biens", value: "" },
     ],
     image: digiPublic,
     logo: "#",
@@ -171,9 +171,9 @@ export const projectsData: Project[] = [
   
   {
     id: "dapioil_app",
-    nameKey: "Dapi Oil SARL",
-    descriptionKey: "Site internet pour Dapi Oil SARL destiné à la visibilité, la gestion client et l’acheminement des produits petrolieres.",
-    typeKey: "Site internet",
+    nameKey: "projects.dapioil.name",
+    descriptionKey: "projects.dapioil.description",
+    typeKey: "projects.dapioil.type",
     links: [
       {
         icon: <FaGlobe />,
@@ -182,8 +182,8 @@ export const projectsData: Project[] = [
       },
     ],
     stats: [
-      { labelKey: "clients_gérés", value: "50+" },
-      { labelKey: "referencement", value: "100%" },
+      { labelKey: "projects.dapioil.stats.clients_gérés", value: "50+" },
+      { labelKey: "projects.dapioil.stats.referencement", value: "100%" },
     ],
     image: dapioil,
     logo: "#",
