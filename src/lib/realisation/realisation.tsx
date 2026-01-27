@@ -7,6 +7,7 @@ import Lukatout from "/public/images/Design sans titre (1).png";
 import esmicom from "/public/images/Design_Esmicom-removebg-preview.png";
 import resurection from "/public/images/resurection_design.png";
 import digiPublic from "/public/images/digi_public.png";
+import dapioil from "/public/images/dapioil.png";
 import { FaAppStore, FaGithub, FaGlobe, FaMobile } from "react-icons/fa";
 
 export const projectsData: Project[] = [
@@ -149,22 +150,43 @@ export const projectsData: Project[] = [
   {
     id: "digi_public",
     nameKey: "Digi Public Client",
-    descriptionKey: "Plateforme de gestion de la communication publique pour la ville de Kinshasa. gestion de departements, des activites, des extensions, des evenements,  des membres, des finances, des rapports",
+    descriptionKey: "Application permettant de faire l'auto-déclaration, déclarer ses biens, payer ses taxes, suivre son dossier et gérer ses biens.",
     typeKey: "Web Application",
     links: [
       {
         icon: <FaGlobe />,
         labelKey: "links.webapp",
-        url: "#",
+        url: "https://www.client-dev.digipublic.app/",
       },
     ],
     stats: [
-      { labelKey: "departements", value: "8+" },
-      { labelKey: "activites", value: "200+" },
-      { labelKey: "extensions", value: "10+" },
+      { labelKey: "auto_declarations", value: "" },
+      { labelKey: "suivre_ses_dossiers", value: "" },
+      { labelKey: "gérer_ses_biens", value: "" },
     ],
-    image: resurection,
+    image: digiPublic,
     logo: "#",
-    responsable: "La Resurection",
+    responsable: "Digi Public",
+  },
+  
+  {
+    id: "dapioil_app",
+    nameKey: "Dapi Oil SARL",
+    descriptionKey: "Site internet pour Dapi Oil SARL destiné à la visibilité, la gestion client et l’acheminement des produits petrolieres.",
+    typeKey: "Site internet",
+    links: [
+      {
+        icon: <FaGlobe />,
+        labelKey: "links.website",
+        url: "https://www.dapioil.com/",
+      },
+    ],
+    stats: [
+      { labelKey: "clients_gérés", value: "50+" },
+      { labelKey: "referencement", value: "100%" },
+    ],
+    image: dapioil,
+    logo: "#",
+    responsable: "Dapi Oil SARL",
   }
 ];
