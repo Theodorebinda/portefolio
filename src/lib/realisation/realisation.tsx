@@ -135,7 +135,7 @@ export const projectsData: Project[] = [
       {
         icon: <FaGlobe />,
         labelKey: "links.webapp",
-        url: "#",
+        url: "https://resurrection-repport-teste.vercel.app",
       },
     ],
     stats: [
