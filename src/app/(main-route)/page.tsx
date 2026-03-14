@@ -4,16 +4,18 @@ import HeroSection from "@/components/heroSection";
 import { useTrackPageView } from "@/lib/hooks/useTrackPageView";
 import dynamic from "next/dynamic";
 
-// Lazy load des sections non-critiques pour améliorer le FCP et LCP
 const AboutSection = dynamic(() => import("@/components/aboutSection"), {
   ssr: true,
   loading: () => <div className="min-h-[400px]" />,
 });
 
-const RealisationSection = dynamic(() => import("@/components/realisationSection"), {
-  ssr: true,
-  loading: () => <div className="min-h-[300px]" />,
-});
+const RealisationSection = dynamic(
+  () => import("@/components/realisationSection"),
+  {
+    ssr: true,
+    loading: () => <div className="min-h-[300px]" />,
+  },
+);
 
 export default function Home() {
   useTrackPageView();
