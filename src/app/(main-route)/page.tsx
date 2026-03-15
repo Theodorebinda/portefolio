@@ -16,7 +16,7 @@ const RealisationSection = dynamic(
     loading: () => <div className="min-h-[300px]" />,
   },
 );
-// hmfnhsndgjslkmd.adgnm,sfjgnldhjnmflg,.vldkmgjrmls.,dngkjlretjlrgklgmrnetjklng,.v
+// hmfnhsndgjslkmd.adgnm,sfjgnldhjnmflg,.vldkmgjrmls.,dngkjlretjlrgklgmrnetjklng
 
 export default function Home() {
   useTrackPageView();
