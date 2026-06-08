@@ -3,6 +3,7 @@
     "about": "Résumé",
     "career": "Carrière",
     "projects": "Projets",
+    "recommendations": "Recommandations",
     "blog": "Blog",
     "home": "Retourner à l'accueil"
   },
@@ -37,6 +38,12 @@
     "review2": "Une expérience incroyable, très satisfait des résultats!",
     "review3": "Très bonne collaboration, travail de qualité.",
     "review4": "Super service, je recommande vivement!"
+  },
+  "recommendations": {
+    "section_label": "Recommandations",
+    "section_title": "Ce qu'ils disent",
+    "cta": "Dites quelque chose sur Theodore",
+    "view_all": "Voir toutes les recommandations"
   },
   "redirection": {
     "contact_lets_talk": "Parlons de votre projet...",

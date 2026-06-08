@@ -5,6 +5,7 @@ import { Analytics } from "@/components/analytique/Analytics";
 import TrackPageView from "@/components/analytique/tracking-view";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { LanguageProvider } from "@/contexts/language/LanguageContext";
+import { AuthSessionProvider } from "@/components/auth/AuthSessionProvider";
 
 // Configuration optimisée de la police Inter
 const inter = Inter({
@@ -156,10 +157,12 @@ export default function RootLayout({
         <link rel="canonical" href="https://theodorebinda.me" />
       </head>
       <body className="font-sans  antialiased">
-        <LanguageProvider>
-          {children}
-          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
-        </LanguageProvider>
+        <AuthSessionProvider>
+          <LanguageProvider>
+            {children}
+            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
+          </LanguageProvider>
+        </AuthSessionProvider>
       </body>
     </html>
   );
