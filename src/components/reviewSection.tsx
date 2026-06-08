@@ -1,7 +1,6 @@
 // components/reviewSection.tsx
 "use client";
 import React, { useCallback, useEffect, useState } from "react";
-import ReviewCard from "./reviewCard";
 import { useTranslation } from "@/lib/hooks/useTranslation";
 import { useSession } from "next-auth/react";
 import {
@@ -11,6 +10,15 @@ import {
 import { RecommendationModal } from "@/components/recommendations/RecommendationModal";
 import { RecommendationSkeletonGrid } from "@/components/recommendations/RecommendationSkeleton";
 import { LoginButton } from "@/components/auth/LoginButton";
+import {
+  Empty,
+  EmptyContent,
+  EmptyDescription,
+  EmptyHeader,
+  EmptyMedia,
+  EmptyTitle,
+} from "@/components/ui/empty";
+import { MessageSquareText } from "lucide-react";
 
 interface RecommendationsResponse {
   items: PublicRecommendation[];
@@ -24,40 +32,6 @@ const ReviewsPage = () => {
   );
   const [modalOpen, setModalOpen] = useState(false);
   const [loading, setLoading] = useState(true);
-
-  const reviews = [
-    {
-      photo: "https://avatars.githubusercontent.com/u/141269644?s=100&v=4",
-      name: "Sacre Mbiku",
-      role: "Developer|| Designer UI/UX",
-      review: t("reviews.review1"),
-      origin: "LinkedIn",
-    },
-    {
-      photo:
-        "https://media.licdn.com/dms/image/v2/D4D03AQGV-0WKhuKIcA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1729609426768?e=1756944000&v=beta&t=Rtd8ejHkmv1rgVxsjoi5aQ1edPz1znZNQX4p5zXDtIg",
-      name: "Gaël Makelele",
-      role: "Chercheur & Entrepreneur",
-      review: t("reviews.review2"),
-      origin: "LinkedIn",
-    },
-    {
-      photo:
-        "https://media.licdn.com/dms/image/v2/D4E03AQG6fASoGiVFWA/profile-displayphoto-shrink_400_400/B4EZXj8wU.GwAg-/0/1743286115742?e=1756944000&v=beta&t=7CyURoyqSCAAH4D8yaHhlhp3ieBBXCbnQdeQRsSaRfg",
-      name: "Felicien Fercus",
-      role: "Développement commercial et des projets",
-      review: t("reviews.review3"),
-      origin: "LinkedIn",
-    },
-    {
-      photo:
-        "https://scontent.ffih1-2.fna.fbcdn.net/v/t39.30808-6/460728981_1974582133009823_2311644627155562444_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEsO59Je_Tz-ou_d3kMNXLE-i8Qv8DvQ2D6LxC_wO9DYK09C1nJuAaJzDhOWb9Jnr1fPO8LROy-bG4kSC1jW4zx&_nc_ohc=Bk1D3B7JvpYQ7kNvwEmJs_2&_nc_oc=AdlpUBPs7CfjFIY0EwvcBZpE66jGECwAZ8fmfm97LRh5KXzMhApdLLnKHDhS4dJuJSk&_nc_zt=23&_nc_ht=scontent.ffih1-2.fna&_nc_gid=O-qEag8kKFXMaiogDnn-Cg&oh=00_AfNH8XDdvNCHULwKAZ_zXBwJerzK-gBvMkeUCd16fJOQYw&oe=686793B6",
-      name: "Tresor Moziko",
-      role: "Ingenieur Batiment Travaux Public",
-      review: t("reviews.review4"),
-      origin: "Facebook",
-    },
-  ];
 
   const loadRecommendations = useCallback(async () => {
     try {
@@ -145,11 +119,35 @@ const ReviewsPage = () => {
           ))}
         </div>
       ) : (
-        <div className="grid items-start gap-8 md:grid-cols-2">
-          {reviews.map((review, index) => (
-            <ReviewCard key={index} review={review} />
-          ))}
-        </div>
+        <Empty>
+          <EmptyHeader>
+            <EmptyMedia variant="icon">
+              <MessageSquareText />
+            </EmptyMedia>
+            <EmptyTitle>Aucune recommandation pour le moment</EmptyTitle>
+            <EmptyDescription>
+              Les recommandations approuvees apparaitront ici. Vous pouvez etre
+              le premier a laisser un mot sur Theodore.
+            </EmptyDescription>
+          </EmptyHeader>
+          <EmptyContent>
+            {status === "authenticated" ? (
+              <button
+                type="button"
+                onClick={handleRecommend}
+                className="inline-flex h-10 items-center justify-center rounded-md bg-[#b2d2fa] px-4 text-sm font-semibold text-black transition hover:bg-[#5182be]"
+              >
+                Ajouter une recommandation
+              </button>
+            ) : (
+              <LoginButton
+                label="Ajouter une recommandation"
+                disabled={status === "loading"}
+                onSuccess={handleLinkedInSuccess}
+              />
+            )}
+          </EmptyContent>
+        </Empty>
       )}
 
       {!loading && recommendations.length > 0 && (

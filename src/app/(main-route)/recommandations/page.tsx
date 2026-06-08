@@ -1,11 +1,18 @@
 import Link from "next/link";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, MessageSquareText } from "lucide-react";
 import { prisma } from "@/lib/prisma";
 import {
   RecommendationPublicCard,
   type PublicRecommendation,
 } from "@/components/recommendations/RecommendationPublicCard";
 import { Container } from "@/ui/components/container/container";
+import {
+  Empty,
+  EmptyDescription,
+  EmptyHeader,
+  EmptyMedia,
+  EmptyTitle,
+} from "@/components/ui/empty";
 
 const PAGE_SIZE = 6;
 
@@ -88,9 +95,18 @@ export default async function RecommendationsPage({
           ))}
         </div>
       ) : (
-        <div className="rounded-md border border-white/10 bg-white/5 p-6 text-slate-300">
-          Aucune recommandation approuvee pour le moment.
-        </div>
+        <Empty>
+          <EmptyHeader>
+            <EmptyMedia variant="icon">
+              <MessageSquareText />
+            </EmptyMedia>
+            <EmptyTitle>Aucune recommandation approuvee</EmptyTitle>
+            <EmptyDescription>
+              Les recommandations visibles publiquement apparaitront ici apres
+              moderation.
+            </EmptyDescription>
+          </EmptyHeader>
+        </Empty>
       )}
 
       {totalPages > 1 && (
