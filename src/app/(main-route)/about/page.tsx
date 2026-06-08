@@ -2,12 +2,10 @@
 import { Container } from "@/ui/components/container/container";
 import HeroSectionAbout from "@/components/heroSectionAbout";
 import ToolsAndSoftwareSection from "@/components/sectionToolsAndSoftward";
-import LinkToOtherPage from "@/ui/components/link-to-other-page/linkToOtherPage";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDownCircle, ChevronUpCircle } from "lucide-react";
 import AboutMe from "@/components/detailAbout";
 import { useTrackPageView } from "@/lib/hooks/useTrackPageView";
-import { useTranslation } from "@/lib/hooks/useTranslation";
 import dynamic from "next/dynamic";
 
 const MotionDiv = dynamic(
@@ -21,7 +19,6 @@ const About = () => {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const aboutMeRef = useRef<HTMLDivElement>(null);
-  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,11 +66,6 @@ const About = () => {
     <Container className="flex flex-col  ">
       <HeroSectionAbout />
       <ToolsAndSoftwareSection />
-      <LinkToOtherPage
-        className={`md:ml-2`}
-        texte={t("redirection.details_career")}
-        link={"/carriere"}
-      />
       <div className="flex flex-col  mt-4">
         {!showMore && (
           <button
