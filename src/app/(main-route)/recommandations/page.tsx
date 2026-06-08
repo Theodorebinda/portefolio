@@ -95,7 +95,7 @@ export default async function RecommendationsPage({
           ))}
         </div>
       ) : (
-        <Empty>
+        <Empty className="border-0 max-w-md mx-auto bg-current">
           <EmptyHeader>
             <EmptyMedia variant="icon">
               <MessageSquareText />
