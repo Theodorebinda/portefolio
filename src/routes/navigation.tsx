@@ -43,7 +43,7 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
   return (
     <header
       className={clsx(
-        "fixed top-0 left-0 right-0 max-w-full md:mx-48 ",
+        "fixed top-0 left-0 right-0 z-50 max-w-full md:mx-48 ",
         className,
         { "shadow-sm": isScrolled }
       )}

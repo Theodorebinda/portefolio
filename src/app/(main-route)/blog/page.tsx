@@ -95,55 +95,36 @@ export default function BlogPage() {
   }, [activeTag, query]);
 
   return (
-    <main className=" flex w-full  flex-col gap-12  text-slate-200 -mt-28">
+    <main className="relative z-0 isolate flex w-full flex-col gap-12 py-8 text-neutral-800 dark:text-slate-200  -mt-32">
       <section className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_260px] lg:items-end">
-        <div className="max-w-2xl">
-          <span className="mb-4 inline-flex h-8 items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 text-xs font-semibold uppercase tracking-wide text-[#b2d2fa]">
+        <div className="max-w-xl">
+          <span className="mb-4 inline-flex h-8 items-center gap-2 rounded-md border border-neutral-200 bg-neutral-50 px-3 text-xs font-semibold uppercase tracking-wide text-[#436896] dark:border-white/10 dark:bg-white/5 dark:text-[#b2d2fa]">
             <Tag size={14} />
             Blog
           </span>
-          <h1 className="text-4xl font-extrabold leading-tight text-white md:text-5xl">
-            Notes, idees et retours d&apos;experience.
-          </h1>
-          <p className="mt-5 text-base leading-8 text-slate-400 md:text-lg">
-            Une selection d&apos;articles autour de Next.js, React, TypeScript,
-            Prisma, design d&apos;interface et construction de produits web
-            utiles.
+          <p className="mt-5 text-base leading-8 text-neutral-600 dark:text-slate-400 md:text-lg">
+            {
+              "Une selection d'articles, de pensées et d'idées sur des sujets tels que les systèmes de conception, l'accessibilité,l'automatisation, les machines d'état et bien plus encore."
+            }
           </p>
-        </div>
-
-        <div className="relative hidden overflow-hidden rounded-md border border-white/10 bg-white/5 lg:block">
-          <Image
-            src={imageHero}
-            alt="Theodore Samba"
-            width={260}
-            height={300}
-            className="h-[300px] w-full object-contain object-bottom"
-            priority
-            placeholder="blur"
-          />
-          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#222020] to-transparent p-4">
-            <p className="text-sm font-semibold text-white">Theodore Samba</p>
-            <p className="text-xs text-slate-400">Developpeur web & mobile</p>
-          </div>
         </div>
       </section>
 
       <section className="flex flex-col gap-4">
         <label
           htmlFor="blog-search"
-          className="relative block max-w-xl text-slate-300"
+          className="relative block max-w-xl text-neutral-700 dark:text-slate-300"
         >
           <Search
             size={17}
-            className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"
+            className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-neutral-500 dark:text-slate-500"
           />
           <input
             id="blog-search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder="Rechercher un article"
-            className="h-11 w-full rounded-md border border-white/10 bg-white/5 pl-10 pr-4 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-[#b2d2fa]"
+            className="h-11 w-full rounded-md border border-neutral-200 bg-white pl-10 pr-4 text-sm text-neutral-950 outline-none transition placeholder:text-neutral-400 focus:border-[#436896] dark:border-white/10 dark:bg-white/5 dark:text-white dark:placeholder:text-slate-500 dark:focus:border-[#b2d2fa]"
           />
         </label>
 
@@ -158,8 +139,8 @@ export default function BlogPage() {
                 onClick={() => setActiveTag(tagName)}
                 className={`h-8 rounded-md border px-3 text-xs font-semibold transition ${
                   active
-                    ? "border-[#b2d2fa] bg-[#b2d2fa] text-black"
-                    : "border-white/10 bg-white/5 text-slate-400 hover:border-[#b2d2fa] hover:text-white"
+                    ? "border-[#436896] bg-[#436896] text-white dark:border-[#b2d2fa] dark:bg-[#b2d2fa] dark:text-black"
+                    : "border-neutral-200 bg-neutral-50 text-neutral-600 hover:border-[#436896] hover:text-neutral-950 dark:border-white/10 dark:bg-white/5 dark:text-slate-400 dark:hover:border-[#b2d2fa] dark:hover:text-white"
                 }`}
               >
                 #{tagName}
@@ -169,9 +150,9 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <section className="rounded-md border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.03] p-5 shadow-xl md:p-7">
-        <div className="mb-3 flex flex-wrap items-center gap-3 text-xs text-slate-500">
-          <span className="font-bold uppercase tracking-wide text-[#b2d2fa]">
+      <section className="rounded-md border border-neutral-200 bg-gradient-to-br from-neutral-50 to-white p-5 shadow-xl shadow-neutral-200/50 dark:border-white/10 dark:from-white/[0.08] dark:to-white/[0.03] dark:shadow-black/20 md:p-7">
+        <div className="mb-3 flex flex-wrap items-center gap-3 text-xs text-neutral-500 dark:text-slate-500">
+          <span className="font-bold uppercase tracking-wide text-[#436896] dark:text-[#b2d2fa]">
             Article en vedette
           </span>
           <span>{FEATURED_ARTICLE.date}</span>
@@ -182,17 +163,17 @@ export default function BlogPage() {
         </div>
         <div className="grid gap-6 md:grid-cols-[minmax(0,1fr)_180px] md:items-end">
           <div>
-            <h2 className="text-2xl font-bold text-white">
+            <h2 className="text-2xl font-bold text-neutral-950 dark:text-white">
               {FEATURED_ARTICLE.title}
             </h2>
-            <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-400 md:text-base">
+            <p className="mt-3 max-w-3xl text-sm leading-7 text-neutral-600 dark:text-slate-400 md:text-base">
               {FEATURED_ARTICLE.excerpt}
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
               {FEATURED_ARTICLE.tags.map((tagName) => (
                 <span
                   key={tagName}
-                  className="rounded-md border border-[#b2d2fa]/20 bg-[#b2d2fa]/10 px-2.5 py-1 text-xs font-semibold text-[#b2d2fa]"
+                  className="rounded-md border border-[#436896]/20 bg-[#436896]/10 px-2.5 py-1 text-xs font-semibold text-[#436896] dark:border-[#b2d2fa]/20 dark:bg-[#b2d2fa]/10 dark:text-[#b2d2fa]"
                 >
                   #{tagName}
                 </span>
@@ -201,7 +182,7 @@ export default function BlogPage() {
           </div>
           <Link
             href="/contact"
-            className="inline-flex h-10 items-center justify-center gap-2 rounded-md bg-[#b2d2fa] px-4 text-sm font-bold text-black transition hover:bg-white"
+            className="inline-flex h-10 items-center justify-center gap-2 rounded-md bg-[#436896] px-4 text-sm font-bold text-white transition hover:bg-[#1c1917] dark:bg-[#b2d2fa] dark:text-black dark:hover:bg-white"
           >
             En discuter
             <ArrowRight size={16} />
@@ -210,11 +191,11 @@ export default function BlogPage() {
       </section>
 
       <section className="space-y-4">
-        <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-3">
-          <h3 className="text-xs font-bold uppercase tracking-wide text-slate-400">
+        <div className="flex items-center justify-between gap-4 border-b border-neutral-200 pb-3 dark:border-white/10">
+          <h3 className="text-xs font-bold uppercase tracking-wide text-neutral-500 dark:text-slate-400">
             Toutes les publications
           </h3>
-          <span className="text-xs text-slate-500">
+          <span className="text-xs text-neutral-500 dark:text-slate-500">
             {filteredArticles.length} article
             {filteredArticles.length > 1 ? "s" : ""}
           </span>
@@ -225,7 +206,7 @@ export default function BlogPage() {
             {filteredArticles.map((article) => (
               <article
                 key={article.title}
-                className="group rounded-md border border-transparent p-4 transition hover:border-white/10 hover:bg-white/[0.04]"
+                className="group rounded-md border border-transparent p-4 transition hover:border-neutral-200 hover:bg-neutral-50 dark:hover:border-white/10 dark:hover:bg-white/[0.04]"
               >
                 <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
                   <div className="min-w-0">
@@ -233,21 +214,21 @@ export default function BlogPage() {
                       {article.tags.map((tagName) => (
                         <span
                           key={tagName}
-                          className="text-xs font-semibold text-[#b2d2fa]"
+                          className="text-xs font-semibold text-[#436896] dark:text-[#b2d2fa]"
                         >
                           #{tagName}
                         </span>
                       ))}
                     </div>
-                    <h4 className="text-lg font-semibold text-slate-100 transition group-hover:text-white">
+                    <h4 className="text-lg font-semibold text-neutral-950 transition dark:text-slate-100 dark:group-hover:text-white">
                       {article.title}
                     </h4>
-                    <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-500">
+                    <p className="mt-2 max-w-2xl text-sm leading-6 text-neutral-600 dark:text-slate-500">
                       {article.excerpt}
                     </p>
                   </div>
 
-                  <div className="flex shrink-0 items-center gap-2 text-xs text-slate-500 md:pt-7">
+                  <div className="flex shrink-0 items-center gap-2 text-xs text-neutral-500 dark:text-slate-500 md:pt-7">
                     <span>{article.date}</span>
                     <span>•</span>
                     <span>{article.readTime}</span>
@@ -257,25 +238,25 @@ export default function BlogPage() {
             ))}
           </div>
         ) : (
-          <div className="rounded-md border border-white/10 bg-white/5 p-6 text-sm text-slate-400">
+          <div className="rounded-md border border-neutral-200 bg-neutral-50 p-6 text-sm text-neutral-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-400">
             Aucun article ne correspond a cette recherche.
           </div>
         )}
       </section>
 
-      <section className="flex flex-col gap-4 rounded-md border border-white/10 bg-white/[0.04] p-5 md:flex-row md:items-center md:justify-between">
+      <section className="flex flex-col gap-4 rounded-md border border-neutral-200 bg-neutral-50 p-5 dark:border-white/10 dark:bg-white/[0.04] md:flex-row md:items-center md:justify-between">
         <div>
-          <h3 className="text-lg font-bold text-white">
+          <h3 className="text-lg font-bold text-neutral-950 dark:text-white">
             Une idee d&apos;article ou de collaboration ?
           </h3>
-          <p className="mt-1 text-sm text-slate-400">
+          <p className="mt-1 text-sm text-neutral-600 dark:text-slate-400">
             Parlons technique, produit ou interface autour d&apos;un projet
             concret.
           </p>
         </div>
         <Link
           href="mailto:theodorebinda@gmail.com"
-          className="inline-flex h-10 items-center justify-center gap-2 rounded-md border border-white/10 px-4 text-sm font-semibold text-white transition hover:border-[#b2d2fa] hover:text-[#b2d2fa]"
+          className="inline-flex h-10 items-center justify-center gap-2 rounded-md border border-neutral-300 px-4 text-sm font-semibold text-neutral-900 transition hover:border-[#436896] hover:text-[#436896] dark:border-white/10 dark:text-white dark:hover:border-[#b2d2fa] dark:hover:text-[#b2d2fa]"
         >
           <Mail size={16} />
           Ecrire

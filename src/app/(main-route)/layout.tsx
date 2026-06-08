@@ -6,7 +6,7 @@ import { GlobalStyle } from "@/styles/globalStyle";
 import Loader from "@/app/loader/loader";
 import { useTheme } from "@/lib/useTheme/useTheme";
 import NavigationWrapper from "@/routes/navigationWraper";
-import React from "react";
+import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
 
 // Lazy load des composants non-critiques pour réduire le bundle initial
@@ -27,6 +27,12 @@ function MainRoutesLayout({ children }: { children: React.ReactNode }) {
 
   const selectedTheme = theme === "light" ? lightTheme : darkTheme;
 
+  useEffect(() => {
+    if (!theme) return;
+
+    document.documentElement.classList.toggle("dark", theme === "dark");
+  }, [theme]);
+
   if (theme === null) {
     return <Loader />;
   }
@@ -34,7 +40,7 @@ function MainRoutesLayout({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider theme={selectedTheme}>
       <GlobalStyle />
-      <div className=" mx-auto py-8 max-w-screen-xl">
+      <div className="relative z-0 mx-auto py-8 max-w-screen-xl">
         <NavigationWrapper toggleTheme={toggleTheme} currentTheme={theme} />
         {children}
         <TrackPageView />
