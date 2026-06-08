@@ -17,6 +17,12 @@ export default function Footer() {
           </Link>
           <Dot strokeWidth={1.75} />
           <Typography className="text-xs ">Kinshasa - RDC 2024</Typography>
+          <Dot strokeWidth={1.75} />
+          <Link href="/admin/recommandations">
+            <Typography className="text-xs transition hover:text-[#b2d2fa]">
+              Me
+            </Typography>
+          </Link>
         </Container>
       </Container>
     </Container>

@@ -4,6 +4,7 @@ import { auth } from "../../../../../../auth";
 import { prisma } from "@/lib/prisma";
 
 function getModerationStatus(value: unknown) {
+  if (value === RecommendationStatus.PENDING) return RecommendationStatus.PENDING;
   if (value === RecommendationStatus.APPROVED) return RecommendationStatus.APPROVED;
   if (value === RecommendationStatus.REJECTED) return RecommendationStatus.REJECTED;
 
@@ -46,4 +47,24 @@ export async function PATCH(
     status: recommendation.status,
     approvedAt: recommendation.approvedAt?.toISOString() ?? null,
   });
+}
+
+export async function DELETE(
+  _request: Request,
+  { params }: { params: { id: string } }
+) {
+  const session = await auth();
+
+  if (session?.user?.role !== "ADMIN") {
+    return NextResponse.json(
+      { message: "Acces administrateur requis." },
+      { status: 403 }
+    );
+  }
+
+  await prisma.recommendation.delete({
+    where: { id: params.id },
+  });
+
+  return NextResponse.json({ id: params.id });
 }
