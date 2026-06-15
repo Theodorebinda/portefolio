@@ -18,3 +18,4 @@ refactor: optimize tooltip positioning for mobile - Part 17
 refactor: adjust badge spacing on small screens - Part 18
 refactor: improve avatar sizing on mobile - Part 19
 refactor: adjust icon spacing in buttons - Part 20
+refactor: optimize loading spinner spacing - Part 21
