@@ -36,3 +36,4 @@ refactor: implement CSS custom properties - Part 35
 refactor: simplify responsive breakpoint logic - Part 36
 refactor: extract theme configuration - Part 37
 refactor: improve color variable organization - Part 38
+refactor: consolidate button variants - Part 39
