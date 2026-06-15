@@ -27,9 +27,9 @@ interface RecommendationsResponse {
 const ReviewsPage = () => {
   const { t } = useTranslation();
   const { data: session, status, update } = useSession();
-  const [recommendations, setRecommendations] = useState<PublicRecommendation[]>(
-    []
-  );
+  const [recommendations, setRecommendations] = useState<
+    PublicRecommendation[]
+  >([]);
   const [modalOpen, setModalOpen] = useState(false);
   const [loading, setLoading] = useState(true);
 
@@ -64,7 +64,7 @@ const ReviewsPage = () => {
     window.history.replaceState(
       {},
       "",
-      `${url.pathname}${url.search}${url.hash}`
+      `${url.pathname}${url.search}${url.hash}`,
     );
   }, [status]);
 
@@ -83,9 +83,9 @@ const ReviewsPage = () => {
     <section className="flex flex-col gap-6">
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-wide text-[#b2d2fa]">
+          {/* <p className="text-sm font-semibold uppercase tracking-wide dark:text-[#b2d2fa] text-[#1e293b]">
             {t("recommendations.section_label")}
-          </p>
+          </p> */}
           <h2 className="text-2xl font-bold">
             {t("recommendations.section_title")}
           </h2>
@@ -110,7 +110,7 @@ const ReviewsPage = () => {
       {loading ? (
         <RecommendationSkeletonGrid />
       ) : recommendations.length > 0 ? (
-        <div className="grid items-stretch gap-8 md:grid-cols-2">
+        <div className="grid items-start gap-8 md:grid-cols-2 ">
           {recommendations.map((recommendation) => (
             <RecommendationPublicCard
               key={recommendation.id}
@@ -153,7 +153,7 @@ const ReviewsPage = () => {
       {!loading && recommendations.length > 0 && (
         <a
           href="/recommandations"
-          className="text-sm font-semibold text-[#b2d2fa] underline-offset-4 hover:text-[#5182be] hover:underline"
+          className="text-sm font-semibold dark:text-[#b2d2fa] text-[#1e293b] underline-offset-4 dark:hover:text-[#5182be] hover:text-[#5182be] hover:underline"
         >
           {t("recommendations.view_all")}
         </a>

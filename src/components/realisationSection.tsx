@@ -16,7 +16,7 @@ export default function RealisationSection() {
       <Typo className=" py-4 md:mt-8 font-normal  text-xl">
         {t("projects.recent")} {/* Traduction */}
       </Typo>
-      <Container className="md:w-3/4 mb-4">
+      <Container className="md:w-1/2 mb-4">
         {projectsData
           .slice()
           .reverse()

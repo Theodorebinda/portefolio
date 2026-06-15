@@ -57,7 +57,7 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
         <Container
           className={`mx-auto flex flex-row px-4 md:px-0 py-6 max-w-5xl w-full justify-between ${
             isScrolled ? "items-center" : "items-end"
-          } h-[5rem]`}
+          } h-[7rem]`}
         >
           <Link href="/" className="flex justify-between items-center">
             <Image

@@ -95,7 +95,7 @@ export default function BlogPage() {
   }, [activeTag, query]);
 
   return (
-    <main className="relative z-0 isolate flex w-full flex-col gap-12 py-8 text-neutral-800 dark:text-slate-200  -mt-32">
+    <main className="relative z-0 isolate flex w-full flex-col gap-12 py-8 text-neutral-800 dark:text-slate-200  ">
       <section className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_260px] lg:items-end">
         <div className="max-w-xl">
           <span className="mb-4 inline-flex h-8 items-center gap-2 rounded-md border border-neutral-200 bg-neutral-50 px-3 text-xs font-semibold uppercase tracking-wide text-[#436896] dark:border-white/10 dark:bg-white/5 dark:text-[#b2d2fa]">

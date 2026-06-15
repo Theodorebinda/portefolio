@@ -25,7 +25,7 @@ const AboutSection = () => {
   return (
     <Container className="flex flex-col gap-8 font-poppins">
       <Container className="flex-col flex md:flex-row justify-between mb-10 gap-10 md:gap-0 md:my-32">
-        <Container className="flex  flex-col gap-1">
+        <Container className="flex  flex-col gap-1 leading-relaxed">
           <Container className=" flex items-start md:items-center justify-start gap-4">
             <div className="hidden md:block">
               {!loading ? (

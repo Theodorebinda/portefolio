@@ -1,12 +1,18 @@
 /* App.css */
 .typewriter {
-  font-size: 2.5rem;
-  color: #878483;
+  font-size: 1.5rem;
+  color: #436896;
   padding-bottom: 10px;
   font-weight: 700;
   overflow: hidden;
   display: inline-block;
   border-right: none; /* Style du curseur */
+}
+
+@media (min-width: 768px) {
+  .typewriter {
+    font-size: 2.5rem;
+  }
 }
 
 .dark .typewriter {

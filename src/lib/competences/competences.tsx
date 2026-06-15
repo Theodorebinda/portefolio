@@ -12,8 +12,20 @@ import flutter from "/public/svg/flutter.svg";
 import figma from "/public/svg/figma.svg";
 import notion from "/public/svg/notion.svg";
 import github from "/public/svg/github.svg";
+import n8n from "/public/svg/n8n.svg";
+import openclaw from "/public/svg/openclaw-logo.svg";
+import ubuntu from "/public/svg/ubuntu.svg";
+import git from "/public/svg/git.svg";
+import py from "/public/svg/py.svg";
+import django from "/public/svg/django.svg";
+import gcp from "/public/svg/gcp.svg";
 
 export const ListOfHardCompetences: toolsAndSoftward[] = [
+  {
+    id: 13,
+    image: ubuntu,
+    name: "ubuntu",
+  },
   {
     id: 1,
     image: nextJS,
@@ -38,6 +50,11 @@ export const ListOfHardCompetences: toolsAndSoftward[] = [
     id: 12,
     image: github,
     name: "github",
+  },
+  {
+    id: 17,
+    image: git,
+    name: "git",
   },
   {
     id: 13,
@@ -79,5 +96,30 @@ export const ListOfHardCompetences: toolsAndSoftward[] = [
     id: 10,
     image: prismaIcon,
     name: "Prisma",
+  },
+  {
+    id: 11,
+    image: n8n,
+    name: "n8n",
+  },
+  {
+    id: 12,
+    image: openclaw,
+    name: "openclaw",
+  },
+  {
+    id: 13,
+    image: py,
+    name: "python",
+  },
+  {
+    id: 14,
+    image: django,
+    name: "django",
+  },
+  {
+    id: 15,
+    image: gcp,
+    name: "google cloud platform",
   },
 ];

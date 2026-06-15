@@ -28,7 +28,7 @@ export function RecommendationPublicCard({
   const image = recommendation.image;
 
   return (
-    <article className="flex h-full flex-col justify-between rounded-md bg-[#2f2d2d] p-4 text-slate-300 shadow-xl">
+    <article className="flex flex-col rounded-lg bg-[#2f2d2d] p-4 text-slate-300 ring-1 ring-white/5 shadow-lg">
       <div>
         <div className="mb-4 flex items-start gap-4">
           {image ? (
@@ -47,7 +47,9 @@ export function RecommendationPublicCard({
           <div className="min-w-0 flex-1">
             <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
               <div className="min-w-0">
-                <p className="truncate text-base font-bold text-white">{name}</p>
+                <p className="truncate text-base font-bold text-white">
+                  {name}
+                </p>
                 {recommendation.headline && (
                   <p className="text-xs leading-5 text-slate-400">
                     {recommendation.headline}
@@ -60,7 +62,9 @@ export function RecommendationPublicCard({
                     <Star
                       key={index}
                       size={14}
-                      fill={index < recommendation.rating! ? "currentColor" : "none"}
+                      fill={
+                        index < recommendation.rating! ? "currentColor" : "none"
+                      }
                     />
                   ))}
                 </div>

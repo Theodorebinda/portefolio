@@ -1,0 +1,2 @@
+ - Part 1
+refactor: adjust container padding for mobile devices - Part 2

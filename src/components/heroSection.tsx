@@ -2,13 +2,10 @@
 import { Container } from "@/ui/components/container/container";
 import Typewriter from "@/ui/components/typewriter/Typewriter";
 import { Typography } from "@/ui/components/typography/typography";
-import Image from "next/image";
-import imageHero from "/public/theodore-removebg-preview.png";
 import Link from "next/link";
 import { Btn, Typo } from "@/styles/globalStyle";
 import { ChevronRight } from "lucide-react";
 import { trackEvent } from "@/utils/trackEvent";
-import Greeting from "./greting";
 import { useTranslation } from "@/lib/hooks/useTranslation";
 export default function HeroSection() {
   const { t } = useTranslation();

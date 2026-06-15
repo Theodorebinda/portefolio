@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply mt-[8vh] md:mt-[10vh]   md:pt-20 lg:pt-12 mx-5 pt-10 max-w-full;
+  @apply mt-[8vh] md:mt-[12vh]   md:pt-20 lg:pt-12 mx-5 pt-10 max-w-full;
 }
 
 h1,

@@ -16,7 +16,9 @@ export default function Footer() {
             </Typography>
           </Link>
           <Dot strokeWidth={1.75} />
-          <Typography className="text-xs ">Kinshasa - RDC 2024</Typography>
+          <Typography className="text-xs ">
+            Kinshasa - RDC {new Date().getFullYear()}
+          </Typography>
           <Dot strokeWidth={1.75} />
           <Link href="/admin/recommandations">
             <Typography className="text-xs transition hover:text-[#b2d2fa]">
