@@ -7,3 +7,4 @@ feat: apply new fonts to headings - Part 6
 feat: apply new fonts to body text - Part 7
 feat: update button typography styles - Part 8
 feat: adjust form label font sizes - Part 9
+feat: update table header typography - Part 10
