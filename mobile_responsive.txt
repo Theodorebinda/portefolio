@@ -24,3 +24,4 @@ refactor: adjust tab component spacing on mobile - Part 23
 refactor: optimize accordion item spacing - Part 24
 refactor: improve checkbox and radio spacing - Part 25
 refactor: adjust switch component sizing - Part 26
+refactor: improve progress bar spacing - Part 27
