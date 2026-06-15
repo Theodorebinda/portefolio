@@ -19,3 +19,4 @@ style: update navigation menu font styles - Part 18
 style: refine sidebar text appearance - Part 19
 style: improve error message typography - Part 20
 style: enhance success notification fonts - Part 21
+refactor: restructure component folder hierarchy - Part 22
