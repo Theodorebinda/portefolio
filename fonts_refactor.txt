@@ -16,3 +16,4 @@ style: update letter spacing across components - Part 15
 style: improve text contrast on cards - Part 16
 style: enhance modal title typography - Part 17
 style: update navigation menu font styles - Part 18
+style: refine sidebar text appearance - Part 19
