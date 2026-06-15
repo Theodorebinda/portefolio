@@ -21,3 +21,4 @@ refactor: adjust icon spacing in buttons - Part 20
 refactor: optimize loading spinner spacing - Part 21
 refactor: improve toast notification spacing - Part 22
 refactor: adjust tab component spacing on mobile - Part 23
+refactor: optimize accordion item spacing - Part 24
