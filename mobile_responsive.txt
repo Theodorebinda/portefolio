@@ -15,3 +15,4 @@ refactor: reduce sidebar width on mobile devices - Part 14
 refactor: adjust navigation menu spacing - Part 15
 refactor: improve dropdown spacing on mobile - Part 16
 refactor: optimize tooltip positioning for mobile - Part 17
+refactor: adjust badge spacing on small screens - Part 18
