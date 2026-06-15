@@ -86,7 +86,7 @@ export default async function RecommendationsPage({
       </div>
 
       {items.length > 0 ? (
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid items-start gap-5 md:grid-cols-2">
           {items.map((recommendation) => (
             <RecommendationPublicCard
               key={recommendation.id}
