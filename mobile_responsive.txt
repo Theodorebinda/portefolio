@@ -14,3 +14,4 @@ refactor: optimize section spacing on mobile - Part 13
 refactor: reduce sidebar width on mobile devices - Part 14
 refactor: adjust navigation menu spacing - Part 15
 refactor: improve dropdown spacing on mobile - Part 16
+refactor: optimize tooltip positioning for mobile - Part 17
