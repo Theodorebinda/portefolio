@@ -21,3 +21,4 @@ style: improve error message typography - Part 20
 style: enhance success notification fonts - Part 21
 refactor: restructure component folder hierarchy - Part 22
 refactor: extract reusable typography components - Part 23
+refactor: consolidate font configuration files - Part 24
