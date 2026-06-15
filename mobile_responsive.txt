@@ -7,3 +7,4 @@ refactor: improve button touch target sizes - Part 6
 refactor: reduce header padding for mobile - Part 7
 refactor: adjust table cell spacing on mobile - Part 8
 refactor: optimize modal padding for small screens - Part 9
+refactor: adjust footer spacing on mobile - Part 10
