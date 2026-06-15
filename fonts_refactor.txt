@@ -26,3 +26,4 @@ refactor: simplify CSS variable naming - Part 25
 refactor: remove duplicate font declarations - Part 26
 refactor: organize global styles efficiently - Part 27
 refactor: split large CSS files into modules - Part 28
+refactor: migrate inline styles to CSS classes - Part 29
