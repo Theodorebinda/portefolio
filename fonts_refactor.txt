@@ -34,3 +34,4 @@ refactor: optimize CSS selector specificity - Part 33
 refactor: group related style definitions - Part 34
 refactor: implement CSS custom properties - Part 35
 refactor: simplify responsive breakpoint logic - Part 36
+refactor: extract theme configuration - Part 37
