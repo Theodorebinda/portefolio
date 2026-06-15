@@ -9,3 +9,4 @@ feat: update button typography styles - Part 8
 feat: adjust form label font sizes - Part 9
 feat: update table header typography - Part 10
 feat: add responsive font sizes for mobile - Part 11
+feat: optimize font loading performance - Part 12
