@@ -12,3 +12,4 @@ refactor: improve list item spacing on mobile - Part 11
 refactor: adjust grid gap for responsive layout - Part 12
 refactor: optimize section spacing on mobile - Part 13
 refactor: reduce sidebar width on mobile devices - Part 14
+refactor: adjust navigation menu spacing - Part 15
