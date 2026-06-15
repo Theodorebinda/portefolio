@@ -38,3 +38,4 @@ refactor: extract theme configuration - Part 37
 refactor: improve color variable organization - Part 38
 refactor: consolidate button variants - Part 39
 refactor: enhance code documentation - Part 40
+refactor: remove deprecated style patterns - Part 41
