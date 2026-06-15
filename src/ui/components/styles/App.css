@@ -9,6 +9,10 @@
   border-right: none; /* Style du curseur */
 }
 
+.dark .typewriter {
+  color: #b2d2fa;
+}
+
 .cursor {
   animation: blink 0.7s step-end infinite;
 }

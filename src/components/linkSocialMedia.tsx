@@ -16,29 +16,32 @@ export default function LinkMediaSocial({
         target="_black"
         aria-label={"github"}
       >
-        {currentTheme === "light" ? (
-          <FaGithub size={20} className=" hover:fill-[#464646]" />
-        ) : (
-          <FaGithub size={20} className=" hover:fill-[#ffffff]" />
-        )}
+        <FaGithub
+          size={20}
+          className={
+            currentTheme === "light" ? "hover:fill-[#464646]" : "fill-[#b2d2fa]"
+          }
+        />
       </Link>
       <Link
         href={"https://www.linkedin.com/in/theodore-samba-26b456282/"}
         target="_black"
         aria-label={"LinkedIn"}
       >
-        {currentTheme === "light" ? (
-          <IoLogoLinkedin size={20} className=" hover:fill-[#464646]" />
-        ) : (
-          <IoLogoLinkedin size={20} className=" hover:fill-[#ffffff]" />
-        )}
+        <IoLogoLinkedin
+          size={20}
+          className={
+            currentTheme === "light" ? "hover:fill-[#464646]" : "fill-[#b2d2fa]"
+          }
+        />
       </Link>
       <Link href={"#"} target="_black" aria-label={"X"}>
-        {currentTheme === "light" ? (
-          <FaXTwitter size={20} className=" hover:fill-[#464646]" />
-        ) : (
-          <FaXTwitter size={20} className=" hover:fill-[#ffffff]" />
-        )}
+        <FaXTwitter
+          size={20}
+          className={
+            currentTheme === "light" ? "hover:fill-[#464646]" : "fill-[#b2d2fa]"
+          }
+        />
       </Link>
     </Container>
   );
