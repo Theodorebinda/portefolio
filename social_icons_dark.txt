@@ -1,3 +1,4 @@
  - Part 1
 refactor: update social media icon colors for dark theme - Part 2
 refactor: adjust icon contrast for better visibility in dark mode - Part 3
+refactor: add hover effects for social icons in dark theme - Part 4
