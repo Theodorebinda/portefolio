@@ -11,3 +11,4 @@ feat: update table header typography - Part 10
 feat: add responsive font sizes for mobile - Part 11
 feat: optimize font loading performance - Part 12
 feat: add font-display swap strategy - Part 13
+style: adjust line heights for better readability - Part 14
