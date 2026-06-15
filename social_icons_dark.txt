@@ -6,3 +6,4 @@ refactor: optimize icon SVG for dark background - Part 5
 refactor: update LinkedIn icon styling for dark mode - Part 6
 refactor: update GitHub icon styling for dark theme - Part 7
 refactor: update Twitter/X icon styling for dark mode - Part 8
+refactor: add smooth transition for icon theme switching - Part 9
