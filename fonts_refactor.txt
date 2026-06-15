@@ -3,3 +3,4 @@ feat: add new custom fonts to project - Part 2
 feat: integrate Google Fonts Inter font family - Part 3
 feat: add fallback fonts for better compatibility - Part 4
 feat: update font weights across application - Part 5
+feat: apply new fonts to headings - Part 6
