@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "tsc && next build",
+    "build": "prisma generate && tsc && next build",
     "start": "next start",
-    "postinstall": "tsc --version && cat tsconfig.json && npm list --depth=0 && printenv",
+    "postinstall": "prisma generate",
     "lint": "next lint"
   },
   "dependencies": {
@@ -33,7 +33,6 @@
     "next-auth": "^5.0.0-beta.31",
     "next-cloudinary": "^6.16.0",
     "next-pwa": "^5.6.0",
-    "portefolio": "file:",
     "react": "^18",
     "react-circular-progressbar": "^2.1.0",
     "react-dom": "^18",
