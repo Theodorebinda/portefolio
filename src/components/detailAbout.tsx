@@ -14,7 +14,7 @@ const PhotoGallery = () => {
 
   return (
     <Container className="mt-16 w-full flex flex-col justify-start">
-      <Typography className="text-4xl lg:text-6xl font-bold mb-8">
+      <Typography className="text-4xl lg:text-6xl font-black mb-8">
         {t("gallery.title")}
       </Typography>
 

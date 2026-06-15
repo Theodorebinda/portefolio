@@ -11,7 +11,7 @@ const ToolsAndSoftwareSection = () => {
   return (
     <Container className="mt-16">
       <Container className="flex flex-col gap-3">
-        <Typography className="text-4xl lg:text-6xl font-bold">
+        <Typography className="text-4xl lg:text-6xl font-black">
           {t("aboutPage.toolsAndSoftware.title")}
         </Typography>
         <Container>

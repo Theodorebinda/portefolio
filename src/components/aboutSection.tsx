@@ -25,7 +25,7 @@ const AboutSection = () => {
   return (
     <Container className="flex flex-col gap-8 font-poppins">
       <Container className="flex-col flex md:flex-row justify-between mb-10 gap-10 md:gap-0 md:my-32">
-        <Container className="flex  flex-col gap-1">
+        <Container className="flex  flex-col gap-1 leading-relaxed">
           <Container className=" flex items-start md:items-center justify-start gap-4">
             <div className="hidden md:block">
               {!loading ? (
@@ -47,16 +47,16 @@ const AboutSection = () => {
               )}
             </div>
 
-            <Typography className="text-5xl  sm:text-5xl md:text-7xl font-bold ">
+            <Typography className="text-5xl  sm:text-5xl md:text-7xl font-black ">
               {t("about.design")}
             </Typography>
           </Container>
 
-          <Typography className="md:text-6xl text-4xl  font-bold  ">
+          <Typography className="md:text-6xl text-4xl  font-black  ">
             {t("about.applications")} {/* Traduction */}
           </Typography>
           <Container className="flex items-center gap-8">
-            <Typography className="md:text-6xl text-4xl font-bold">
+            <Typography className="md:text-6xl text-4xl font-black">
               {t("about.web_mobile")}{" "}
             </Typography>
             <Pin className="md:hidden flex" color="#b2d2fa" fill="#b2d2fa" />

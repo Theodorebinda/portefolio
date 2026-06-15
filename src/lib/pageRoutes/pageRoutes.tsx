@@ -1,15 +1,11 @@
 // lib/pageRoutes/pageRoutes.ts
 import { AppLinks } from "@/types/app-links";
-import { Presentation, Home, Settings2 } from "lucide-react";
+import { Home } from "lucide-react";
 
 export const MainRoutes: AppLinks[] = [
   {
     titleKey: "routes.about",
     baseUrl: "/about",
-  },
-  {
-    titleKey: "routes.career",
-    baseUrl: "/carriere",
   },
   {
     titleKey: "routes.projects",

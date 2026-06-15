@@ -20,6 +20,7 @@ import LinkMediaSocial from "@/components/linkSocialMedia";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/contexts/language/LanguageContext";
 import { useTranslation } from "@/lib/hooks/useTranslation";
+import Image from "next/image";
 
 export const ThemeToggleButton = styled.button`
   color: ${(props) => props.theme.text};
@@ -42,6 +43,7 @@ export const MobileNavigation = ({
   const [open, setOpen] = useState(false);
   const { language, toggleLanguage } = useLanguage();
   const { t } = useTranslation();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,16 +74,30 @@ export const MobileNavigation = ({
         } flex flex-row items-center w-full justify-between px-4 py-8 h-[10vh]`}
       >
         <Container className="flex justify-start items-center gap-3">
-          <Link
-            href="/"
-            className="flex justify-start items-center"
-            aria-label={"logo"}
-            onClick={handleLinkClick}
-          >
-            <div className="bg-[#b2d2fa] hover:bg-[#5182be] w-6 rounded-full h-6"></div>
-            <span className="px-1 text-xl font-normal hover:text-[#464646]">
+          <Link href="/" className="flex justify-between items-center">
+            <Image
+              src="https://lh3.googleusercontent.com/a/ACg8ocKi7_sRkEisPwvp2TKaQQXOPC0DjsoGJ24BReynndwrm_7InhzT=s288-c-no"
+              height={80}
+              width={80}
+              alt="theodore"
+              className="object-cover rounded-full flex w-10 h-10 border-2 border-[#b2d2fa] hover:border-[#5182be]"
+              loading="lazy"
+              onLoad={() => setLoading(true)}
+              onError={() => {
+                setLoading(false);
+                console.error("Image failed to load.");
+              }}
+            />
+            <Typography
+              component="p"
+              className={`px-3 text-xl font-normal ${
+                currentTheme === "light"
+                  ? "hover:text-[#000]"
+                  : "hover:text-white"
+              }`}
+            >
               T.Samba
-            </span>
+            </Typography>
           </Link>
 
           <ThemeToggleButton onClick={toggleTheme} aria-label={"theme"}>

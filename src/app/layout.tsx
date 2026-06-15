@@ -1,18 +1,11 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { graphik, acumin } from "./fonts";
 import { Analytics } from "@/components/analytique/Analytics";
 import TrackPageView from "@/components/analytique/tracking-view";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { LanguageProvider } from "@/contexts/language/LanguageContext";
-
-// Configuration optimisée de la police Inter
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter", // Permet d'utiliser la police via C
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
+import { AuthSessionProvider } from "@/components/auth/AuthSessionProvider";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://theodorebinda.me"),
@@ -131,7 +124,11 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="fr" translate="no" className={inter.variable}>
+    <html
+      lang="fr"
+      translate="no"
+      className={`${graphik.variable} ${acumin.variable}`}
+    >
       <head>
         {/* Favicon - Next.js sert automatiquement /public/favicon.ico à /favicon.ico */}
         {/* Métadonnées structurées pour les images (JSON-LD) */}
@@ -156,10 +153,12 @@ export default function RootLayout({
         <link rel="canonical" href="https://theodorebinda.me" />
       </head>
       <body className="font-sans  antialiased">
-        <LanguageProvider>
-          {children}
-          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
-        </LanguageProvider>
+        <AuthSessionProvider>
+          <LanguageProvider>
+            {children}
+            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
+          </LanguageProvider>
+        </AuthSessionProvider>
       </body>
     </html>
   );

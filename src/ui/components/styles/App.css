@@ -1,19 +1,34 @@
 /* App.css */
 .typewriter {
-    font-size: 1.4rem; 
-    color: #878483;
-    padding-bottom: 10px;
-    font-weight:700;
-    overflow: hidden;
-    display: inline-block;
-    border-right:none; /* Style du curseur */
+  font-size: 1.5rem;
+  color: #436896;
+  padding-bottom: 10px;
+  font-weight: 700;
+  overflow: hidden;
+  display: inline-block;
+  border-right: none; /* Style du curseur */
+}
+
+@media (min-width: 768px) {
+  .typewriter {
+    font-size: 2.5rem;
   }
-  
-  .cursor {
-    animation: blink 0.7s step-end infinite;
+}
+
+.dark .typewriter {
+  color: #b2d2fa;
+}
+
+.cursor {
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
   }
-  
-  @keyframes blink {
-    from, to { border-color: transparent }
-    50% { border-color: black }
+  50% {
+    border-color: black;
   }
+}

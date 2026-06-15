@@ -13,8 +13,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const { t } = useTranslation();
 
   return (
-    <div className="flex flex-col-reverse md:flex-row  md:items-start justify-between overflow-hidden bg-transparent ">
-      <div className="md:w-1/2 w-full relative h-[300px] md:h-[400px] overflow-hidden group -z-30 rounded-l-lg shadow-lg ">
+    <div className="flex flex-col-reverse md:flex-row-reverse  md:items-start justify-between overflow-hidden bg-transparent md:gap-8 gap-2 ">
+      <div className="md:w-1/2 w-full relative h-[300px] md:h-[350px] overflow-hidden group -z-30 rounded-l-lg shadow-lg ">
         <Image
           src={project.image}
           alt={`${t(project.nameKey)} screenshot`}
@@ -28,10 +28,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                transform-gpu"
         />
       </div>
-      <div className="md:w-1/3   flex flex-col justify-between md:h-full">
-        <div className="space-y-6 flex flex-col ">
-          <h3 className="text-3xl md:text-4xl font-bold text-[#436896] hover:text-[#5182be] font-poppins">
-            {t(project.nameKey)} {/* Traduction */}
+      <div className="md:w-1/2   flex flex-col justify-between md:h-full">
+        <div className="space-y-2 flex flex-col ">
+          <h3 className="text-xl md:text-xl font-bold text-[#436896] dark:text-[#b2d2fa] hover:text-[#5182be] dark:hover:text-[#5182be] ">
+            {t(project.nameKey)}
           </h3>
           <div className="flex items-center justify-start gap-8">
             {project.links?.map((link: any, index: any) => (
@@ -48,15 +48,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             ))}
           </div>
 
-          <p className="text-xl font-poppins leading-relaxed">
-            {t(project.descriptionKey)} {/* Traduction */}
-          </p>
+          <p className="leading-relaxed">{t(project.descriptionKey)}</p>
         </div>
 
         <div className="flex flex-wrap gap-8 py-8">
           {project.stats.map((stat, index) => (
             <div key={index} className="flex flex-col min-w-[120px]">
-              <span className="text-sm uppercase tracking-wider text-[#436896] font-bold">
+              <span className="text-sm uppercase tracking-wider text-[#436896] dark:text-[#b2d2fa] hover:text-[#5182be] dark:hover:text-[#5182be] ">
                 {t(stat.labelKey)} {/* Traduction */}
               </span>
               <span className="text-2xl md:text-4xl font-semibold">

@@ -2,27 +2,20 @@
 import { Container } from "@/ui/components/container/container";
 import Typewriter from "@/ui/components/typewriter/Typewriter";
 import { Typography } from "@/ui/components/typography/typography";
-import Image from "next/image";
-import imageHero from "/public/theodore-removebg-preview.png";
 import Link from "next/link";
 import { Btn, Typo } from "@/styles/globalStyle";
 import { ChevronRight } from "lucide-react";
 import { trackEvent } from "@/utils/trackEvent";
-import Greeting from "./greting";
 import { useTranslation } from "@/lib/hooks/useTranslation";
 export default function HeroSection() {
   const { t } = useTranslation();
 
   return (
-    <Container className="flex flex-col items-start justify-between flex-wrap  lg:flex-row mb-8 font-poppins ">
-      <Container className="flex flex-col gap-3 md:basis-1/2">
-        <Typo className=" text-6xl md:text-6xl">Théodore Samba</Typo>
-        <Container className="text-xl flex justify-start gap-3  items-center">
-          <Greeting />
-          <Typography>{t("hero.iam")}</Typography> {/* Traduction */}
-        </Container>
+    <Container className="flex flex-col items-start justify-between flex-wrap  lg:flex-row  font-poppins ">
+      <Container className="flex flex-col gap-4 ">
+        <Typo className=" text-6xl md:text-8xl">Théodore Samba</Typo>
 
-        <Container>
+        <Container className="md:pl-4 pl-0">
           <Container>
             <Typewriter
               texts={[
@@ -35,14 +28,16 @@ export default function HeroSection() {
               deleteDelay={1500}
             />
           </Container>
-          <Typography className="text-xl   leading-8 font-semibold">
-            <span>{t("hero.passionate")}</span>
-            {"  "}
-            <span>{t("hero.design_systems")},</span> {"  "}
-            <span>{t("hero.accessibility")},</span> {"  "}
-            <span>{t("hero.state_machines")},</span> {"  "}
-            <span>{t("hero.user_experience")}.</span>
-          </Typography>
+          <Container className="mt-4 md:max-w-lg w-full">
+            <Typography className="text-2xl   leading-relaxed  ">
+              <span>{t("hero.passionate")}</span>
+              {"  "}
+              <span>{t("hero.design_systems")},</span> {"  "}
+              <span>{t("hero.accessibility")},</span> {"  "}
+              <span>{t("hero.state_machines")},</span> {"  "}
+              <span>{t("hero.user_experience")}.</span>
+            </Typography>
+          </Container>
         </Container>
 
         <Container className="mt-4 mb-4 flex justify-center p-2">
@@ -56,18 +51,6 @@ export default function HeroSection() {
             </Btn>
           </Link>
         </Container>
-      </Container>
-      <Container className="hidden lg:flex lg:justify-end items-start w-1/2">
-        <Image
-          src={imageHero}
-          height={400}
-          width={400}
-          alt="theodore"
-          className="object-contain"
-          priority
-          sizes="(min-width: 1024px) 400px, 100vw"
-          placeholder="blur"
-        />
       </Container>
     </Container>
   );
