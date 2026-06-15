@@ -22,3 +22,4 @@ style: enhance success notification fonts - Part 21
 refactor: restructure component folder hierarchy - Part 22
 refactor: extract reusable typography components - Part 23
 refactor: consolidate font configuration files - Part 24
+refactor: simplify CSS variable naming - Part 25
