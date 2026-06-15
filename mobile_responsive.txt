@@ -1,3 +1,4 @@
  - Part 1
 refactor: adjust container padding for mobile devices - Part 2
 refactor: reduce margin spacing on small screens - Part 3
+refactor: optimize card spacing for mobile view - Part 4
