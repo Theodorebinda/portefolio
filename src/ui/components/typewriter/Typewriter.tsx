@@ -2,12 +2,16 @@ import React, { useState, useEffect } from "react";
 import "../styles/App.css";
 
 interface TypewriterProps {
-  texts: string[];      // Tableau des textes à afficher
-  speed: number;        // Vitesse de frappe en millisecondes
-  deleteDelay: number;  // Délai avant la suppression après l'écriture complète
+  texts: string[]; // Tableau des textes à afficher
+  speed: number; // Vitesse de frappe en millisecondes
+  deleteDelay: number; // Délai avant la suppression après l'écriture complète
 }
 
-const Typewriter: React.FC<TypewriterProps> = ({ texts, speed, deleteDelay }) => {
+const Typewriter: React.FC<TypewriterProps> = ({
+  texts,
+  speed,
+  deleteDelay,
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [index, setIndex] = useState(0);
@@ -40,7 +44,15 @@ const Typewriter: React.FC<TypewriterProps> = ({ texts, speed, deleteDelay }) =>
         clearTimeout(timeoutId);
       }
     };
-  }, [displayedText, index, texts, speed, deleteDelay, isDeleting, currentIndex]);
+  }, [
+    displayedText,
+    index,
+    texts,
+    speed,
+    deleteDelay,
+    isDeleting,
+    currentIndex,
+  ]);
 
   return (
     <div className="typewriter">

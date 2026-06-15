@@ -77,7 +77,7 @@ export default async function RecommendationsPage({
   }));
 
   return (
-    <Container className="mt-28 flex flex-col gap-8 px-4 md:px-0">
+    <Container className=" h-auto flex flex-col gap-8 px-4 md:px-0">
       <div className="flex flex-col gap-3">
         <h1 className="text-4xl font-bold md:text-5xl">Recommandations</h1>
         <p className="max-w-2xl text-base leading-7 text-slate-400">

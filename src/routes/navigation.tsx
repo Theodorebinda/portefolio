@@ -1,5 +1,6 @@
 "use client";
 import { Typography } from "@/ui/components/typography/typography";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MainRoutes } from "@/lib/pageRoutes/pageRoutes";
@@ -21,11 +22,13 @@ interface Props {
 export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [, setLoading] = useState(false);
   const { language, toggleLanguage } = useLanguage();
   const { t } = useTranslation();
-  
+
   // Utiliser currentTheme pour déterminer la couleur du texte
-  const textColor = currentTheme === "light" ? "text-gray-800" : "text-gray-200";
+  const textColor =
+    currentTheme === "light" ? "text-gray-800" : "text-gray-200";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,24 +45,34 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
 
   return (
     <header
-      className={clsx(
-        "fixed top-0 left-0 right-0 z-50 max-w-full md:mx-48 ",
-        className,
-        { "shadow-sm": isScrolled }
-      )}
+      className={clsx("fixed top-0 left-0 right-0 z-50 w-full", className, {
+        "shadow-sm": isScrolled,
+      })}
     >
       <Container
-        className={`${
-          currentTheme === "light" ? "bg-white " : "bg-[#1c1917] max-w-full"
+        className={`w-full ${
+          currentTheme === "light" ? "bg-white" : "bg-[#1c1917]"
         }`}
       >
         <Container
-          className={`mx-4 flex flex-row md:mx-auto py-8 max-w-screen-xl ${
+          className={`mx-auto flex flex-row px-4 md:px-0 py-6 max-w-5xl w-full justify-between ${
             isScrolled ? "items-center" : "items-end"
-          } max-w-full justify-between h-[7rem]`}
+          } h-[5rem]`}
         >
           <Link href="/" className="flex justify-between items-center">
-            <div className="bg-[#b2d2fa] hover:bg-[#5182be] w-6 rounded-full h-6"></div>
+            <Image
+              src="https://lh3.googleusercontent.com/a/ACg8ocKi7_sRkEisPwvp2TKaQQXOPC0DjsoGJ24BReynndwrm_7InhzT=s288-c-no"
+              height={80}
+              width={80}
+              alt="theodore"
+              className="object-cover rounded-full flex w-10 h-10 border-2 border-[#b2d2fa] hover:border-[#5182be]"
+              loading="lazy"
+              onLoad={() => setLoading(true)}
+              onError={() => {
+                setLoading(false);
+                console.error("Image failed to load.");
+              }}
+            />
             <Typography
               component="p"
               className={`px-3 text-xl font-normal ${

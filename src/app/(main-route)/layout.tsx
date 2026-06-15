@@ -18,9 +18,12 @@ const ScrollToTop = dynamic(() => import("@/utils/scroll-to-top"), {
   ssr: false,
 });
 
-const TrackPageView = dynamic(() => import("@/components/analytique/tracking-view"), {
-  ssr: false,
-});
+const TrackPageView = dynamic(
+  () => import("@/components/analytique/tracking-view"),
+  {
+    ssr: false,
+  },
+);
 
 function MainRoutesLayout({ children }: { children: React.ReactNode }) {
   const { theme, toggleTheme } = useTheme();
@@ -40,7 +43,7 @@ function MainRoutesLayout({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider theme={selectedTheme}>
       <GlobalStyle />
-      <div className="relative z-0 mx-auto py-8 max-w-screen-xl">
+      <div className="relative z-0 mx-auto py-8 lg:max-w-5xl">
         <NavigationWrapper toggleTheme={toggleTheme} currentTheme={theme} />
         {children}
         <TrackPageView />
