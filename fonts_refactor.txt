@@ -28,3 +28,4 @@ refactor: organize global styles efficiently - Part 27
 refactor: split large CSS files into modules - Part 28
 refactor: migrate inline styles to CSS classes - Part 29
 refactor: improve media query organization - Part 30
+refactor: standardize spacing utilities - Part 31
