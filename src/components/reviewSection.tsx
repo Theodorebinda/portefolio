@@ -119,15 +119,16 @@ const ReviewsPage = () => {
           ))}
         </div>
       ) : (
-        <Empty>
+        <Empty className="border-none bg-transparent">
           <EmptyHeader>
             <EmptyMedia variant="icon">
               <MessageSquareText />
             </EmptyMedia>
-            <EmptyTitle>Aucune recommandation pour le moment</EmptyTitle>
+            <EmptyTitle className="w-2/3 text-center dark:text-white text-black">
+              Aucune recommandation pour le moment
+            </EmptyTitle>
             <EmptyDescription>
-              Les recommandations approuvees apparaitront ici. Vous pouvez etre
-              le premier a laisser un mot sur Theodore.
+              Vous pouvez être le premier à laisser un mot sur Theodore.
             </EmptyDescription>
           </EmptyHeader>
           <EmptyContent>
