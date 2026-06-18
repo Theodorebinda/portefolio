@@ -6,3 +6,4 @@ feat: create migration for blog models - Part 5
 feat: add seed script for categories, tags, and demo post - Part 6
 feat: create public /blog page with published posts - Part 7
 feat: add search functionality to blog list - Part 8
+feat: add tag filter to blog list - Part 9
