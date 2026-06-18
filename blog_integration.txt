@@ -25,3 +25,4 @@ feat: add admin blog list with status filters - Part 24
 feat: implement draft, publish, unpublish, archive workflow - Part 25
 feat: add POST /api/admin/blog/posts for creating drafts - Part 26
 feat: generate unique slug for new posts - Part 27
+feat: upsert tags from free text input - Part 28
