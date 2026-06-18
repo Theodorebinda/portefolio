@@ -18,6 +18,13 @@ enum RecommendationStatus {
   REJECTED
 }
 
+enum BlogPostStatus {
+  DRAFT
+  IN_REVIEW
+  PUBLISHED
+  ARCHIVED
+}
+
 model User {
   id              String           @id @default(cuid())
   name            String?
@@ -30,6 +37,7 @@ model User {
   accounts        Account[]
   sessions        Session[]
   recommendations Recommendation[]
+  blogPosts       BlogPost[]       @relation("BlogPostAuthor")
   createdAt       DateTime         @default(now())
   updatedAt       DateTime         @updatedAt
 }
@@ -76,4 +84,59 @@ model Recommendation {
 
   @@index([status, createdAt])
   @@index([userId])
+}
+
+model BlogPost {
+  id             String         @id @default(cuid())
+  slug           String         @unique
+  title          String
+  excerpt        String         @db.VarChar(300)
+  content        String
+  coverImage     String?
+  status         BlogPostStatus @default(DRAFT)
+  featured       Boolean        @default(false)
+  language       String         @default("fr")
+  readingTime    Int?
+  seoTitle       String?
+  seoDescription String?
+  publishedAt    DateTime?
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  authorId       String
+  author         User           @relation("BlogPostAuthor", fields: [authorId], references: [id], onDelete: Cascade)
+  categoryId     String?
+  category       BlogCategory?  @relation(fields: [categoryId], references: [id])
+  tags           BlogPostTag[]
+
+  @@index([status, publishedAt])
+  @@index([authorId])
+  @@index([categoryId])
+}
+
+model BlogCategory {
+  id        String     @id @default(cuid())
+  slug      String     @unique
+  name      String
+  posts     BlogPost[]
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+}
+
+model BlogTag {
+  id        String        @id @default(cuid())
+  slug      String        @unique
+  name      String
+  posts     BlogPostTag[]
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+}
+
+model BlogPostTag {
+  postId String
+  tagId  String
+  post   BlogPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+  tag    BlogTag  @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([postId, tagId])
+  @@index([tagId])
 }

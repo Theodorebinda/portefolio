@@ -1,0 +1,2 @@
+ - Part 1
+feat: add BlogPost, BlogCategory, BlogTag models to Prisma schema - Part 2

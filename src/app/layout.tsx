@@ -1,4 +1,5 @@
 import "./globals.css";
+import "@pubwave/editor/style.css";
 import type { Metadata } from "next";
 import { graphik, acumin } from "./fonts";
 import { Analytics } from "@/components/analytique/Analytics";
