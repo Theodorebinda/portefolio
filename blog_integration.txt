@@ -29,3 +29,4 @@ feat: upsert tags from free text input - Part 28
 feat: add PATCH /api/admin/blog/posts/[id] for updates - Part 29
 feat: handle slug conflicts with numeric suffix - Part 30
 feat: resynchronize tags on update - Part 31
+feat: add DELETE /api/admin/blog/posts/[id] for archiving - Part 32
