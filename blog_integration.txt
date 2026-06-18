@@ -43,3 +43,4 @@ feat: convert Tiptap JSON to Markdown for storage - Part 42
 feat: add Editor component wrapper - Part 43
 feat: handle image uploads from editor via /api/upload - Part 44
 feat: add dynamic sitemap.xml with published articles - Part 45
+feat: mark blog pages as force-dynamic - Part 46
