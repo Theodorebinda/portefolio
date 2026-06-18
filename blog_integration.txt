@@ -8,3 +8,4 @@ feat: create public /blog page with published posts - Part 7
 feat: add search functionality to blog list - Part 8
 feat: add tag filter to blog list - Part 9
 feat: add featured post highlight to blog page - Part 10
+feat: implement pagination for blog list - Part 11
