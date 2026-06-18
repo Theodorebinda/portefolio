@@ -2,3 +2,4 @@
 feat: add BlogPost, BlogCategory, BlogTag models to Prisma schema - Part 2
 feat: add BlogPostStatus enum (DRAFT, IN_REVIEW, PUBLISHED, ARCHIVED) - Part 3
 feat: add User relation to BlogPost for author - Part 4
+feat: create migration for blog models - Part 5
