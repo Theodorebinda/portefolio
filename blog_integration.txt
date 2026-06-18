@@ -22,3 +22,4 @@ feat: create /admin/blog route with auth protection - Part 21
 feat: create /admin/blog/new page for post creation - Part 22
 feat: create /admin/blog/[id]/edit page for editing - Part 23
 feat: add admin blog list with status filters - Part 24
+feat: implement draft, publish, unpublish, archive workflow - Part 25
