@@ -36,3 +36,4 @@ feat: set publishedAt timestamp on publish - Part 35
 feat: add POST /api/admin/blog/posts/[id]/unpublish endpoint - Part 36
 feat: revert status to DRAFT and clear publishedAt - Part 37
 feat: add POST /api/upload endpoint for Cloudinary - Part 38
+feat: accept jpeg, png, webp, avif images up to 5MB - Part 39
