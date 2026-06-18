@@ -40,3 +40,4 @@ feat: accept jpeg, png, webp, avif images up to 5MB - Part 39
 feat: return Cloudinary secureUrl, publicId, width, height - Part 40
 feat: integrate @pubwave/editor Notion-like editor - Part 41
 feat: convert Tiptap JSON to Markdown for storage - Part 42
+feat: add Editor component wrapper - Part 43
