@@ -12,3 +12,4 @@ feat: implement pagination for blog list - Part 11
 feat: create /blog/[slug] public page - Part 12
 feat: render Markdown content with react-markdown - Part 13
 feat: add remark-gfm for GitHub Flavored Markdown - Part 14
+feat: add rehype-sanitize for secure HTML rendering - Part 15
