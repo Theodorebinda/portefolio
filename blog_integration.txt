@@ -19,3 +19,4 @@ feat: add related posts section on article page - Part 18
 feat: add social share CTA on article page - Part 19
 feat: add contact CTA on article page - Part 20
 feat: create /admin/blog route with auth protection - Part 21
+feat: create /admin/blog/new page for post creation - Part 22
