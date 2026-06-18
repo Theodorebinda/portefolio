@@ -23,3 +23,4 @@ feat: create /admin/blog/new page for post creation - Part 22
 feat: create /admin/blog/[id]/edit page for editing - Part 23
 feat: add admin blog list with status filters - Part 24
 feat: implement draft, publish, unpublish, archive workflow - Part 25
+feat: add POST /api/admin/blog/posts for creating drafts - Part 26
