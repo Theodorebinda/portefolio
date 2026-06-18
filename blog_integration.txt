@@ -35,3 +35,4 @@ feat: validate required fields before publishing - Part 34
 feat: set publishedAt timestamp on publish - Part 35
 feat: add POST /api/admin/blog/posts/[id]/unpublish endpoint - Part 36
 feat: revert status to DRAFT and clear publishedAt - Part 37
+feat: add POST /api/upload endpoint for Cloudinary - Part 38
