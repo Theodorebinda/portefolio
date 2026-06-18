@@ -14,3 +14,4 @@ feat: render Markdown content with react-markdown - Part 13
 feat: add remark-gfm for GitHub Flavored Markdown - Part 14
 feat: add rehype-sanitize for secure HTML rendering - Part 15
 feat: add dynamic metadata and Open Graph for blog posts - Part 16
+feat: add Twitter Card and JSON-LD BlogPosting schema - Part 17
