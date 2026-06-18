@@ -31,3 +31,4 @@ feat: handle slug conflicts with numeric suffix - Part 30
 feat: resynchronize tags on update - Part 31
 feat: add DELETE /api/admin/blog/posts/[id] for archiving - Part 32
 feat: add POST /api/admin/blog/posts/[id]/publish endpoint - Part 33
+feat: validate required fields before publishing - Part 34
