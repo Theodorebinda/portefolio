@@ -47,3 +47,4 @@ feat: mark blog pages as force-dynamic - Part 46
 feat: add admin role check on all blog API routes - Part 47
 chore: install required dependencies (@pubwave/editor, chart.js, zod, react-markdown, remark-gfm, rehype-sanitize) - Part 48
 chore: add tsx dev dependency - Part 49
+docs: add blog setup and usage documentation - Part 50
