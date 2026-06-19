@@ -31,3 +31,4 @@ feat: add image preview before upload - Part 30
 feat: add image removal functionality - Part 31
 feat: add image upload progress indicator - Part 32
 feat: add new translations for hire page (English) - Part 33
+feat: add new translations for hire page (French) - Part 34
