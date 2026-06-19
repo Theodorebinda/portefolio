@@ -47,3 +47,4 @@ refactor: add connection timeout configuration - Part 46
 refactor: add connection pool settings - Part 47
 refactor: clean up commented-out project data in realisation.tsx - Part 48
 refactor: remove unused imports and variables - Part 49
+style: format code with prettier - Part 50
