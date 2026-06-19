@@ -12,3 +12,4 @@ feat: add theme options (light, dark, system) - Part 11
 feat: add language switching logic - Part 12
 feat: add theme switching logic - Part 13
 feat: add language selector styles - Part 14
+feat: add theme toggle animations - Part 15
