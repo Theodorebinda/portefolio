@@ -7,3 +7,4 @@ feat: add share via email action - Part 6
 style: enhance blog article typography and readability - Part 7
 style: add featured image with rounded corners and shadow - Part 8
 refactor: move share actions to reusable component - Part 9
+feat: add share count tracking - Part 10
