@@ -5,3 +5,4 @@ feat: add hire page translation keys (EN/FR) - Part 4
 feat: integrate HirePageContent into routing - Part 5
 feat: add hire page route to app router - Part 6
 feat: update navigation to include hire page link - Part 7
+feat: add Sonner toast notifications provider - Part 8
