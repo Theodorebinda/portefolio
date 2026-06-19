@@ -17,3 +17,4 @@ feat: add email service for hire inquiries - Part 16
 feat: add hire form loading state - Part 17
 feat: add hire form success screen - Part 18
 feat: update AdminRecommendations with improved UI - Part 19
+feat: add error handling to AdminRecommendations - Part 20
