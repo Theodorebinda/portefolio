@@ -4,3 +4,4 @@ feat: add ThemeToggle component with sun/moon icons - Part 3
 feat: integrate LanguageSelector into header/navbar - Part 4
 feat: integrate ThemeToggle into header/navbar - Part 5
 feat: add language state management (zustand/context) - Part 6
+feat: add theme state management (zustand/context) - Part 7
