@@ -13,6 +13,15 @@ import { notFound } from "next/navigation";
 export const dynamic = "force-dynamic";
 
 const baseUrl = "https://theodorebinda.me";
+const defaultCoverImage = "/theodore - Copie.jpg";
+
+function getAbsoluteUrl(pathOrUrl: string) {
+  return new URL(pathOrUrl, baseUrl).toString();
+}
+
+function getSocialImageUrl(coverImage?: string | null) {
+  return getAbsoluteUrl(getValidBlogImageSource(coverImage) ?? defaultCoverImage);
+}
 
 const postInclude = {
   author: {
@@ -51,10 +60,10 @@ export async function generateMetadata({
     };
   }
 
-  const title = post.seoTitle ?? post.title;
-  const description = post.seoDescription ?? post.excerpt;
-  const url = `/blog/${post.slug}`;
-  const coverImage = getValidBlogImageSource(post.coverImage);
+  const title = post.title;
+  const description = post.excerpt;
+  const url = getAbsoluteUrl(`/blog/${post.slug}`);
+  const socialImage = getSocialImageUrl(post.coverImage);
 
   return {
     title,
@@ -70,20 +79,20 @@ export async function generateMetadata({
       publishedTime: post.publishedAt?.toISOString(),
       modifiedTime: post.updatedAt.toISOString(),
       authors: [post.author.name ?? "Theodore Samba"],
-      images: coverImage
-        ? [
-            {
-              url: coverImage,
-              alt: post.title,
-            },
-          ]
-        : undefined,
+      images: [
+        {
+          url: socialImage,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: coverImage ? [coverImage] : undefined,
+      images: [socialImage],
     },
   };
 }
@@ -122,12 +131,13 @@ export default async function BlogPostPage({
       : [];
   const articleUrl = `${baseUrl}/blog/${post.slug}`;
   const coverImage = getValidBlogImageSource(post.coverImage);
+  const socialImage = getSocialImageUrl(post.coverImage);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
     description: post.seoDescription ?? post.excerpt,
-    image: coverImage ? [coverImage] : undefined,
+    image: [socialImage],
     datePublished: post.publishedAt?.toISOString(),
     dateModified: post.updatedAt.toISOString(),
     author: {
