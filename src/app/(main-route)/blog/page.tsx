@@ -325,7 +325,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         ) : null}
       </section>
 
-      <section className="flex flex-col gap-4 rounded-md border border-neutral-200 bg-neutral-50 p-5 dark:border-white/10 dark:bg-white/[0.04] md:flex-row md:items-center md:justify-between">
+      {/* <section className="flex flex-col gap-4 rounded-md border border-neutral-200 bg-neutral-50 p-5 dark:border-white/10 dark:bg-white/[0.04] md:flex-row md:items-center md:justify-between">
         <div>
           <h2 className="text-lg font-bold text-neutral-950 dark:text-white">
             Une idee d&apos;article ou de collaboration ?
@@ -341,7 +341,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         >
           Ecrire
         </Link>
-      </section>
+      </section> */}
     </main>
   );
 }

@@ -193,7 +193,7 @@ export function ThemeToggle({
       disabled={!toggleTheme}
       aria-label={isLight ? "Activer le theme sombre" : "Activer le theme clair"}
       className={cn(
-        "group relative inline-flex h-9 w-[4.25rem] items-center rounded-full border p-1 shadow-sm transition duration-300 hover:-translate-y-0.5 active:translate-y-0 active:scale-95 disabled:cursor-not-allowed disabled:opacity-60",
+        "group relative inline-flex h-8 w-[4.25rem] items-center rounded-full border p-1 shadow-sm transition duration-300 hover:-translate-y-0.5 active:translate-y-0 active:scale-95 disabled:cursor-not-allowed disabled:opacity-60",
         isLight
           ? "border-neutral-200 bg-neutral-100 text-neutral-700 hover:border-[#436896]"
           : "border-white/10 bg-white/5 text-slate-200 hover:border-[#b2d2fa]",
@@ -206,7 +206,7 @@ export function ThemeToggle({
       </span>
       <span
         className={cn(
-          "absolute left-1 top-1 flex h-7 w-7 items-center justify-center rounded-full shadow-sm transition-transform duration-300",
+          "absolute left-1 top-1 flex h-6 w-6 items-center justify-center rounded-full shadow-sm transition-transform duration-300",
           isLight
             ? "translate-x-0 bg-[#436896] text-white"
             : "translate-x-8 bg-[#b2d2fa] text-black"
