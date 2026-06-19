@@ -13,3 +13,4 @@ feat: add language switching logic - Part 12
 feat: add theme switching logic - Part 13
 feat: add language selector styles - Part 14
 feat: add theme toggle animations - Part 15
+feat: add accessibility attributes to components - Part 16
