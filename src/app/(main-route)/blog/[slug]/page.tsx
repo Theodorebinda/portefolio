@@ -142,7 +142,7 @@ export default async function BlogPostPage({
   };
 
   return (
-    <main className="relative z-0 isolate flex w-full flex-col gap-10 py-8 text-neutral-800 dark:text-slate-200">
+    <main className="relative z-0 isolate flex w-full md:max-w-4xl mx-auto flex-col gap-10  text-neutral-800 dark:text-slate-200">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -168,7 +168,7 @@ export default async function BlogPostPage({
               </span>
             ))}
           </div>
-          <h1 className="max-w-4xl text-4xl font-bold leading-tight text-neutral-950 dark:text-white md:text-5xl">
+          <h1 className="max-w-2xl text-4xl font-bold leading-tight text-neutral-950 dark:text-white md:text-5xl">
             {post.title}
           </h1>
           <p className="max-w-3xl text-lg leading-8 text-neutral-600 dark:text-slate-400">

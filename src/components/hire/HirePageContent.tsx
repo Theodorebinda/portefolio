@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslation } from "@/lib/hooks/useTranslation";
+import { Typography } from "@/ui/components/typography/typography";
 import { Linkedin, Mail, Pen } from "lucide-react";
 import Link from "next/link";
 
@@ -17,9 +18,9 @@ export function HirePageContent() {
               <h1 className="text-3xl font-bold leading-tight text-neutral-800 dark:text-slate-200">
             {t("hirePage.title")}
           </h1>
-          <p className="mt-5 max-w-2xl whitespace-pre-line text-base leading-8 text-neutral-800 font-medium dark:text-slate-300 md:text-xl">
+          <Typography className="mt-5 max-w-2xl whitespace-pre-line text-base text-xl font-normal leading-8  dark:text-slate-300 md:text-xl">
             {t("hirePage.subtitle")}
-          </p>
+          </Typography>
           </div>
       
         
