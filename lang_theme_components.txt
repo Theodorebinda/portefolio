@@ -17,3 +17,4 @@ feat: add accessibility attributes to components - Part 16
 feat: add keyboard navigation for dropdown - Part 17
 feat: add translation keys for language selector labels - Part 18
 feat: add theme toggle tooltips - Part 19
+test: add LanguageSelector unit tests - Part 20
