@@ -21,3 +21,4 @@ feat: add error handling to AdminRecommendations - Part 20
 feat: add loading skeleton for AdminRecommendations - Part 21
 feat: add empty state for AdminRecommendations - Part 22
 feat: add refresh button to AdminRecommendations - Part 23
+feat: enhance blog image validation utility - Part 24
