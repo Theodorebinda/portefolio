@@ -25,3 +25,4 @@ feat: enhance blog image validation utility - Part 24
 feat: add image file type validation (jpeg, png, webp) - Part 25
 feat: add image size validation (max 5MB) - Part 26
 feat: add image dimension validation - Part 27
+feat: add image error handling in upload - Part 28
