@@ -9,3 +9,4 @@ feat: persist language preference in localStorage - Part 8
 feat: persist theme preference in localStorage - Part 9
 feat: add language options (FR, EN, LN, SW) - Part 10
 feat: add theme options (light, dark, system) - Part 11
+feat: add language switching logic - Part 12
