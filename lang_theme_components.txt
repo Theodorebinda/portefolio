@@ -8,3 +8,4 @@ feat: add theme state management (zustand/context) - Part 7
 feat: persist language preference in localStorage - Part 8
 feat: persist theme preference in localStorage - Part 9
 feat: add language options (FR, EN, LN, SW) - Part 10
+feat: add theme options (light, dark, system) - Part 11
