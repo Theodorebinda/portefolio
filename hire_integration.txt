@@ -13,3 +13,4 @@ feat: add error toast for hire form failures - Part 12
 feat: implement hire form validation with Zod - Part 13
 feat: add hire form fields (name, email, message, service) - Part 14
 feat: add hire form API endpoint - Part 15
+feat: add email service for hire inquiries - Part 16
