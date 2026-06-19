@@ -1,3 +1,4 @@
  - Part 1
 feat: add LanguageSelector component with dropdown - Part 2
 feat: add ThemeToggle component with sun/moon icons - Part 3
+feat: integrate LanguageSelector into header/navbar - Part 4
