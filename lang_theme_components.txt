@@ -15,3 +15,4 @@ feat: add language selector styles - Part 14
 feat: add theme toggle animations - Part 15
 feat: add accessibility attributes to components - Part 16
 feat: add keyboard navigation for dropdown - Part 17
+feat: add translation keys for language selector labels - Part 18
