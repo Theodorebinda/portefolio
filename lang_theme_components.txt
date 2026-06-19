@@ -11,3 +11,4 @@ feat: add language options (FR, EN, LN, SW) - Part 10
 feat: add theme options (light, dark, system) - Part 11
 feat: add language switching logic - Part 12
 feat: add theme switching logic - Part 13
+feat: add language selector styles - Part 14
