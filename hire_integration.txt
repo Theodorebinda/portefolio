@@ -3,3 +3,4 @@ feat: add HirePageContent component with translation support - Part 2
 feat: implement service offerings grid in HirePageContent - Part 3
 feat: add hire page translation keys (EN/FR) - Part 4
 feat: integrate HirePageContent into routing - Part 5
+feat: add hire page route to app router - Part 6
