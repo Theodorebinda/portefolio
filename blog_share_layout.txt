@@ -6,3 +6,4 @@ feat: add copy link to clipboard functionality - Part 5
 feat: add share via email action - Part 6
 style: enhance blog article typography and readability - Part 7
 style: add featured image with rounded corners and shadow - Part 8
+refactor: move share actions to reusable component - Part 9
