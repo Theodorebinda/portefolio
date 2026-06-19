@@ -35,3 +35,4 @@ feat: add new translations for hire page (French) - Part 34
 feat: update translation keys for hire services - Part 35
 feat: add hire page translations for form fields - Part 36
 feat: add hire page translations for validation errors - Part 37
+feat: add hire page translations for success messages - Part 38
