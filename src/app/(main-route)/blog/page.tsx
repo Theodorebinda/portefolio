@@ -163,15 +163,13 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
     <main className="relative z-0 isolate flex w-full flex-col gap-12  text-neutral-800 dark:text-slate-200">
       <section className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_260px] lg:items-end">
         <div className="max-w-2xl">
-          <span className="mb-4 inline-flex h-8 items-center gap-2 rounded-md border border-neutral-200 bg-neutral-50 px-3 text-xs font-semibold uppercase tracking-wide text-[#436896] dark:border-white/10 dark:bg-white/5 dark:text-[#b2d2fa]">
-            <Tag size={14} />
-            Blog
-          </span>
-          <h1 className="text-4xl font-bold text-neutral-950 dark:text-white">
-            Articles, notes techniques et retours de terrain
+        
+               <h1 className="text-3xl font-bold leading-tight text-neutral-800 dark:text-slate-200">
+           Blog
           </h1>
           <p className="mt-5 text-base leading-8 text-neutral-600 dark:text-slate-400 md:text-lg">
-            Une selection d&apos;articles sur Next.js, React, TypeScript, Prisma,
+            Une selection d&apos;articles,de réflexions et d&apos;idées sur des sujets
+            tels que Next.js, React, TypeScript,IA, Prisma, Flutter,
             l&apos;interface produit, l&apos;accessibilite et les decisions
             techniques qui rendent un projet plus solide.
           </p>
@@ -204,14 +202,11 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                 {heroPost.readingTime ?? 1} min read
               </span>
             </div>
-            <div className="grid gap-6 md:grid-cols-[minmax(0,1fr)_180px] md:items-end">
+            <div className="grid gap-6 md:grid-cols-[minmax(0,1fr)_180px] items-end">
               <div>
                 <h2 className="text-2xl font-bold text-neutral-950 dark:text-white">
                   {heroPost.title}
                 </h2>
-                <p className="mt-3 max-w-3xl text-sm leading-7 text-neutral-600 dark:text-slate-400 md:text-base">
-                  {heroPost.excerpt}
-                </p>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {heroPost.tags.map(({ tag }) => (
                     <span
@@ -250,43 +245,68 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 
         {posts.length > 0 ? (
           <div className="grid gap-3">
-            {posts.map((post) => (
-              <article
-                key={post.id}
-                className="group rounded-md border border-transparent p-4 transition hover:border-neutral-200 hover:bg-neutral-50 dark:hover:border-white/10 dark:hover:bg-white/[0.04]"
-              >
-                <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
-                  <div className="min-w-0">
-                    <div className="mb-2 flex flex-wrap gap-2">
-                      {post.tags.map(({ tag }) => (
-                        <span
-                          key={tag.id}
-                          className="text-xs font-semibold text-[#436896] dark:text-[#b2d2fa]"
-                        >
-                          #{tag.name}
-                        </span>
-                      ))}
-                    </div>
-                    <TrackedBlogLink
-                      href={`/blog/${post.slug}`}
-                      trackingLabel={post.slug}
-                      className="block text-lg font-semibold text-neutral-950 transition dark:text-slate-100 dark:group-hover:text-white"
-                    >
-                      {post.title}
-                    </TrackedBlogLink>
-                    <p className="mt-2 max-w-2xl text-sm leading-6 text-neutral-600 dark:text-slate-500">
-                      {post.excerpt}
-                    </p>
-                  </div>
+            {posts.map((post) => {
+              const postCoverImage = getValidBlogImageSource(post.coverImage);
 
-                  <div className="flex shrink-0 items-center gap-2 text-xs text-neutral-500 dark:text-slate-500 md:pt-7">
-                    <span>{formatPostDate(post.publishedAt)}</span>
-                    <span>•</span>
-                    <span>{post.readingTime ?? 1} min</span>
+              return (
+                <article
+                  key={post.id}
+                  className="group rounded-md border border-transparent p-4 transition hover:border-neutral-200 hover:bg-neutral-50 dark:hover:border-white/10 dark:hover:bg-white/[0.04]"
+                >
+                  <div className="flex flex-col gap-4 md:flex-row md:items-start">
+                    {postCoverImage ? (
+                      <TrackedBlogLink
+                        href={`/blog/${post.slug}`}
+                        trackingLabel={`${post.slug}-cover`}
+                        className="relative aspect-[16/10] w-full shrink-0 overflow-hidden rounded-md border border-neutral-200 bg-neutral-100 dark:border-white/10 dark:bg-white/5 md:w-1/3"
+                      >
+                        <Image
+                          src={postCoverImage}
+                          alt={post.title}
+                          fill
+                          className="object-cover transition duration-300 group-hover:scale-105"
+                          sizes="(min-width: 768px) 200px, 100vw"
+                        />
+                      </TrackedBlogLink>
+                    ) : null}
+
+                    <div className="flex min-w-0 flex-1 flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                      <div className="min-w-0">
+                        <div className="mb-2 flex flex-wrap gap-2">
+                          {post.tags.map(({ tag }) => (
+                            <span
+                              key={tag.id}
+                              className="text-xs font-semibold text-[#436896] dark:text-[#b2d2fa]"
+                            >
+                              #{tag.name}
+                            </span>
+                          ))}
+                        </div>
+                        <TrackedBlogLink
+                          href={`/blog/${post.slug}`}
+                          trackingLabel={post.slug}
+                          className="block text-xl font-semibold text-neutral-950 transition dark:text-slate-100 dark:group-hover:text-white"
+                        >
+                          {post.title}
+                        </TrackedBlogLink>
+                        <p className="mt-2 max-w-2xl text-md leading-6 text-neutral-600 dark:text-slate-300">
+                          {post.excerpt}
+                        </p>
+                        <span className="text-sm text-neutral-500 dark:text-slate-500">
+                          {post.author.name ?? "Theodore Samba"}
+                        </span>
+                      </div>
+
+                      <div className="flex shrink-0 items-center gap-2 text-xs text-neutral-500 dark:text-slate-500 md:pt-7">
+                        <span>{formatPostDate(post.publishedAt)}</span>
+                        <span>•</span>
+                        <span>{post.readingTime ?? 1} min</span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </article>
-            ))}
+                </article>
+              );
+            })}
           </div>
         ) : (
           <div className="rounded-md border border-neutral-200 bg-neutral-50 p-6 text-sm text-neutral-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-400">
@@ -325,23 +345,6 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         ) : null}
       </section>
 
-      {/* <section className="flex flex-col gap-4 rounded-md border border-neutral-200 bg-neutral-50 p-5 dark:border-white/10 dark:bg-white/[0.04] md:flex-row md:items-center md:justify-between">
-        <div>
-          <h2 className="text-lg font-bold text-neutral-950 dark:text-white">
-            Une idee d&apos;article ou de collaboration ?
-          </h2>
-          <p className="mt-1 text-sm text-neutral-600 dark:text-slate-400">
-            Parlons technique, produit ou interface autour d&apos;un projet
-            concret.
-          </p>
-        </div>
-        <Link
-          href="mailto:theodorebinda@gmail.com"
-          className="inline-flex h-10 items-center justify-center rounded-md border border-neutral-300 px-4 text-sm font-semibold text-neutral-900 transition hover:border-[#436896] hover:text-[#436896] dark:border-white/10 dark:text-white dark:hover:border-[#b2d2fa] dark:hover:text-[#b2d2fa]"
-        >
-          Ecrire
-        </Link>
-      </section> */}
     </main>
   );
 }

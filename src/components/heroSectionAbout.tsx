@@ -19,7 +19,7 @@ const HeroSectionAbout = () => {
             <Typo className="font-normal text-6xl md:text-7xl">
               {t("aboutPage.hero.iam")} {/* Traduction */}
             </Typo>
-            {t("aboutPage.hero.title")} {/* Traduction */}
+            {t("aboutPage.hero.title")} 
           </Typography>
           <Typography className="text-xl font-normal leading-relaxed">
             {t("aboutPage.hero.graduated")} {/* Traduction */}

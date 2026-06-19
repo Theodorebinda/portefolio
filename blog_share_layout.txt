@@ -1,0 +1,2 @@
+ - Part 1
+refactor: improve blog post layout with better spacing - Part 2
