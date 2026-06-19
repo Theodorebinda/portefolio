@@ -1,2 +1,3 @@
  - Part 1
 refactor: improve blog post layout with better spacing - Part 2
+refactor: add sticky share buttons sidebar to blog article - Part 3
