@@ -40,3 +40,4 @@ feat: update page routes to include hire page - Part 39
 feat: add hire page to sitemap - Part 40
 feat: add hire page metadata (title, description) - Part 41
 feat: add hire page Open Graph tags - Part 42
+feat: add hire page JSON-LD structured data - Part 43
