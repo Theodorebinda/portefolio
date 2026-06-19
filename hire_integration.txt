@@ -8,3 +8,4 @@ feat: update navigation to include hire page link - Part 7
 feat: add Sonner toast notifications provider - Part 8
 feat: integrate Sonner with existing UI - Part 9
 feat: add toast notification for hire form submission - Part 10
+feat: add success toast after form submission - Part 11
