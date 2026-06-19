@@ -6,12 +6,10 @@ import { usePathname } from "next/navigation";
 import { MainRoutes } from "@/lib/pageRoutes/pageRoutes";
 import { Container } from "@/ui/components/container/container";
 import clsx from "clsx";
-import { FaMoon } from "react-icons/fa6";
-import { FaSun } from "react-icons/fa";
 import LinkMediaSocial from "@/components/linkSocialMedia";
 import { useEffect, useState } from "react";
-import { useLanguage } from "@/contexts/language/LanguageContext";
 import { useTranslation } from "@/lib/hooks/useTranslation";
+import { LanguagePopover, ThemeToggle } from "@/components/HeaderControls";
 
 interface Props {
   className?: string;
@@ -23,12 +21,7 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [, setLoading] = useState(false);
-  const { language, toggleLanguage } = useLanguage();
   const { t } = useTranslation();
-
-  // Utiliser currentTheme pour déterminer la couleur du texte
-  const textColor =
-    currentTheme === "light" ? "text-gray-800" : "text-gray-200";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -116,32 +109,12 @@ export const Navigation = ({ toggleTheme, currentTheme, className }: Props) => {
           </nav>
 
           <Container className="flex flex-col md:flex-row justify-between items-center gap-3 md:gap-8">
-            <button
-              onClick={toggleLanguage}
-              className={` flex items-center gap-2 px-1 py-0.5 rounded-lg shadow-sm transition ${
-                currentTheme === "light"
-                  ? "bg-gray-100 hover:bg-gray-200 text-gray-800"
-                  : "bg-gray-700 hover:bg-gray-600 text-white"
-              }`}
-            >
-              <span className="text-sm">{language === "fr" ? "🇬🇧" : "🇫🇷"}</span>
-              <span className="hidden sm:inline text-sm font-medium">
-                {language === "fr" ? "EN" : "FR"}
-              </span>
-            </button>
-
+            <LanguagePopover currentTheme={currentTheme} />
             <LinkMediaSocial currentTheme={currentTheme} />
-            <button
-              onClick={toggleTheme}
-              aria-label="theme"
-              className={`${textColor} cursor-pointer transition-all duration-250 ease-linear`}
-            >
-              {currentTheme === "light" ? (
-                <FaMoon size={20} className="hover:fill-[#464646]" />
-              ) : (
-                <FaSun size={20} className="hover:fill-[#ffffff]" />
-              )}
-            </button>
+            <ThemeToggle
+              currentTheme={currentTheme}
+              toggleTheme={toggleTheme}
+            />
           </Container>
         </Container>
       </Container>

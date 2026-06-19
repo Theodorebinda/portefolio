@@ -1,11 +1,18 @@
 // contexts/LanguageContext.tsx
 "use client";
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  ReactNode,
+} from "react";
 
-type Language = "fr" | "en";
+export type Language = "fr" | "en";
 
 interface LanguageContextType {
   language: Language;
+  setLanguage: (language: Language) => void;
   toggleLanguage: () => void;
 }
 
@@ -30,12 +37,25 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
 }) => {
   const [language, setLanguage] = useState<Language>("fr");
 
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem("language");
+    if (savedLanguage === "fr" || savedLanguage === "en") {
+      setLanguage(savedLanguage);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("language", language);
+  }, [language]);
+
   const toggleLanguage = () => {
     setLanguage((prev) => (prev === "fr" ? "en" : "fr"));
   };
 
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage }}>
+    <LanguageContext.Provider
+      value={{ language, setLanguage, toggleLanguage }}
+    >
       {children}
     </LanguageContext.Provider>
   );

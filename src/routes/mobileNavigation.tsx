@@ -1,8 +1,6 @@
 "use client";
 import { Typography } from "@/ui/components/typography/typography";
-import styled from "styled-components";
 import Link from "next/link";
-import { ActiveLink } from "./activeLink";
 import clsx from "clsx";
 import { MainRoutes } from "@/lib/pageRoutes/pageRoutes";
 import { Container } from "@/ui/components/container/container";
@@ -13,20 +11,12 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { FaMoon } from "react-icons/fa6";
-import { FaSun } from "react-icons/fa";
 import { RiMenu2Line } from "react-icons/ri";
 import LinkMediaSocial from "@/components/linkSocialMedia";
 import { useEffect, useState } from "react";
-import { useLanguage } from "@/contexts/language/LanguageContext";
 import { useTranslation } from "@/lib/hooks/useTranslation";
 import Image from "next/image";
-
-export const ThemeToggleButton = styled.button`
-  color: ${(props) => props.theme.text};
-  cursor: pointer;
-  transition: all 0.25s linear;
-`;
+import { LanguagePopover, ThemeToggle } from "@/components/HeaderControls";
 
 interface Props {
   className?: string;
@@ -41,7 +31,6 @@ export const MobileNavigation = ({
 }: Props) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const { language, toggleLanguage } = useLanguage();
   const { t } = useTranslation();
   const [loading, setLoading] = useState(false);
 
@@ -100,27 +89,8 @@ export const MobileNavigation = ({
             </Typography>
           </Link>
 
-          <ThemeToggleButton onClick={toggleTheme} aria-label={"theme"}>
-            {currentTheme === "light" ? (
-              <FaMoon size={18} className=" hover:fill-[#464646]" />
-            ) : (
-              <FaSun size={18} className=" hover:fill-[#ffffff]" />
-            )}
-          </ThemeToggleButton>
-
-          <button
-            onClick={toggleLanguage}
-            className={`flex items-center gap-2 px-1 py-0.5 rounded-lg shadow-sm transition ${
-              currentTheme === "light"
-                ? "bg-gray-100 hover:bg-gray-200 text-gray-800"
-                : "bg-gray-700 hover:bg-gray-600 text-white"
-            }`}
-          >
-            <span className="text-sm">{language === "fr" ? "🇬🇧" : "🇫🇷"}</span>
-            <span className="hidden sm:inline text-sm font-medium">
-              {language === "fr" ? "EN" : "FR"}
-            </span>
-          </button>
+          <ThemeToggle currentTheme={currentTheme} toggleTheme={toggleTheme} />
+          <LanguagePopover currentTheme={currentTheme} align="start" />
         </Container>
 
         <Sheet open={open} onOpenChange={setOpen}>

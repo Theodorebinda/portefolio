@@ -1,47 +1,42 @@
 import { Container } from "@/ui/components/container/container";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { FaGithub, FaXTwitter } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa6";
 import { IoLogoLinkedin } from "react-icons/io5";
 
+type LinkMediaSocialProps = {
+  currentTheme?: string | null;
+  className?: string;
+};
+
 export default function LinkMediaSocial({
-  currentTheme = "string",
-  className = "string",
-}) {
+  currentTheme,
+  className,
+}: LinkMediaSocialProps) {
+  const iconClassName =
+    currentTheme === "light"
+      ? "transition hover:fill-[#464646]"
+      : "fill-[#b2d2fa] transition hover:fill-white";
+
   return (
     <Container
-      className={`${className} flex items-center justify-between gap-10  animate`}
+      className={cn("flex items-center justify-between gap-10", className)}
     >
       <Link
         href={"https://github.com/Theodorebinda"}
-        target="_black"
-        aria-label={"github"}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={"GitHub"}
       >
-        <FaGithub
-          size={20}
-          className={
-            currentTheme === "light" ? "hover:fill-[#464646]" : "fill-[#b2d2fa]"
-          }
-        />
+        <FaGithub size={20} className={iconClassName} />
       </Link>
       <Link
         href={"https://www.linkedin.com/in/theodore-samba-26b456282/"}
-        target="_black"
+        target="_blank"
+        rel="noreferrer"
         aria-label={"LinkedIn"}
       >
-        <IoLogoLinkedin
-          size={20}
-          className={
-            currentTheme === "light" ? "hover:fill-[#464646]" : "fill-[#b2d2fa]"
-          }
-        />
-      </Link>
-      <Link href={"#"} target="_black" aria-label={"X"}>
-        <FaXTwitter
-          size={20}
-          className={
-            currentTheme === "light" ? "hover:fill-[#464646]" : "fill-[#b2d2fa]"
-          }
-        />
+        <IoLogoLinkedin size={20} className={iconClassName} />
       </Link>
     </Container>
   );
