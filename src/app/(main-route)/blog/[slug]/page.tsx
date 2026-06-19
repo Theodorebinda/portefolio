@@ -1,7 +1,7 @@
 import { BlogArticleActions } from "@/components/blog/BlogArticleActions";
 import { MarkdownContent } from "@/components/blog/MarkdownContent";
 import { TrackedBlogLink } from "@/components/blog/TrackedBlogLink";
-import { formatPostDate } from "@/lib/blog/utils";
+import { formatPostDate, getValidBlogImageSource } from "@/lib/blog/utils";
 import { prisma } from "@/lib/prisma";
 import { BlogPostStatus, Prisma } from "@prisma/client";
 import { ArrowLeft, Clock } from "lucide-react";
@@ -54,6 +54,7 @@ export async function generateMetadata({
   const title = post.seoTitle ?? post.title;
   const description = post.seoDescription ?? post.excerpt;
   const url = `/blog/${post.slug}`;
+  const coverImage = getValidBlogImageSource(post.coverImage);
 
   return {
     title,
@@ -69,10 +70,10 @@ export async function generateMetadata({
       publishedTime: post.publishedAt?.toISOString(),
       modifiedTime: post.updatedAt.toISOString(),
       authors: [post.author.name ?? "Theodore Samba"],
-      images: post.coverImage
+      images: coverImage
         ? [
             {
-              url: post.coverImage,
+              url: coverImage,
               alt: post.title,
             },
           ]
@@ -82,7 +83,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: post.coverImage ? [post.coverImage] : undefined,
+      images: coverImage ? [coverImage] : undefined,
     },
   };
 }
@@ -120,12 +121,13 @@ export default async function BlogPostPage({
         })
       : [];
   const articleUrl = `${baseUrl}/blog/${post.slug}`;
+  const coverImage = getValidBlogImageSource(post.coverImage);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
     description: post.seoDescription ?? post.excerpt,
-    image: post.coverImage ? [post.coverImage] : undefined,
+    image: coverImage ? [coverImage] : undefined,
     datePublished: post.publishedAt?.toISOString(),
     dateModified: post.updatedAt.toISOString(),
     author: {
@@ -184,10 +186,10 @@ export default async function BlogPostPage({
           </div>
         </header>
 
-        {post.coverImage ? (
+        {coverImage ? (
           <div className="relative aspect-[16/8] overflow-hidden rounded-md border border-neutral-200 dark:border-white/10">
             <Image
-              src={post.coverImage}
+              src={coverImage}
               alt={post.title}
               fill
               className="object-cover"

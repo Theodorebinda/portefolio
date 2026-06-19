@@ -79,60 +79,6 @@ const nextConfig = {
   },
   // Optimisation des exports
   output: 'standalone',
-  // Optimisation webpack pour réduire le bundle
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      // Optimisation pour réduire le bundle client
-      config.optimization = {
-        ...config.optimization,
-        moduleIds: 'deterministic',
-        runtimeChunk: 'single',
-        splitChunks: {
-          chunks: 'all',
-          cacheGroups: {
-            default: false,
-            vendors: false,
-            // Grouper styled-components
-            styledComponents: {
-              name: 'styled-components',
-              test: /[\\/]node_modules[\\/]styled-components[\\/]/,
-              chunks: 'all',
-              priority: 10,
-            },
-            // Grouper framer-motion
-            framerMotion: {
-              name: 'framer-motion',
-              test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
-              chunks: 'all',
-              priority: 10,
-            },
-            // Grouper react-icons
-            reactIcons: {
-              name: 'react-icons',
-              test: /[\\/]node_modules[\\/]react-icons[\\/]/,
-              chunks: 'all',
-              priority: 10,
-            },
-            // Grouper lucide-react
-            lucideReact: {
-              name: 'lucide-react',
-              test: /[\\/]node_modules[\\/]lucide-react[\\/]/,
-              chunks: 'all',
-              priority: 10,
-            },
-            // Grouper les autres vendor
-            vendor: {
-              name: 'vendor',
-              test: /[\\/]node_modules[\\/]/,
-              chunks: 'all',
-              priority: 5,
-            },
-          },
-        },
-      };
-    }
-    return config;
-  },
   experimental: {
     scrollRestoration: true,
     optimizePackageImports: ['lucide-react', 'framer-motion', 'react-icons', 'styled-components'],
@@ -143,4 +89,5 @@ export default withPWA({
   dest: "public",
   register: true,
   skipWaiting: true,
+  disable: process.env.NODE_ENV === "development",
 })(nextConfig);

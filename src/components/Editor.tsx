@@ -1,7 +1,7 @@
 "use client";
 
 import { PubwaveEditor, markdownToHTML, type EditorTheme } from "@pubwave/editor";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 type Mark = {
   type: string;
@@ -30,18 +30,6 @@ const emptyDocument = {
       type: "paragraph",
     },
   ],
-};
-
-const editorTheme: EditorTheme = {
-  locale: "fr",
-  colors: {
-    background: "transparent",
-    text: "#e5e7eb",
-    textMuted: "#94a3b8",
-    border: "rgba(255,255,255,0.1)",
-    primary: "#b2d2fa",
-    linkColor: "#b2d2fa",
-  },
 };
 
 function getTextContent(node?: RichNode): string {
@@ -172,11 +160,38 @@ export default function Editor({
   placeholder = "Ecrivez votre article...",
   className,
 }: EditorProps) {
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
   const content = useMemo(() => {
     if (!initialContent.trim()) return emptyDocument;
 
     return markdownToHTML(initialContent);
   }, [initialContent]);
+  const editorTheme = useMemo<EditorTheme>(
+    () => ({
+      locale: "fr",
+      colors: {
+        background: "transparent",
+        text: isDarkTheme ? "#e5e7eb" : "#171717",
+        textMuted: isDarkTheme ? "#94a3b8" : "#737373",
+        border: isDarkTheme ? "rgba(255,255,255,0.1)" : "#d4d4d4",
+        primary: isDarkTheme ? "#b2d2fa" : "#436896",
+        linkColor: isDarkTheme ? "#b2d2fa" : "#436896",
+      },
+    }),
+    [isDarkTheme],
+  );
+
+  useEffect(() => {
+    const root = document.documentElement;
+    const syncTheme = () => setIsDarkTheme(root.classList.contains("dark"));
+
+    syncTheme();
+
+    const observer = new MutationObserver(syncTheme);
+    observer.observe(root, { attributes: true, attributeFilter: ["class"] });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div

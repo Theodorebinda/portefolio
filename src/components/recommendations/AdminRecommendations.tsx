@@ -2,7 +2,6 @@
 
 import {
   Clock,
-  FolderKanban,
   Loader2,
   MessageSquare,
   Star,
@@ -49,9 +48,12 @@ const STATUS_LABELS: Record<RecommendationStatus, string> = {
 };
 
 const STATUS_STYLES: Record<RecommendationStatus, string> = {
-  PENDING: "border-amber-300/30 bg-amber-300/10 text-amber-200",
-  APPROVED: "border-emerald-300/30 bg-emerald-300/10 text-emerald-200",
-  REJECTED: "border-red-300/30 bg-red-300/10 text-red-200",
+  PENDING:
+    "border-amber-300 bg-amber-50 text-amber-800 dark:border-amber-300/30 dark:bg-amber-300/10 dark:text-amber-200",
+  APPROVED:
+    "border-emerald-300 bg-emerald-50 text-emerald-800 dark:border-emerald-300/30 dark:bg-emerald-300/10 dark:text-emerald-200",
+  REJECTED:
+    "border-red-300 bg-red-50 text-red-700 dark:border-red-300/30 dark:bg-red-300/10 dark:text-red-200",
 };
 
 function formatDate(value: string) {
@@ -97,8 +99,8 @@ function Avatar({
     <div
       className={
         size === "lg"
-          ? "flex h-[52px] w-[52px] items-center justify-center rounded-full bg-[#b2d2fa] font-bold text-black"
-          : "flex h-11 w-11 items-center justify-center rounded-full bg-[#b2d2fa] font-bold text-black"
+          ? "flex h-[52px] w-[52px] items-center justify-center rounded-full bg-[#436896] font-bold text-white dark:bg-[#b2d2fa] dark:text-black"
+          : "flex h-11 w-11 items-center justify-center rounded-full bg-[#436896] font-bold text-white dark:bg-[#b2d2fa] dark:text-black"
       }
     >
       {getInitial(name)}
@@ -118,7 +120,11 @@ function StatusBadge({ status }: { status: RecommendationStatus }) {
 
 function RatingStars({ rating }: { rating: number | null }) {
   if (!rating) {
-    return <span className="text-xs text-slate-500">Sans note</span>;
+    return (
+      <span className="text-xs text-neutral-500 dark:text-slate-500">
+        Sans note
+      </span>
+    );
   }
 
   return (
@@ -130,7 +136,7 @@ function RatingStars({ rating }: { rating: number | null }) {
           <Star
             key={index}
             size={14}
-            className={active ? "text-amber-300" : "text-slate-600"}
+            className={active ? "text-amber-400" : "text-neutral-300 dark:text-slate-600"}
             fill={active ? "currentColor" : "none"}
           />
         );
@@ -250,91 +256,74 @@ export function AdminRecommendations({
   }
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[220px_minmax(0,1fr)]">
-      <aside className="lg:sticky lg:top-28 lg:self-start">
-        <div className=" p-2">
-          <nav className="flex gap-4 overflow-x-auto lg:flex-col lg:overflow-visible">
-            <button
-              type="button"
-              onClick={() => setActiveTab("recommendations")}
-              className={`inline-flex h-11 min-w-max items-center gap-2 rounded-md px-3 text-sm font-semibold transition ${
-                activeTab === "recommendations"
-                  ? "bg-[#b2d2fa] text-black"
-                  : "text-slate-300 hover:bg-white/10 hover:text-white"
-              }`}
-            >
-              <MessageSquare size={17} />
-              Recommandation
-              <span className="rounded bg-black/10 px-1.5 text-xs">
-                {counts.recommendations}
-              </span>
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveTab("visitors")}
-              className={`inline-flex h-11 min-w-max items-center gap-2 rounded-md px-3 text-sm font-semibold transition ${
-                activeTab === "visitors"
-                  ? "bg-[#b2d2fa] text-black"
-                  : "text-slate-300 hover:bg-white/10 hover:text-white"
-              }`}
-            >
-              <Users size={17} />
-              Visiteur
-              <span className="rounded bg-black/10 px-1.5 text-xs">
-                {counts.visitors}
-              </span>
-            </button>
-            <button
-              type="button"
-              disabled
-              className="inline-flex h-11 min-w-max cursor-not-allowed items-center gap-2 rounded-md px-3 text-sm font-semibold text-slate-500"
-            >
-              <FolderKanban size={17} />
-              Projet
-              <span className="rounded border border-white/10 px-1.5 text-[11px]">
-                A faire plus tard
-              </span>
-            </button>
-          </nav>
+    <section className="min-w-0 space-y-6">
+      <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+        <div>
+          <p className="text-sm font-semibold text-[#436896] dark:text-[#b2d2fa]">
+            Me
+          </p>
+          <h1 className="text-3xl font-bold">
+            {activeTab === "recommendations" ? "Recommandations" : "Visiteurs"}
+          </h1>
         </div>
-      </aside>
-
-      <section className="min-w-0">
-        <div className="mb-6 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p className="text-sm font-semibold text-[#b2d2fa]">Me</p>
-            <h1 className="text-3xl font-bold">
-              {activeTab === "recommendations"
-                ? "Recommandations"
-                : "Visiteurs"}
-            </h1>
-          </div>
-          {activeTab === "recommendations" && (
-            <div className="inline-flex h-9 items-center gap-2 rounded-md border border-white/10 px-3 text-sm text-slate-300">
-              <Clock size={15} />
-              {counts.pending} en attente
-            </div>
-          )}
-        </div>
-
-        {error && (
-          <div className="mb-4 rounded-md border border-red-300/20 bg-red-500/10 p-3 text-sm text-red-100">
-            {error}
+        {activeTab === "recommendations" && (
+          <div className="inline-flex h-9 w-fit items-center gap-2 rounded-md border border-neutral-200 px-3 text-sm text-neutral-700 dark:border-white/10 dark:text-slate-300">
+            <Clock size={15} />
+            {counts.pending} en attente
           </div>
         )}
+      </div>
 
-        {activeTab === "recommendations" ? (
-          <RecommendationsView
-            items={recommendations}
-            loadingId={loadingId}
-            onDelete={deleteRecommendation}
-            onStatusChange={updateStatus}
-          />
-        ) : (
-          <VisitorsView visitors={visitors} />
-        )}
-      </section>
-    </div>
+      <nav className="flex gap-2 overflow-x-auto pb-1" aria-label="Vues recommandations">
+        <button
+          type="button"
+          onClick={() => setActiveTab("recommendations")}
+          className={`inline-flex h-10 min-w-max items-center gap-2 rounded-md px-3 text-sm font-semibold transition ${
+            activeTab === "recommendations"
+              ? "bg-[#436896] text-white dark:bg-[#b2d2fa] dark:text-black"
+              : "border border-neutral-200 text-neutral-600 hover:border-[#436896] hover:text-[#436896] dark:border-white/10 dark:text-slate-300 dark:hover:border-[#b2d2fa] dark:hover:text-[#b2d2fa]"
+          }`}
+        >
+          <MessageSquare size={17} />
+          Recommandation
+          <span className="rounded bg-black/10 px-1.5 text-xs">
+            {counts.recommendations}
+          </span>
+        </button>
+        <button
+          type="button"
+          onClick={() => setActiveTab("visitors")}
+          className={`inline-flex h-10 min-w-max items-center gap-2 rounded-md px-3 text-sm font-semibold transition ${
+            activeTab === "visitors"
+              ? "bg-[#436896] text-white dark:bg-[#b2d2fa] dark:text-black"
+              : "border border-neutral-200 text-neutral-600 hover:border-[#436896] hover:text-[#436896] dark:border-white/10 dark:text-slate-300 dark:hover:border-[#b2d2fa] dark:hover:text-[#b2d2fa]"
+          }`}
+        >
+          <Users size={17} />
+          Visiteur
+          <span className="rounded bg-black/10 px-1.5 text-xs">
+            {counts.visitors}
+          </span>
+        </button>
+      </nav>
+
+      {error && (
+        <div className="rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-700 dark:border-red-300/20 dark:bg-red-500/10 dark:text-red-100">
+          {error}
+        </div>
+      )}
+
+      {activeTab === "recommendations" ? (
+        <RecommendationsView
+          items={recommendations}
+          loadingId={loadingId}
+          onDelete={deleteRecommendation}
+          onStatusChange={updateStatus}
+        />
+      ) : (
+        <VisitorsView visitors={visitors} />
+      )}
+    </section>
   );
 }
 
@@ -351,7 +340,7 @@ function RecommendationsView({
 }) {
   if (items.length === 0) {
     return (
-      <div className="rounded-md border border-white/10 bg-white/5 p-6 text-slate-300">
+      <div className="rounded-md border border-neutral-200 bg-neutral-50 p-6 text-neutral-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
         Aucune recommandation.
       </div>
     );
@@ -366,7 +355,7 @@ function RecommendationsView({
         return (
           <article
             key={item.id}
-            className="rounded-md border border-white/10 bg-white/5 p-4 text-slate-200"
+            className="rounded-md border border-neutral-200 bg-white p-4 text-neutral-800 dark:border-white/10 dark:bg-white/5 dark:text-slate-200"
           >
             <div className="mb-4 flex flex-col gap-4 xl:flex-row xl:items-start xl:justify-between">
               <div className="flex min-w-0 items-start gap-3">
@@ -376,15 +365,15 @@ function RecommendationsView({
                     <p className="font-semibold">{name}</p>
                     <StatusBadge status={item.status} />
                   </div>
-                  <p className="mt-1 break-all text-xs text-slate-400">
+                  <p className="mt-1 break-all text-xs text-neutral-500 dark:text-slate-400">
                     {item.user.email ?? "Email indisponible"}
                   </p>
                   {item.headline && (
-                    <p className="mt-1 text-xs text-slate-400">
+                    <p className="mt-1 text-xs text-neutral-500 dark:text-slate-400">
                       {item.headline}
                     </p>
                   )}
-                  <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-slate-500">
+                  <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-neutral-500 dark:text-slate-500">
                     <span>{formatDate(item.createdAt)}</span>
                     <RatingStars rating={item.rating} />
                   </div>
@@ -405,7 +394,7 @@ function RecommendationsView({
                       event.target.value as RecommendationStatus,
                     )
                   }
-                  className="h-9 rounded-md border border-white/10 bg-[#222020] px-3 text-sm font-semibold text-white outline-none transition focus:border-[#b2d2fa] disabled:opacity-60"
+                  className="h-9 rounded-md border border-neutral-300 bg-white px-3 text-sm font-semibold text-neutral-950 outline-none transition focus:border-[#436896] disabled:opacity-60 dark:border-white/10 dark:bg-[#222020] dark:text-white dark:focus:border-[#b2d2fa]"
                 >
                   <option value="PENDING">En attente</option>
                   <option value="APPROVED">Approuvee</option>
@@ -437,7 +426,7 @@ function RecommendationsView({
 function VisitorsView({ visitors }: { visitors: AdminVisitor[] }) {
   if (visitors.length === 0) {
     return (
-      <div className="rounded-md border border-white/10 bg-white/5 p-6 text-slate-300">
+      <div className="rounded-md border border-neutral-200 bg-neutral-50 p-6 text-neutral-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
         Aucun visiteur.
       </div>
     );
@@ -451,28 +440,28 @@ function VisitorsView({ visitors }: { visitors: AdminVisitor[] }) {
         return (
           <article
             key={visitor.id}
-            className="flex flex-col gap-4 rounded-md border border-white/10 bg-white/5 p-4 text-slate-200 md:flex-row md:items-center md:justify-between"
+            className="flex flex-col gap-4 rounded-md border border-neutral-200 bg-white p-4 text-neutral-800 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 md:flex-row md:items-center md:justify-between"
           >
             <div className="flex min-w-0 items-center gap-3">
               <Avatar image={visitor.image} name={name} size="lg" />
               <div className="min-w-0">
                 <p className="font-semibold">{name}</p>
-                <p className="mt-1 break-all text-xs text-slate-400">
+                <p className="mt-1 break-all text-xs text-neutral-500 dark:text-slate-400">
                   {visitor.email ?? "Email indisponible"}
                 </p>
                 {visitor.headline && (
-                  <p className="mt-1 text-xs text-slate-400">
+                  <p className="mt-1 text-xs text-neutral-500 dark:text-slate-400">
                     {visitor.headline}
                   </p>
                 )}
               </div>
             </div>
-            <div className="flex flex-wrap gap-2 text-xs text-slate-300 md:justify-end">
-              <span className="inline-flex h-8 items-center gap-1 rounded-md border border-white/10 px-2.5">
+            <div className="flex flex-wrap gap-2 text-xs text-neutral-600 dark:text-slate-300 md:justify-end">
+              <span className="inline-flex h-8 items-center gap-1 rounded-md border border-neutral-200 px-2.5 dark:border-white/10">
                 <UserRound size={14} />
                 {formatDate(visitor.createdAt)}
               </span>
-              <span className="inline-flex h-8 items-center gap-1 rounded-md border border-white/10 px-2.5">
+              <span className="inline-flex h-8 items-center gap-1 rounded-md border border-neutral-200 px-2.5 dark:border-white/10">
                 <MessageSquare size={14} />
                 {visitor.recommendationsCount} recommandation
                 {visitor.recommendationsCount > 1 ? "s" : ""}

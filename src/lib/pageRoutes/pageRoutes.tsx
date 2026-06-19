@@ -11,10 +11,15 @@ export const MainRoutes: AppLinks[] = [
     titleKey: "routes.projects",
     baseUrl: "/realisation",
   },
+    {
+    titleKey: "routes.hire",
+    baseUrl: "/hire",
+  },
   {
     titleKey: "routes.blog",
     baseUrl: "/blog",
   },
+
 ];
 
 export const HomeRoute: AppLinks[] = [

@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { revalidatePath } from "next/cache";
 import { auth } from "@/lib/auth";
-import { prisma } from "@/lib/prisma";
+import { prisma, withPrismaConnectionRetry } from "@/lib/prisma";
 
 function forbidden() {
   return NextResponse.json(
@@ -20,18 +20,20 @@ export async function POST(
     return forbidden();
   }
 
-  const post = await prisma.blogPost.update({
-    where: { id: params.id },
-    data: {
-      status: "DRAFT",
-      publishedAt: null,
-    },
-    select: {
-      id: true,
-      slug: true,
-      status: true,
-    },
-  });
+  const post = await withPrismaConnectionRetry(() =>
+    prisma.blogPost.update({
+      where: { id: params.id },
+      data: {
+        status: "DRAFT",
+        publishedAt: null,
+      },
+      select: {
+        id: true,
+        slug: true,
+        status: true,
+      },
+    }),
+  );
 
   revalidatePath("/blog");
   revalidatePath(`/blog/${post.slug}`);

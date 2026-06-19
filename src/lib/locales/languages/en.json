@@ -4,6 +4,7 @@
     "projects": "Projects",
     "recommendations": "Recommendations",
     "blog": "Blog",
+    "hire": "Hire me",
     "home": "Back to home"
   },
   "hero": {
@@ -166,6 +167,44 @@
         "message_required": "Please write something"
       },
       "success": "Thank you for your message!"
+    }
+  },
+  "hirePage": {
+    "badge": "Available for work",
+    "title": "Hire me",
+    "subtitle": "I help companies design high-performing, accessible web and mobile applications tailored to their business needs.\nSpecialized in React, Next.js and Django, I build modern interfaces, robust architectures and automate workflows with n8n to reduce repetitive tasks and save teams time.\nMy areas of expertise: full stack development, UX, accessibility and automation.",
+    "cta": "Discuss the project",
+    "secondaryCta": "View my projects",
+    "availabilityLabel": "Availability",
+    "availability": "Freelance work and collaborations",
+    "locationLabel": "Location",
+    "location": "Kinshasa · Remote friendly",
+    "responseLabel": "Response",
+    "response": "Within 24h",
+    "servicesTitle": "What I can do",
+    "services": {
+      "consultant": {
+        "title": "Consultant",
+        "description": "Strategic and technical guidance to optimize your digital projects."
+      },
+      "contract": {
+        "title": "Contract work",
+        "description": "Focused development and automation missions with a strong commitment to quality and timelines."
+      },
+      "workshops": {
+        "title": "Workshops",
+        "description": "Practical training to transfer skills in front-end, UX and automation."
+      },
+      "advisory": {
+        "title": "Advisory",
+        "description": "Ongoing support to guide your technical decisions and help your projects evolve."
+      }
+    },
+    "processTitle": "How we work",
+    "process": {
+      "discovery": "We clarify the need, users, constraints and expected outcome.",
+      "prototype": "I propose a concrete direction with screens, architecture and realistic priorities.",
+      "delivery": "We ship in small steps, with regular feedback, testing and useful documentation."
     }
   },
   "common": {

@@ -1,7 +1,15 @@
 import { BlogFilters } from "@/components/blog/BlogFilters";
 import { TrackedBlogLink } from "@/components/blog/TrackedBlogLink";
-import { BLOG_POSTS_PER_PAGE, formatPostDate } from "@/lib/blog/utils";
-import { prisma } from "@/lib/prisma";
+import {
+  BLOG_POSTS_PER_PAGE,
+  formatPostDate,
+  getValidBlogImageSource,
+} from "@/lib/blog/utils";
+import {
+  isTransientPrismaConnectionError,
+  prisma,
+  withPrismaConnectionRetry,
+} from "@/lib/prisma";
 import { BlogPostStatus, Prisma } from "@prisma/client";
 import { ArrowRight, Clock, Tag } from "lucide-react";
 import type { Metadata } from "next";
@@ -64,36 +72,13 @@ const postInclude = {
   },
 } satisfies Prisma.BlogPostInclude;
 
-export default async function BlogPage({ searchParams }: BlogPageProps) {
-  const query = searchParams?.q?.trim() ?? "";
-  const activeTag = searchParams?.tag?.trim() ?? "";
-  const page = parsePage(searchParams?.page);
-  const where: Prisma.BlogPostWhereInput = {
-    status: BlogPostStatus.PUBLISHED,
-    publishedAt: { not: null },
-    ...(query
-      ? {
-          OR: [
-            { title: { contains: query, mode: "insensitive" } },
-            { excerpt: { contains: query, mode: "insensitive" } },
-            { content: { contains: query, mode: "insensitive" } },
-          ],
-        }
-      : {}),
-    ...(activeTag
-      ? {
-          tags: {
-            some: {
-              tag: {
-                slug: activeTag,
-              },
-            },
-          },
-        }
-      : {}),
-  };
+async function getBlogPageData(params: {
+  where: Prisma.BlogPostWhereInput;
+  page: number;
+}) {
+  const { where, page } = params;
 
-  const [posts, totalPosts, tags, featuredPost] = await Promise.all([
+  return prisma.$transaction([
     prisma.blogPost.findMany({
       where,
       orderBy: [{ publishedAt: "desc" }, { createdAt: "desc" }],
@@ -126,8 +111,53 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
       include: postInclude,
     }),
   ]);
+}
+
+export default async function BlogPage({ searchParams }: BlogPageProps) {
+  const query = searchParams?.q?.trim() ?? "";
+  const activeTag = searchParams?.tag?.trim() ?? "";
+  const page = parsePage(searchParams?.page);
+  const where: Prisma.BlogPostWhereInput = {
+    status: BlogPostStatus.PUBLISHED,
+    publishedAt: { not: null },
+    ...(query
+      ? {
+          OR: [
+            { title: { contains: query, mode: "insensitive" } },
+            { excerpt: { contains: query, mode: "insensitive" } },
+            { content: { contains: query, mode: "insensitive" } },
+          ],
+        }
+      : {}),
+    ...(activeTag
+      ? {
+          tags: {
+            some: {
+              tag: {
+                slug: activeTag,
+              },
+            },
+          },
+        }
+      : {}),
+  };
+
+  let databaseUnavailable = false;
+  const [posts, totalPosts, tags, featuredPost] =
+    await withPrismaConnectionRetry(() => getBlogPageData({ where, page })).catch(
+      (error) => {
+        if (!isTransientPrismaConnectionError(error)) {
+          throw error;
+        }
+
+        databaseUnavailable = true;
+
+        return [[], 0, [], null] as Awaited<ReturnType<typeof getBlogPageData>>;
+      },
+    );
   const totalPages = Math.max(1, Math.ceil(totalPosts / BLOG_POSTS_PER_PAGE));
   const heroPost = featuredPost ?? posts[0] ?? null;
+  const heroCoverImage = getValidBlogImageSource(heroPost?.coverImage);
 
   return (
     <main className="relative z-0 isolate flex w-full flex-col gap-12 py-8 text-neutral-800 dark:text-slate-200">
@@ -152,10 +182,10 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 
       {heroPost ? (
         <section className="overflow-hidden rounded-md border border-neutral-200 bg-gradient-to-br from-neutral-50 to-white shadow-xl shadow-neutral-200/50 dark:border-white/10 dark:from-white/[0.08] dark:to-white/[0.03] dark:shadow-black/20">
-          {heroPost.coverImage ? (
+          {heroCoverImage ? (
             <div className="relative aspect-[16/7] border-b border-neutral-200 dark:border-white/10">
               <Image
-                src={heroPost.coverImage}
+                src={heroCoverImage}
                 alt={heroPost.title}
                 fill
                 className="object-cover"
@@ -212,7 +242,9 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
             Toutes les publications
           </h2>
           <span className="text-xs text-neutral-500 dark:text-slate-500">
-            {totalPosts} article{totalPosts > 1 ? "s" : ""}
+            {databaseUnavailable
+              ? "Indisponible"
+              : `${totalPosts} article${totalPosts > 1 ? "s" : ""}`}
           </span>
         </div>
 
@@ -258,7 +290,9 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           </div>
         ) : (
           <div className="rounded-md border border-neutral-200 bg-neutral-50 p-6 text-sm text-neutral-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-400">
-            Aucun article ne correspond a cette recherche.
+            {databaseUnavailable
+              ? "Le blog est temporairement indisponible. La base de donnees se reconnecte, reessayez dans un instant."
+              : "Aucun article ne correspond a cette recherche."}
           </div>
         )}
 

@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { revalidatePath } from "next/cache";
 import { auth } from "@/lib/auth";
 import { getReadingTime } from "@/lib/blog/server";
-import { prisma } from "@/lib/prisma";
+import { prisma, withPrismaConnectionRetry } from "@/lib/prisma";
 
 function forbidden() {
   return NextResponse.json(
@@ -21,9 +21,11 @@ export async function POST(
     return forbidden();
   }
 
-  const currentPost = await prisma.blogPost.findUnique({
-    where: { id: params.id },
-  });
+  const currentPost = await withPrismaConnectionRetry(() =>
+    prisma.blogPost.findUnique({
+      where: { id: params.id },
+    }),
+  );
 
   if (!currentPost) {
     return NextResponse.json(
@@ -45,20 +47,22 @@ export async function POST(
     );
   }
 
-  const post = await prisma.blogPost.update({
-    where: { id: params.id },
-    data: {
-      status: "PUBLISHED",
-      publishedAt: currentPost.publishedAt ?? new Date(),
-      readingTime: getReadingTime(currentPost.content, currentPost.readingTime),
-    },
-    select: {
-      id: true,
-      slug: true,
-      status: true,
-      publishedAt: true,
-    },
-  });
+  const post = await withPrismaConnectionRetry(() =>
+    prisma.blogPost.update({
+      where: { id: params.id },
+      data: {
+        status: "PUBLISHED",
+        publishedAt: currentPost.publishedAt ?? new Date(),
+        readingTime: getReadingTime(currentPost.content, currentPost.readingTime),
+      },
+      select: {
+        id: true,
+        slug: true,
+        status: true,
+        publishedAt: true,
+      },
+    }),
+  );
 
   revalidatePath("/blog");
   revalidatePath(`/blog/${post.slug}`);

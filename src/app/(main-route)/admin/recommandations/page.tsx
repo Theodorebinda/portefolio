@@ -46,31 +46,29 @@ export default async function AdminRecommendationsPage() {
   ]);
 
   return (
-    <main className="min-h-screen  text-white  -mt-20">
-      <div className="">
-        <AdminRecommendations
-          initialRecommendations={recommendations.map((item) => ({
-            id: item.id,
-            userId: item.userId,
-            message: item.message,
-            rating: item.rating,
-            headline: item.headline,
-            status: item.status,
-            createdAt: item.createdAt.toISOString(),
-            approvedAt: item.approvedAt?.toISOString() ?? null,
-            user: item.user,
-          }))}
-          initialVisitors={visitors.map((visitor) => ({
-            id: visitor.id,
-            name: visitor.name,
-            email: visitor.email,
-            image: visitor.image,
-            headline: visitor.headline,
-            createdAt: visitor.createdAt.toISOString(),
-            recommendationsCount: visitor._count.recommendations,
-          }))}
-        />
-      </div>
+    <main className="min-h-screen">
+      <AdminRecommendations
+        initialRecommendations={recommendations.map((item) => ({
+          id: item.id,
+          userId: item.userId,
+          message: item.message,
+          rating: item.rating,
+          headline: item.headline,
+          status: item.status,
+          createdAt: item.createdAt.toISOString(),
+          approvedAt: item.approvedAt?.toISOString() ?? null,
+          user: item.user,
+        }))}
+        initialVisitors={visitors.map((visitor) => ({
+          id: visitor.id,
+          name: visitor.name,
+          email: visitor.email,
+          image: visitor.image,
+          headline: visitor.headline,
+          createdAt: visitor.createdAt.toISOString(),
+          recommendationsCount: visitor._count.recommendations,
+        }))}
+      />
     </main>
   );
 }

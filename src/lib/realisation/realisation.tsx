@@ -11,55 +11,7 @@ import dapioil from "../../../public/images/dapioil.png";
 import { FaAppStore, FaGithub, FaGlobe, FaMobile } from "react-icons/fa";
 
 export const projectsData: Project[] = [
-  {
-    id: "opi-b",
-    nameKey: "projects.opi_b.name", // Clé de traduction
-    descriptionKey: "projects.opi_b.description", // Clé de traduction
-    typeKey: "projects.opi_b.type", // Clé de traduction
-    links: [
-      {
-        icon: <FaGlobe />,
-        labelKey: "links.website", // Clé de traduction
-        url: "https://opi-b.bprod.top/",
-      },
-      {
-        icon: <FaGithub />,
-        labelKey: "links.github", // Clé de traduction
-        url: "https://github.com/username/opi-b",
-      },
-    ],
-    stats: [
-      { labelKey: "projects.opi_b.stats.users", value: "500+" }, // Clé de traduction
-      { labelKey: "projects.opi_b.stats.destinations", value: "50+" }, // Clé de traduction
-    ],
-    image: second,
-    logo: "/images/opi-b-logo.svg",
-    responsable: "Jonathan Smith",
-  },
-  {
-    id: "mentor-conect",
-    nameKey: "projects.mentor_conect.name",
-    descriptionKey: "projects.mentor_conect.description",
-    typeKey: "projects.mentor_conect.type",
-    links: [
-      {
-        icon: <FaGlobe />,
-        labelKey: "links.website",
-        url: "https://opi-b.bprod.top/",
-      },
-      {
-        icon: <FaGithub />,
-        labelKey: "links.github",
-        url: "https://github.com/username/opi-b",
-      },
-    ],
-    stats: [
-      { labelKey: "projects.mentor_conect.stats.mentors", value: "100+" },
-      { labelKey: "projects.mentor_conect.stats.students", value: "1K+" },
-    ],
-    image: mentor,
-    responsable: "Jonathan Smith",
-  },
+
   {
     id: "monyaya",
     nameKey: "projects.monyaya.name",
@@ -80,31 +32,31 @@ export const projectsData: Project[] = [
     logo: "/images/monyaya-logo.svg",
     responsable: "Gael",
   },
-  {
-    id: "Lukatout_app",
-    nameKey: "projects.lukatout.name",
-    descriptionKey: "projects.lukatout.description",
-    typeKey: "projects.lukatout.type",
-    links: [
-      {
-        icon: <FaAppStore />,
-        labelKey: "links.appstore",
-        url: "#",
-      },
-      {
-        icon: <FaMobile />,
-        labelKey: "links.playstore",
-        url: "#",
-      },
-    ],
-    stats: [
-      { labelKey: "projects.lukatout.stats.users", value: "200+" },
-      { labelKey: "projects.lukatout.stats.merchants", value: "30+" },
-    ],
-    image: Lukatout,
-    logo: "/images/monyaya-logo.svg",
-    responsable: "Felicien",
-  },
+  // {
+  //   id: "Lukatout_app",
+  //   nameKey: "projects.lukatout.name",
+  //   descriptionKey: "projects.lukatout.description",
+  //   typeKey: "projects.lukatout.type",
+  //   links: [
+  //     {
+  //       icon: <FaAppStore />,
+  //       labelKey: "links.appstore",
+  //       url: "#",
+  //     },
+  //     {
+  //       icon: <FaMobile />,
+  //       labelKey: "links.playstore",
+  //       url: "#",
+  //     },
+  //   ],
+  //   stats: [
+  //     { labelKey: "projects.lukatout.stats.users", value: "200+" },
+  //     { labelKey: "projects.lukatout.stats.merchants", value: "30+" },
+  //   ],
+  //   image: Lukatout,
+  //   logo: "/images/monyaya-logo.svg",
+  //   responsable: "Felicien",
+  // },
   {
     id: "esmicom_app",
     nameKey: "projects.esmicom.name",

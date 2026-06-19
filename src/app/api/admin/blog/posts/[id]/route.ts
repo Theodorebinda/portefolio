@@ -3,7 +3,7 @@ import { revalidatePath } from "next/cache";
 import { auth } from "@/lib/auth";
 import { getReadingTime, getUniquePostSlug, syncPostTags } from "@/lib/blog/server";
 import { blogPostPatchSchema } from "@/lib/blog/validation";
-import { prisma } from "@/lib/prisma";
+import { prisma, withPrismaConnectionRetry } from "@/lib/prisma";
 
 function forbidden() {
   return NextResponse.json(
@@ -35,76 +35,92 @@ export async function PATCH(
   const payload = result.data;
 
   try {
-    const post = await prisma.$transaction(async (tx) => {
-      const currentPost = await tx.blogPost.findUnique({
-        where: { id: params.id },
-        select: { id: true, slug: true, content: true },
-      });
+    const transactionResult = await withPrismaConnectionRetry(() =>
+      prisma.$transaction(
+        async (tx) => {
+          const currentPost = await tx.blogPost.findUnique({
+            where: { id: params.id },
+            select: { id: true, slug: true, content: true },
+          });
 
-      if (!currentPost) {
-        return null;
-      }
+          if (!currentPost) {
+            return null;
+          }
 
-      const slug =
-        payload.slug || payload.title
-          ? await getUniquePostSlug(
-              tx,
-              payload.slug ?? payload.title ?? currentPost.slug,
-              currentPost.id
-            )
-          : undefined;
-      const content = payload.content ?? currentPost.content;
+          const slug =
+            payload.slug || payload.title
+              ? await getUniquePostSlug(
+                  tx,
+                  payload.slug ?? payload.title ?? currentPost.slug,
+                  currentPost.id
+                )
+              : undefined;
+          const content = payload.content ?? currentPost.content;
 
-      await tx.blogPost.update({
-        where: { id: currentPost.id },
-        data: {
-          ...(payload.title !== undefined ? { title: payload.title } : {}),
-          ...(slug !== undefined ? { slug } : {}),
-          ...(payload.excerpt !== undefined ? { excerpt: payload.excerpt } : {}),
-          ...(payload.content !== undefined
-            ? {
-                content: payload.content,
-                readingTime: getReadingTime(content),
-              }
-            : {}),
-          ...(payload.coverImage !== undefined
-            ? { coverImage: payload.coverImage }
-            : {}),
-          ...(payload.featured !== undefined
-            ? { featured: payload.featured }
-            : {}),
-          ...(payload.language !== undefined ? { language: payload.language } : {}),
-          ...(payload.seoTitle !== undefined ? { seoTitle: payload.seoTitle } : {}),
-          ...(payload.seoDescription !== undefined
-            ? { seoDescription: payload.seoDescription }
-            : {}),
-          ...(payload.categoryId !== undefined
-            ? { categoryId: payload.categoryId }
-            : {}),
+          await tx.blogPost.update({
+            where: { id: currentPost.id },
+            data: {
+              ...(payload.title !== undefined ? { title: payload.title } : {}),
+              ...(slug !== undefined ? { slug } : {}),
+              ...(payload.excerpt !== undefined ? { excerpt: payload.excerpt } : {}),
+              ...(payload.content !== undefined
+                ? {
+                    content: payload.content,
+                    readingTime: getReadingTime(content),
+                  }
+                : {}),
+              ...(payload.coverImage !== undefined
+                ? { coverImage: payload.coverImage }
+                : {}),
+              ...(payload.featured !== undefined
+                ? { featured: payload.featured }
+                : {}),
+              ...(payload.language !== undefined ? { language: payload.language } : {}),
+              ...(payload.seoTitle !== undefined ? { seoTitle: payload.seoTitle } : {}),
+              ...(payload.seoDescription !== undefined
+                ? { seoDescription: payload.seoDescription }
+                : {}),
+              ...(payload.categoryId !== undefined
+                ? { categoryId: payload.categoryId }
+                : {}),
+            },
+          });
+
+          if (payload.tagNames !== undefined) {
+            await syncPostTags(tx, currentPost.id, payload.tagNames);
+          }
+
+          return {
+            id: currentPost.id,
+            previousSlug: currentPost.slug,
+            slug: slug ?? currentPost.slug,
+          };
         },
-      });
+        { timeout: 15_000 },
+      ),
+    );
 
-      if (payload.tagNames !== undefined) {
-        await syncPostTags(tx, currentPost.id, payload.tagNames);
-      }
-
-      return tx.blogPost.findUniqueOrThrow({
-        where: { id: currentPost.id },
-        include: {
-          category: true,
-          tags: { include: { tag: true } },
-        },
-      });
-    });
-
-    if (!post) {
+    if (!transactionResult) {
       return NextResponse.json(
         { message: "Article introuvable." },
         { status: 404 }
       );
     }
 
+    const post = await withPrismaConnectionRetry(() =>
+      prisma.blogPost.findUniqueOrThrow({
+        where: { id: transactionResult.id },
+        include: {
+          category: true,
+          tags: { include: { tag: true } },
+        },
+      }),
+    );
+
     revalidatePath("/blog");
+    if (transactionResult.previousSlug !== post.slug) {
+      revalidatePath(`/blog/${transactionResult.previousSlug}`);
+    }
     revalidatePath(`/blog/${post.slug}`);
     revalidatePath("/admin/blog");
 
@@ -132,14 +148,16 @@ export async function DELETE(
     return forbidden();
   }
 
-  const post = await prisma.blogPost.update({
-    where: { id: params.id },
-    data: {
-      status: "ARCHIVED",
-      publishedAt: null,
-    },
-    select: { slug: true },
-  });
+  const post = await withPrismaConnectionRetry(() =>
+    prisma.blogPost.update({
+      where: { id: params.id },
+      data: {
+        status: "ARCHIVED",
+        publishedAt: null,
+      },
+      select: { slug: true },
+    }),
+  );
 
   revalidatePath("/blog");
   revalidatePath(`/blog/${post.slug}`);

@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { BLOG_IMAGE_SOURCE_ERROR, isValidBlogImageSource } from "./utils";
 
 const optionalText = (max: number) =>
   z
@@ -15,7 +16,10 @@ export const blogPostPayloadSchema = z.object({
     .min(20, "L'extrait doit contenir au moins 20 caracteres.")
     .max(300, "L'extrait ne peut pas depasser 300 caracteres."),
   content: z.string().trim().min(1, "Le contenu est requis."),
-  coverImage: optionalText(500),
+  coverImage: optionalText(500).refine(
+    (value) => isValidBlogImageSource(value),
+    BLOG_IMAGE_SOURCE_ERROR
+  ),
   featured: z.boolean().optional(),
   language: z.string().trim().min(2).max(8).optional(),
   seoTitle: optionalText(70),

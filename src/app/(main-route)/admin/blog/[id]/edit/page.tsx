@@ -42,17 +42,17 @@ export default async function EditBlogPostPage({
   }
 
   return (
-    <main className="min-h-screen text-white -mt-20">
+    <main className="min-h-screen">
       <div className="space-y-6">
         <header>
           <Link
             href="/admin/blog"
-            className="text-sm font-semibold text-slate-400 transition hover:text-[#b2d2fa]"
+            className="text-sm font-semibold text-neutral-600 transition hover:text-[#436896] dark:text-slate-400 dark:hover:text-[#b2d2fa]"
           >
             Retour aux articles
           </Link>
           <h1 className="mt-3 text-3xl font-bold">Editer l&apos;article</h1>
-          <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-400">
+          <p className="mt-2 max-w-2xl text-sm leading-6 text-neutral-600 dark:text-slate-400">
             Modifie le brouillon, les metadonnees, l&apos;image ou le contenu.
           </p>
         </header>

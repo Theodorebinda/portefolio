@@ -7,6 +7,7 @@ import TrackPageView from "@/components/analytique/tracking-view";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { LanguageProvider } from "@/contexts/language/LanguageContext";
 import { AuthSessionProvider } from "@/components/auth/AuthSessionProvider";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://theodorebinda.me"),
@@ -157,6 +158,7 @@ export default function RootLayout({
         <AuthSessionProvider>
           <LanguageProvider>
             {children}
+            <Toaster />
             <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
           </LanguageProvider>
         </AuthSessionProvider>

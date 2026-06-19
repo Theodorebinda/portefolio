@@ -31,35 +31,40 @@ export async function POST(request: Request) {
 
   const payload = result.data;
 
-  const post = await prisma.$transaction(async (tx) => {
-    const slug = await getUniquePostSlug(tx, payload.slug ?? payload.title);
-    const createdPost = await tx.blogPost.create({
-      data: {
-        title: payload.title,
-        slug,
-        excerpt: payload.excerpt,
-        content: payload.content,
-        coverImage: payload.coverImage,
-        featured: payload.featured ?? false,
-        language: payload.language ?? "fr",
-        readingTime: getReadingTime(payload.content),
-        seoTitle: payload.seoTitle,
-        seoDescription: payload.seoDescription,
-        categoryId: payload.categoryId,
-        authorId: session.user.id,
-      },
-      select: { id: true },
-    });
+  const createdPost = await prisma.$transaction(
+    async (tx) => {
+      const slug = await getUniquePostSlug(tx, payload.slug ?? payload.title);
+      const post = await tx.blogPost.create({
+        data: {
+          title: payload.title,
+          slug,
+          excerpt: payload.excerpt,
+          content: payload.content,
+          coverImage: payload.coverImage,
+          featured: payload.featured ?? false,
+          language: payload.language ?? "fr",
+          readingTime: getReadingTime(payload.content),
+          seoTitle: payload.seoTitle,
+          seoDescription: payload.seoDescription,
+          categoryId: payload.categoryId,
+          authorId: session.user.id,
+        },
+        select: { id: true },
+      });
 
-    await syncPostTags(tx, createdPost.id, payload.tagNames);
+      await syncPostTags(tx, post.id, payload.tagNames);
 
-    return tx.blogPost.findUniqueOrThrow({
-      where: { id: createdPost.id },
-      include: {
-        category: true,
-        tags: { include: { tag: true } },
-      },
-    });
+      return post;
+    },
+    { timeout: 15_000 }
+  );
+
+  const post = await prisma.blogPost.findUniqueOrThrow({
+    where: { id: createdPost.id },
+    include: {
+      category: true,
+      tags: { include: { tag: true } },
+    },
   });
 
   revalidatePath("/blog");

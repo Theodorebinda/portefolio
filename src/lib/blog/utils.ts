@@ -1,6 +1,20 @@
 export const BLOG_POSTS_PER_PAGE = 6;
 
 const COMBINING_MARKS_REGEX = /[\u0300-\u036f]/g;
+const ALLOWED_REMOTE_IMAGE_HOSTNAMES = new Set([
+  "lh3.googleusercontent.com",
+  "photos.app.goo.gl",
+  "res.cloudinary.com",
+  "scontent.ffih1-2.fna.fbcdn.net",
+  "avatars.githubusercontent.com",
+  "media.licdn.com",
+  "scontent-jnb2-1.xx.fbcdn.net",
+  "photos.fife.usercontent.google.com",
+  "i.pinimg.com",
+]);
+
+export const BLOG_IMAGE_SOURCE_ERROR =
+  "L'image doit etre vide, commencer par /, ou etre une URL http(s) d'un domaine autorise.";
 
 export function slugify(value: string) {
   return value
@@ -59,4 +73,34 @@ export function formatPostDate(value: Date | string | null) {
 
 export function getBlogPostUrl(slug: string) {
   return `/blog/${slug}`;
+}
+
+export function normalizeBlogImageSource(value?: string | null) {
+  return value?.trim() ?? "";
+}
+
+export function isValidBlogImageSource(value?: string | null) {
+  const source = normalizeBlogImageSource(value);
+
+  if (!source) return true;
+  if (source.startsWith("/")) return !source.startsWith("//");
+
+  try {
+    const url = new URL(source);
+    return (
+      (url.protocol === "http:" || url.protocol === "https:") &&
+      ALLOWED_REMOTE_IMAGE_HOSTNAMES.has(url.hostname)
+    );
+  } catch {
+    return false;
+  }
+}
+
+export function getBlogImageSourceError(value?: string | null) {
+  return isValidBlogImageSource(value) ? null : BLOG_IMAGE_SOURCE_ERROR;
+}
+
+export function getValidBlogImageSource(value?: string | null) {
+  const source = normalizeBlogImageSource(value);
+  return source && isValidBlogImageSource(source) ? source : null;
 }

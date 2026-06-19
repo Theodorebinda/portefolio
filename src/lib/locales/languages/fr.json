@@ -4,6 +4,7 @@
     "projects": "Projets",
     "recommendations": "Recommandations",
     "blog": "Blog",
+    "hire": "Embauchez-moi",
     "home": "Retourner à l'accueil"
   },
   "hero": {
@@ -166,6 +167,44 @@
         "message_required": "Ecrivez quelque chose"
       },
       "success": "Merci pour votre message!"
+    }
+  },
+  "hirePage": {
+    "badge": "Disponible pour mission",
+    "title": "Embauchez-moi",
+    "subtitle": "J’aide les entreprises à concevoir des applications web et mobiles performantes, accessibles et adaptées à leurs besoins métier.\nSpécialisé en React, Next.js et Django, je développe des interfaces modernes, des architectures robustes et j’automatise les processus avec n8n pour réduire les tâches répétitives et faire gagner du temps aux équipes.\nMes domaines d’expertise : développement full stack, UX, accessibilité et automatisation.",
+    "cta": "Parler du projet",
+    "secondaryCta": "Voir mes projets",
+    "availabilityLabel": "Disponibilité",
+    "availability": "Missions freelance et collaborations",
+    "locationLabel": "Localisation",
+    "location": "Kinshasa · Remote friendly",
+    "responseLabel": "Réponse",
+    "response": "Sous 24h",
+    "servicesTitle": "Ce que je peux faire",
+    "services": {
+      "consultant": {
+        "title": "Consultant",
+        "description": "Conseil stratégique et technique pour optimiser vos projets digitaux."
+      },
+      "contract": {
+        "title": "Travail contractuel",
+        "description": "Missions ciblées en développement et automatisation avec engagement sur qualité et délais."
+      },
+      "workshops": {
+        "title": "Ateliers",
+        "description": "Formations pratiques pour transmettre des compétences en front-end, UX et automatisation."
+      },
+      "advisory": {
+        "title": "Consultatif",
+        "description": "Accompagnement continu pour guider vos choix techniques et faire évoluer vos projets."
+      }
+    },
+    "processTitle": "Comment on avance",
+    "process": {
+      "discovery": "On clarifie le besoin, les utilisateurs, les contraintes et le résultat attendu.",
+      "prototype": "Je propose une direction concrète avec écrans, architecture et priorités réalistes.",
+      "delivery": "On livre par petites étapes, avec retours réguliers, tests et documentation utile."
     }
   },
   "common": {
