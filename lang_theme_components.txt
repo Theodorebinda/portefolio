@@ -6,3 +6,4 @@ feat: integrate ThemeToggle into header/navbar - Part 5
 feat: add language state management (zustand/context) - Part 6
 feat: add theme state management (zustand/context) - Part 7
 feat: persist language preference in localStorage - Part 8
+feat: persist theme preference in localStorage - Part 9
