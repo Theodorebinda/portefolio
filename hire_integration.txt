@@ -28,3 +28,4 @@ feat: add image dimension validation - Part 27
 feat: add image error handling in upload - Part 28
 feat: add user-friendly image error messages - Part 29
 feat: add image preview before upload - Part 30
+feat: add image removal functionality - Part 31
