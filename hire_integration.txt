@@ -15,3 +15,4 @@ feat: add hire form fields (name, email, message, service) - Part 14
 feat: add hire form API endpoint - Part 15
 feat: add email service for hire inquiries - Part 16
 feat: add hire form loading state - Part 17
+feat: add hire form success screen - Part 18
