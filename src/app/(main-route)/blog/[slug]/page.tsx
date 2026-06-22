@@ -152,7 +152,7 @@ export default async function BlogPostPage({
   };
 
   return (
-    <main className="relative z-0 isolate flex w-full md:max-w-4xl mx-auto flex-col gap-10  text-neutral-800 dark:text-slate-200">
+    <main className="relative z-0 isolate flex w-full md:max-w-4xl mx-auto flex-col gap-4  text-neutral-800 dark:text-slate-200">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -168,7 +168,11 @@ export default async function BlogPostPage({
 
       <article className="space-y-8">
         <header className="space-y-5">
-          <div className="flex flex-wrap gap-2">
+       
+          <h1 className="max-w-2xl text-2xl font-bold leading-tight text-neutral-950 dark:text-white md:text-3xl">
+            {post.title}
+          </h1>
+             <div className="flex flex-wrap gap-2">
             {post.tags.map(({ tag }) => (
               <span
                 key={tag.id}
@@ -178,22 +182,25 @@ export default async function BlogPostPage({
               </span>
             ))}
           </div>
-          <h1 className="max-w-2xl text-4xl font-bold leading-tight text-neutral-950 dark:text-white md:text-5xl">
-            {post.title}
-          </h1>
-          <p className="max-w-3xl text-lg leading-8 text-neutral-600 dark:text-slate-400">
-            {post.excerpt}
-          </p>
-          <div className="flex flex-wrap items-center gap-3 text-sm text-neutral-500 dark:text-slate-500">
+          <div className="flex items-center justify-between ">          <div className="flex flex-wrap items-center gap-3 text-sm text-neutral-500 dark:text-slate-500">
+            <Image
+              src={post.author.image ?? "/theodore - Copie.jpg"}
+              alt={post.author.name ?? "Theodore Samba"}
+              width={32}
+              height={32}
+              className="rounded-full"
+            />
             <span>{post.author.name ?? "Theodore Samba"}</span>
-            <span>•</span>
+          </div>
+            <div className="flex items-center gap-2 text-sm text-neutral-500 dark:text-slate-500">
             <span>{formatPostDate(post.publishedAt)}</span>
             <span>•</span>
             <span className="inline-flex items-center gap-1">
               <Clock size={15} />
               {post.readingTime ?? 1} min read
             </span>
-          </div>
+            </div></div>
+
         </header>
 
         {coverImage ? (
@@ -207,6 +214,9 @@ export default async function BlogPostPage({
             />
           </div>
         ) : null}
+          <p className="max-w-3xl text-lg leading-8 text-neutral-600 dark:text-slate-400">
+            {post.excerpt}
+          </p>
 
         <MarkdownContent content={post.content} />
       </article>
