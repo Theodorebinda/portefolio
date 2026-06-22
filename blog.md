@@ -22,7 +22,7 @@ Le blog utilise les variables deja presentes:
 ```env
 DATABASE_URL="postgresql://..."
 AUTH_SECRET="..."
-ADMIN_EMAILS="admin@example.com,theodorebinda@gmail.com"
+ADMIN_EMAILS="admin@example.com,contact@theodorebinda.me"
 ```
 
 Ajouter aussi pour l'upload Cloudinary:

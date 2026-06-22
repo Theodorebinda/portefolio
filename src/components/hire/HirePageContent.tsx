@@ -33,11 +33,11 @@ export function HirePageContent() {
              Laissez-moi un message
             </Link>
             <Link
-              href="mailto:theodorebinda@gmail.com"
+              href="mailto:contact@theodorebinda.me"
               className="inline-flex underline w-fit items-center gap-3  font-semibold text-neutral-800 transition hover:text-[#436896] dark:text-slate-200 dark:hover:text-[#b2d2fa]"
             >
               <Mail size={20} color="#436896" />
-              theodorebinda@gmail.com
+              contact@theodorebinda.me
             </Link>
             <Link
               href="https://www.linkedin.com/in/theodore-samba-26b456282/"

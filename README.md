@@ -96,7 +96,7 @@ Vos idées sont les bienvenues ! Si vous souhaitez contribuer :
 
 ## Contact
 Vous avez des questions ou souhaitez simplement échanger ? Contactez-moi via :
-- **Email** : [theodorebinda@gmail.com](mailto:theodorebinda@gmail.com)
+- **Email** : [contact@theodorebinda.me](mailto:contact@theodorebinda.me)
 
 ---
 

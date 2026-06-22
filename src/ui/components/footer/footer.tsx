@@ -9,10 +9,10 @@ export default function Footer() {
       <Container className="border-t border-[#545454] flex md:m-auto pt-4 md:w-1/2 ">
         <Container className="flex flex-row justify-between md:m-auto  items-center gap-1">
           <Copyright strokeWidth={2} size={20} />
-          <Link href="mailto:theodorebinda@gmail.com">
+          <Link href="mailto:contact@theodorebinda.me">
             {" "}
             <Typography className="text-xs ">
-              theodorebinda@gmail.com
+              contact@theodorebinda.me
             </Typography>
           </Link>
           <Dot strokeWidth={1.75} />

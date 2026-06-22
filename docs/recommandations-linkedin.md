@@ -11,7 +11,7 @@ DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DATABASE?schema=public"
 AUTH_SECRET="random-secret"
 AUTH_LINKEDIN_ID="linkedin-client-id"
 AUTH_LINKEDIN_SECRET="linkedin-client-secret"
-ADMIN_EMAILS="admin@example.com,theodorebinda@gmail.com"
+ADMIN_EMAILS="admin@example.com,contact@theodorebinda.me"
 ```
 
 `ADMIN_EMAILS` est une liste separee par des virgules. Un utilisateur connecte avec un email present dans cette liste obtient le role `ADMIN` dans sa session.

@@ -138,11 +138,11 @@ export const MobileNavigation = ({
                   <span>
                     email :
                     <a
-                      href="mailto:theodorebinda@gmail.com"
+                      href="mailto:contact@theodorebinda.me"
                       onClick={handleLinkClick}
                       className="ml-1"
                     >
-                      theodorebinda@gmail.com
+                      contact@theodorebinda.me
                     </a>
                   </span>
                   <span>
