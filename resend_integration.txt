@@ -14,3 +14,4 @@ feat: implement email queue system - Part 13
 feat: add email sending with rate limiting - Part 14
 feat: add email sending timeout handling - Part 15
 feat: add email attachment support - Part 16
+feat: add email CC and BCC support - Part 17
