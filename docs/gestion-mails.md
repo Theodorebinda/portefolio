@@ -4,28 +4,26 @@ Ce document decrit l'etat actuel de l'envoi de mails dans le portfolio et propos
 
 ## Etat actuel
 
-L'envoi de mail est aujourd'hui gere uniquement par le formulaire de contact:
+L'envoi de mail est aujourd'hui gere par une route serveur dediee au formulaire de contact:
 
 - Composant: `src/components/contactForm.tsx`
-- Fournisseur utilise: `@emailjs/browser`
-- Execution: cote client, directement depuis le navigateur
+- Route API: `POST /api/contact`
+- Couche mail: `src/lib/mail`
+- Fournisseur utilise: `resend`
+- Execution: cote serveur
 - Champs envoyes: `name`, `email`, `message`
-- Validation locale: champs requis + format email simple
-- Retour utilisateur: popup de succes apres envoi
-- Gestion d'erreur: `console.error`, sans message visible pour l'utilisateur
+- Protection anti-spam: honeypot `website`
+- Validation: validation locale simple + validation serveur avec `zod`
+- Retour utilisateur: popup de succes ou erreur lisible
 
-Le projet contient aussi `resend` dans les dependances, mais il n'est pas encore utilise dans le code applicatif.
+Les secrets mail restent cote serveur et ne sont pas exposes dans le bundle client.
 
 ## Limites actuelles
 
-- Les identifiants EmailJS de service/template/public key sont exposes cote client.
-- La logique d'envoi est liee au composant du formulaire de contact.
-- Il n'existe pas de service mail centralise utilisable par les routes API, les actions serveur ou les composants.
 - Aucun historique d'envoi n'est conserve.
 - Aucun systeme de retry n'existe si le fournisseur echoue.
-- Les erreurs ne sont pas normalisees.
-- Les templates ne sont pas versionnes dans le code.
-- Il n'y a pas de distinction claire entre mails transactionnels, notifications admin et reponses utilisateur.
+- Il n'y a pas encore de file d'attente pour absorber les pics ou retenter plus tard.
+- Les notifications hors contact ne sont pas encore branchees.
 
 ## Objectif
 
@@ -77,9 +75,9 @@ await sendMail({
 });
 ```
 
-## Fournisseur recommande
+## Fournisseur utilise
 
-Pour les prochaines evolutions, privilegier un fournisseur serveur comme Resend, deja present dans les dependances.
+Le projet utilise un fournisseur serveur via Resend.
 
 Avantages:
 
@@ -88,8 +86,6 @@ Avantages:
 - La meme couche peut etre appelee depuis les routes API et les actions serveur.
 - Le `replyTo` peut etre configure proprement avec l'email du visiteur.
 - Les erreurs peuvent etre remontees et journalisees de facon uniforme.
-
-EmailJS peut rester temporairement pour le formulaire existant, mais il devrait etre remplace progressivement par une route serveur.
 
 ## Variables d'environnement cible
 
@@ -125,8 +121,8 @@ Notes:
 
 | Evenement | Destinataire | Priorite | Statut |
 | --- | --- | --- | --- |
-| Nouveau message contact | Admin | Haute | A faire |
-| Accuse de reception contact | Visiteur | Moyenne | A faire |
+| Nouveau message contact | Admin | Haute | Fait |
+| Accuse de reception contact | Visiteur | Moyenne | Fait |
 | Nouvelle recommandation LinkedIn | Admin | Haute | A faire |
 | Recommandation approuvee | Visiteur | Moyenne | A faire |
 | Recommandation rejetee | Visiteur | Basse | Optionnel |
@@ -174,14 +170,10 @@ Avant d'ouvrir une route publique d'envoi:
 
 ## Migration progressive
 
-1. Documenter l'existant et choisir la structure cible.
-2. Creer `src/lib/mail` avec un provider serveur Resend.
-3. Creer une route `POST /api/contact`.
-4. Brancher le formulaire de contact sur cette route.
-5. Supprimer l'appel direct a EmailJS cote client.
-6. Ajouter les mails pour les recommandations LinkedIn.
-7. Ajouter les mails pour les futurs besoins blog/hire/admin.
-8. Retirer les dependances EmailJS si elles ne sont plus utilisees.
+1. Ajouter les mails pour les recommandations LinkedIn.
+2. Ajouter les mails pour les futurs besoins blog/hire/admin.
+3. Ajouter un historique d'envoi si le besoin de support ou d'audit augmente.
+4. Ajouter un systeme de retry ou une file d'attente si le trafic augmente.
 
 ## Points a verifier avant production
 
@@ -192,4 +184,3 @@ Avant d'ouvrir une route publique d'envoi:
 - Tests manuels sur production ou preview.
 - Comportement clair quand `MAIL_ENABLED=false`.
 - Aucun secret expose dans le bundle client.
-

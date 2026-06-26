@@ -160,11 +160,14 @@
       "message": "Message",
       "message_placeholder": "votre message",
       "submit": "Envoyer",
+      "sending": "Envoi en cours...",
       "errors": {
         "name_required": "Veuillez entrer votre nom !",
         "email_required": "Veuillez entrer votre adresse Email.",
         "email_invalid": "Revoyez votre adresse email",
-        "message_required": "Ecrivez quelque chose"
+        "message_required": "Ecrivez quelque chose",
+        "send_failed": "Le message n'a pas pu être envoyé. Réessayez plus tard.",
+        "network": "Impossible de joindre le serveur. Réessayez plus tard."
       },
       "success": "Merci pour votre message!"
     }
