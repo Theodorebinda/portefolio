@@ -27,3 +27,4 @@ feat: add email validation with Zod - Part 26
 feat: add email service to DI container - Part 27
 feat: add email service error types - Part 28
 feat: add email service logging - Part 29
+feat: add email sending audit trail - Part 30
