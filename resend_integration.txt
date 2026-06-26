@@ -22,3 +22,4 @@ feat: add POST /api/email/template endpoint - Part 21
 feat: add GET /api/email/status/:id endpoint - Part 22
 feat: add health check for email service - Part 23
 feat: add email test endpoint - Part 24
+feat: add email rate limit guard - Part 25
