@@ -17,3 +17,4 @@ feat: add email attachment support - Part 16
 feat: add email CC and BCC support - Part 17
 feat: add email reply-to support - Part 18
 feat: create EmailController for HTTP endpoints - Part 19
+feat: add POST /api/email/send endpoint - Part 20
