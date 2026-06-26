@@ -34,3 +34,4 @@ feat: add email click tracking - Part 33
 feat: add email engagement dashboard - Part 34
 feat: add admin email history view - Part 35
 feat: add email template preview in admin - Part 36
+feat: add email preferences page for users - Part 37
