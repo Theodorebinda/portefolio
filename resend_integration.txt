@@ -43,3 +43,4 @@ chore: add Resend config to example env - Part 42
 chore: update package.json with Resend - Part 43
 docs: add email integration documentation - Part 44
 test: add EmailService unit tests - Part 45
+test: add email template tests - Part 46
