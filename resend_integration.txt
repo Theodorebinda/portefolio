@@ -9,3 +9,4 @@ feat: add welcome email template - Part 8
 feat: add password reset email template - Part 9
 feat: add email verification template - Part 10
 feat: add notification email template - Part 11
+feat: add magic link email template - Part 12
