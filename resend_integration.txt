@@ -25,3 +25,4 @@ feat: add email test endpoint - Part 24
 feat: add email rate limit guard - Part 25
 feat: add email validation with Zod - Part 26
 feat: add email service to DI container - Part 27
+feat: add email service error types - Part 28
