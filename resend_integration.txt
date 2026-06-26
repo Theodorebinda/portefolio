@@ -45,3 +45,4 @@ docs: add email integration documentation - Part 44
 test: add EmailService unit tests - Part 45
 test: add email template tests - Part 46
 test: add EmailController integration tests - Part 47
+test: add email rate limit tests - Part 48
