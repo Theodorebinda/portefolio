@@ -1,0 +1,2 @@
+ - Part 1
+feat: add Resend dependency and base configuration - Part 2
