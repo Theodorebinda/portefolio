@@ -39,3 +39,4 @@ feat: add unsubscribe link handling - Part 38
 feat: add resend email functionality - Part 39
 feat: add email scheduling with cron - Part 40
 feat: add email batch sending - Part 41
+chore: add Resend config to example env - Part 42
