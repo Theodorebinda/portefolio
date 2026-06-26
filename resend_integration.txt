@@ -33,3 +33,4 @@ feat: add email open tracking - Part 32
 feat: add email click tracking - Part 33
 feat: add email engagement dashboard - Part 34
 feat: add admin email history view - Part 35
+feat: add email template preview in admin - Part 36
