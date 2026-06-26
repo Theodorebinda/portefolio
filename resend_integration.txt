@@ -7,3 +7,4 @@ feat: add sendEmail with retry logic - Part 6
 feat: implement email templating system - Part 7
 feat: add welcome email template - Part 8
 feat: add password reset email template - Part 9
+feat: add email verification template - Part 10
