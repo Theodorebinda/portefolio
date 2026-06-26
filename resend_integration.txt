@@ -13,3 +13,4 @@ feat: add magic link email template - Part 12
 feat: implement email queue system - Part 13
 feat: add email sending with rate limiting - Part 14
 feat: add email sending timeout handling - Part 15
+feat: add email attachment support - Part 16
