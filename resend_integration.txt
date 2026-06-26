@@ -4,3 +4,4 @@ feat: create Resend client singleton instance - Part 3
 feat: add Resend environment variables validation - Part 4
 feat: create EmailService with sendEmail method - Part 5
 feat: add sendEmail with retry logic - Part 6
+feat: implement email templating system - Part 7
