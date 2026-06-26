@@ -47,3 +47,4 @@ test: add email template tests - Part 46
 test: add EmailController integration tests - Part 47
 test: add email rate limit tests - Part 48
 test: add email validation tests - Part 49
+refactor: extract email constants - Part 50
