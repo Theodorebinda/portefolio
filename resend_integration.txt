@@ -1,3 +1,4 @@
  - Part 1
 feat: add Resend dependency and base configuration - Part 2
 feat: create Resend client singleton instance - Part 3
+feat: add Resend environment variables validation - Part 4
