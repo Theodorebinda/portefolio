@@ -37,3 +37,4 @@ feat: add email template preview in admin - Part 36
 feat: add email preferences page for users - Part 37
 feat: add unsubscribe link handling - Part 38
 feat: add resend email functionality - Part 39
+feat: add email scheduling with cron - Part 40
